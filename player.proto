@@ -1,0 +1,11 @@
+message Player {
+    required string name = 1;
+
+    optional string team = 2;
+
+    required string position = 3;
+
+    required int32 salary = 4;
+
+    required float points = 5;
+}

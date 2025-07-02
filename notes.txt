@@ -2,6 +2,7 @@
 
 Steps:
 
+* protoc --python_out=. player.proto
 * Download projections CSV from fantasy fuel (DFF_NBA_cheatsheet.csv)
 * Download ownership CSV from fantasy team advice (Ownership.csv)
 * Run "AggregatePlayerInformation.py" to generate CSV (player_pool.csv)
