@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "player.proto";
+
+message OptimizerRequest {
+    repeated string player_name_locks = 1;
+    
+    float randomness = 2;
+}
+
+message OptimizerResponse {
+    map<string, Player> lineup = 1;
+}
