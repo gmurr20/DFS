@@ -16,7 +16,7 @@ class Player:
         self.ownership = ownership
 
     def __eq__(self, other):
-        return self.name == self.name and self.team == self.team
+        return self.name == other.name and self.team == other.team
 
     def __str__(self):
         return f"{self.name} ({self.team})"

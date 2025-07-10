@@ -1,11 +1,17 @@
+syntax = "proto3";
+
 message Player {
-    required string name = 1;
+  string name = 1;
 
-    optional string team = 2;
+  string team = 2;
 
-    required string position = 3;
+  string position = 3;
 
-    required int32 salary = 4;
+  int32 salary = 4;
 
-    required float points = 5;
+  float points = 5;
+
+  float sim_points = 6;
 }
+
+message PlayerPool { repeated Player players = 1; }

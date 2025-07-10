@@ -1,5 +1,0 @@
-message OptimizerInput {
-    repeated string player_name_locks = 1;
-    
-    optional float randomness = 2;
-}
