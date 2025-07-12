@@ -46,6 +46,26 @@ class Optimizer:
         randomized_pool['simulated_projection'] = randomized_pool['points'].apply(my_func)
         return randomized_pool
     
+    def _calculate_stack_bonus(self, lineup_players: pd.DataFrame, player_vars: dict[str, int]) -> float:
+        bonus = 0.0
+        
+        # QB + WR from same team bonus
+        qbs = lineup_players[lineup_players['position'] == 'QB']
+        wrs = lineup_players[lineup_players['position'] == 'WR']
+
+        stack = False
+        for _, qb in qbs.iterrows():
+            if player_vars[qb['id']] != 1:
+                continue
+            same_team_wrs = wrs[wrs['team'] == qb['team']]
+            for _, wr in same_team_wrs.iterrows():
+                if player_vars[wr['id']] == 1:
+                    stack = True
+        if stack:
+            bonus = 5.0
+        
+        return bonus
+    
     def generate_optimal_lineup(self, player_pool: pd.DataFrame, request: OptimizerRequest):
         # 1. Define the problem
         prob = pulp.LpProblem("DraftKings Lineup Optimizer", pulp.LpMaximize)
@@ -57,7 +77,7 @@ class Optimizer:
         player_vars = pulp.LpVariable.dicts("Player", [p["id"] for _, p in player_pool.iterrows()], 0, 1, pulp.LpBinary)
 
         # 3. Objective Function: Maximize total projected points
-        prob += pulp.lpSum([player_pool.loc[player_pool['id'] == p_id, 'points'].iloc[0] * player_vars[p_id] for p_id in player_vars]), "Total Projected Points"
+        prob += pulp.lpSum([player_pool.loc[player_pool['id'] == p_id, 'points'].iloc[0] * player_vars[p_id] for p_id in player_vars]) + self._calculate_stack_bonus(player_pool, player_vars), "Total Projected Points"
 
         # 4. Constraints
         # Constraint 1: Salary Cap
