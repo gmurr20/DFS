@@ -3,10 +3,12 @@ from optimizer_api_pb2 import OptimizerRequest, OptimizerResponse
 import pandas as pd
 import numpy as np
 from team import Team
-from copy import deepcopy
-import heapq
+import pulp
+from functools import partial
 
-def randomize_points(initial_projection: float, random_factor: float) -> float:
+SALARY_CAP = 50000
+
+def randomize_points(random_factor: float, initial_projection: float) -> float:
     if random_factor < 0:
         random_factor = 0.0
     if random_factor > 1.0:
@@ -21,9 +23,9 @@ class Optimizer:
 
     def __init__(self, player_pool: PlayerPool, team_requirements: dict[str, int]):
         self.player_pool = self._convert_player_pool_to_dataframe(player_pool)
-        self.team_requirements = {'pg': 1, 'sg': 1, 'sf': 1, 'pf': 1, 'c': 1, 'pg|sg': 1, 'sf|pf': 1, 'pg|sg|sf|pf|c': 1}
+        self.team_requirements = team_requirements
     
-    def _convert_player_pool_to_dataframe(player_pool_proto: PlayerPool) -> pd.DataFrame:
+    def _convert_player_pool_to_dataframe(self, player_pool_proto: PlayerPool) -> pd.DataFrame:
         player_data = []
         for player in player_pool_proto.players:
             row = {
@@ -32,7 +34,7 @@ class Optimizer:
                 'position': player.position,
                 'salary': player.salary,
                 'points': player.points,
-                'team': player.team if player.HasField('team') else None
+                'team': player.team
             }
             player_data.append(row)
         df = pd.DataFrame(player_data)
@@ -40,37 +42,73 @@ class Optimizer:
     
     def _add_randomness_to_player_pool(self, randomness: float):
         randomized_pool = self.player_pool.copy(deep=True)
-        randomized_pool['simulated_projection'] = randomized_pool['points'].apply(randomize_points)
-        return randomize_points
+        my_func = partial(randomize_points, randomness)
+        randomized_pool['simulated_projection'] = randomized_pool['points'].apply(my_func)
+        return randomized_pool
+    
+    def generate_optimal_lineup(self, player_pool: pd.DataFrame, request: OptimizerRequest):
+        # 1. Define the problem
+        prob = pulp.LpProblem("DraftKings Lineup Optimizer", pulp.LpMaximize)
+
+        # 2. Decision Variables
+        # Create a dictionary of binary variables, one for each player
+        # Key: player_id
+        # Value: LpBinary variable
+        player_vars = pulp.LpVariable.dicts("Player", [p["id"] for _, p in player_pool.iterrows()], 0, 1, pulp.LpBinary)
+
+        # 3. Objective Function: Maximize total projected points
+        prob += pulp.lpSum([player_pool.loc[player_pool['id'] == p_id, 'points'].iloc[0] * player_vars[p_id] for p_id in player_vars]), "Total Projected Points"
+
+        # 4. Constraints
+        # Constraint 1: Salary Cap
+        prob += pulp.lpSum([player_pool.loc[player_pool['id'] == p_id, 'salary'].iloc[0] * player_vars[p_id] for p_id in player_vars]) <= SALARY_CAP, "Salary Cap"
+
+        # Constraint 2: Positional Requirements
+        # Group players by their primary position for constraints
+        total_player_count = 0
+        for pos, count in self.team_requirements.items():
+            players_in_current_position = player_pool[player_pool['position'].str.contains(f'^({pos})')]
+            prob += pulp.lpSum([player_vars[p["id"]] for _, p in players_in_current_position.iterrows()]) >= count, f"{pos}_MinCount_{count}"
+            total_player_count += count
+        # Total players constraint (sum of all roster spots must be filled)
+        prob += pulp.lpSum([player_vars[p_id] for p_id in player_vars]) == total_player_count, "Total Players Selected"
+
+        # Constraint 3: Passed in requirements
+        for lock in request.player_name_locks:
+            prob +=  pulp.lpSum([player_vars[lock]]) == 1, f'{lock} player lock'
+
+        # 4. Solve the problem
+        # You can specify different solvers here. PuLP uses CBC by default (open-source).
+        # For better performance on larger problems, consider Gurobi, CPLEX (commercial), or GLPK (open-source).
+        prob.solve()
+
+        # No optimal solution.
+        if prob.status != pulp.LpStatusOptimal:
+            return None
+        # Optimal solution found!
+        final_team = Team(self.team_requirements, SALARY_CAP)
+        for _, p in player_pool.iterrows():
+            if player_vars[p["id"]].varValue == 1:
+                final_team.add_player(p.to_dict())
+        return final_team
+
 
     def optimize(self, request: OptimizerRequest) -> OptimizerResponse:
-        player_pool = self._add_randomness_to_player_pool(request.randomness)
-
-        # DFS through all possible team combos
-        stack = []
-        positions = self.team_requirements.keys
-        all_players_in_pos = player_pool['position'].str.contains(f'^({positions[0]})')
-        for row in all_players_in_pos.itertuples():
-            stack.append(Team(self.team_requirements, row, positions[0]))
-        top_teams = []
-        visited = set([])
-        while len(stack) != 0:
-            curr_team = stack.pop()
-            if curr_team in visited:
+        unique_teams = set([])
+        iterations = 1
+        randomness = request.randomness
+        request.num_lineups = max(request.num_lineups, 1)
+        while len(unique_teams) < request.num_lineups and iterations <= 100:
+            player_pool = self._add_randomness_to_player_pool(randomness)
+            player_pool = player_pool[player_pool['simulated_projection'] > .5]
+            iterations += 1
+            potential_team = self.generate_optimal_lineup(player_pool, request)
+            if potential_team is None or potential_team in unique_teams:
+                randomness += .05
                 continue
-            visited.add(curr_team)
-            needs = curr_team.needs()
-            for pos in needs:
-                potential_players = player_pool['position'].str.contains(f'^({pos})')
-                for player in potential_players:
-                    new_team = deepcopy(curr_team)
-                    new_team.add(player, pos)
-                    if not new_team.is_valid():
-                        continue
-                    if new_team.team_finalized():
-                        heapq.heappush(top_teams, new_team)
-                        if len(heapq) > 10:
-                            heapq.heappop(top_teams)
-                    else:
-                        stack.append(new_team)
-        return OptimizerResponse()
+            unique_teams.add(potential_team)
+        response = OptimizerResponse()
+        for team in unique_teams:
+            response.lineups.append(team.to_lineup())
+        return response
+        

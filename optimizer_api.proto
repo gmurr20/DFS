@@ -6,8 +6,18 @@ message OptimizerRequest {
     repeated string player_name_locks = 1;
     
     float randomness = 2;
+
+    int32 num_lineups = 3;
+}
+
+message Players {
+    repeated Player players = 1;
+}
+
+message Lineup {
+    map<string, Players> position_to_players = 1;
 }
 
 message OptimizerResponse {
-    map<string, Player> lineup = 1;
+    repeated Lineup lineups = 1;
 }
