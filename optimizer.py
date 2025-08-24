@@ -9,6 +9,8 @@ from functools import partial
 SALARY_CAP = 50000
 
 def randomize_points(random_factor: float, initial_projection: float) -> float:
+    if initial_projection <= 0:
+        return 0
     if random_factor < 0:
         random_factor = 0.0
     if random_factor > 1.0:
@@ -96,6 +98,27 @@ class Optimizer:
         # Constraint 3: Passed in requirements
         for lock in request.player_name_locks:
             prob +=  pulp.lpSum([player_vars[lock]]) == 1, f'{lock} player lock'
+        if request.stack:
+            qbs = player_pool[player_pool['position'].str.contains('^(QB)')]
+            for _, qb in qbs.iterrows():
+                qb_team = qb['team']
+                qb_id = qb['id']
+                
+                # Find all WRs and TEs on the same team as this QB
+                stack_eligible = player_pool[
+                    (player_pool['team'] == qb_team) & 
+                    (player_pool['position'].str.contains('^(WR|TE)'))
+                ]
+                
+                if len(stack_eligible) > 0:  # Only add constraint if there are stackable players
+                    # If QB is selected (left side = 1), then at least 1 WR/TE from same team must be selected
+                    prob += (
+                        pulp.lpSum([player_vars[p["id"]] for _, p in stack_eligible.iterrows()]) >= 
+                        player_vars[qb_id]
+                    ), f"QB_Stack_{qb_team}_{qb_id}"
+        
+        # Constraint 4: DST doesn't conflict with players
+        # TODO(need to add this info)
 
         # 4. Solve the problem
         # You can specify different solvers here. PuLP uses CBC by default (open-source).

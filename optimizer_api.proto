@@ -8,6 +8,8 @@ message OptimizerRequest {
     float randomness = 2;
 
     int32 num_lineups = 3;
+
+    bool stack = 4;
 }
 
 message Players {

@@ -9,7 +9,7 @@ headers = {
     'x-rapidapi-host': "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com"
 }
 
-conn.request("GET", "/getNFLDFS?date=20250119", headers=headers)
+conn.request("GET", "/getNFLDFS?date=20250824", headers=headers)
 
 res = conn.getresponse()
 data = res.read()
