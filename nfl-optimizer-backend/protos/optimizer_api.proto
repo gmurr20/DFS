@@ -12,14 +12,12 @@ message OptimizerRequest {
     bool stack = 4;
 }
 
-message Players {
-    repeated Player players = 1;
-}
-
-message Lineup {
-    map<string, Players> position_to_players = 1;
-}
-
 message OptimizerResponse {
     repeated Lineup lineups = 1;
+}
+
+message GetPlayersRequest {}
+
+message GetPlayersResponse {
+    Players players = 1;
 }

@@ -18,4 +18,10 @@ message Player {
   float sim_points = 8;
 }
 
-message PlayerPool { repeated Player players = 1; }
+message Players {
+    repeated Player players = 1;
+}
+
+message Lineup {
+    map<string, Players> position_to_players = 1;
+}

@@ -2,5 +2,4 @@
 
 Steps:
 protoc player.proto
-* protoc --python_out=nfl-optimizer-backend/protos/. --proto_path=nfl-optimizer-backend/protos nfl-optimizer-backend/protos/player.proto
-* protoc --python_out=nfl-optimizer-backend/protos/. --proto_path=nfl-optimizer-backend/protos nfl-optimizer-backend/protos/optimizer_api.proto
+* protoc --proto_path=nfl-optimizer-backend/protos --python_out=nfl-optimizer-backend/protos nfl-optimizer-backend/protos/player.proto nfl-optimizer-backend/protos/optimizer_api.proto

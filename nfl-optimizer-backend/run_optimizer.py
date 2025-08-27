@@ -1,5 +1,5 @@
 import csv
-from protos.player_pb2 import Player, PlayerPool
+from protos.player_pb2 import Player, Players
 from optimizer import Optimizer
 from protos.optimizer_api_pb2 import OptimizerRequest, OptimizerResponse
 import pandas as pd
@@ -44,7 +44,7 @@ for id, dst in ff_projections["body"]["teamDefenseProjections"].items():
     player_dict[team_id].points = float(dst["fantasyPointsDefault"])
 
 # Clean data to player pool
-player_pool = PlayerPool()
+player_pool = Players()
 for _, player in player_dict.items():
     player_pool.players.append(player)
 
