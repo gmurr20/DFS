@@ -3,7 +3,7 @@ syntax = "proto3";
 import "player.proto";
 
 message OptimizerRequest {
-    repeated string player_name_locks = 1;
+    repeated string player_id_locks = 1;
     
     float randomness = 2;
 

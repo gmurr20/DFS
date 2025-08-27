@@ -1,11 +1,11 @@
 from typing import List
-from player_pb2 import Player, PlayerPool
-from optimizer_api_pb2 import OptimizerRequest, OptimizerResponse
+from protos.player_pb2 import Player, PlayerPool
+from protos.optimizer_api_pb2 import OptimizerRequest, OptimizerResponse
 import pandas as pd
 import numpy as np
-from old_optimizer.team import Team
 import pulp
 from functools import partial
+from team import Team
 
 SALARY_CAP = 50000
 
@@ -33,7 +33,7 @@ class Optimizer:
         player_data = []
         for player in player_pool_proto.players:
             row = {
-                'id': player.name + "_" + player.position,
+                'id': player.id,
                 'name': player.name,
                 'position': player.position,
                 'salary': player.salary,
@@ -81,8 +81,8 @@ class Optimizer:
         prob += pulp.lpSum([player_vars[p_id] for p_id in player_vars]) == self.num_players, "Total Players Selected"
 
         # Constraint 3: Passed in requirements
-        for lock in request.player_name_locks:
-            prob +=  pulp.lpSum([player_vars[lock]]) == 1, f'{lock} player lock'
+        for lock in request.player_id_locks:
+            prob +=  pulp.lpSum([player_vars[lock]]) == 1, f'{player_vars[lock].id} player lock'
         if request.stack:
             qbs = player_pool[player_pool['position'].str.contains('^(QB)')]
             for _, qb in qbs.iterrows():

@@ -1,5 +1,5 @@
-from optimizer_api_pb2 import Lineup, Players
-from player_pb2 import Player
+from protos.optimizer_api_pb2 import Lineup
+from protos.player_pb2 import Player
 
 class Team:
     def __init__(self, team_requirements, salary_cap):

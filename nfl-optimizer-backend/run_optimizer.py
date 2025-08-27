@@ -1,16 +1,16 @@
 import csv
-from player_pb2 import Player, PlayerPool
+from protos.player_pb2 import Player, PlayerPool
 from optimizer import Optimizer
-from optimizer_api_pb2 import OptimizerRequest, OptimizerResponse
+from protos.optimizer_api_pb2 import OptimizerRequest, OptimizerResponse
 import pandas as pd
 import json
 
 # Load Data
-with open('dfs_salaries.json', 'r') as file:
+with open('data/dfs_salaries.json', 'r') as file:
     salaries_json = json.load(file)
-with open('ff_projections.json', 'r') as file:
+with open('data/ff_projections.json', 'r') as file:
     ff_projections = json.load(file)
-with open('week1_matchups.json', 'r') as file:
+with open('data/week1_matchups.json', 'r') as file:
     matchups = json.load(file)
 
 team_to_opposing_team = {}
