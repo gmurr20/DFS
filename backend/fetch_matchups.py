@@ -1,7 +1,10 @@
 import http.client
 import json
-from env_keys import RAPID_API
+from backend.env_keys import RAPID_API
 
+
+week = '1'
+season = '2025'
 conn = http.client.HTTPSConnection("tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com")
 
 headers = {
@@ -9,11 +12,11 @@ headers = {
     'x-rapidapi-host': "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com"
 }
 
-conn.request("GET", "/getNFLProjections?week=1&twoPointConversions=2&passYards=.04&passAttempts=-.5&passTD=4&passCompletions=1&passInterceptions=-2&pointsPerReception=1&carries=.2&rushYards=.1&rushTD=6&fumbles=-2&receivingYards=.1&receivingTD=6&targets=.1&fgMade=3&fgMissed=-1&xpMade=1&xpMissed=-1", headers=headers)
+conn.request("GET", f"/getNFLGamesForWeek?week={week}&seasonType=reg&season={season}", headers=headers)
 
 res = conn.getresponse()
 data = res.read()
 
 json_data = json.loads(data.decode("utf-8"))
-with open('ff_projections.json', 'w', encoding='utf-8') as f:
+with open(f'data/week{week}_matchups.json', 'w', encoding='utf-8') as f:
     json.dump(json_data, f, indent=2, ensure_ascii=False)

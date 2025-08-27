@@ -1,5 +1,5 @@
 import random
-from Player import Player
+from old_optimizer.Player import Player
 
 NBA_POSITIONS = ["pg", "sg", "sf", "c", "pf", "g", "f", "util"]
 

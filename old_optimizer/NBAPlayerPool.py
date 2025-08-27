@@ -1,4 +1,4 @@
-from Player import Player
+from old_optimizer.Player import Player
 import random
 from NBATeam import NBATeam
 

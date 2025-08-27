@@ -13,7 +13,9 @@ message Player {
 
   float points = 6;
 
-  float sim_points = 7;
+  string opposing_team = 7;
+
+  float sim_points = 8;
 }
 
 message PlayerPool { repeated Player players = 1; }

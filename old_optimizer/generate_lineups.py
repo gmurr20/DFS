@@ -1,5 +1,5 @@
 import csv
-from Player import Player
+from old_optimizer.Player import Player
 from NBAPlayerPool import NBAPlayerPool
 import random
 

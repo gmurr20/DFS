@@ -2,7 +2,7 @@ from player_pb2 import Player, PlayerPool
 from optimizer_api_pb2 import OptimizerRequest, OptimizerResponse
 import pandas as pd
 import numpy as np
-from team import Team
+from old_optimizer.team import Team
 from copy import deepcopy
 import heapq
 from functools import partial

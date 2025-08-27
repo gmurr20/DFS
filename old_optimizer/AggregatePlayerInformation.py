@@ -1,5 +1,5 @@
 import pandas
-from Player import Player
+from old_optimizer.Player import Player
 
 # with open("DFF_NBA_cheatsheet.csv") as projections:
 #     csv_reader = csv.reader(projections, delimiter=",")

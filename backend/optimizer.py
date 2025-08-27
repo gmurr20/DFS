@@ -1,8 +1,9 @@
+from typing import List
 from player_pb2 import Player, PlayerPool
 from optimizer_api_pb2 import OptimizerRequest, OptimizerResponse
 import pandas as pd
 import numpy as np
-from team import Team
+from old_optimizer.team import Team
 import pulp
 from functools import partial
 
@@ -23,9 +24,10 @@ def randomize_points(random_factor: float, initial_projection: float) -> float:
 
 class Optimizer:
 
-    def __init__(self, player_pool: PlayerPool, team_requirements: dict[str, int]):
+    def __init__(self, player_pool: PlayerPool, team_requirements: dict[str, List], num_players: int):
         self.player_pool = self._convert_player_pool_to_dataframe(player_pool)
         self.team_requirements = team_requirements
+        self.num_players = num_players
     
     def _convert_player_pool_to_dataframe(self, player_pool_proto: PlayerPool) -> pd.DataFrame:
         player_data = []
@@ -36,7 +38,8 @@ class Optimizer:
                 'position': player.position,
                 'salary': player.salary,
                 'points': player.points,
-                'team': player.team
+                'team': player.team,
+                'opposing_team': player.opposing_team
             }
             player_data.append(row)
         df = pd.DataFrame(player_data)
@@ -47,26 +50,6 @@ class Optimizer:
         my_func = partial(randomize_points, randomness)
         randomized_pool['simulated_projection'] = randomized_pool['points'].apply(my_func)
         return randomized_pool
-    
-    def _calculate_stack_bonus(self, lineup_players: pd.DataFrame, player_vars: dict[str, int]) -> float:
-        bonus = 0.0
-        
-        # QB + WR from same team bonus
-        qbs = lineup_players[lineup_players['position'] == 'QB']
-        wrs = lineup_players[lineup_players['position'] == 'WR']
-
-        stack = False
-        for _, qb in qbs.iterrows():
-            if player_vars[qb['id']] != 1:
-                continue
-            same_team_wrs = wrs[wrs['team'] == qb['team']]
-            for _, wr in same_team_wrs.iterrows():
-                if player_vars[wr['id']] == 1:
-                    stack = True
-        if stack:
-            bonus = 5.0
-        
-        return bonus
     
     def generate_optimal_lineup(self, player_pool: pd.DataFrame, request: OptimizerRequest):
         # 1. Define the problem
@@ -79,7 +62,7 @@ class Optimizer:
         player_vars = pulp.LpVariable.dicts("Player", [p["id"] for _, p in player_pool.iterrows()], 0, 1, pulp.LpBinary)
 
         # 3. Objective Function: Maximize total projected points
-        prob += pulp.lpSum([player_pool.loc[player_pool['id'] == p_id, 'points'].iloc[0] * player_vars[p_id] for p_id in player_vars]) + self._calculate_stack_bonus(player_pool, player_vars), "Total Projected Points"
+        prob += pulp.lpSum([player_pool.loc[player_pool['id'] == p_id, 'simulated_projection'].iloc[0] * player_vars[p_id] for p_id in player_vars]), "Total Projected Points"
 
         # 4. Constraints
         # Constraint 1: Salary Cap
@@ -88,12 +71,14 @@ class Optimizer:
         # Constraint 2: Positional Requirements
         # Group players by their primary position for constraints
         total_player_count = 0
-        for pos, count in self.team_requirements.items():
+        for pos, select_range in self.team_requirements.items():
+            min_count = select_range[0]
+            max_count = select_range[1]
             players_in_current_position = player_pool[player_pool['position'].str.contains(f'^({pos})')]
-            prob += pulp.lpSum([player_vars[p["id"]] for _, p in players_in_current_position.iterrows()]) >= count, f"{pos}_MinCount_{count}"
-            total_player_count += count
+            prob += pulp.lpSum([player_vars[p["id"]] for _, p in players_in_current_position.iterrows()]) >= min_count, f"{pos}_MinCount_{min_count}"
+            prob += pulp.lpSum([player_vars[p["id"]] for _, p in players_in_current_position.iterrows()]) <= max_count, f"{pos}_MaxCount_{max_count}"
         # Total players constraint (sum of all roster spots must be filled)
-        prob += pulp.lpSum([player_vars[p_id] for p_id in player_vars]) == total_player_count, "Total Players Selected"
+        prob += pulp.lpSum([player_vars[p_id] for p_id in player_vars]) == self.num_players, "Total Players Selected"
 
         # Constraint 3: Passed in requirements
         for lock in request.player_name_locks:
@@ -103,13 +88,11 @@ class Optimizer:
             for _, qb in qbs.iterrows():
                 qb_team = qb['team']
                 qb_id = qb['id']
-                
                 # Find all WRs and TEs on the same team as this QB
                 stack_eligible = player_pool[
                     (player_pool['team'] == qb_team) & 
                     (player_pool['position'].str.contains('^(WR|TE)'))
                 ]
-                
                 if len(stack_eligible) > 0:  # Only add constraint if there are stackable players
                     # If QB is selected (left side = 1), then at least 1 WR/TE from same team must be selected
                     prob += (
@@ -118,7 +101,23 @@ class Optimizer:
                     ), f"QB_Stack_{qb_team}_{qb_id}"
         
         # Constraint 4: DST doesn't conflict with players
-        # TODO(need to add this info)
+        defenses = player_pool[player_pool['position'].str.contains('^(DST)')] 
+        for _, defense in defenses.iterrows():
+            defense_team = defense['team']
+            defense_id = defense['id']
+            
+            # Find all non-defense players whose opposing_team matches the defense's team
+            opposing_players = player_pool[
+                (player_pool['opposing_team'] == defense_team) & 
+                (~player_pool['position'].str.contains('^(DST)'))  # Exclude other defenses
+            ]
+            if len(opposing_players) > 0:
+                # Defense can't be selected if any opposing team player is selected
+                # This constraint: defense + sum(opposing_players) <= 1
+                prob += (
+                    player_vars[defense_id] + 
+                    pulp.lpSum([player_vars[p["id"]] for _, p in opposing_players.iterrows()]) <= 1
+                ), f"Defense_Opposition_{defense_team}_{defense_id}"
 
         # 4. Solve the problem
         # You can specify different solvers here. PuLP uses CBC by default (open-source).
@@ -127,12 +126,15 @@ class Optimizer:
 
         # No optimal solution.
         if prob.status != pulp.LpStatusOptimal:
+            print('Could not find optimal solution')
             return None
         # Optimal solution found!
         final_team = Team(self.team_requirements, SALARY_CAP)
+        players = 0
         for _, p in player_pool.iterrows():
             if player_vars[p["id"]].varValue == 1:
                 final_team.add_player(p.to_dict())
+                players += 1
         return final_team
 
 
@@ -143,7 +145,7 @@ class Optimizer:
         request.num_lineups = max(request.num_lineups, 1)
         while len(unique_teams) < request.num_lineups and iterations <= 100:
             player_pool = self._add_randomness_to_player_pool(randomness)
-            player_pool = player_pool[player_pool['simulated_projection'] > .5]
+            player_pool = player_pool[player_pool['simulated_projection'] > .1]
             iterations += 1
             potential_team = self.generate_optimal_lineup(player_pool, request)
             if potential_team is None or potential_team in unique_teams:
