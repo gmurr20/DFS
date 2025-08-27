@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Lock, X, Users, ChevronUp, ChevronDown } from 'lucide-react';
 
-import {GetPlayersResponse, OptimizerRequest, OptimizerResponse} from './compiled.js';
+import { GetPlayersResponse, OptimizerRequest, OptimizerResponse } from './compiled.js';
 
 const FLASK_BASE_URL = 'http://localhost:8888';
 
@@ -17,6 +17,8 @@ const NFLOptimizerFrontend = () => {
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [optimizing, setOptimizing] = useState(false);
+  const [optimizedLineup, setOptimizedLineup] = useState(null);
 
   // Fetch players from API
   useEffect(() => {
@@ -146,14 +148,14 @@ const NFLOptimizerFrontend = () => {
           player.id === playerId ? { ...player, status: newStatus } : player
         );
       });
-      
+
       // Update FLEX array with the updated players
       newPlayers.FLEX = [
         ...newPlayers.WR,
         ...newPlayers.RB,
         ...newPlayers.TE
       ];
-      
+
       return newPlayers;
     });
   };
@@ -214,14 +216,14 @@ const NFLOptimizerFrontend = () => {
           status: 'available'
         }));
       });
-      
+
       // Update FLEX array with cleared players
       newPlayers.FLEX = [
         ...newPlayers.WR,
         ...newPlayers.RB,
         ...newPlayers.TE
       ];
-      
+
       return newPlayers;
     });
   };
@@ -280,6 +282,80 @@ const NFLOptimizerFrontend = () => {
     if (!projection || !salary || salary === 0) return 0;
     return (projection / salary * 1000);
   };
+
+  // Function to handle lineup optimization
+  const handleOptimizeLineup = async () => {
+    try {
+      setOptimizing(true);
+      setError(null);
+
+      // Collect all locked player IDs
+      const lockedPlayerIds = [];
+      Object.keys(players).forEach(position => {
+        if (position === 'FLEX') return; // Skip FLEX as it's virtual
+        const locked = players[position].filter(p => p.status === 'locked');
+        lockedPlayerIds.push(...locked.map(p => p.id));
+      });
+
+      // Collect all excluded player IDs
+      const excludedPlayerIds = [];
+      Object.keys(players).forEach(position => {
+        if (position === 'FLEX') return; // Skip FLEX as it's virtual
+        const excluded = players[position].filter(p => p.status === 'excluded');
+        excludedPlayerIds.push(...excluded.map(p => p.id));
+      });
+
+      // Create the OptimizerRequest message
+      const request = OptimizerRequest.create({
+        locked_player_ids: lockedPlayerIds,
+        excluded_player_ids: excludedPlayerIds
+      });
+
+      // Encode the request to bytes
+      const requestBytes = OptimizerRequest.encode(request).finish();
+
+      // Send the request to the backend
+      const response = await fetch(`${FLASK_BASE_URL}/optimize`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/octet-stream',
+        },
+        body: requestBytes
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      // Get the response as array buffer for protobuf parsing
+      const arrayBuffer = await response.arrayBuffer();
+
+      // Decode the OptimizerResponse
+      const optimizerResponse = OptimizerResponse.decode(new Uint8Array(arrayBuffer));
+      const responseObject = OptimizerResponse.toObject(optimizerResponse, {
+        longs: String,
+        enums: String,
+        bytes: String
+      });
+
+      // Store the optimized lineup
+      setOptimizedLineup(responseObject);
+
+      console.log('Optimized Lineup:', responseObject);
+
+      // You can add additional handling here, such as:
+      // - Displaying the optimized lineup in a modal
+      // - Highlighting the selected players in the table
+      // - Showing the total salary and projected points
+
+    } catch (err) {
+      console.error('Error optimizing lineup:', err);
+      setError(`Failed to optimize lineup: ${err.message}`);
+    } finally {
+      setOptimizing(false);
+    }
+  };
+
   const handleSort = (key) => {
     let direction = 'asc';
     if (sortConfig.key === key && sortConfig.direction === 'asc') {
@@ -483,7 +559,7 @@ const NFLOptimizerFrontend = () => {
                       <X className="w-5 h-5 text-red-600" />
                       <h3 className="text-lg font-semibold text-red-800">Excluded Players</h3>
                       <span className="bg-red-200 text-red-800 text-xs font-medium px-2 py-1 rounded-full">
-                        {Object.keys(players).filter(pos => pos !== 'FLEX').map(position => 
+                        {Object.keys(players).filter(pos => pos !== 'FLEX').map(position =>
                           players[position].filter(p => p.status === 'excluded')
                         ).flat().length}
                       </span>
@@ -493,7 +569,7 @@ const NFLOptimizerFrontend = () => {
                     {Object.values(players).flat().filter(p => p.status === 'excluded').length === 0 ? (
                       <p className="text-red-600 text-sm italic">No players excluded</p>
                     ) : (
-                      Object.keys(players).filter(pos => pos !== 'FLEX').map(position => 
+                      Object.keys(players).filter(pos => pos !== 'FLEX').map(position =>
                         players[position].filter(p => p.status === 'excluded')
                       ).flat().map((player) => {
                         const position = getCurrentPlayerPosition(player.id);
@@ -526,10 +602,71 @@ const NFLOptimizerFrontend = () => {
 
               {/* Optimize Lineup Button */}
               <div className="mt-6">
-                <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors text-lg">
-                  Optimize Lineup
+                <button
+                  onClick={handleOptimizeLineup}
+                  disabled={optimizing}
+                  className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {optimizing ? 'Optimizing...' : 'Optimize Lineup'}
                 </button>
               </div>
+
+              {/* Optimized Lineup Display */}
+              {optimizedLineup && (
+                <div className="mt-6 bg-purple-50 rounded-lg p-4">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-lg font-semibold text-purple-800">Optimized Lineup</h3>
+                    <button
+                      onClick={() => setOptimizedLineup(null)}
+                      className="text-purple-600 hover:text-purple-800"
+                    >
+                      <X className="w-5 h-5" />
+                    </button>
+                  </div>
+
+                  {optimizedLineup.lineups.length > 0 ? optimizedLineup.lineups.map(lineup => (
+                    <>
+                      {/* <div className="space-y-2 mb-4">
+                        {lineup.position_to_players && lineup.position_to_players.map((position, player) => (
+                          <div className="flex items-center justify-between bg-white rounded px-3 py-2">
+                            <div className="flex items-center space-x-2">
+                              <span className="bg-purple-100 text-purple-800 text-xs font-medium px-2 py-1 rounded">
+                                {position}
+                              </span>
+                              <span className="text-sm font-medium text-gray-900">{player.name}</span>
+                              <span className="text-xs text-gray-500">({player.team})</span>
+                            </div>
+                            <div className="flex items-center space-x-3">
+                              <span className="text-xs text-gray-600">${player.salary?.toLocaleString()}</span>
+                              <span className="text-xs font-medium text-purple-700">{player.points?.toFixed(2)} pts</span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="border-t border-purple-200 pt-3">
+                        <div className="flex justify-between items-center">
+                          <div className="text-sm">
+                            <span className="font-semibold text-purple-800">Total Salary:</span>
+                            <span className="ml-1 text-purple-700">
+                              ${lineup.total_salary?.toLocaleString()} / ${MAX_SALARY_CAP.toLocaleString()}
+                            </span>
+                          </div>
+                          <div className="text-sm">
+                            <span className="font-semibold text-purple-800">Projected Points:</span>
+                            <span className="ml-1 text-purple-700 font-bold">
+                              {lineup.total_points?.toFixed(2)}
+                            </span>
+                          </div>
+                        </div>
+                      </div> */
+                      }
+                    </>)
+                  ) : (
+                    <p className="text-purple-600 text-sm italic">No valid lineup could be generated with the current constraints.</p>
+                  )}
+                </div>
+              )}
             </div>
           </div>
 
