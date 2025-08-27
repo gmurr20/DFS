@@ -5,8 +5,8 @@ import logging
 import os
 import optimizer as op_lib
 
-from protos.player_pb2 import Player, Players, Lineup
-from protos.optimizer_api_pb2 import OptimizerRequest, OptimizerResponse, GetPlayersRequest, GetPlayersResponse
+from player_pb2 import Player, Players, Lineup
+from optimizer_api_pb2 import OptimizerRequest, OptimizerResponse, GetPlayersRequest, GetPlayersResponse
 
 NFL_TEAM_REQUIREMENTS = {'QB': [1, 1], 'RB': [2,3], 'WR': [3,4], 'TE': [1,2], 'DST': [1,1]}
 

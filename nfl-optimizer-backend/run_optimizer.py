@@ -1,8 +1,6 @@
-import csv
-from protos.player_pb2 import Player, Players
+from player_pb2 import Player, Players
 from optimizer import Optimizer
-from protos.optimizer_api_pb2 import OptimizerRequest, OptimizerResponse
-import pandas as pd
+from optimizer_api_pb2 import OptimizerRequest
 import json
 
 # Load Data

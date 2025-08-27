@@ -1,4 +1,4 @@
-from protos.player_pb2 import Player, Lineup
+from player_pb2 import Player, Lineup
 
 class Team:
     def __init__(self, team_requirements, salary_cap):

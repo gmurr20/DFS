@@ -1,6 +1,6 @@
 from typing import List
-from protos.player_pb2 import Players, Player
-from protos.optimizer_api_pb2 import OptimizerRequest, OptimizerResponse
+from player_pb2 import Players, Player
+from optimizer_api_pb2 import OptimizerRequest, OptimizerResponse
 import pandas as pd
 import numpy as np
 import pulp

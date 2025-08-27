@@ -1,48 +1,160 @@
-import React, { useState } from 'react';
-import { Lock, X, Users } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Lock, X, Users, ChevronUp, ChevronDown } from 'lucide-react';
+
+import protobuf from 'protobufjs';
+
+const FLASK_BASE_URL = 'http://localhost:8888';
 
 const NFLOptimizerFrontend = () => {
-  // Sample player data - replace with your actual data source
   const [players, setPlayers] = useState({
-    QB: [
-      { id: 1, name: 'Josh Allen', team: 'BUF', salary: 8500, projection: 22.5, status: 'available' },
-      { id: 2, name: 'Lamar Jackson', team: 'BAL', salary: 8300, projection: 21.8, status: 'available' },
-      { id: 3, name: 'Patrick Mahomes', team: 'KC', salary: 8100, projection: 21.2, status: 'available' },
-      { id: 4, name: 'Dak Prescott', team: 'DAL', salary: 7800, projection: 19.5, status: 'available' },
-    ],
-    RB: [
-      { id: 5, name: 'Christian McCaffrey', team: 'SF', salary: 9000, projection: 20.8, status: 'available' },
-      { id: 6, name: 'Austin Ekeler', team: 'LAC', salary: 7800, projection: 18.2, status: 'available' },
-      { id: 7, name: 'Derrick Henry', team: 'TEN', salary: 7600, projection: 17.9, status: 'available' },
-      { id: 8, name: 'Nick Chubb', team: 'CLE', salary: 7400, projection: 17.1, status: 'available' },
-      { id: 9, name: 'Alvin Kamara', team: 'NO', salary: 7200, projection: 16.8, status: 'available' },
-      { id: 10, name: 'Saquon Barkley', team: 'PHI', salary: 7000, projection: 16.2, status: 'available' },
-    ],
-    WR: [
-      { id: 11, name: 'Cooper Kupp', team: 'LAR', salary: 8800, projection: 19.5, status: 'available' },
-      { id: 12, name: 'Davante Adams', team: 'LV', salary: 8600, projection: 19.2, status: 'available' },
-      { id: 13, name: 'Tyreek Hill', team: 'MIA', salary: 8400, projection: 18.8, status: 'available' },
-      { id: 14, name: 'Stefon Diggs', team: 'HOU', salary: 8200, projection: 18.5, status: 'available' },
-      { id: 15, name: 'DeAndre Hopkins', team: 'TEN', salary: 7800, projection: 17.2, status: 'available' },
-      { id: 16, name: 'Mike Evans', team: 'TB', salary: 7600, projection: 16.8, status: 'available' },
-    ],
-    TE: [
-      { id: 17, name: 'Travis Kelce', team: 'KC', salary: 7500, projection: 16.5, status: 'available' },
-      { id: 18, name: 'Mark Andrews', team: 'BAL', salary: 6800, projection: 14.2, status: 'available' },
-      { id: 19, name: 'George Kittle', team: 'SF', salary: 6600, projection: 13.8, status: 'available' },
-      { id: 20, name: 'T.J. Hockenson', team: 'DET', salary: 5800, projection: 11.5, status: 'available' },
-    ],
-    DST: [
-      { id: 21, name: 'San Francisco', team: 'SF', salary: 3200, projection: 8.5, status: 'available' },
-      { id: 22, name: 'Buffalo', team: 'BUF', salary: 3000, projection: 8.2, status: 'available' },
-      { id: 23, name: 'Pittsburgh', team: 'PIT', salary: 2800, projection: 7.8, status: 'available' },
-      { id: 24, name: 'New England', team: 'NE', salary: 2600, projection: 7.2, status: 'available' },
-    ]
+    QB: [],
+    RB: [],
+    WR: [],
+    TE: [],
+    DST: []
   });
 
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Fetch players from API
+  useEffect(() => {
+    const fetchPlayers = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch(`${FLASK_BASE_URL}/getPlayers`);
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        // Get the response as array buffer for protobuf parsing
+        const arrayBuffer = await response.arrayBuffer();
+
+        // Define the protobuf schema
+        const root = protobuf.Root.fromJSON({
+          "nested": {
+            "Player": {
+              "fields": {
+                "id": { "type": "string", "id": 1 },
+                "name": { "type": "string", "id": 2 },
+                "team": { "type": "string", "id": 3 },
+                "position": { "type": "string", "id": 4 },
+                "salary": { "type": "int32", "id": 5 },
+                "points": { "type": "float", "id": 6 },
+                "opposing_team": { "type": "string", "id": 7 }
+              }
+            },
+            "Players": {
+              "fields": {
+                "players": { "rule": "repeated", "type": "Player", "id": 1 }
+              }
+            },
+            "GetPlayersResponse": {
+              "fields": {
+                "players": { "type": "Players", "id": 1 }
+              }
+            }
+          }
+        });
+
+        const GetPlayersResponse = root.lookupType("GetPlayersResponse");
+        const message = GetPlayersResponse.decode(new Uint8Array(arrayBuffer));
+        const object = GetPlayersResponse.toObject(message, {
+          longs: String,
+          enums: String,
+          bytes: String
+        });
+
+        // Group players by position and add status field
+        const groupedPlayers = {
+          QB: [],
+          RB: [],
+          WR: [],
+          TE: [],
+          DST: []
+        };
+
+        object.players.players.forEach(player => {
+          const formattedPlayer = {
+            id: player.id,
+            name: player.name,
+            team: player.team,
+            salary: player.salary,
+            projection: player.points || 0, // Default to 0 if no projection
+            status: 'available'
+          };
+
+          if (groupedPlayers[player.position]) {
+            groupedPlayers[player.position].push(formattedPlayer);
+          }
+        });
+
+        setPlayers(groupedPlayers);
+        setError(null);
+      } catch (err) {
+        console.error('Error fetching players:', err);
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPlayers();
+  }, []);
+
   const [selectedPosition, setSelectedPosition] = useState('QB');
+  const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
+
+  // Position limits for locking (base requirements + flex)
+  const BASE_REQUIREMENTS = {
+    QB: 1,
+    RB: 2,
+    WR: 3,
+    TE: 1,
+    DST: 1
+  };
+  const MAX_REQUIREMENTS = {
+    QB: 1,
+    RB: 3,
+    WR: 4,
+    TE: 2,
+    DST: 1
+  };
+
+  const FLEX_ELIGIBLE = ['RB', 'WR', 'TE']; // Positions that can fill flex
+  const MAX_FLEX = 1; // Only 1 flex spot
+  const MAX_TOTAL_LOCKED = 9;
+  const MAX_SALARY_CAP = 50000;
 
   const updatePlayerStatus = (playerId, newStatus) => {
+    // If trying to lock a player, check restrictions
+    if (newStatus === 'locked') {
+      const allLockedPlayers = getAllLockedPlayers();
+      const currentPosition = getCurrentPlayerPosition(playerId);
+      const currentPositionLocked = getLockedPlayersInPosition(currentPosition);
+      const totalLocked = allLockedPlayers.length;
+      const totalSalary = calculateTotalSalary(allLockedPlayers, playerId);
+
+      // Check position limit
+      if (currentPositionLocked.length >= MAX_REQUIREMENTS[currentPosition]) {
+        alert(`Cannot lock more than ${MAX_REQUIREMENTS[currentPosition]} ${currentPosition} player${MAX_REQUIREMENTS[currentPosition] > 1 ? 's' : ''}.`);
+        return;
+      }
+
+      // Check total locked limit
+      if (totalLocked >= MAX_TOTAL_LOCKED) {
+        alert(`Cannot lock more than ${MAX_TOTAL_LOCKED} players total.`);
+        return;
+      }
+
+      // Check salary cap
+      if (totalSalary > MAX_SALARY_CAP) {
+        alert(`Locking this player would exceed the salary cap of ${MAX_SALARY_CAP.toLocaleString()}.`);
+        return;
+      }
+    }
+
     setPlayers(prevPlayers => {
       const newPlayers = { ...prevPlayers };
       Object.keys(newPlayers).forEach(position => {
@@ -52,6 +164,159 @@ const NFLOptimizerFrontend = () => {
       });
       return newPlayers;
     });
+  };
+
+  // Helper functions for restrictions
+  const getAllLockedPlayers = () => {
+    const allLocked = [];
+    Object.keys(players).forEach(position => {
+      const locked = players[position].filter(p => p.status === 'locked');
+      allLocked.push(...locked);
+    });
+    return allLocked;
+  };
+
+  const getCurrentPlayerPosition = (playerId) => {
+    for (const position of Object.keys(players)) {
+      const player = players[position].find(p => p.id === playerId);
+      if (player) return position;
+    }
+    return null;
+  };
+
+  const getLockedPlayersInPosition = (position) => {
+    return players[position].filter(p => p.status === 'locked');
+  };
+
+  const calculateTotalSalary = (lockedPlayers, additionalPlayerId = null) => {
+    let total = lockedPlayers.reduce((sum, player) => sum + player.salary, 0);
+
+    // If adding a new player, include their salary
+    if (additionalPlayerId) {
+      const additionalPlayer = findPlayerById(additionalPlayerId);
+      if (additionalPlayer) {
+        total += additionalPlayer.salary;
+      }
+    }
+
+    return total;
+  };
+
+  const findPlayerById = (playerId) => {
+    for (const position of Object.keys(players)) {
+      const player = players[position].find(p => p.id === playerId);
+      if (player) return player;
+    }
+    return null;
+  };
+
+  const clearAllFilters = () => {
+    setPlayers(prevPlayers => {
+      const newPlayers = { ...prevPlayers };
+      Object.keys(newPlayers).forEach(position => {
+        newPlayers[position] = newPlayers[position].map(player => ({
+          ...player,
+          status: 'available'
+        }));
+      });
+      return newPlayers;
+    });
+  };
+
+  // Calculate how many flex spots are currently used
+  const getFlexUsed = () => {
+    let flexUsed = 0;
+    FLEX_ELIGIBLE.forEach(position => {
+      const locked = getLockedPlayersInPosition(position).length;
+      const base = BASE_REQUIREMENTS[position];
+      if (locked > base) {
+        flexUsed += (locked - base);
+      }
+    });
+    return flexUsed;
+  };
+
+  // Check if a player can be locked in a position considering flex rules
+  const canLockPlayerInPosition = (position) => {
+    const currentPositionLocked = getLockedPlayersInPosition(position);
+    const baseRequired = BASE_REQUIREMENTS[position];
+
+    // Non-flex positions (QB, DST) - simple check
+    if (!FLEX_ELIGIBLE.includes(position)) {
+      if (currentPositionLocked.length >= baseRequired) {
+        return {
+          allowed: false,
+          message: `Cannot lock more than ${baseRequired} ${position} player${baseRequired > 1 ? 's' : ''}.`
+        };
+      }
+      return { allowed: true };
+    }
+
+    // Flex-eligible positions (RB, WR, TE)
+    const flexUsed = getFlexUsed();
+    const currentlyInPosition = currentPositionLocked.length;
+
+    // If we haven't met base requirements, allow locking
+    if (currentlyInPosition < baseRequired) {
+      return { allowed: true };
+    }
+
+    // If we've met base requirements, check if flex is available
+    if (flexUsed >= MAX_FLEX) {
+      return {
+        allowed: false,
+        message: `Cannot lock more ${position} players. Base requirement (${baseRequired}) met and flex spot is occupied.`
+      };
+    }
+
+    return { allowed: true };
+  };
+
+  // Helper function to calculate value safely
+  const calculateValue = (projection, salary) => {
+    if (!projection || !salary || salary === 0) return 0;
+    return (projection / salary * 1000);
+  };
+  const handleSort = (key) => {
+    let direction = 'asc';
+    if (sortConfig.key === key && sortConfig.direction === 'asc') {
+      direction = 'desc';
+    }
+    setSortConfig({ key, direction });
+  };
+
+  const getSortedPlayers = (playerList) => {
+    if (!sortConfig.key) return playerList;
+
+    return [...playerList].sort((a, b) => {
+      let aValue = a[sortConfig.key];
+      let bValue = b[sortConfig.key];
+
+      // Handle different data types
+      if (sortConfig.key === 'name') {
+        aValue = aValue.toLowerCase();
+        bValue = bValue.toLowerCase();
+      } else if (sortConfig.key === 'salary' || sortConfig.key === 'projection') {
+        aValue = Number(aValue);
+        bValue = Number(bValue);
+      } else if (sortConfig.key === 'value') {
+        aValue = calculateValue(a.projection, a.salary);
+        bValue = calculateValue(b.projection, b.salary);
+      }
+
+      if (aValue < bValue) return sortConfig.direction === 'asc' ? -1 : 1;
+      if (aValue > bValue) return sortConfig.direction === 'asc' ? 1 : -1;
+      return 0;
+    });
+  };
+
+  const getSortIcon = (columnKey) => {
+    if (sortConfig.key !== columnKey) {
+      return <ChevronUp className="w-4 h-4 text-gray-400 opacity-0 group-hover:opacity-100" />;
+    }
+    return sortConfig.direction === 'asc'
+      ? <ChevronUp className="w-4 h-4 text-blue-600" />
+      : <ChevronDown className="w-4 h-4 text-blue-600" />;
   };
 
   const getStatusColor = (status) => {
@@ -71,6 +336,37 @@ const NFLOptimizerFrontend = () => {
   };
 
   const positions = Object.keys(players);
+
+  // Show loading state
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 p-6 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading players...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Show error state
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gray-50 p-6 flex items-center justify-center">
+        <div className="text-center">
+          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+            Error loading players: {error}
+          </div>
+          <button
+            onClick={() => window.location.reload()}
+            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          >
+            Retry
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
@@ -95,11 +391,10 @@ const NFLOptimizerFrontend = () => {
                   <button
                     key={position}
                     onClick={() => setSelectedPosition(position)}
-                    className={`w-full text-left px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                      selectedPosition === position
-                        ? 'bg-blue-100 text-blue-700'
-                        : 'text-gray-600 hover:bg-gray-100'
-                    }`}
+                    className={`w-full text-left px-3 py-2 rounded-md text-sm font-medium transition-colors ${selectedPosition === position
+                      ? 'bg-blue-100 text-blue-700'
+                      : 'text-gray-600 hover:bg-gray-100'
+                      }`}
                   >
                     {position} ({players[position].length})
                   </button>
@@ -111,30 +406,81 @@ const NFLOptimizerFrontend = () => {
             <div className="flex-1 p-6">
               <div className="mb-6">
                 <h2 className="text-2xl font-bold text-gray-900">{selectedPosition} Players</h2>
-                <p className="text-gray-600 mt-1">
-                  {players[selectedPosition].filter(p => p.status === 'locked').length} locked, {' '}
-                  {players[selectedPosition].filter(p => p.status === 'excluded').length} excluded
-                </p>
+                <div className="flex justify-between items-center mt-1">
+                  <p className="text-gray-600">
+                    {players[selectedPosition].filter(p => p.status === 'locked').length} locked, {' '}
+                    {players[selectedPosition].filter(p => p.status === 'excluded').length} excluded
+                  </p>
+                  <div className="text-sm text-gray-600">
+                    <span className="mr-4">
+                      <button
+                        onClick={clearAllFilters}
+                        className="bg-red-600 text-white px-3 py-1 rounded text-sm font-medium hover:bg-red-700 transition-colors"
+                      >
+                        Clear Filters
+                      </button>
+                    </span>
+                    <span className="mr-4">
+                      Total Locked: {getAllLockedPlayers().length}/{MAX_TOTAL_LOCKED}
+                    </span>
+                    <span className="mr-4">
+                      Flex Used: {getFlexUsed()}/{MAX_FLEX}
+                    </span>
+                    <span>
+                      Salary: ${calculateTotalSalary(getAllLockedPlayers()).toLocaleString()}/${MAX_SALARY_CAP.toLocaleString()}
+                    </span>
+                  </div>
+                </div>
               </div>
 
               <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 rounded-lg">
                 <table className="min-w-full divide-y divide-gray-300">
                   <thead className="bg-gray-50">
                     <tr>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">
-                        Player
+                      <th
+                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group"
+                        onClick={() => handleSort('name')}
+                      >
+                        <div className="flex items-center justify-between">
+                          Player
+                          {getSortIcon('name')}
+                        </div>
                       </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">
-                        Team
+                      <th
+                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group"
+                        onClick={() => handleSort('team')}
+                      >
+                        <div className="flex items-center justify-between">
+                          Team
+                          {getSortIcon('team')}
+                        </div>
                       </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">
-                        Salary
+                      <th
+                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group"
+                        onClick={() => handleSort('salary')}
+                      >
+                        <div className="flex items-center justify-between">
+                          Salary
+                          {getSortIcon('salary')}
+                        </div>
                       </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">
-                        Projection
+                      <th
+                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group"
+                        onClick={() => handleSort('projection')}
+                      >
+                        <div className="flex items-center justify-between">
+                          Projection
+                          {getSortIcon('projection')}
+                        </div>
                       </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">
-                        Value
+                      <th
+                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group"
+                        onClick={() => handleSort('value')}
+                      >
+                        <div className="flex items-center justify-between">
+                          Value
+                          {getSortIcon('value')}
+                        </div>
                       </th>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">
                         Actions
@@ -142,7 +488,7 @@ const NFLOptimizerFrontend = () => {
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
-                    {players[selectedPosition].map((player) => (
+                    {getSortedPlayers(players[selectedPosition]).map((player) => (
                       <tr
                         key={player.id}
                         className={`transition-colors ${getStatusColor(player.status)}`}
@@ -164,34 +510,41 @@ const NFLOptimizerFrontend = () => {
                           ${player.salary.toLocaleString()}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                          {player.projection}
+                          {(player.projection || 0).toFixed(2)}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                          {(player.projection / player.salary * 1000).toFixed(1)}
+                          {calculateValue(player.projection, player.salary).toFixed(1)}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm space-x-2">
                           <button
-                            onClick={() => updatePlayerStatus(player.id, 
+                            onClick={() => updatePlayerStatus(player.id,
                               player.status === 'locked' ? 'available' : 'locked'
                             )}
-                            className={`inline-flex items-center px-3 py-1 rounded-md text-xs font-medium transition-colors ${
-                              player.status === 'locked'
-                                ? 'bg-green-100 text-green-700 hover:bg-green-200'
+                            disabled={player.status !== 'locked' && (
+                              !canLockPlayerInPosition(selectedPosition).allowed ||
+                              getAllLockedPlayers().length >= MAX_TOTAL_LOCKED ||
+                              calculateTotalSalary(getAllLockedPlayers(), player.id) > MAX_SALARY_CAP
+                            )}
+                            className={`inline-flex items-center px-3 py-1 rounded-md text-xs font-medium transition-colors ${player.status === 'locked'
+                              ? 'bg-green-100 text-green-700 hover:bg-green-200'
+                              : (!canLockPlayerInPosition(selectedPosition).allowed ||
+                                getAllLockedPlayers().length >= MAX_TOTAL_LOCKED ||
+                                calculateTotalSalary(getAllLockedPlayers(), player.id) > MAX_SALARY_CAP)
+                                ? 'bg-gray-50 text-gray-400 cursor-not-allowed'
                                 : 'bg-gray-100 text-gray-700 hover:bg-green-100 hover:text-green-700'
-                            }`}
+                              }`}
                           >
                             <Lock className="w-3 h-3 mr-1" />
                             {player.status === 'locked' ? 'Locked' : 'Lock'}
                           </button>
                           <button
-                            onClick={() => updatePlayerStatus(player.id, 
+                            onClick={() => updatePlayerStatus(player.id,
                               player.status === 'excluded' ? 'available' : 'excluded'
                             )}
-                            className={`inline-flex items-center px-3 py-1 rounded-md text-xs font-medium transition-colors ${
-                              player.status === 'excluded'
-                                ? 'bg-red-100 text-red-700 hover:bg-red-200'
-                                : 'bg-gray-100 text-gray-700 hover:bg-red-100 hover:text-red-700'
-                            }`}
+                            className={`inline-flex items-center px-3 py-1 rounded-md text-xs font-medium transition-colors ${player.status === 'excluded'
+                              ? 'bg-red-100 text-red-700 hover:bg-red-200'
+                              : 'bg-gray-100 text-gray-700 hover:bg-red-100 hover:text-red-700'
+                              }`}
                           >
                             <X className="w-3 h-3 mr-1" />
                             {player.status === 'excluded' ? 'Excluded' : 'Exclude'}
