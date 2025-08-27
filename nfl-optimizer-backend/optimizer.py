@@ -130,6 +130,8 @@ class Optimizer:
         # Constraint 3: Passed in requirements
         for lock in request.player_id_locks:
             prob +=  pulp.lpSum([player_vars[lock]]) == 1, f'{player_vars[lock].id} player lock'
+        for exclude in request.player_id_excludes:
+            prob +=  pulp.lpSum([player_vars[exclude]]) == 0, f'{player_vars[lock].id} player exclude'
         if request.stack:
             qbs = player_pool[player_pool['position'].str.contains('^(QB)')]
             for _, qb in qbs.iterrows():

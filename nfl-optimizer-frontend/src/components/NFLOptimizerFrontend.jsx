@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Lock, X, Users, ChevronUp, ChevronDown } from 'lucide-react';
 
-import protobuf from 'protobufjs';
+import {GetPlayersResponse, OptimizerRequest, OptimizerResponse} from './compiled.js';
 
 const FLASK_BASE_URL = 'http://localhost:8888';
 
@@ -11,7 +11,8 @@ const NFLOptimizerFrontend = () => {
     RB: [],
     WR: [],
     TE: [],
-    DST: []
+    DST: [],
+    FLEX: [] // Virtual position for flex-eligible players
   });
 
   const [loading, setLoading] = useState(true);
@@ -31,34 +32,6 @@ const NFLOptimizerFrontend = () => {
         // Get the response as array buffer for protobuf parsing
         const arrayBuffer = await response.arrayBuffer();
 
-        // Define the protobuf schema
-        const root = protobuf.Root.fromJSON({
-          "nested": {
-            "Player": {
-              "fields": {
-                "id": { "type": "string", "id": 1 },
-                "name": { "type": "string", "id": 2 },
-                "team": { "type": "string", "id": 3 },
-                "position": { "type": "string", "id": 4 },
-                "salary": { "type": "int32", "id": 5 },
-                "points": { "type": "float", "id": 6 },
-                "opposing_team": { "type": "string", "id": 7 }
-              }
-            },
-            "Players": {
-              "fields": {
-                "players": { "rule": "repeated", "type": "Player", "id": 1 }
-              }
-            },
-            "GetPlayersResponse": {
-              "fields": {
-                "players": { "type": "Players", "id": 1 }
-              }
-            }
-          }
-        });
-
-        const GetPlayersResponse = root.lookupType("GetPlayersResponse");
         const message = GetPlayersResponse.decode(new Uint8Array(arrayBuffer));
         const object = GetPlayersResponse.toObject(message, {
           longs: String,
@@ -72,7 +45,8 @@ const NFLOptimizerFrontend = () => {
           RB: [],
           WR: [],
           TE: [],
-          DST: []
+          DST: [],
+          FLEX: [] // Will be populated separately
         };
 
         object.players.players.forEach(player => {
@@ -90,6 +64,13 @@ const NFLOptimizerFrontend = () => {
           }
         });
 
+        // Populate FLEX with all WR, RB, and TE players
+        groupedPlayers.FLEX = [
+          ...groupedPlayers.WR,
+          ...groupedPlayers.RB,
+          ...groupedPlayers.TE
+        ];
+
         setPlayers(groupedPlayers);
         setError(null);
       } catch (err) {
@@ -105,6 +86,8 @@ const NFLOptimizerFrontend = () => {
 
   const [selectedPosition, setSelectedPosition] = useState('QB');
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
+  const [currentPage, setCurrentPage] = useState(1);
+  const PLAYERS_PER_PAGE = 50;
 
   // Position limits for locking (base requirements + flex)
   const BASE_REQUIREMENTS = {
@@ -158,10 +141,19 @@ const NFLOptimizerFrontend = () => {
     setPlayers(prevPlayers => {
       const newPlayers = { ...prevPlayers };
       Object.keys(newPlayers).forEach(position => {
+        if (position === 'FLEX') return; // Skip FLEX as it's virtual
         newPlayers[position] = newPlayers[position].map(player =>
           player.id === playerId ? { ...player, status: newStatus } : player
         );
       });
+      
+      // Update FLEX array with the updated players
+      newPlayers.FLEX = [
+        ...newPlayers.WR,
+        ...newPlayers.RB,
+        ...newPlayers.TE
+      ];
+      
       return newPlayers;
     });
   };
@@ -170,6 +162,7 @@ const NFLOptimizerFrontend = () => {
   const getAllLockedPlayers = () => {
     const allLocked = [];
     Object.keys(players).forEach(position => {
+      if (position === 'FLEX') return; // Skip FLEX as it's virtual
       const locked = players[position].filter(p => p.status === 'locked');
       allLocked.push(...locked);
     });
@@ -178,6 +171,7 @@ const NFLOptimizerFrontend = () => {
 
   const getCurrentPlayerPosition = (playerId) => {
     for (const position of Object.keys(players)) {
+      if (position === 'FLEX') continue; // Skip FLEX as it's virtual
       const player = players[position].find(p => p.id === playerId);
       if (player) return position;
     }
@@ -214,11 +208,20 @@ const NFLOptimizerFrontend = () => {
     setPlayers(prevPlayers => {
       const newPlayers = { ...prevPlayers };
       Object.keys(newPlayers).forEach(position => {
+        if (position === 'FLEX') return; // Skip FLEX as it's virtual
         newPlayers[position] = newPlayers[position].map(player => ({
           ...player,
           status: 'available'
         }));
       });
+      
+      // Update FLEX array with cleared players
+      newPlayers.FLEX = [
+        ...newPlayers.WR,
+        ...newPlayers.RB,
+        ...newPlayers.TE
+      ];
+      
       return newPlayers;
     });
   };
@@ -310,6 +313,23 @@ const NFLOptimizerFrontend = () => {
     });
   };
 
+  const getPaginatedPlayers = (playerList) => {
+    const sortedPlayers = getSortedPlayers(playerList);
+    const startIndex = (currentPage - 1) * PLAYERS_PER_PAGE;
+    const endIndex = startIndex + PLAYERS_PER_PAGE;
+    return sortedPlayers.slice(startIndex, endIndex);
+  };
+
+  const getTotalPages = (playerList) => {
+    return Math.ceil(playerList.length / PLAYERS_PER_PAGE);
+  };
+
+  // Reset to page 1 when position changes
+  const handlePositionChange = (position) => {
+    setSelectedPosition(position);
+    setCurrentPage(1);
+  };
+
   const getSortIcon = (columnKey) => {
     if (sortConfig.key !== columnKey) {
       return <ChevronUp className="w-4 h-4 text-gray-400 opacity-0 group-hover:opacity-100" />;
@@ -380,6 +400,137 @@ const NFLOptimizerFrontend = () => {
                 <p className="text-gray-600 mt-1">Lock or exclude players to customize your lineup optimization</p>
               </div>
             </div>
+
+            {/* Locked and Excluded Players Summary */}
+            <div className="mt-6">
+              {/* Summary Stats */}
+              <div className="bg-blue-50 rounded-lg p-4 mb-6">
+                <div className="flex flex-wrap items-center justify-between gap-4">
+                  <div className="flex items-center space-x-6">
+                    <div className="text-sm">
+                      <span className="font-semibold text-blue-800">Total Locked:</span>
+                      <span className="ml-1 text-blue-700">{getAllLockedPlayers().length}/{MAX_TOTAL_LOCKED}</span>
+                    </div>
+                    <div className="text-sm">
+                      <span className="font-semibold text-blue-800">Flex Used:</span>
+                      <span className="ml-1 text-blue-700">{getFlexUsed()}/{MAX_FLEX}</span>
+                    </div>
+                    <div className="text-sm">
+                      <span className="font-semibold text-blue-800">Salary:</span>
+                      <span className="ml-1 text-blue-700">
+                        ${calculateTotalSalary(getAllLockedPlayers()).toLocaleString()} / ${MAX_SALARY_CAP.toLocaleString()}
+                      </span>
+                    </div>
+                  </div>
+                  <button
+                    onClick={clearAllFilters}
+                    className="bg-red-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-red-700 transition-colors"
+                  >
+                    Clear All Filters
+                  </button>
+                </div>
+              </div>
+
+              {/* Player Lists */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {/* Locked Players */}
+                <div className="bg-green-50 rounded-lg p-4">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center space-x-2">
+                      <Lock className="w-5 h-5 text-green-600" />
+                      <h3 className="text-lg font-semibold text-green-800">Locked Players</h3>
+                      <span className="bg-green-200 text-green-800 text-xs font-medium px-2 py-1 rounded-full">
+                        {getAllLockedPlayers().length}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="space-y-2 max-h-32 overflow-y-auto">
+                    {getAllLockedPlayers().length === 0 ? (
+                      <p className="text-green-600 text-sm italic">No players locked</p>
+                    ) : (
+                      getAllLockedPlayers().map((player) => {
+                        const position = getCurrentPlayerPosition(player.id);
+                        return (
+                          <div key={player.id} className="flex items-center justify-between bg-white rounded px-3 py-2">
+                            <div className="flex items-center space-x-2">
+                              <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded">
+                                {position}
+                              </span>
+                              <span className="text-sm font-medium text-gray-900">{player.name}</span>
+                              <span className="text-xs text-gray-500">({player.team})</span>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                              <span className="text-xs text-gray-600">${player.salary.toLocaleString()}</span>
+                              <button
+                                onClick={() => updatePlayerStatus(player.id, 'available')}
+                                className="text-red-600 hover:text-red-800 text-xs"
+                                title="Remove lock"
+                              >
+                                <X className="w-4 h-4" />
+                              </button>
+                            </div>
+                          </div>
+                        );
+                      })
+                    )}
+                  </div>
+                </div>
+
+                {/* Excluded Players */}
+                <div className="bg-red-50 rounded-lg p-4">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center space-x-2">
+                      <X className="w-5 h-5 text-red-600" />
+                      <h3 className="text-lg font-semibold text-red-800">Excluded Players</h3>
+                      <span className="bg-red-200 text-red-800 text-xs font-medium px-2 py-1 rounded-full">
+                        {Object.keys(players).filter(pos => pos !== 'FLEX').map(position => 
+                          players[position].filter(p => p.status === 'excluded')
+                        ).flat().length}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="space-y-2 max-h-32 overflow-y-auto">
+                    {Object.values(players).flat().filter(p => p.status === 'excluded').length === 0 ? (
+                      <p className="text-red-600 text-sm italic">No players excluded</p>
+                    ) : (
+                      Object.keys(players).filter(pos => pos !== 'FLEX').map(position => 
+                        players[position].filter(p => p.status === 'excluded')
+                      ).flat().map((player) => {
+                        const position = getCurrentPlayerPosition(player.id);
+                        return (
+                          <div key={player.id} className="flex items-center justify-between bg-white rounded px-3 py-2">
+                            <div className="flex items-center space-x-2">
+                              <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded">
+                                {position}
+                              </span>
+                              <span className="text-sm font-medium text-gray-900">{player.name}</span>
+                              <span className="text-xs text-gray-500">({player.team})</span>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                              <span className="text-xs text-gray-600">${player.salary.toLocaleString()}</span>
+                              <button
+                                onClick={() => updatePlayerStatus(player.id, 'available')}
+                                className="text-green-600 hover:text-green-800 text-xs"
+                                title="Remove exclusion"
+                              >
+                                <X className="w-4 h-4" />
+                              </button>
+                            </div>
+                          </div>
+                        );
+                      })
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              {/* Optimize Lineup Button */}
+              <div className="mt-6">
+                <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors text-lg">
+                  Optimize Lineup
+                </button>
+              </div>
+            </div>
           </div>
 
           <div className="flex">
@@ -390,7 +541,7 @@ const NFLOptimizerFrontend = () => {
                 {positions.map(position => (
                   <button
                     key={position}
-                    onClick={() => setSelectedPosition(position)}
+                    onClick={() => handlePositionChange(position)}
                     className={`w-full text-left px-3 py-2 rounded-md text-sm font-medium transition-colors ${selectedPosition === position
                       ? 'bg-blue-100 text-blue-700'
                       : 'text-gray-600 hover:bg-gray-100'
@@ -411,24 +562,29 @@ const NFLOptimizerFrontend = () => {
                     {players[selectedPosition].filter(p => p.status === 'locked').length} locked, {' '}
                     {players[selectedPosition].filter(p => p.status === 'excluded').length} excluded
                   </p>
+                </div>
+                <div className="flex justify-between items-center mt-4">
                   <div className="text-sm text-gray-600">
-                    <span className="mr-4">
-                      <button
-                        onClick={clearAllFilters}
-                        className="bg-red-600 text-white px-3 py-1 rounded text-sm font-medium hover:bg-red-700 transition-colors"
-                      >
-                        Clear Filters
-                      </button>
+                    Showing {((currentPage - 1) * PLAYERS_PER_PAGE) + 1} to {Math.min(currentPage * PLAYERS_PER_PAGE, players[selectedPosition].length)} of {players[selectedPosition].length} players
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <button
+                      onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
+                      disabled={currentPage === 1}
+                      className="px-3 py-1 rounded border border-gray-300 text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
+                    >
+                      Previous
+                    </button>
+                    <span className="text-sm text-gray-600">
+                      Page {currentPage} of {getTotalPages(players[selectedPosition])}
                     </span>
-                    <span className="mr-4">
-                      Total Locked: {getAllLockedPlayers().length}/{MAX_TOTAL_LOCKED}
-                    </span>
-                    <span className="mr-4">
-                      Flex Used: {getFlexUsed()}/{MAX_FLEX}
-                    </span>
-                    <span>
-                      Salary: ${calculateTotalSalary(getAllLockedPlayers()).toLocaleString()}/${MAX_SALARY_CAP.toLocaleString()}
-                    </span>
+                    <button
+                      onClick={() => setCurrentPage(Math.min(getTotalPages(players[selectedPosition]), currentPage + 1))}
+                      disabled={currentPage === getTotalPages(players[selectedPosition])}
+                      className="px-3 py-1 rounded border border-gray-300 text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
+                    >
+                      Next
+                    </button>
                   </div>
                 </div>
               </div>
@@ -488,7 +644,7 @@ const NFLOptimizerFrontend = () => {
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
-                    {getSortedPlayers(players[selectedPosition]).map((player) => (
+                    {getPaginatedPlayers(players[selectedPosition]).map((player) => (
                       <tr
                         key={player.id}
                         className={`transition-colors ${getStatusColor(player.status)}`}
@@ -499,7 +655,14 @@ const NFLOptimizerFrontend = () => {
                               {getStatusIcon(player.status)}
                             </div>
                             <div>
-                              <div className="text-sm font-medium text-gray-900">{player.name}</div>
+                              <div className="text-sm font-medium text-gray-900">
+                                {player.name}
+                                {selectedPosition === 'FLEX' && (
+                                  <span className="ml-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
+                                    {getCurrentPlayerPosition(player.id)}
+                                  </span>
+                                )}
+                              </div>
                             </div>
                           </div>
                         </td>
@@ -521,13 +684,13 @@ const NFLOptimizerFrontend = () => {
                               player.status === 'locked' ? 'available' : 'locked'
                             )}
                             disabled={player.status !== 'locked' && (
-                              !canLockPlayerInPosition(selectedPosition).allowed ||
+                              !canLockPlayerInPosition(getCurrentPlayerPosition(player.id) || selectedPosition === 'FLEX' ? getCurrentPlayerPosition(player.id) : selectedPosition).allowed ||
                               getAllLockedPlayers().length >= MAX_TOTAL_LOCKED ||
                               calculateTotalSalary(getAllLockedPlayers(), player.id) > MAX_SALARY_CAP
                             )}
                             className={`inline-flex items-center px-3 py-1 rounded-md text-xs font-medium transition-colors ${player.status === 'locked'
                               ? 'bg-green-100 text-green-700 hover:bg-green-200'
-                              : (!canLockPlayerInPosition(selectedPosition).allowed ||
+                              : (!canLockPlayerInPosition(getCurrentPlayerPosition(player.id) || selectedPosition === 'FLEX' ? getCurrentPlayerPosition(player.id) : selectedPosition).allowed ||
                                 getAllLockedPlayers().length >= MAX_TOTAL_LOCKED ||
                                 calculateTotalSalary(getAllLockedPlayers(), player.id) > MAX_SALARY_CAP)
                                 ? 'bg-gray-50 text-gray-400 cursor-not-allowed'
@@ -554,12 +717,6 @@ const NFLOptimizerFrontend = () => {
                     ))}
                   </tbody>
                 </table>
-              </div>
-
-              <div className="mt-6">
-                <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
-                  Optimize Lineup
-                </button>
               </div>
             </div>
           </div>

@@ -4,12 +4,14 @@ import "player.proto";
 
 message OptimizerRequest {
     repeated string player_id_locks = 1;
+
+    repeated string player_id_excludes = 2;
     
-    float randomness = 2;
+    float randomness = 3;
 
-    int32 num_lineups = 3;
+    int32 num_lineups = 4;
 
-    bool stack = 4;
+    bool stack = 5;
 }
 
 message OptimizerResponse {
