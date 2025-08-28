@@ -60,6 +60,5 @@ response = optimizer.optimize(request)
 
 for lineup in response.lineups:
     print()
-    for pos, players in lineup.position_to_players.items():
-        for player in players.players:
-            print(pos, player.name, player.points)
+    for player in lineup.players:
+        print(player.position, player.name, player.points)

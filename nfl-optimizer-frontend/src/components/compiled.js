@@ -16,6 +16,7 @@ $root.OptimizerRequest = (function() {
      * @exports IOptimizerRequest
      * @interface IOptimizerRequest
      * @property {Array.<string>|null} [playerIdLocks] OptimizerRequest playerIdLocks
+     * @property {Array.<string>|null} [playerIdExcludes] OptimizerRequest playerIdExcludes
      * @property {number|null} [randomness] OptimizerRequest randomness
      * @property {number|null} [numLineups] OptimizerRequest numLineups
      * @property {boolean|null} [stack] OptimizerRequest stack
@@ -31,6 +32,7 @@ $root.OptimizerRequest = (function() {
      */
     function OptimizerRequest(properties) {
         this.playerIdLocks = [];
+        this.playerIdExcludes = [];
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -44,6 +46,14 @@ $root.OptimizerRequest = (function() {
      * @instance
      */
     OptimizerRequest.prototype.playerIdLocks = $util.emptyArray;
+
+    /**
+     * OptimizerRequest playerIdExcludes.
+     * @member {Array.<string>} playerIdExcludes
+     * @memberof OptimizerRequest
+     * @instance
+     */
+    OptimizerRequest.prototype.playerIdExcludes = $util.emptyArray;
 
     /**
      * OptimizerRequest randomness.
@@ -96,12 +106,15 @@ $root.OptimizerRequest = (function() {
         if (message.playerIdLocks != null && message.playerIdLocks.length)
             for (var i = 0; i < message.playerIdLocks.length; ++i)
                 writer.uint32(/* id 1, wireType 2 =*/10).string(message.playerIdLocks[i]);
+        if (message.playerIdExcludes != null && message.playerIdExcludes.length)
+            for (var i = 0; i < message.playerIdExcludes.length; ++i)
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.playerIdExcludes[i]);
         if (message.randomness != null && Object.hasOwnProperty.call(message, "randomness"))
-            writer.uint32(/* id 2, wireType 5 =*/21).float(message.randomness);
+            writer.uint32(/* id 3, wireType 5 =*/29).float(message.randomness);
         if (message.numLineups != null && Object.hasOwnProperty.call(message, "numLineups"))
-            writer.uint32(/* id 3, wireType 0 =*/24).int32(message.numLineups);
+            writer.uint32(/* id 4, wireType 0 =*/32).int32(message.numLineups);
         if (message.stack != null && Object.hasOwnProperty.call(message, "stack"))
-            writer.uint32(/* id 4, wireType 0 =*/32).bool(message.stack);
+            writer.uint32(/* id 5, wireType 0 =*/40).bool(message.stack);
         return writer;
     };
 
@@ -145,14 +158,20 @@ $root.OptimizerRequest = (function() {
                     break;
                 }
             case 2: {
-                    message.randomness = reader.float();
+                    if (!(message.playerIdExcludes && message.playerIdExcludes.length))
+                        message.playerIdExcludes = [];
+                    message.playerIdExcludes.push(reader.string());
                     break;
                 }
             case 3: {
-                    message.numLineups = reader.int32();
+                    message.randomness = reader.float();
                     break;
                 }
             case 4: {
+                    message.numLineups = reader.int32();
+                    break;
+                }
+            case 5: {
                     message.stack = reader.bool();
                     break;
                 }
@@ -198,6 +217,13 @@ $root.OptimizerRequest = (function() {
                 if (!$util.isString(message.playerIdLocks[i]))
                     return "playerIdLocks: string[] expected";
         }
+        if (message.playerIdExcludes != null && message.hasOwnProperty("playerIdExcludes")) {
+            if (!Array.isArray(message.playerIdExcludes))
+                return "playerIdExcludes: array expected";
+            for (var i = 0; i < message.playerIdExcludes.length; ++i)
+                if (!$util.isString(message.playerIdExcludes[i]))
+                    return "playerIdExcludes: string[] expected";
+        }
         if (message.randomness != null && message.hasOwnProperty("randomness"))
             if (typeof message.randomness !== "number")
                 return "randomness: number expected";
@@ -229,6 +255,13 @@ $root.OptimizerRequest = (function() {
             for (var i = 0; i < object.playerIdLocks.length; ++i)
                 message.playerIdLocks[i] = String(object.playerIdLocks[i]);
         }
+        if (object.playerIdExcludes) {
+            if (!Array.isArray(object.playerIdExcludes))
+                throw TypeError(".OptimizerRequest.playerIdExcludes: array expected");
+            message.playerIdExcludes = [];
+            for (var i = 0; i < object.playerIdExcludes.length; ++i)
+                message.playerIdExcludes[i] = String(object.playerIdExcludes[i]);
+        }
         if (object.randomness != null)
             message.randomness = Number(object.randomness);
         if (object.numLineups != null)
@@ -251,8 +284,10 @@ $root.OptimizerRequest = (function() {
         if (!options)
             options = {};
         var object = {};
-        if (options.arrays || options.defaults)
+        if (options.arrays || options.defaults) {
             object.playerIdLocks = [];
+            object.playerIdExcludes = [];
+        }
         if (options.defaults) {
             object.randomness = 0;
             object.numLineups = 0;
@@ -262,6 +297,11 @@ $root.OptimizerRequest = (function() {
             object.playerIdLocks = [];
             for (var j = 0; j < message.playerIdLocks.length; ++j)
                 object.playerIdLocks[j] = message.playerIdLocks[j];
+        }
+        if (message.playerIdExcludes && message.playerIdExcludes.length) {
+            object.playerIdExcludes = [];
+            for (var j = 0; j < message.playerIdExcludes.length; ++j)
+                object.playerIdExcludes[j] = message.playerIdExcludes[j];
         }
         if (message.randomness != null && message.hasOwnProperty("randomness"))
             object.randomness = options.json && !isFinite(message.randomness) ? String(message.randomness) : message.randomness;
@@ -1513,7 +1553,7 @@ $root.Lineup = (function() {
      * Properties of a Lineup.
      * @exports ILineup
      * @interface ILineup
-     * @property {Object.<string,IPlayers>|null} [positionToPlayers] Lineup positionToPlayers
+     * @property {Array.<IPlayer>|null} [players] Lineup players
      */
 
     /**
@@ -1525,7 +1565,7 @@ $root.Lineup = (function() {
      * @param {ILineup=} [properties] Properties to set
      */
     function Lineup(properties) {
-        this.positionToPlayers = {};
+        this.players = [];
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -1533,12 +1573,12 @@ $root.Lineup = (function() {
     }
 
     /**
-     * Lineup positionToPlayers.
-     * @member {Object.<string,IPlayers>} positionToPlayers
+     * Lineup players.
+     * @member {Array.<IPlayer>} players
      * @memberof Lineup
      * @instance
      */
-    Lineup.prototype.positionToPlayers = $util.emptyObject;
+    Lineup.prototype.players = $util.emptyArray;
 
     /**
      * Creates a new Lineup instance using the specified properties.
@@ -1564,11 +1604,9 @@ $root.Lineup = (function() {
     Lineup.encode = function encode(message, writer) {
         if (!writer)
             writer = $Writer.create();
-        if (message.positionToPlayers != null && Object.hasOwnProperty.call(message, "positionToPlayers"))
-            for (var keys = Object.keys(message.positionToPlayers), i = 0; i < keys.length; ++i) {
-                writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
-                $root.Players.encode(message.positionToPlayers[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
-            }
+        if (message.players != null && message.players.length)
+            for (var i = 0; i < message.players.length; ++i)
+                $root.Player.encode(message.players[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
         return writer;
     };
 
@@ -1599,33 +1637,16 @@ $root.Lineup = (function() {
     Lineup.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Lineup(), key, value;
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Lineup();
         while (reader.pos < end) {
             var tag = reader.uint32();
             if (tag === error)
                 break;
             switch (tag >>> 3) {
             case 1: {
-                    if (message.positionToPlayers === $util.emptyObject)
-                        message.positionToPlayers = {};
-                    var end2 = reader.uint32() + reader.pos;
-                    key = "";
-                    value = null;
-                    while (reader.pos < end2) {
-                        var tag2 = reader.uint32();
-                        switch (tag2 >>> 3) {
-                        case 1:
-                            key = reader.string();
-                            break;
-                        case 2:
-                            value = $root.Players.decode(reader, reader.uint32());
-                            break;
-                        default:
-                            reader.skipType(tag2 & 7);
-                            break;
-                        }
-                    }
-                    message.positionToPlayers[key] = value;
+                    if (!(message.players && message.players.length))
+                        message.players = [];
+                    message.players.push($root.Player.decode(reader, reader.uint32()));
                     break;
                 }
             default:
@@ -1663,14 +1684,13 @@ $root.Lineup = (function() {
     Lineup.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
-        if (message.positionToPlayers != null && message.hasOwnProperty("positionToPlayers")) {
-            if (!$util.isObject(message.positionToPlayers))
-                return "positionToPlayers: object expected";
-            var key = Object.keys(message.positionToPlayers);
-            for (var i = 0; i < key.length; ++i) {
-                var error = $root.Players.verify(message.positionToPlayers[key[i]]);
+        if (message.players != null && message.hasOwnProperty("players")) {
+            if (!Array.isArray(message.players))
+                return "players: array expected";
+            for (var i = 0; i < message.players.length; ++i) {
+                var error = $root.Player.verify(message.players[i]);
                 if (error)
-                    return "positionToPlayers." + error;
+                    return "players." + error;
             }
         }
         return null;
@@ -1688,14 +1708,14 @@ $root.Lineup = (function() {
         if (object instanceof $root.Lineup)
             return object;
         var message = new $root.Lineup();
-        if (object.positionToPlayers) {
-            if (typeof object.positionToPlayers !== "object")
-                throw TypeError(".Lineup.positionToPlayers: object expected");
-            message.positionToPlayers = {};
-            for (var keys = Object.keys(object.positionToPlayers), i = 0; i < keys.length; ++i) {
-                if (typeof object.positionToPlayers[keys[i]] !== "object")
-                    throw TypeError(".Lineup.positionToPlayers: object expected");
-                message.positionToPlayers[keys[i]] = $root.Players.fromObject(object.positionToPlayers[keys[i]]);
+        if (object.players) {
+            if (!Array.isArray(object.players))
+                throw TypeError(".Lineup.players: array expected");
+            message.players = [];
+            for (var i = 0; i < object.players.length; ++i) {
+                if (typeof object.players[i] !== "object")
+                    throw TypeError(".Lineup.players: object expected");
+                message.players[i] = $root.Player.fromObject(object.players[i]);
             }
         }
         return message;
@@ -1714,13 +1734,12 @@ $root.Lineup = (function() {
         if (!options)
             options = {};
         var object = {};
-        if (options.objects || options.defaults)
-            object.positionToPlayers = {};
-        var keys2;
-        if (message.positionToPlayers && (keys2 = Object.keys(message.positionToPlayers)).length) {
-            object.positionToPlayers = {};
-            for (var j = 0; j < keys2.length; ++j)
-                object.positionToPlayers[keys2[j]] = $root.Players.toObject(message.positionToPlayers[keys2[j]], options);
+        if (options.arrays || options.defaults)
+            object.players = [];
+        if (message.players && message.players.length) {
+            object.players = [];
+            for (var j = 0; j < message.players.length; ++j)
+                object.players[j] = $root.Player.toObject(message.players[j], options);
         }
         return object;
     };

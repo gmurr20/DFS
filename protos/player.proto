@@ -23,5 +23,5 @@ message Players {
 }
 
 message Lineup {
-    map<string, Players> position_to_players = 1;
+    repeated Player players = 1;
 }

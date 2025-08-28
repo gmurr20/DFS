@@ -624,44 +624,59 @@ const NFLOptimizerFrontend = () => {
                     </button>
                   </div>
 
-                  {optimizedLineup.lineups.length > 0 ? optimizedLineup.lineups.map(lineup => (
-                    <>
-                      {/* <div className="space-y-2 mb-4">
-                        {lineup.position_to_players && lineup.position_to_players.map((position, player) => (
-                          <div className="flex items-center justify-between bg-white rounded px-3 py-2">
-                            <div className="flex items-center space-x-2">
-                              <span className="bg-purple-100 text-purple-800 text-xs font-medium px-2 py-1 rounded">
-                                {position}
-                              </span>
-                              <span className="text-sm font-medium text-gray-900">{player.name}</span>
-                              <span className="text-xs text-gray-500">({player.team})</span>
-                            </div>
-                            <div className="flex items-center space-x-3">
-                              <span className="text-xs text-gray-600">${player.salary?.toLocaleString()}</span>
-                              <span className="text-xs font-medium text-purple-700">{player.points?.toFixed(2)} pts</span>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
+                  {optimizedLineup.lineups && optimizedLineup.lineups.length > 0 ? (
+                    optimizedLineup.lineups.map((lineup, lineupIndex) => (
+                      <div key={lineupIndex} className="mb-6 bg-white rounded-lg p-4 border border-purple-200">
+                        <h4 className="text-md font-semibold text-purple-800 mb-3">
+                          Lineup {lineupIndex + 1}
+                        </h4>
 
-                      <div className="border-t border-purple-200 pt-3">
-                        <div className="flex justify-between items-center">
-                          <div className="text-sm">
-                            <span className="font-semibold text-purple-800">Total Salary:</span>
-                            <span className="ml-1 text-purple-700">
-                              ${lineup.total_salary?.toLocaleString()} / ${MAX_SALARY_CAP.toLocaleString()}
-                            </span>
-                          </div>
-                          <div className="text-sm">
-                            <span className="font-semibold text-purple-800">Projected Points:</span>
-                            <span className="ml-1 text-purple-700 font-bold">
-                              {lineup.total_points?.toFixed(2)}
-                            </span>
+                        <div className="space-y-2 mb-4">
+                          {lineup.players && lineup.players.map((player, playerIndex) => (
+                            <div key={`${player.position}-${playerIndex}`} className="flex items-center justify-between bg-gray-50 rounded px-3 py-2">
+                              <div className="flex items-center space-x-2">
+                                <span className="bg-purple-100 text-purple-800 text-xs font-medium px-2 py-1 rounded">
+                                  {player.position}
+                                </span>
+                                <span className="text-sm font-medium text-gray-900">{player.name}</span>
+                                <span className="text-xs text-gray-500">({player.team})</span>
+                              </div>
+                              <div className="flex items-center space-x-3">
+                                <span className="text-xs text-gray-600">${player.salary?.toLocaleString()}</span>
+                                <span className="text-xs font-medium text-purple-700">{player.points?.toFixed(2)} pts</span>
+                              </div>
+                            </div>
+                          ))
+                          }
+                        </div>
+
+                        {/* Calculate and display totals for this lineup */}
+                        <div className="border-t border-purple-200 pt-3">
+                          <div className="flex justify-between items-center">
+                            <div className="text-sm">
+                              <span className="font-semibold text-purple-800">Total Salary:</span>
+                              <span className="ml-1 text-purple-700">
+                                ${lineup.players ?
+                                  lineup.players
+                                    .reduce((sum, player) => sum + (player.salary || 0), 0)
+                                    .toLocaleString() : '0'
+                                } / ${MAX_SALARY_CAP.toLocaleString()}
+                              </span>
+                            </div>
+                            <div className="text-sm">
+                              <span className="font-semibold text-purple-800">Projected Points:</span>
+                              <span className="ml-1 text-purple-700 font-bold">
+                                {lineup.players ?
+                                  lineup.players
+                                    .reduce((sum, player) => sum + (player.points || 0), 0)
+                                    .toFixed(2) : '0.00'
+                                }
+                              </span>
+                            </div>
                           </div>
                         </div>
-                      </div> */
-                      }
-                    </>)
+                      </div>
+                    ))
                   ) : (
                     <p className="text-purple-600 text-sm italic">No valid lineup could be generated with the current constraints.</p>
                   )}

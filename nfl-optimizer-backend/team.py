@@ -25,17 +25,26 @@ class Team:
 
     def to_lineup(self):
         lineup = Lineup()
+        final_order = ['QB', 'RB', 'WR', 'TE', 'FLEX', 'DST']
+        position_to_player = {'QB': [], 'RB': [], 'WR': [], 'TE': [], 'FLEX': [], 'DST': []}
+        min_count_per_flex = {'RB': 2, 'WR': 3, 'TE': 1}
         for pos, players in self.team.items():
             for player in players:
                 player_proto = Player()
+                player_proto.id = player['id']
                 player_proto.name = player['name']
                 player_proto.team = player['team']
                 player_proto.position = player['position']
                 player_proto.salary = player['salary']
                 player_proto.points = player['points']
                 player_proto.sim_points = player['simulated_projection']
-                position_players = lineup.position_to_players[pos]
-                position_players.players.append(player_proto)
+                if player_proto.position in min_count_per_flex and len(position_to_player[player_proto.position]) >= min_count_per_flex[player_proto.position]:
+                    position_to_player['FLEX'].append(player_proto)
+                else:
+                    position_to_player[player_proto.position].append(player_proto)
+        for pos in final_order:
+            for player in position_to_player[pos]:
+                lineup.players.append(player)
         return lineup
 
     def points(self):
