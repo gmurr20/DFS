@@ -20,6 +20,12 @@ const NFLOptimizerFrontend = () => {
   const [optimizing, setOptimizing] = useState(false);
   const [optimizedLineup, setOptimizedLineup] = useState(null);
 
+  // Optimizer settings
+  const [randomness, setRandomness] = useState(0);
+  const [numLineups, setNumLineups] = useState(1);
+  const [stack, setStack] = useState(false);
+  const [noOpposingDefense, setNoOpposingDefense] = useState(false);
+
   // Fetch players from API
   useEffect(() => {
     const fetchPlayers = async () => {
@@ -308,7 +314,11 @@ const NFLOptimizerFrontend = () => {
       // Create the OptimizerRequest message
       const request = OptimizerRequest.create({
         playerIdLocks: lockedPlayerIds,
-        playerIdExcludes: excludedPlayerIds
+        playerIdExcludes: excludedPlayerIds,
+        randomness: randomness,
+        numLineups: numLineups,
+        stack: stack,
+        noOpposingDefense: noOpposingDefense
       });
 
       console.log('OptimizerRequest:', request);
@@ -479,6 +489,85 @@ const NFLOptimizerFrontend = () => {
               </div>
             </div>
 
+            {/* Optimizer Settings */}
+            <div className="mt-6 bg-gray-50 rounded-lg p-4">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Optimizer Settings</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {/* Randomness Slider */}
+                <div>
+                  <label htmlFor="randomness" className="block text-sm font-medium text-gray-700 mb-2">
+                    Randomness: {randomness.toFixed(2)}
+                  </label>
+                  <input
+                    type="range"
+                    id="randomness"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value={randomness}
+                    onChange={(e) => setRandomness(parseFloat(e.target.value))}
+                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
+                  />
+                  <div className="flex justify-between text-xs text-gray-500 mt-1">
+                    <span>0 (Optimal)</span>
+                    <span>1 (Random)</span>
+                  </div>
+                </div>
+
+                {/* Number of Lineups */}
+                <div>
+                  <label htmlFor="numLineups" className="block text-sm font-medium text-gray-700 mb-2">
+                    Number of Lineups
+                  </label>
+                  <input
+                    type="number"
+                    id="numLineups"
+                    min="1"
+                    max="10"
+                    value={numLineups}
+                    onChange={(e) => setNumLineups(parseInt(e.target.value) || 1)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  />
+                </div>
+
+                {/* Stack Checkbox */}
+                <div>
+                  <div className="flex items-center h-full">
+                    <label className="flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={stack}
+                        onChange={(e) => setStack(e.target.checked)}
+                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+                      />
+                      <span className="ml-2 text-sm font-medium text-gray-700">
+                        Stack Players
+                      </span>
+                    </label>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-1">QB with same-team receivers/TEs</p>
+                </div>
+
+                {/* No Opposing Defense Checkbox */}
+                <div>
+                  <div className="flex items-center h-full">
+                    <label className="flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={noOpposingDefense}
+                        onChange={(e) => setNoOpposingDefense(e.target.checked)}
+                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+                      />
+                      <span className="ml-2 text-sm font-medium text-gray-700">
+                        No Opposing Defense
+                      </span>
+                    </label>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-1">Avoid defenses playing against your players</p>
+                </div>
+              </div>
+            </div>
+
             {/* Locked and Excluded Players Summary */}
             <div className="mt-6">
               {/* Summary Stats */}
@@ -616,69 +705,68 @@ const NFLOptimizerFrontend = () => {
               {/* Optimized Lineup Display */}
               {optimizedLineup && (
                 <div className="mt-6 bg-purple-50 rounded-lg p-4">
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="mb-4">
                     <h3 className="text-lg font-semibold text-purple-800">Optimized Lineup</h3>
-                    <button
-                      onClick={() => setOptimizedLineup(null)}
-                      className="text-purple-600 hover:text-purple-800"
-                    >
-                      <X className="w-5 h-5" />
-                    </button>
                   </div>
 
                   {optimizedLineup.lineups && optimizedLineup.lineups.length > 0 ? (
-                    optimizedLineup.lineups.map((lineup, lineupIndex) => (
-                      <div key={lineupIndex} className="mb-6 bg-white rounded-lg p-4 border border-purple-200">
-                        <h4 className="text-md font-semibold text-purple-800 mb-3">
-                          Lineup {lineupIndex + 1}
-                        </h4>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+                      {optimizedLineup.lineups.map((lineup, lineupIndex) => (
+                        <div key={lineupIndex} className="bg-white rounded-lg p-4 border border-purple-200">
+                          <h4 className="text-md font-semibold text-purple-800 mb-3">
+                            Lineup {lineupIndex + 1}
+                          </h4>
 
-                        <div className="space-y-2 mb-4">
-                          {lineup.players && lineup.players.map((player, playerIndex) => (
-                            <div key={`${player.position}-${playerIndex}`} className="flex items-center justify-between bg-gray-50 rounded px-3 py-2">
-                              <div className="flex items-center space-x-2">
-                                <span className="bg-purple-100 text-purple-800 text-xs font-medium px-2 py-1 rounded">
-                                  {player.position}
+                          <div className="space-y-1.5 mb-4">
+                            {lineup.players && lineup.players.map((player, playerIndex) => (
+                              <div key={`${player.position}-${playerIndex}`} className="flex items-center justify-between bg-gray-50 rounded px-2 py-1.5">
+                                <div className="flex items-center space-x-1.5">
+                                  <span className="bg-purple-100 text-purple-800 text-xs font-medium px-1.5 py-0.5 rounded">
+                                    {player.position}
+                                  </span>
+                                  <div>
+                                    <span className="text-xs font-medium text-gray-900">
+                                      {player.name} <span className="text-gray-500">({player.team})</span>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div className="flex flex-col items-end">
+                                  <span className="text-xs text-gray-600">${player.salary?.toLocaleString()}</span>
+                                  <span className="text-xs font-medium text-purple-700">{player.points?.toFixed(1)} pts</span>
+                                </div>
+                              </div>
+                            ))
+                            }
+                          </div>
+
+                          {/* Calculate and display totals for this lineup */}
+                          <div className="border-t border-purple-200 pt-2">
+                            <div className="space-y-1">
+                              <div className="text-xs">
+                                <span className="font-semibold text-purple-800">Salary:</span>
+                                <span className="ml-1 text-purple-700">
+                                  ${lineup.players ?
+                                    lineup.players
+                                      .reduce((sum, player) => sum + (player.salary || 0), 0)
+                                      .toLocaleString() : '0'
+                                  }
                                 </span>
-                                <span className="text-sm font-medium text-gray-900">{player.name}</span>
-                                <span className="text-xs text-gray-500">({player.team})</span>
                               </div>
-                              <div className="flex items-center space-x-3">
-                                <span className="text-xs text-gray-600">${player.salary?.toLocaleString()}</span>
-                                <span className="text-xs font-medium text-purple-700">{player.points?.toFixed(2)} pts</span>
+                              <div className="text-xs">
+                                <span className="font-semibold text-purple-800">Points:</span>
+                                <span className="ml-1 text-purple-700 font-bold">
+                                  {lineup.players ?
+                                    lineup.players
+                                      .reduce((sum, player) => sum + (player.points || 0), 0)
+                                      .toFixed(2) : '0.00'
+                                  }
+                                </span>
                               </div>
-                            </div>
-                          ))
-                          }
-                        </div>
-
-                        {/* Calculate and display totals for this lineup */}
-                        <div className="border-t border-purple-200 pt-3">
-                          <div className="flex justify-between items-center">
-                            <div className="text-sm">
-                              <span className="font-semibold text-purple-800">Total Salary:</span>
-                              <span className="ml-1 text-purple-700">
-                                ${lineup.players ?
-                                  lineup.players
-                                    .reduce((sum, player) => sum + (player.salary || 0), 0)
-                                    .toLocaleString() : '0'
-                                } / ${MAX_SALARY_CAP.toLocaleString()}
-                              </span>
-                            </div>
-                            <div className="text-sm">
-                              <span className="font-semibold text-purple-800">Projected Points:</span>
-                              <span className="ml-1 text-purple-700 font-bold">
-                                {lineup.players ?
-                                  lineup.players
-                                    .reduce((sum, player) => sum + (player.points || 0), 0)
-                                    .toFixed(2) : '0.00'
-                                }
-                              </span>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    ))
+                      ))}
+                    </div>
                   ) : (
                     <p className="text-purple-600 text-sm italic">No valid lineup could be generated with the current constraints.</p>
                   )}

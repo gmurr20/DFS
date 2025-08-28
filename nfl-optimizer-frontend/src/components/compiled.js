@@ -20,6 +20,7 @@ $root.OptimizerRequest = (function() {
      * @property {number|null} [randomness] OptimizerRequest randomness
      * @property {number|null} [numLineups] OptimizerRequest numLineups
      * @property {boolean|null} [stack] OptimizerRequest stack
+     * @property {boolean|null} [noOpposingDefense] OptimizerRequest noOpposingDefense
      */
 
     /**
@@ -80,6 +81,14 @@ $root.OptimizerRequest = (function() {
     OptimizerRequest.prototype.stack = false;
 
     /**
+     * OptimizerRequest noOpposingDefense.
+     * @member {boolean} noOpposingDefense
+     * @memberof OptimizerRequest
+     * @instance
+     */
+    OptimizerRequest.prototype.noOpposingDefense = false;
+
+    /**
      * Creates a new OptimizerRequest instance using the specified properties.
      * @function create
      * @memberof OptimizerRequest
@@ -115,6 +124,8 @@ $root.OptimizerRequest = (function() {
             writer.uint32(/* id 4, wireType 0 =*/32).int32(message.numLineups);
         if (message.stack != null && Object.hasOwnProperty.call(message, "stack"))
             writer.uint32(/* id 5, wireType 0 =*/40).bool(message.stack);
+        if (message.noOpposingDefense != null && Object.hasOwnProperty.call(message, "noOpposingDefense"))
+            writer.uint32(/* id 6, wireType 0 =*/48).bool(message.noOpposingDefense);
         return writer;
     };
 
@@ -175,6 +186,10 @@ $root.OptimizerRequest = (function() {
                     message.stack = reader.bool();
                     break;
                 }
+            case 6: {
+                    message.noOpposingDefense = reader.bool();
+                    break;
+                }
             default:
                 reader.skipType(tag & 7);
                 break;
@@ -233,6 +248,9 @@ $root.OptimizerRequest = (function() {
         if (message.stack != null && message.hasOwnProperty("stack"))
             if (typeof message.stack !== "boolean")
                 return "stack: boolean expected";
+        if (message.noOpposingDefense != null && message.hasOwnProperty("noOpposingDefense"))
+            if (typeof message.noOpposingDefense !== "boolean")
+                return "noOpposingDefense: boolean expected";
         return null;
     };
 
@@ -268,6 +286,8 @@ $root.OptimizerRequest = (function() {
             message.numLineups = object.numLineups | 0;
         if (object.stack != null)
             message.stack = Boolean(object.stack);
+        if (object.noOpposingDefense != null)
+            message.noOpposingDefense = Boolean(object.noOpposingDefense);
         return message;
     };
 
@@ -292,6 +312,7 @@ $root.OptimizerRequest = (function() {
             object.randomness = 0;
             object.numLineups = 0;
             object.stack = false;
+            object.noOpposingDefense = false;
         }
         if (message.playerIdLocks && message.playerIdLocks.length) {
             object.playerIdLocks = [];
@@ -309,6 +330,8 @@ $root.OptimizerRequest = (function() {
             object.numLineups = message.numLineups;
         if (message.stack != null && message.hasOwnProperty("stack"))
             object.stack = message.stack;
+        if (message.noOpposingDefense != null && message.hasOwnProperty("noOpposingDefense"))
+            object.noOpposingDefense = message.noOpposingDefense;
         return object;
     };
 
