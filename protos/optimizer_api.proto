@@ -12,6 +12,8 @@ message OptimizerRequest {
     int32 num_lineups = 4;
 
     bool stack = 5;
+
+    bool no_opposing_defense = 6;
 }
 
 message OptimizerResponse {

@@ -307,9 +307,11 @@ const NFLOptimizerFrontend = () => {
 
       // Create the OptimizerRequest message
       const request = OptimizerRequest.create({
-        locked_player_ids: lockedPlayerIds,
-        excluded_player_ids: excludedPlayerIds
+        playerIdLocks: lockedPlayerIds,
+        playerIdExcludes: excludedPlayerIds
       });
+
+      console.log('OptimizerRequest:', request);
 
       // Encode the request to bytes
       const requestBytes = OptimizerRequest.encode(request).finish();
@@ -520,7 +522,7 @@ const NFLOptimizerFrontend = () => {
                       </span>
                     </div>
                   </div>
-                  <div className="space-y-2 max-h-32 overflow-y-auto">
+                  <div className="space-y-2 max-h-48 overflow-y-auto">
                     {getAllLockedPlayers().length === 0 ? (
                       <p className="text-green-600 text-sm italic">No players locked</p>
                     ) : (
@@ -565,7 +567,7 @@ const NFLOptimizerFrontend = () => {
                       </span>
                     </div>
                   </div>
-                  <div className="space-y-2 max-h-32 overflow-y-auto">
+                  <div className="space-y-2 max-h-48 overflow-y-auto">
                     {Object.values(players).flat().filter(p => p.status === 'excluded').length === 0 ? (
                       <p className="text-red-600 text-sm italic">No players excluded</p>
                     ) : (
@@ -709,12 +711,6 @@ const NFLOptimizerFrontend = () => {
             <div className="flex-1 p-6">
               <div className="mb-6">
                 <h2 className="text-2xl font-bold text-gray-900">{selectedPosition} Players</h2>
-                <div className="flex justify-between items-center mt-1">
-                  <p className="text-gray-600">
-                    {players[selectedPosition].filter(p => p.status === 'locked').length} locked, {' '}
-                    {players[selectedPosition].filter(p => p.status === 'excluded').length} excluded
-                  </p>
-                </div>
                 <div className="flex justify-between items-center mt-4">
                   <div className="text-sm text-gray-600">
                     Showing {((currentPage - 1) * PLAYERS_PER_PAGE) + 1} to {Math.min(currentPage * PLAYERS_PER_PAGE, players[selectedPosition].length)} of {players[selectedPosition].length} players

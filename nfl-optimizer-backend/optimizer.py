@@ -7,6 +7,7 @@ import pulp
 from functools import partial
 from team import Team
 import json
+from pulp import PULP_CBC_CMD
 
 SALARY_CAP = 50000
 
@@ -117,7 +118,6 @@ class Optimizer:
 
         # Constraint 2: Positional Requirements
         # Group players by their primary position for constraints
-        total_player_count = 0
         for pos, select_range in self.team_requirements.items():
             min_count = select_range[0]
             max_count = select_range[1]
@@ -129,44 +129,45 @@ class Optimizer:
 
         # Constraint 3: Passed in requirements
         for lock in request.player_id_locks:
-            prob +=  pulp.lpSum([player_vars[lock]]) == 1, f'{player_vars[lock].id} player lock'
+            prob += player_vars[lock] == 1, f'{player_vars[lock]} player lock'
         for exclude in request.player_id_excludes:
-            prob +=  pulp.lpSum([player_vars[exclude]]) == 0, f'{player_vars[lock].id} player exclude'
+            prob +=  player_vars[exclude] == 0, f'{player_vars[lock]} player exclude'
         if request.stack:
-            qbs = player_pool[player_pool['position'].str.contains('^(QB)')]
-            for _, qb in qbs.iterrows():
+            # Get all QBs
+            all_qbs = player_pool[player_pool['position'] == 'QB']
+            
+            for _, qb in all_qbs.iterrows():
                 qb_team = qb['team']
                 qb_id = qb['id']
-                # Find all WRs and TEs on the same team as this QB
-                stack_eligible = player_pool[
+                
+                # Get all WR/TE from the same team
+                same_team_receivers = player_pool[
                     (player_pool['team'] == qb_team) & 
-                    (player_pool['position'].str.contains('^(WR|TE)'))
+                    (player_pool['position'].isin(['WR', 'TE']))
                 ]
-                if len(stack_eligible) > 0:  # Only add constraint if there are stackable players
-                    # If QB is selected (left side = 1), then at least 1 WR/TE from same team must be selected
+                if len(same_team_receivers) > 0:
+                    # If this QB is selected, at least one receiver from same team must be selected
+                    # Using Big-M method: if QB selected (=1), then sum(receivers) >= 1
+                    # This translates to: sum(receivers) >= player_vars[qb_id]
                     prob += (
-                        pulp.lpSum([player_vars[p["id"]] for _, p in stack_eligible.iterrows()]) >= 
+                        pulp.lpSum([player_vars[rec['id']] for _, rec in same_team_receivers.iterrows()]) >= 
                         player_vars[qb_id]
-                    ), f"QB_Stack_{qb_team}_{qb_id}"
-        
-        # Constraint 4: DST doesn't conflict with players
-        defenses = player_pool[player_pool['position'].str.contains('^(DST)')] 
-        for _, defense in defenses.iterrows():
-            defense_team = defense['team']
-            defense_id = defense['id']
-            
-            # Find all non-defense players whose opposing_team matches the defense's team
-            opposing_players = player_pool[
-                (player_pool['opposing_team'] == defense_team) & 
-                (~player_pool['position'].str.contains('^(DST)'))  # Exclude other defenses
-            ]
-            if len(opposing_players) > 0:
-                # Defense can't be selected if any opposing team player is selected
-                # This constraint: defense + sum(opposing_players) <= 1
-                prob += (
-                    player_vars[defense_id] + 
-                    pulp.lpSum([player_vars[p["id"]] for _, p in opposing_players.iterrows()]) <= 1
-                ), f"Defense_Opposition_{defense_team}_{defense_id}"
+                    ), f"Stack_QB_{qb['name'].replace(' ', '_')}" 
+        if request.no_opposing_defense:
+            defenses = player_pool[player_pool['position'] == 'DST'] 
+            for _, defense in defenses.iterrows():
+                defense_team = defense['team']
+                defense_id = defense['id']
+                
+                # Find all non-defense players whose opposing_team matches the defense's team
+                opposing_players = player_pool[(player_pool['opposing_team'] == defense_id)]
+                opposing_players = opposing_players[opposing_players['position'] != 'DST']
+                if len(opposing_players) > 0:
+                    # Defense can't be selected if any opposing team player is selected
+                    # This constraint: sum(opposing_players) <= (0 if defense selected otherwise 9)
+                    prob += (
+                        pulp.lpSum([player_vars[p["id"]] for _, p in opposing_players.iterrows()]) <= 9 * (1- player_vars[defense_id])
+                    ), f"Defense_Opposition_{defense_team}_{defense_id}"
 
         # 4. Solve the problem
         # You can specify different solvers here. PuLP uses CBC by default (open-source).
@@ -192,9 +193,9 @@ class Optimizer:
         iterations = 1
         randomness = request.randomness
         request.num_lineups = max(request.num_lineups, 1)
-        while len(unique_teams) < request.num_lineups and iterations <= 100:
+        while len(unique_teams) < request.num_lineups and iterations <= 20:
+            print(unique_teams)
             player_pool = self._add_randomness_to_player_pool(randomness)
-            player_pool = player_pool[player_pool['simulated_projection'] > .1]
             iterations += 1
             potential_team = self.generate_optimal_lineup(player_pool, request)
             if potential_team is None or potential_team in unique_teams:

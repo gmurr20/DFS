@@ -52,9 +52,12 @@ optimizer = Optimizer(player_pool=player_pool, team_requirements=NFL_TEAM_REQUIR
 
 # Run Optimizer
 request = OptimizerRequest()
+request.player_id_locks.append('4426348')
+# request.player_id_locks.append('NYG')
 request.randomness = 0.0
-request.num_lineups = 10
+request.num_lineups = 1
 request.stack = True
+request.no_opposing_defense = True
 
 response = optimizer.optimize(request)
 
