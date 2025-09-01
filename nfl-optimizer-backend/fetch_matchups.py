@@ -1,6 +1,6 @@
 import http.client
 import json
-from backend.env_keys import RAPID_API
+from env_keys import RAPID_API
 
 
 week = '1'

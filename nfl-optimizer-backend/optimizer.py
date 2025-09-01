@@ -1,11 +1,14 @@
 from typing import List
 from player_pb2 import Players, Player
+from team_matchup_pb2 import WeekMatchups
+from google.protobuf import text_format
 from optimizer_api_pb2 import OptimizerRequest, OptimizerResponse
 import pandas as pd
 import numpy as np
 import pulp
 from functools import partial
 from team import Team
+from adjust_projection_for_game_script import simulate_projections_with_vegas_lines
 import json
 from pulp import PULP_CBC_CMD
 
@@ -70,12 +73,19 @@ def get_player_pool() -> Players:
     
     return player_pool
 
+def get_spreads() -> WeekMatchups:
+    week_matchups = WeekMatchups()
+    with open('nfl-optimizer-backend/data/week1_spreads.textproto', 'r') as f:
+        text_format.Parse(f.read(), week_matchups)
+    return week_matchups
+
 class Optimizer:
 
     def __init__(self, player_pool: Players, team_requirements: dict[str, List], num_players: int):
         self.player_pool = self._convert_player_pool_to_dataframe(player_pool)
         self.team_requirements = team_requirements
         self.num_players = num_players
+        self.matchups = get_spreads()
     
     def _convert_player_pool_to_dataframe(self, player_pool_proto: Players) -> pd.DataFrame:
         player_data = []
@@ -93,11 +103,11 @@ class Optimizer:
         df = pd.DataFrame(player_data)
         return df
     
-    def _add_randomness_to_player_pool(self, randomness: float):
-        randomized_pool = self.player_pool.copy(deep=True)
-        my_func = partial(randomize_points, randomness)
-        randomized_pool['simulated_projection'] = randomized_pool['points'].apply(my_func)
-        return randomized_pool
+    # def _add_randomness_to_player_pool(self, randomness: float):
+    #     randomized_pool = self.player_pool.copy(deep=True)
+    #     my_func = partial(randomize_points, randomness)
+    #     randomized_pool['simulated_projection'] = randomized_pool['points'].apply(my_func)
+    #     return randomized_pool
     
     def generate_optimal_lineup(self, player_pool: pd.DataFrame, request: OptimizerRequest):
         # 1. Define the problem
@@ -121,7 +131,7 @@ class Optimizer:
         for pos, select_range in self.team_requirements.items():
             min_count = select_range[0]
             max_count = select_range[1]
-            players_in_current_position = player_pool[player_pool['position'].str.contains(f'^({pos})')]
+            players_in_current_position = player_pool[player_pool['position'].str.contains(f'^{pos}')]
             prob += pulp.lpSum([player_vars[p["id"]] for _, p in players_in_current_position.iterrows()]) >= min_count, f"{pos}_MinCount_{min_count}"
             prob += pulp.lpSum([player_vars[p["id"]] for _, p in players_in_current_position.iterrows()]) <= max_count, f"{pos}_MaxCount_{max_count}"
         # Total players constraint (sum of all roster spots must be filled)
@@ -172,7 +182,7 @@ class Optimizer:
         # 4. Solve the problem
         # You can specify different solvers here. PuLP uses CBC by default (open-source).
         # For better performance on larger problems, consider Gurobi, CPLEX (commercial), or GLPK (open-source).
-        prob.solve()
+        prob.solve(PULP_CBC_CMD(msg=0))
 
         # No optimal solution.
         if prob.status != pulp.LpStatusOptimal:
@@ -191,11 +201,10 @@ class Optimizer:
     def optimize(self, request: OptimizerRequest) -> OptimizerResponse:
         unique_teams = set([])
         iterations = 1
-        randomness = request.randomness
+        randomness = max(min(request.randomness, 1.0), 0.0)
         request.num_lineups = max(request.num_lineups, 1)
         while len(unique_teams) < request.num_lineups and iterations <= 20:
-            print(unique_teams)
-            player_pool = self._add_randomness_to_player_pool(randomness)
+            player_pool = simulate_projections_with_vegas_lines(player_pool=self.player_pool, week_matchups=self.matchups, randomness=randomness)
             iterations += 1
             potential_team = self.generate_optimal_lineup(player_pool, request)
             if potential_team is None or potential_team in unique_teams:

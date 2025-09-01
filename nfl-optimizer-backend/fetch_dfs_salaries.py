@@ -1,6 +1,6 @@
 import http.client
 import json
-from backend.env_keys import RAPID_API
+from env_keys import RAPID_API
 
 conn = http.client.HTTPSConnection("tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com")
 

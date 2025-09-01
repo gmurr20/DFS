@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+message TeamMatchup {
+    string team = 1;
+
+    string opposing_team = 2;
+
+    bool is_home = 3;
+
+    float projected_team_total = 4;
+
+    float projected_opposing_team_total = 5;
+
+    float over_under = 6;
+
+    float spread = 7;
+}
+
+message WeekMatchups {
+    repeated TeamMatchup matchups = 1;
+}
