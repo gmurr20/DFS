@@ -7,7 +7,7 @@ player_pool = op_lib.get_player_pool()
 
 # Initialize Optimizer
 NFL_TEAM_REQUIREMENTS = {'QB': [1, 1], 'RB': [2,3], 'WR': [3,4], 'TE': [1,2], 'DST': [1,1]}
-optimizer = op_lib.Optimizer(player_pool=player_pool, team_requirements=NFL_TEAM_REQUIREMENTS, num_players=9)
+optimizer = op_lib.Optimizer(player_pool=player_pool, spreads=op_lib.get_spreads(), team_requirements=NFL_TEAM_REQUIREMENTS, num_players=9)
 
 # Run Optimizer
 request = OptimizerRequest()

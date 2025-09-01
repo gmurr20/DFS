@@ -85,7 +85,7 @@ def optimize_lineup():
         if parse_error:
             return create_protobuf_error_response(f"Invalid protobuf format: {parse_error}", 400)
         
-        optimizer = op_lib.Optimizer(player_pool=op_lib.get_player_pool(), team_requirements=NFL_TEAM_REQUIREMENTS, num_players=9)
+        optimizer = op_lib.Optimizer(player_pool=op_lib.get_player_pool(), spreads=op_lib.get_spreads(), team_requirements=NFL_TEAM_REQUIREMENTS, num_players=9)
 
         response = optimizer.optimize(optimize_request)
 

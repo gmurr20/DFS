@@ -6,7 +6,6 @@ from optimizer_api_pb2 import OptimizerRequest, OptimizerResponse
 import pandas as pd
 import numpy as np
 import pulp
-from functools import partial
 from team import Team
 from adjust_projection_for_game_script import simulate_projections_with_vegas_lines
 import json
@@ -81,11 +80,11 @@ def get_spreads() -> WeekMatchups:
 
 class Optimizer:
 
-    def __init__(self, player_pool: Players, team_requirements: dict[str, List], num_players: int):
+    def __init__(self, player_pool: Players, spreads: WeekMatchups, team_requirements: dict[str, List], num_players: int):
         self.player_pool = self._convert_player_pool_to_dataframe(player_pool)
         self.team_requirements = team_requirements
         self.num_players = num_players
-        self.matchups = get_spreads()
+        self.matchups = spreads
     
     def _convert_player_pool_to_dataframe(self, player_pool_proto: Players) -> pd.DataFrame:
         player_data = []
@@ -201,7 +200,7 @@ class Optimizer:
     def optimize(self, request: OptimizerRequest) -> OptimizerResponse:
         unique_teams = set([])
         iterations = 1
-        randomness = max(min(request.randomness, 1.0), 0.0)
+        randomness = max(request.randomness, 0.0)
         request.num_lineups = max(request.num_lineups, 1)
         while len(unique_teams) < request.num_lineups and iterations <= 20:
             player_pool = simulate_projections_with_vegas_lines(player_pool=self.player_pool, week_matchups=self.matchups, randomness=randomness)
