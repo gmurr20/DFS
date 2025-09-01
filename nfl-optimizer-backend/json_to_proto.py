@@ -1,5 +1,6 @@
 import json
 from team_matchup_pb2 import TeamMatchup, WeekMatchups
+from player_pb2 import Player, Players
 
 def get_projected_total(over_under: float, spread: float):
     return (over_under - spread) / 2.0
@@ -42,3 +43,41 @@ def create_spreads_proto(json_data: json):
         week_matchups.matchups.append(away_team)
     return week_matchups
     
+
+def create_player_pool(matchups: json, ff_projections: json, salaries_json: json) -> Players:
+    team_to_opposing_team = {}
+    for matchup in matchups["body"]:
+        team_to_opposing_team[matchup["away"]] = matchup["home"]
+        team_to_opposing_team[matchup["home"]] = matchup["away"]
+
+    # Grab player pool and salaries
+    player_dict = {}
+    for player in salaries_json["body"]["draftkings"]:
+        player_proto = Player()
+        player_proto.id = player["playerID"] if "playerID" in player else player["team"]
+        player_proto.name = player["longName"]
+        player_proto.team = player["team"]
+        player_proto.position = player["pos"]
+        player_proto.salary = int(player["salary"])
+        player_proto.opposing_team = team_to_opposing_team[player["team"]]
+        player_dict[player_proto.id] = player_proto
+
+    # Grab fantasy projections
+    for id, player in ff_projections["body"]["playerProjections"].items():
+        if id not in player_dict:
+            # print(f"Can't find '{player["longName"]}'")
+            continue
+        player_dict[id].points = float(player["fantasyPointsDefault"]["PPR"])
+    for id, dst in ff_projections["body"]["teamDefenseProjections"].items():
+        team_id = dst["teamAbv"]
+        if team_id not in player_dict:
+            # print(f"Can't find DST {team_id}")
+            continue
+        player_dict[team_id].points = float(dst["fantasyPointsDefault"])
+
+    # Clean data to player pool
+    player_pool = Players()
+    for _, player in player_dict.items():
+        player_pool.players.append(player)
+    
+    return player_pool

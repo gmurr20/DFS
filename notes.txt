@@ -3,5 +3,6 @@
 Steps:
 * protoc --proto_path=protos --python_out=nfl-optimizer-backend protos/player.proto protos/optimizer_api.proto protos/team_matchup.proto
 * pbjs -t static-module -w commonjs -o nfl-optimizer-frontend/src/components/compiled.js protos/optimizer_api.proto
-* python3 nfl-optimizer-backend/server.py
+* cd nfl-optimizer-backend && python3 fetch_current_data.py
+* cd nfl-optimizer-backend && python3 local_server.py
 * cd nfl-optimizer-frontend && npm start

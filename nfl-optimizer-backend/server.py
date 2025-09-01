@@ -4,7 +4,8 @@ from datetime import datetime
 import logging
 import os
 import optimizer as op_lib
-import local_backend as backend_lib
+# import local_backend as backend_lib
+import online_backend as backend_lib
 from optimizer_api_pb2 import OptimizerRequest, GetPlayersResponse
 
 NFL_TEAM_REQUIREMENTS = {'QB': [1, 1], 'RB': [2,3], 'WR': [3,4], 'TE': [1,2], 'DST': [1,1]}
