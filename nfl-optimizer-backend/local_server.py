@@ -4,9 +4,8 @@ from datetime import datetime
 import logging
 import os
 import optimizer as op_lib
-
-from player_pb2 import Player, Players, Lineup
-from optimizer_api_pb2 import OptimizerRequest, OptimizerResponse, GetPlayersRequest, GetPlayersResponse
+import local_backend as backend_lib
+from optimizer_api_pb2 import OptimizerRequest, GetPlayersResponse
 
 NFL_TEAM_REQUIREMENTS = {'QB': [1, 1], 'RB': [2,3], 'WR': [3,4], 'TE': [1,2], 'DST': [1,1]}
 
@@ -68,7 +67,7 @@ def health_check():
 @app.route('/getPlayers', methods=['GET'])
 def get_players():
     try:
-        player_pool = op_lib.get_player_pool()
+        player_pool = backend_lib.get_player_pool()
         response = GetPlayersResponse(players=player_pool)
         return Response(response.SerializeToString(), content_type='application/x-protobuf')
     except Exception as e:
@@ -85,7 +84,7 @@ def optimize_lineup():
         if parse_error:
             return create_protobuf_error_response(f"Invalid protobuf format: {parse_error}", 400)
         
-        optimizer = op_lib.Optimizer(player_pool=op_lib.get_player_pool(), spreads=op_lib.get_spreads(), team_requirements=NFL_TEAM_REQUIREMENTS, num_players=9)
+        optimizer = op_lib.Optimizer(player_pool=backend_lib.get_player_pool(), spreads=backend_lib.get_spreads(), team_requirements=NFL_TEAM_REQUIREMENTS, num_players=9)
 
         response = optimizer.optimize(optimize_request)
 

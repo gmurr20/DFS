@@ -1,13 +1,13 @@
 from player_pb2 import Player, Players
 import optimizer as op_lib
 from optimizer_api_pb2 import OptimizerRequest
-import json
+from local_backend import get_player_pool, get_spreads
 
-player_pool = op_lib.get_player_pool()
+player_pool = get_player_pool()
 
 # Initialize Optimizer
 NFL_TEAM_REQUIREMENTS = {'QB': [1, 1], 'RB': [2,3], 'WR': [3,4], 'TE': [1,2], 'DST': [1,1]}
-optimizer = op_lib.Optimizer(player_pool=player_pool, spreads=op_lib.get_spreads(), team_requirements=NFL_TEAM_REQUIREMENTS, num_players=9)
+optimizer = op_lib.Optimizer(player_pool=player_pool, spreads=get_spreads(), team_requirements=NFL_TEAM_REQUIREMENTS, num_players=9)
 
 # Run Optimizer
 request = OptimizerRequest()

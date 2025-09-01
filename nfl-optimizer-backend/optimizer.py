@@ -26,60 +26,7 @@ def randomize_points(random_factor: float, initial_projection: float) -> float:
         new_projection = 0
     return new_projection
 
-def get_player_pool() -> Players:
-    # Load Data
-    with open('nfl-optimizer-backend/data/dfs_salaries.json', 'r') as file:
-        salaries_json = json.load(file)
-    with open('nfl-optimizer-backend/data/ff_projections.json', 'r') as file:
-        ff_projections = json.load(file)
-    with open('nfl-optimizer-backend/data/week1_matchups.json', 'r') as file:
-        matchups = json.load(file)
-
-    team_to_opposing_team = {}
-    for matchup in matchups["body"]:
-        team_to_opposing_team[matchup["away"]] = matchup["home"]
-        team_to_opposing_team[matchup["home"]] = matchup["away"]
-
-    # Grab player pool and salaries
-    player_dict = {}
-    for player in salaries_json["body"]["draftkings"]:
-        player_proto = Player()
-        player_proto.id = player["playerID"] if "playerID" in player else player["team"]
-        player_proto.name = player["longName"]
-        player_proto.team = player["team"]
-        player_proto.position = player["pos"]
-        player_proto.salary = int(player["salary"])
-        player_proto.opposing_team = team_to_opposing_team[player["team"]]
-        player_dict[player_proto.id] = player_proto
-
-    # Grab fantasy projections
-    for id, player in ff_projections["body"]["playerProjections"].items():
-        if id not in player_dict:
-            # print(f"Can't find '{player["longName"]}'")
-            continue
-        player_dict[id].points = float(player["fantasyPointsDefault"]["PPR"])
-    for id, dst in ff_projections["body"]["teamDefenseProjections"].items():
-        team_id = dst["teamAbv"]
-        if team_id not in player_dict:
-            # print(f"Can't find DST {team_id}")
-            continue
-        player_dict[team_id].points = float(dst["fantasyPointsDefault"])
-
-    # Clean data to player pool
-    player_pool = Players()
-    for _, player in player_dict.items():
-        player_pool.players.append(player)
-    
-    return player_pool
-
-def get_spreads() -> WeekMatchups:
-    week_matchups = WeekMatchups()
-    with open('nfl-optimizer-backend/data/week1_spreads.textproto', 'r') as f:
-        text_format.Parse(f.read(), week_matchups)
-    return week_matchups
-
 class Optimizer:
-
     def __init__(self, player_pool: Players, spreads: WeekMatchups, team_requirements: dict[str, List], num_players: int):
         self.player_pool = self._convert_player_pool_to_dataframe(player_pool)
         self.team_requirements = team_requirements
