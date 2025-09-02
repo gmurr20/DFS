@@ -3,7 +3,7 @@ import { Lock, X, Users, ChevronUp, ChevronDown, Eye, EyeOff } from 'lucide-reac
 
 import { GetPlayersResponse, OptimizerRequest, OptimizerResponse } from './compiled.js';
 
-const FLASK_BASE_URL = 'http://localhost:8888';
+const FLASK_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8888';
 
 // Token management utilities
 const getToken = () => localStorage.getItem('nfl-optimizer-token');
