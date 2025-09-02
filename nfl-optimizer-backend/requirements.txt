@@ -8,3 +8,4 @@ pulp==3.2.1
 PyJWT==2.10.1
 PyJWT==2.10.1
 python-dotenv==1.1.1
+gunicorn==21.2.0
