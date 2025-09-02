@@ -5,7 +5,7 @@ from optimizer_api_pb2 import OptimizerRequest
 from online_backend import get_player_pool, get_spreads
 
 player_pool = get_player_pool()
-# print(len(player_pool.players))
+print(len(player_pool.players))
 # print(player_pool)
 # exit()
 # Initialize Optimizer

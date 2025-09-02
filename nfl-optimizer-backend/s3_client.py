@@ -1,15 +1,16 @@
 import boto3
 import logging
-from env_keys import AWS_ACCESS_KEY, AWS_SECRET_KEY
+# from env_keys import AWS_ACCESS_KEY, AWS_SECRET_KEY
 import io
+from config import Config
 
 class S3Client:
     def __init__(self):
         # Initialize S3 client
         self.s3_client = boto3.client(
             's3',
-            aws_access_key_id=AWS_ACCESS_KEY,
-            aws_secret_access_key=AWS_SECRET_KEY
+            aws_access_key_id=Config.get(key='AWS_ACCESS_KEY'),
+            aws_secret_access_key=Config.get(key='AWS_SECRET_KEY')
         )
 
     def upload_file(self, season: int, week: int, filename: str) -> bool:

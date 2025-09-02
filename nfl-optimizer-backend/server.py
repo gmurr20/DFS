@@ -10,12 +10,13 @@ import optimizer as op_lib
 import online_backend as backend_lib
 from optimizer_api_pb2 import OptimizerRequest, GetPlayersResponse
 from functools import wraps
-from env_keys import SECRET_KEY, ADMIN_PASSWORD
+# from env_keys import SECRET_KEY, ADMIN_PASSWORD
+from config import Config
 
 NFL_TEAM_REQUIREMENTS = {'QB': [1, 1], 'RB': [
     2, 3], 'WR': [3, 4], 'TE': [1, 2], 'DST': [1, 1]}
 
-ADMIN_PASSWORD_HASH = hashlib.sha256(ADMIN_PASSWORD.encode()).hexdigest()
+ADMIN_PASSWORD_HASH = hashlib.sha256(Config.get('ADMIN_PASSWORD').encode()).hexdigest()
 TOKEN_EXPIRY_HOURS = 720
 
 
@@ -32,13 +33,13 @@ def verify_password(password, hashed):
 def generate_token(payload):
     """Generate a JWT token."""
     payload['exp'] = datetime.utcnow() + timedelta(hours=TOKEN_EXPIRY_HOURS)
-    return jwt.encode(payload, SECRET_KEY, algorithm='HS256')
+    return jwt.encode(payload, Config.get('SECRET_KEY'), algorithm='HS256')
 
 
 def verify_token(token):
     """Verify and decode a JWT token."""
     try:
-        payload = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
+        payload = jwt.decode(token, Config.get('SECRET_KEY'), algorithms=['HS256'])
         return payload
     except jwt.ExpiredSignatureError:
         return None
