@@ -1,3 +1,10 @@
-flask
-flask-cors
-protobuf
+boto3==1.40.21
+Flask==3.1.2
+flask_cors==6.0.1
+numpy==2.3.2
+pandas==2.3.2
+protobuf==6.32.0
+pulp==3.2.1
+PyJWT==2.10.1
+PyJWT==2.10.1
+python-dotenv==1.1.1
