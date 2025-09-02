@@ -1,5 +1,4 @@
 .DS_Store
-*_pb2.py
 *env_keys.py
 *env
 **/__pycache__/
