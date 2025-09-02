@@ -128,8 +128,8 @@ const NFLOptimizerFrontend = () => {
   // Optimizer settings
   const [randomness, setRandomness] = useState(0);
   const [numLineups, setNumLineups] = useState(1);
-  const [stack, setStack] = useState(false);
-  const [noOpposingDefense, setNoOpposingDefense] = useState(false);
+  const [stack, setStack] = useState(true);
+  const [noOpposingDefense, setNoOpposingDefense] = useState(true);
 
   // Check authentication on component mount
   useEffect(() => {

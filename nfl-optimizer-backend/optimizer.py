@@ -160,5 +160,6 @@ class Optimizer:
         response = OptimizerResponse()
         for team in unique_teams:
             response.lineups.append(team.to_lineup())
+        response.lineups.sort(key=lambda l: sum(p.sim_points for p in l.players), reverse=True)
         return response
         

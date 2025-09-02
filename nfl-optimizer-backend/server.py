@@ -1,14 +1,73 @@
 from flask import Flask, jsonify, request, Response
 from flask_cors import CORS
-from datetime import datetime
+from datetime import datetime, timedelta
 import logging
 import os
+import jwt
+import hashlib
 import optimizer as op_lib
 # import local_backend as backend_lib
 import online_backend as backend_lib
 from optimizer_api_pb2 import OptimizerRequest, GetPlayersResponse
+from functools import wraps
+from env_keys import SECRET_KEY, ADMIN_PASSWORD
 
-NFL_TEAM_REQUIREMENTS = {'QB': [1, 1], 'RB': [2,3], 'WR': [3,4], 'TE': [1,2], 'DST': [1,1]}
+NFL_TEAM_REQUIREMENTS = {'QB': [1, 1], 'RB': [
+    2, 3], 'WR': [3, 4], 'TE': [1, 2], 'DST': [1, 1]}
+
+ADMIN_PASSWORD_HASH = hashlib.sha256(ADMIN_PASSWORD.encode()).hexdigest()
+TOKEN_EXPIRY_HOURS = 720
+
+
+def hash_password(password):
+    """Hash a password for storing."""
+    return hashlib.sha256(password.encode()).hexdigest()
+
+
+def verify_password(password, hashed):
+    """Verify a password against its hash."""
+    return hashlib.sha256(password.encode()).hexdigest() == hashed
+
+
+def generate_token(payload):
+    """Generate a JWT token."""
+    payload['exp'] = datetime.utcnow() + timedelta(hours=TOKEN_EXPIRY_HOURS)
+    return jwt.encode(payload, SECRET_KEY, algorithm='HS256')
+
+
+def verify_token(token):
+    """Verify and decode a JWT token."""
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
+        return payload
+    except jwt.ExpiredSignatureError:
+        return None
+    except jwt.InvalidTokenError:
+        return None
+
+
+def token_required(f):
+    """Decorator to require valid JWT token for protected routes."""
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        auth_header = request.headers.get('Authorization')
+
+        if not auth_header:
+            return jsonify({'error': 'No authorization header provided'}), 401
+
+        try:
+            token = auth_header.split(' ')[1]  # Bearer <token>
+        except IndexError:
+            return jsonify({'error': 'Invalid authorization header format'}), 401
+
+        payload = verify_token(token)
+        if not payload:
+            return jsonify({'error': 'Invalid or expired token'}), 401
+
+        return f(*args, **kwargs)
+
+    return decorated
+
 
 def parse_protobuf_request(request_data, message_class):
     """Helper function to safely parse protobuf requests"""
@@ -20,6 +79,7 @@ def parse_protobuf_request(request_data, message_class):
         logger.error(f"Error parsing protobuf: {e}")
         return None, str(e)
 
+
 def create_protobuf_error_response(error_message, status_code=400):
     """Create standardized error response"""
     return Response(
@@ -27,6 +87,7 @@ def create_protobuf_error_response(error_message, status_code=400):
         status=status_code,
         mimetype='application/json'
     )
+
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for React frontend
@@ -41,11 +102,15 @@ app.config['HOST'] = os.getenv('FLASK_HOST', '0.0.0.0')
 app.config['PORT'] = int(os.getenv('FLASK_PORT', 8888))
 
 # Middleware for logging requests
+
+
 @app.before_request
 def log_request_info():
     logger.info(f"{request.method} {request.url} - {request.remote_addr}")
 
 # Routes
+
+
 @app.route('/', methods=['GET'])
 def home():
     """Health check endpoint"""
@@ -54,6 +119,7 @@ def home():
         'timestamp': datetime.utcnow().isoformat(),
         'status': 'healthy'
     })
+
 
 @app.route('/health', methods=['GET'])
 def health_check():
@@ -65,7 +131,59 @@ def health_check():
         'environment': os.getenv('FLASK_ENV', 'development')
     })
 
+
+@app.route('/login', methods=['POST'])
+def login():
+    """Authenticate user and return JWT token"""
+    try:
+        data = request.get_json()
+        if not data or 'password' not in data:
+            return jsonify({'error': 'Password is required'}), 400
+
+        password = data['password']
+
+        if not verify_password(password, ADMIN_PASSWORD_HASH):
+            logger.warning(f"Failed login attempt from {request.remote_addr}")
+            return jsonify({'error': 'Invalid password'}), 401
+
+        # Generate JWT token
+        token = generate_token(
+            {'authenticated': True, 'timestamp': datetime.utcnow().isoformat()})
+
+        logger.info(f"Successful login from {request.remote_addr}")
+        return jsonify({
+            'token': token,
+            'expires_in': TOKEN_EXPIRY_HOURS * 3600  # seconds
+        })
+
+    except Exception as e:
+        logger.error(f"Error in login: {e}")
+        return jsonify({'error': 'Internal server error'}), 500
+
+
+@app.route('/verify-token', methods=['POST'])
+def verify_token_endpoint():
+    """Verify if a JWT token is still valid"""
+    try:
+        data = request.get_json()
+        if not data or 'token' not in data:
+            return jsonify({'error': 'Token is required'}), 400
+
+        token = data['token']
+        payload = verify_token(token)
+
+        if payload:
+            return jsonify({'valid': True, 'payload': payload})
+        else:
+            return jsonify({'valid': False}), 401
+
+    except Exception as e:
+        logger.error(f"Error in verify-token: {e}")
+        return jsonify({'error': 'Internal server error'}), 500
+
+
 @app.route('/getPlayers', methods=['GET'])
+@token_required
 def get_players():
     try:
         player_pool = backend_lib.get_player_pool()
@@ -75,17 +193,25 @@ def get_players():
         logger.error(f"Error in getPlayers: {e}")
         return create_protobuf_error_response("Internal server error", 500)
 
+
 @app.route('/optimize', methods=['POST'])
+@token_required
 def optimize_lineup():
     try:
         # Get request data
         request_data = request.get_data()
         # Parse request
-        optimize_request, parse_error = parse_protobuf_request(request_data, OptimizerRequest)
+        optimize_request, parse_error = parse_protobuf_request(
+            request_data, OptimizerRequest)
         if parse_error:
             return create_protobuf_error_response(f"Invalid protobuf format: {parse_error}", 400)
-        
-        optimizer = op_lib.Optimizer(player_pool=backend_lib.get_player_pool(), spreads=backend_lib.get_spreads(), team_requirements=NFL_TEAM_REQUIREMENTS, num_players=9)
+
+        optimizer = op_lib.Optimizer(
+            player_pool=backend_lib.get_player_pool(),
+            spreads=backend_lib.get_spreads(),
+            team_requirements=NFL_TEAM_REQUIREMENTS,
+            num_players=9
+        )
 
         response = optimizer.optimize(optimize_request)
 
@@ -98,8 +224,10 @@ def optimize_lineup():
         logger.error(f"Error in optimize: {e}")
         return create_protobuf_error_response("Internal server error", 500)
 
+
 if __name__ == '__main__':
-    logger.info(f"Starting Flask server on {app.config['HOST']}:{app.config['PORT']}")
+    logger.info(
+        f"Starting Flask server on {app.config['HOST']}:{app.config['PORT']}")
     app.run(
         host=app.config['HOST'],
         port=app.config['PORT'],
