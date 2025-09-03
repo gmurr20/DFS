@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Lock, X, Users, ChevronUp, ChevronDown, Eye, EyeOff } from 'lucide-react';
+import { Lock, X, ChevronUp, ChevronDown, Eye, EyeOff } from 'lucide-react';
 
 import { GetPlayersResponse, OptimizerRequest, OptimizerResponse } from './compiled.js';
 
@@ -53,9 +53,14 @@ const LoginForm = ({ onLogin, error }) => {
       <div className="max-w-md w-full">
         <div className="bg-white rounded-lg shadow-lg p-8">
           <div className="text-center mb-8">
-            <Users className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+            <div className="text-center mb-8">
+              <img
+                src="./assets/logo.png"
+                alt="Optimizer Logo"
+                className="w-40 h-40 mx-auto mb-4 rounded-lg object-contain"
+              />
+            </div>
             <h1 className="text-2xl font-bold text-gray-900 mb-2">NFL Optimizer</h1>
-            <p className="text-gray-600">Enter password to access the optimizer</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -96,12 +101,6 @@ const LoginForm = ({ onLogin, error }) => {
               {isLoading ? 'Logging in...' : 'Access Optimizer'}
             </button>
           </form>
-
-          <div className="mt-6 text-center">
-            <p className="text-xs text-gray-500">
-              Contact your administrator if you don't have access
-            </p>
-          </div>
         </div>
       </div>
     </div>
@@ -703,11 +702,17 @@ const NFLOptimizerFrontend = () => {
         <div className="bg-white rounded-lg shadow-lg">
           <div className="border-b border-gray-200 p-6">
             <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-3">
-                <Users className="w-8 h-8 text-blue-600" />
+              <div className="flex items-start space-x-3">
                 <div>
-                  <h1 className="text-3xl font-bold text-gray-900">NFL Daily Fantasy Optimizer</h1>
-                  <p className="text-gray-600 mt-1">Lock or exclude players to customize your lineup optimization</p>
+                  <img
+                    src="./assets/logo.png"
+                    alt="Optimizer Logo"
+                    className="w-20 h-20 rounded-lg object-contain"
+                  />
+                </div>
+                <div>
+                  <h1 className="text-3xl font-bold text-gray-900">DFS Optimizer</h1>
+                  <p className="text-gray-600 mt-1">It's milly maker time</p>
                 </div>
               </div>
               <button
