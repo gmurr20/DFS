@@ -1,6 +1,7 @@
 import json
 from team_matchup_pb2 import TeamMatchup, WeekMatchups
 from player_pb2 import Player, Players
+import pandas as pd
 
 def get_projected_total(over_under: float, spread: float):
     return (over_under - spread) / 2.0
@@ -43,16 +44,36 @@ def create_spreads_proto(json_data: json):
         week_matchups.matchups.append(away_team)
     return week_matchups
     
+# This is a hack to only grab main slate games
+def is_sunday_in_time_range_pandas(date_string, time_string):
+    # Parse date
+    date = pd.to_datetime(date_string, format='%Y%m%d')
+    
+    # Parse time (pandas handles 12-hour format well)
+    time_normalized = time_string.upper().replace('P', 'PM').replace('A', 'AM')
+    time_obj = pd.to_datetime(time_normalized, format='%I:%M%p').time()
+    
+    # Check conditions
+    is_sunday = date.day_name() == 'Sunday'
+    is_in_range = pd.to_datetime('1:00 PM', format='%I:%M %p').time() <= time_obj <= pd.to_datetime('5:00 PM', format='%I:%M %p').time()
+    
+    return is_sunday and is_in_range
 
 def create_player_pool(matchups: json, ff_projections: json, salaries_json: json) -> Players:
     team_to_opposing_team = {}
     for matchup in matchups["body"]:
+        is_main_slate = is_sunday_in_time_range_pandas(matchup["gameDate"], matchup["gameTime"])
+        if not is_main_slate:
+            continue
         team_to_opposing_team[matchup["away"]] = matchup["home"]
         team_to_opposing_team[matchup["home"]] = matchup["away"]
 
     # Grab player pool and salaries
     player_dict = {}
     for player in salaries_json["body"]["draftkings"]:
+        # Skip player if they're not on main slate
+        if player["team"] not in team_to_opposing_team:
+            continue
         player_proto = Player()
         player_proto.id = player["playerID"] if "playerID" in player else player["team"]
         player_proto.name = player["longName"]
