@@ -115,8 +115,8 @@ const NFLOptimizerFrontend = () => {
     RB: [],
     WR: [],
     TE: [],
+    FLEX: [], // Virtual position for flex-eligible players
     DST: [],
-    FLEX: [] // Virtual position for flex-eligible players
   });
 
   const [loading, setLoading] = useState(true);
@@ -191,8 +191,8 @@ const NFLOptimizerFrontend = () => {
       RB: [],
       WR: [],
       TE: [],
+      FLEX: [],
       DST: [],
-      FLEX: []
     });
   };
 
@@ -252,8 +252,8 @@ const NFLOptimizerFrontend = () => {
           RB: [],
           WR: [],
           TE: [],
+          FLEX: [], // Will be populated separatey
           DST: [],
-          FLEX: [] // Will be populated separatey
         };
 
         object.players.players.forEach(player => {
@@ -294,7 +294,7 @@ const NFLOptimizerFrontend = () => {
   }, [isAuthenticated]);
 
   const [selectedPosition, setSelectedPosition] = useState('QB');
-  const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
+  const [sortConfig, setSortConfig] = useState({ key: 'salary', direction: 'desc' });
   const [currentPage, setCurrentPage] = useState(1);
   const PLAYERS_PER_PAGE = 50;
 
@@ -507,6 +507,17 @@ const NFLOptimizerFrontend = () => {
     return (projection / salary * 1000);
   };
 
+  // Shortens the player name on mobile
+  const formatPlayerNameMobile = (fullName) => {
+    const nameParts = fullName.split(' ');
+    if (nameParts.length >= 2) {
+      const firstName = nameParts[0];
+      const lastInitial = nameParts[nameParts.length - 1].charAt(0);
+      return `${firstName} ${lastInitial}.`;
+    }
+    return fullName;
+  };
+
   // Function to handle lineup optimization
   const handleOptimizeLineup = async () => {
     try {
@@ -697,36 +708,36 @@ const NFLOptimizerFrontend = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
+    <div className="min-h-screen bg-gray-50 p-3 md:p-6">
       <div className="max-w-7xl mx-auto">
         <div className="bg-white rounded-lg shadow-lg">
-          <div className="border-b border-gray-200 p-6">
+          <div className="border-b border-gray-200 p-3 md:p-6">
             <div className="flex items-center justify-between">
               <div className="flex items-start space-x-3">
                 <div>
                   <img
                     src="./assets/logo.png"
                     alt="Optimizer Logo"
-                    className="w-20 h-20 rounded-lg object-contain"
+                    className="w-12 md:w-20 h-12 md:h-20 rounded-lg object-contain"
                   />
                 </div>
                 <div>
-                  <h1 className="text-3xl font-bold text-gray-900">DFS Optimizer</h1>
-                  <p className="text-gray-600 mt-1">It's milly maker time</p>
+                  <h1 className="text-xl md:text-3xl font-bold text-gray-900">DFS Optimizer</h1>
+                  <p className="text-gray-600 mt-1 text-sm md:text-base">It's milly maker time</p>
                 </div>
               </div>
               <button
                 onClick={handleLogout}
-                className="bg-gray-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-gray-700 transition-colors"
+                className="bg-gray-600 text-white px-3 md:px-4 py-2 rounded text-xs md:text-sm font-medium hover:bg-gray-700 transition-colors"
               >
                 Logout
               </button>
             </div>
 
             {/* Optimizer Settings */}
-            <div className="mt-6 bg-gray-50 rounded-lg p-4">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Optimizer Settings</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="mt-4 md:mt-6 bg-gray-50 rounded-lg p-3 md:p-4">
+              <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4">Optimizer Settings</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                 {/* Randomness Slider */}
                 <div>
                   <label htmlFor="randomness" className="block text-sm font-medium text-gray-700 mb-2">
@@ -802,10 +813,10 @@ const NFLOptimizerFrontend = () => {
             </div>
 
             {/* Summary and Controls */}
-            <div className="mt-6">
-              <div className="bg-blue-50 rounded-lg p-4 mb-6">
-                <div className="flex flex-wrap items-center justify-between gap-4">
-                  <div className="flex items-center space-x-6">
+            <div className="mt-4 md:mt-6">
+              <div className="bg-blue-50 rounded-lg p-3 md:p-4 mb-4 md:mb-6">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                  <div className="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-6">
                     <div className="text-sm">
                       <span className="font-semibold text-blue-800">Total Locked:</span>
                       <span className="ml-1 text-blue-700">{getAllLockedPlayers().length}/{MAX_TOTAL_LOCKED}</span>
@@ -831,13 +842,13 @@ const NFLOptimizerFrontend = () => {
               </div>
 
               {/* Player Lists */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
                 {/* Locked Players */}
-                <div className="bg-green-50 rounded-lg p-4">
+                <div className="bg-green-50 rounded-lg p-3 md:p-4">
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center space-x-2">
                       <Lock className="w-5 h-5 text-green-600" />
-                      <h3 className="text-lg font-semibold text-green-800">Locked Players</h3>
+                      <h3 className="text-base md:text-lg font-semibold text-green-800">Locked Players</h3>
                       <span className="bg-green-200 text-green-800 text-xs font-medium px-2 py-1 rounded-full">
                         {getAllLockedPlayers().length}
                       </span>
@@ -851,12 +862,12 @@ const NFLOptimizerFrontend = () => {
                         const position = getCurrentPlayerPosition(player.id);
                         return (
                           <div key={player.id} className="flex items-center justify-between bg-white rounded px-3 py-2">
-                            <div className="flex items-center space-x-2">
+                            <div className="flex items-center space-x-2 min-w-0 flex-1">
                               <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded">
                                 {position}
                               </span>
-                              <span className="text-sm font-medium text-gray-900">{player.name}</span>
-                              <span className="text-xs text-gray-500">({player.team})</span>
+                              <span className="text-sm font-medium text-gray-900 truncate">{player.name}</span>
+                              <span className="text-xs text-gray-500 hidden sm:inline">({player.team})</span>
                             </div>
                             <div className="flex items-center space-x-2">
                               <span className="text-xs text-gray-600">${player.salary.toLocaleString()}</span>
@@ -876,11 +887,11 @@ const NFLOptimizerFrontend = () => {
                 </div>
 
                 {/* Excluded Players */}
-                <div className="bg-red-50 rounded-lg p-4">
+                <div className="bg-red-50 rounded-lg p-3 md:p-4">
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center space-x-2">
                       <X className="w-5 h-5 text-red-600" />
-                      <h3 className="text-lg font-semibold text-red-800">Excluded Players</h3>
+                      <h3 className="text-base md:text-lg font-semibold text-red-800">Excluded Players</h3>
                       <span className="bg-red-200 text-red-800 text-xs font-medium px-2 py-1 rounded-full">
                         {Object.keys(players).filter(pos => pos !== 'FLEX').map(position =>
                           players[position].filter(p => p.status === 'excluded')
@@ -898,12 +909,12 @@ const NFLOptimizerFrontend = () => {
                         const position = getCurrentPlayerPosition(player.id);
                         return (
                           <div key={player.id} className="flex items-center justify-between bg-white rounded px-3 py-2">
-                            <div className="flex items-center space-x-2">
+                            <div className="flex items-center space-x-2 min-w-0 flex-1">
                               <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded">
                                 {position}
                               </span>
-                              <span className="text-sm font-medium text-gray-900">{player.name}</span>
-                              <span className="text-xs text-gray-500">({player.team})</span>
+                              <span className="text-sm font-medium text-gray-900 truncate">{player.name}</span>
+                              <span className="text-xs text-gray-500 hidden sm:inline">({player.team})</span>
                             </div>
                             <div className="flex items-center space-x-2">
                               <span className="text-xs text-gray-600">${player.salary.toLocaleString()}</span>
@@ -924,11 +935,11 @@ const NFLOptimizerFrontend = () => {
               </div>
 
               {/* Optimize Lineup Button */}
-              <div className="mt-6 flex justify-center">
+              <div className="mt-4 md:mt-6 flex justify-center">
                 <button
                   onClick={handleOptimizeLineup}
                   disabled={optimizing}
-                  className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors text-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
+                  className="w-full md:w-auto bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors text-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                 >
                   {optimizing && (
                     <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
@@ -939,9 +950,9 @@ const NFLOptimizerFrontend = () => {
 
               {/* Optimized Lineup Display */}
               {optimizedLineup && (
-                <div className="mt-6 bg-purple-50 rounded-lg p-4">
+                <div className="mt-4 md:mt-6 bg-purple-50 rounded-lg p-3 md:p-4">
                   <div className="mb-4">
-                    <h3 className="text-lg font-semibold text-purple-800">Optimized Lineup</h3>
+                    <h3 className="text-base md:text-lg font-semibold text-purple-800">Optimized Lineup</h3>
                   </div>
 
                   {optimizedLineup.lineups && optimizedLineup.lineups.length > 0 ? (
@@ -955,20 +966,22 @@ const NFLOptimizerFrontend = () => {
                           <div className="space-y-1.5 mb-4">
                             {lineup.players && lineup.players.map((player, playerIndex) => (
                               <div key={`${player.position}-${playerIndex}`} className="flex items-center justify-between bg-gray-50 rounded px-2 py-1.5">
-                                <div className="flex items-center space-x-1.5">
+                                <div className="flex items-center space-x-1.5 min-w-0 flex-1">
                                   <span className="bg-purple-100 text-purple-800 text-xs font-medium px-1.5 py-0.5 rounded">
                                     {player.position}
                                   </span>
-                                  <div>
-                                    <span className="text-xs font-medium text-gray-900">
-                                      {player.name} <span className="text-gray-500">({player.team})</span>
+                                  <div className="min-w-0">
+                                    <span className="text-xs font-medium text-gray-900 truncate block">
+                                      {player.name} ({player.team})
                                     </span>
                                   </div>
                                 </div>
                                 <div className="flex flex-col items-end">
                                   <span className="text-xs text-green-700 font-medium">${player.salary?.toLocaleString()}</span>
                                   <div className="text-xs">
-                                    <div className="text-gray-600">Base: {player.points?.toFixed(2)}</div>
+                                    <span className="hidden md:inline">
+                                      <div className="text-gray-600">Base: {player.points?.toFixed(2)}</div>
+                                    </span>
                                     <div className="text-purple-700 font-bold">Sim: {player.simPoints?.toFixed(2)}</div>
                                   </div>
                                 </div>
@@ -1011,8 +1024,28 @@ const NFLOptimizerFrontend = () => {
             </div>
           </div>
 
-          <div className="flex">
-            <div className="w-48 border-r border-gray-200 p-4">
+          <div className="flex flex-col lg:flex-row">
+            {/* Mobile Position Selector - Show above table on mobile */}
+            <div className="lg:hidden border-b border-gray-200 p-3">
+              <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Positions</h3>
+              <div className="flex flex-wrap gap-2">
+                {positions.map(position => (
+                  <button
+                    key={position}
+                    onClick={() => handlePositionChange(position)}
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${selectedPosition === position
+                      ? 'bg-blue-100 text-blue-700'
+                      : 'text-gray-600 hover:bg-gray-100 border border-gray-300'
+                      }`}
+                  >
+                    {position} ({players[position].length})
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Desktop Sidebar */}
+            <div className="hidden lg:block w-48 border-r border-gray-200 p-4">
               <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-4">Positions</h3>
               <nav className="space-y-1">
                 {positions.map(position => (
@@ -1029,11 +1062,12 @@ const NFLOptimizerFrontend = () => {
                 ))}
               </nav>
             </div>
+
             {/* Player Table */}
-            <div className="flex-1 p-6">
-              <div className="mb-6">
-                <h2 className="text-2xl font-bold text-gray-900">{selectedPosition} Players</h2>
-                <div className="flex justify-between items-center mt-4">
+            <div className="flex-1 p-3 md:p-6">
+              <div className="mb-4 md:mb-6">
+                <h2 className="text-xl md:text-2xl font-bold text-gray-900">{selectedPosition} Players</h2>
+                <div className="flex flex-col md:flex-row md:justify-between md:items-center mt-4 gap-4">
                   <div className="text-sm text-gray-600">
                     Showing {((currentPage - 1) * PLAYERS_PER_PAGE) + 1} to {Math.min(currentPage * PLAYERS_PER_PAGE, players[selectedPosition].length)} of {players[selectedPosition].length} players
                   </div>
@@ -1059,12 +1093,12 @@ const NFLOptimizerFrontend = () => {
                 </div>
               </div>
 
-              <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 rounded-lg">
+              <div className="overflow-x-auto shadow ring-1 ring-black ring-opacity-5 rounded-lg">
                 <table className="min-w-full divide-y divide-gray-300">
                   <thead className="bg-gray-50">
                     <tr>
                       <th
-                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group"
+                        className="px-2 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group"
                         onClick={() => handleSort('name')}
                       >
                         <div className="flex items-center justify-between">
@@ -1073,7 +1107,7 @@ const NFLOptimizerFrontend = () => {
                         </div>
                       </th>
                       <th
-                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group"
+                        className="px-2 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group"
                         onClick={() => handleSort('team')}
                       >
                         <div className="flex items-center justify-between">
@@ -1082,7 +1116,7 @@ const NFLOptimizerFrontend = () => {
                         </div>
                       </th>
                       <th
-                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group"
+                        className="px-2 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group"
                         onClick={() => handleSort('salary')}
                       >
                         <div className="flex items-center justify-between">
@@ -1091,16 +1125,16 @@ const NFLOptimizerFrontend = () => {
                         </div>
                       </th>
                       <th
-                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group"
+                        className="px-2 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group"
                         onClick={() => handleSort('projection')}
                       >
                         <div className="flex items-center justify-between">
-                          Projection
+                          Proj
                           {getSortIcon('projection')}
                         </div>
                       </th>
                       <th
-                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group"
+                        className="px-2 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group sm:table-cell"
                         onClick={() => handleSort('value')}
                       >
                         <div className="flex items-center justify-between">
@@ -1108,7 +1142,7 @@ const NFLOptimizerFrontend = () => {
                           {getSortIcon('value')}
                         </div>
                       </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">
+                      <th className="px-2 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">
                         Actions
                       </th>
                     </tr>
@@ -1119,14 +1153,15 @@ const NFLOptimizerFrontend = () => {
                         key={player.id}
                         className={`transition-colors ${getStatusColor(player.status)}`}
                       >
-                        <td className="px-6 py-4 whitespace-nowrap">
+                        <td className="text-left px-2 md:px-6 py-4 whitespace-nowrap">
                           <div className="flex items-center">
                             <div className="flex-shrink-0 mr-2">
                               {getStatusIcon(player.status)}
                             </div>
-                            <div>
-                              <div className="text-sm font-medium text-gray-900">
-                                {player.name}
+                            <div className="min-w-0">
+                              <div className="text-sm font-medium text-gray-900 truncate">
+                                <span className="md:hidden">{formatPlayerNameMobile(player.name)}</span>
+                                <span className="hidden md:inline">{player.name}</span>
                                 {selectedPosition === 'FLEX' && (
                                   <span className="ml-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
                                     {getCurrentPlayerPosition(player.id)}
@@ -1136,19 +1171,22 @@ const NFLOptimizerFrontend = () => {
                             </div>
                           </div>
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                        <td className="text-left px-2 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                           {player.team}
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                          ${player.salary.toLocaleString()}
+                        <td className="text-left px-2 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                          <span className="md:hidden">${(player.salary / 1000).toFixed(1)}K</span>
+                          <span className="hidden md:inline">${player.salary.toLocaleString()}</span>
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                          {(player.projection || 0).toFixed(2)}
+                        <td className="text-left px-2 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                          <span className="md:hidden">{(player.projection || 0).toFixed(1)}</span>
+                          <span className="hidden md:inline">{(player.projection || 0).toFixed(2)}</span>
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                          {calculateValue(player.projection, player.salary).toFixed(1)}
+                        <td className="text-left px-2 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 sm:table-cell">
+                          <span className="md:hidden">{calculateValue(player.projection, player.salary).toFixed(1)}</span>
+                          <span className="hidden md:inline">{calculateValue(player.projection, player.salary).toFixed(2)}</span>
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm space-x-2">
+                        <td className="text-left px-2 md:px-6 py-4 whitespace-nowrap text-sm space-x-1 md:space-x-2">
                           <button
                             onClick={() => updatePlayerStatus(player.id,
                               player.status === 'locked' ? 'available' : 'locked'
@@ -1158,7 +1196,7 @@ const NFLOptimizerFrontend = () => {
                               getAllLockedPlayers().length >= MAX_TOTAL_LOCKED ||
                               calculateTotalSalary(getAllLockedPlayers(), player.id) > MAX_SALARY_CAP
                             )}
-                            className={`inline-flex items-center px-3 py-1 rounded-md text-xs font-medium transition-colors ${player.status === 'locked'
+                            className={`inline-flex items-center px-2 md:px-3 py-1 rounded-md text-xs font-medium transition-colors ${player.status === 'locked'
                               ? 'bg-green-100 text-green-700 hover:bg-green-200'
                               : (!canLockPlayerInPosition(getCurrentPlayerPosition(player.id) || selectedPosition === 'FLEX' ? getCurrentPlayerPosition(player.id) : selectedPosition).allowed ||
                                 getAllLockedPlayers().length >= MAX_TOTAL_LOCKED ||
@@ -1168,19 +1206,19 @@ const NFLOptimizerFrontend = () => {
                               }`}
                           >
                             <Lock className="w-3 h-3 mr-1" />
-                            {player.status === 'locked' ? 'Locked' : 'Lock'}
+                            <span className="hidden sm:inline">{player.status === 'locked' ? 'Locked' : 'Lock'}</span>
                           </button>
                           <button
                             onClick={() => updatePlayerStatus(player.id,
                               player.status === 'excluded' ? 'available' : 'excluded'
                             )}
-                            className={`inline-flex items-center px-3 py-1 rounded-md text-xs font-medium transition-colors ${player.status === 'excluded'
+                            className={`inline-flex items-center px-2 md:px-3 py-1 rounded-md text-xs font-medium transition-colors ${player.status === 'excluded'
                               ? 'bg-red-100 text-red-700 hover:bg-red-200'
                               : 'bg-gray-100 text-gray-700 hover:bg-red-100 hover:text-red-700'
                               }`}
                           >
                             <X className="w-3 h-3 mr-1" />
-                            {player.status === 'excluded' ? 'Excluded' : 'Exclude'}
+                            <span className="hidden sm:inline">{player.status === 'excluded' ? 'Excluded' : 'Exclude'}</span>
                           </button>
                         </td>
                       </tr>
