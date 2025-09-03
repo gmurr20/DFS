@@ -157,6 +157,8 @@ class Optimizer:
                 randomness += .05
                 continue
             unique_teams.add(potential_team)
+            if randomness == 0.0:
+                randomness += .05
         response = OptimizerResponse()
         for team in unique_teams:
             response.lineups.append(team.to_lineup())
