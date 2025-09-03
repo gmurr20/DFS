@@ -825,6 +825,100 @@ const NFLOptimizerFrontend = () => {
                 </div>
               </div>
 
+              {/* Player Lists */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {/* Locked Players */}
+                <div className="bg-green-50 rounded-lg p-4">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center space-x-2">
+                      <Lock className="w-5 h-5 text-green-600" />
+                      <h3 className="text-lg font-semibold text-green-800">Locked Players</h3>
+                      <span className="bg-green-200 text-green-800 text-xs font-medium px-2 py-1 rounded-full">
+                        {getAllLockedPlayers().length}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="space-y-2 max-h-48 overflow-y-auto">
+                    {getAllLockedPlayers().length === 0 ? (
+                      <p className="text-green-600 text-sm italic">No players locked</p>
+                    ) : (
+                      getAllLockedPlayers().map((player) => {
+                        const position = getCurrentPlayerPosition(player.id);
+                        return (
+                          <div key={player.id} className="flex items-center justify-between bg-white rounded px-3 py-2">
+                            <div className="flex items-center space-x-2">
+                              <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded">
+                                {position}
+                              </span>
+                              <span className="text-sm font-medium text-gray-900">{player.name}</span>
+                              <span className="text-xs text-gray-500">({player.team})</span>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                              <span className="text-xs text-gray-600">${player.salary.toLocaleString()}</span>
+                              <button
+                                onClick={() => updatePlayerStatus(player.id, 'available')}
+                                className="text-red-600 hover:text-red-800 text-xs"
+                                title="Remove lock"
+                              >
+                                <X className="w-4 h-4" />
+                              </button>
+                            </div>
+                          </div>
+                        );
+                      })
+                    )}
+                  </div>
+                </div>
+
+                {/* Excluded Players */}
+                <div className="bg-red-50 rounded-lg p-4">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center space-x-2">
+                      <X className="w-5 h-5 text-red-600" />
+                      <h3 className="text-lg font-semibold text-red-800">Excluded Players</h3>
+                      <span className="bg-red-200 text-red-800 text-xs font-medium px-2 py-1 rounded-full">
+                        {Object.keys(players).filter(pos => pos !== 'FLEX').map(position =>
+                          players[position].filter(p => p.status === 'excluded')
+                        ).flat().length}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="space-y-2 max-h-48 overflow-y-auto">
+                    {Object.values(players).flat().filter(p => p.status === 'excluded').length === 0 ? (
+                      <p className="text-red-600 text-sm italic">No players excluded</p>
+                    ) : (
+                      Object.keys(players).filter(pos => pos !== 'FLEX').map(position =>
+                        players[position].filter(p => p.status === 'excluded')
+                      ).flat().map((player) => {
+                        const position = getCurrentPlayerPosition(player.id);
+                        return (
+                          <div key={player.id} className="flex items-center justify-between bg-white rounded px-3 py-2">
+                            <div className="flex items-center space-x-2">
+                              <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded">
+                                {position}
+                              </span>
+                              <span className="text-sm font-medium text-gray-900">{player.name}</span>
+                              <span className="text-xs text-gray-500">({player.team})</span>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                              <span className="text-xs text-gray-600">${player.salary.toLocaleString()}</span>
+                              <button
+                                onClick={() => updatePlayerStatus(player.id, 'available')}
+                                className="text-green-600 hover:text-green-800 text-xs"
+                                title="Remove exclusion"
+                              >
+                                <X className="w-4 h-4" />
+                              </button>
+                            </div>
+                          </div>
+                        );
+                      })
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              {/* Optimize Lineup Button */}
               <div className="mt-6 flex justify-center">
                 <button
                   onClick={handleOptimizeLineup}
