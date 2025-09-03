@@ -207,13 +207,16 @@ def optimize_lineup():
         if parse_error:
             return create_protobuf_error_response(f"Invalid protobuf format: {parse_error}", 400)
 
+        # Add constraints to request
+        optimize_request.randomness = max(min(optimize_request.randomness, 1.0), 0.0)
+        optimize_request.num_lineups = min(max(optimize_request.num_lineups, 1), 10)
+
         optimizer = op_lib.Optimizer(
             player_pool=backend_lib.get_player_pool(),
             spreads=backend_lib.get_spreads(),
             team_requirements=NFL_TEAM_REQUIREMENTS,
             num_players=9
         )
-
         response = optimizer.optimize(optimize_request)
 
         logger.info(f"Responding with OptimizeResponse {response}")
