@@ -87,7 +87,7 @@ class Optimizer:
         for lock in request.player_id_locks:
             prob += player_vars[lock] == 1, f'{player_vars[lock]} player lock'
         for exclude in request.player_id_excludes:
-            prob +=  player_vars[exclude] == 0, f'{player_vars[lock]} player exclude'
+            prob +=  player_vars[exclude] == 0, f'{player_vars[exclude]} player exclude'
         if request.stack:
             # Get all QBs
             all_qbs = player_pool[player_pool['position'] == 'QB']
