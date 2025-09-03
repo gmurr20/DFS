@@ -72,7 +72,7 @@ def main(use_local: bool):
     # Grab Projections
     ff_projections = None
     if not use_local:
-        conn.request("GET", f"/getNFLProjections?week={week}&twoPointConversions=2&passYards=.04&passAttempts=0&passTD=4&passCompletions=0&passInterceptions=-1&pointsPerReception=1&carries=0&rushYards=.1&rushTD=6&fumbles=-1&receivingYards=.1&receivingTD=6&targets=0&fgMade=3&fgMissed=-1&xpMade=1&xpMissed=-1", headers=headers)
+        conn.request("GET", f"/getNFLProjections?week={week}&fantasyPoints=true&twoPointConversions=2&passYards=.04&passAttempts=0&passTD=4&passCompletions=0&passInterceptions=-1&pointsPerReception=1&carries=0&rushYards=.1&rushTD=6&fumbles=-1&receivingYards=.1&receivingTD=6&targets=0&defTD=6&xpMade=1&xpMissed=-1&fgMade=3&fgMissed=-1", headers=headers)
         res = conn.getresponse()
         data = res.read()
         ff_projections = json.loads(data.decode("utf-8"))

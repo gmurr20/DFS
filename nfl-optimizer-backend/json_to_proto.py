@@ -43,7 +43,48 @@ def create_spreads_proto(json_data: json):
         week_matchups.matchups.append(home_team)
         week_matchups.matchups.append(away_team)
     return week_matchups
+
+def calculate_draftkings_dst_points(stats):
+    # DraftKings scoring values
+    SACK_POINTS = 1
+    INTERCEPTION_POINTS = 2
+    FUMBLE_RECOVERY_POINTS = 2
+    DEFENSIVE_TD_POINTS = 6
+    RETURN_TD_POINTS = 6
+    SAFETY_POINTS = 2
+    BLOCKED_KICK_POINTS = 2
     
+    # Points allowed scoring
+    def points_allowed_score(pts_against):
+        if pts_against == 0:
+            return 10
+        elif 1 <= pts_against <= 6:
+            return 7
+        elif 7 <= pts_against <= 13:
+            return 4
+        elif 14 <= pts_against <= 20:
+            return 1
+        elif 21 <= pts_against <= 27:
+            return 0
+        elif 28 <= pts_against <= 34:
+            return -1
+        else:  # 35+
+            return -4
+    
+    # Calculate points for each category
+    sack_pts = float(stats["sacks"]) * SACK_POINTS
+    int_pts = float(stats["interceptions"]) * INTERCEPTION_POINTS
+    fumble_pts = float(stats["fumbleRecoveries"]) * FUMBLE_RECOVERY_POINTS
+    def_td_pts = float(stats["defTD"]) * DEFENSIVE_TD_POINTS
+    return_td_pts = float(stats["returnTD"]) * RETURN_TD_POINTS
+    safety_pts = float(stats["safeties"]) * SAFETY_POINTS
+    block_kick_pts = float(stats["blockKick"]) * BLOCKED_KICK_POINTS
+    pts_allowed_pts = points_allowed_score(float(stats["ptsAgainst"]))
+    
+    # Total fantasy points
+    return (sack_pts + int_pts + fumble_pts + def_td_pts + 
+                   return_td_pts + safety_pts + block_kick_pts + pts_allowed_pts)
+
 # This is a hack to only grab main slate games
 def is_sunday_in_time_range_pandas(date_string, time_string):
     # Parse date
@@ -94,7 +135,7 @@ def create_player_pool(matchups: json, ff_projections: json, salaries_json: json
         if team_id not in player_dict:
             # print(f"Can't find DST {team_id}")
             continue
-        player_dict[team_id].points = float(dst["fantasyPointsDefault"])
+        player_dict[team_id].points = calculate_draftkings_dst_points(dst)
 
     # Clean data to player pool
     player_pool = Players()
