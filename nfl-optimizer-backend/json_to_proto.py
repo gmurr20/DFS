@@ -2,6 +2,7 @@ import json
 from team_matchup_pb2 import TeamMatchup, WeekMatchups
 from player_pb2 import Player, Players
 import pandas as pd
+from ff_overrides import player_to_pts_override
 
 def get_projected_total(over_under: float, spread: float):
     return (over_under - spread) / 2.0
@@ -130,6 +131,8 @@ def create_player_pool(matchups: json, ff_projections: json, salaries_json: json
             # print(f"Can't find '{player["longName"]}'")
             continue
         player_dict[id].points = float(player["fantasyPointsDefault"]["PPR"])
+        if id in player_to_pts_override:
+            player_dict[id].points = player_to_pts_override[id]
     for id, dst in ff_projections["body"]["teamDefenseProjections"].items():
         team_id = dst["teamAbv"]
         if team_id not in player_dict:
