@@ -774,6 +774,7 @@ $root.GetPlayersResponse = (function() {
      * @exports IGetPlayersResponse
      * @interface IGetPlayersResponse
      * @property {IPlayers|null} [players] GetPlayersResponse players
+     * @property {string|null} [week] GetPlayersResponse week
      */
 
     /**
@@ -798,6 +799,14 @@ $root.GetPlayersResponse = (function() {
      * @instance
      */
     GetPlayersResponse.prototype.players = null;
+
+    /**
+     * GetPlayersResponse week.
+     * @member {string} week
+     * @memberof GetPlayersResponse
+     * @instance
+     */
+    GetPlayersResponse.prototype.week = "";
 
     /**
      * Creates a new GetPlayersResponse instance using the specified properties.
@@ -825,6 +834,8 @@ $root.GetPlayersResponse = (function() {
             writer = $Writer.create();
         if (message.players != null && Object.hasOwnProperty.call(message, "players"))
             $root.Players.encode(message.players, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.week != null && Object.hasOwnProperty.call(message, "week"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.week);
         return writer;
     };
 
@@ -863,6 +874,10 @@ $root.GetPlayersResponse = (function() {
             switch (tag >>> 3) {
             case 1: {
                     message.players = $root.Players.decode(reader, reader.uint32());
+                    break;
+                }
+            case 2: {
+                    message.week = reader.string();
                     break;
                 }
             default:
@@ -905,6 +920,9 @@ $root.GetPlayersResponse = (function() {
             if (error)
                 return "players." + error;
         }
+        if (message.week != null && message.hasOwnProperty("week"))
+            if (!$util.isString(message.week))
+                return "week: string expected";
         return null;
     };
 
@@ -925,6 +943,8 @@ $root.GetPlayersResponse = (function() {
                 throw TypeError(".GetPlayersResponse.players: object expected");
             message.players = $root.Players.fromObject(object.players);
         }
+        if (object.week != null)
+            message.week = String(object.week);
         return message;
     };
 
@@ -941,10 +961,14 @@ $root.GetPlayersResponse = (function() {
         if (!options)
             options = {};
         var object = {};
-        if (options.defaults)
+        if (options.defaults) {
             object.players = null;
+            object.week = "";
+        }
         if (message.players != null && message.hasOwnProperty("players"))
             object.players = $root.Players.toObject(message.players, options);
+        if (message.week != null && message.hasOwnProperty("week"))
+            object.week = message.week;
         return object;
     };
 

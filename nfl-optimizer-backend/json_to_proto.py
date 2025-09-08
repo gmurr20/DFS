@@ -3,6 +3,7 @@ from team_matchup_pb2 import TeamMatchup, WeekMatchups
 from player_pb2 import Player, Players
 import pandas as pd
 from ff_overrides import player_to_pts_override
+import logging
 
 def get_projected_total(over_under: float, spread: float):
     return (over_under - spread) / 2.0
@@ -20,11 +21,19 @@ def create_spreads_proto(json_data: json):
         for book in books:
             if book not in spread_map:
                 continue
+            if 'totalOver' not in spread_map[book]:
+                continue
+            if 'homeTeamSpread' not in spread_map[book]:
+                continue
+            if spread_map['homeTeamMLOdds'] == 'N/A':
+                continue
             over_under_sum += float(spread_map[book]['totalOver'])
             home_team_spread_sum += float(spread_map[book]['homeTeamSpread']) if spread_map[book]['homeTeamSpread'] != 'PK' else 0
             book_count += 1
-        over_under = over_under_sum / book_count
-        home_team_spread = home_team_spread_sum / book_count
+        if book_count == 0:
+            logging.error(f'{game} has no spread yet. Default to 44')
+        over_under = over_under_sum / book_count if book_count != 0 else 44
+        home_team_spread = home_team_spread_sum / book_count if book_count != 0 else -.5
         home_team = TeamMatchup()
         home_team.team = home
         home_team.opposing_team = away

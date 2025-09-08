@@ -22,6 +22,20 @@ class S3Client:
             logging.error(f'Error uploading with exception {e}')
             return False
     
+    def directory_exists(self, season: int, week: int) -> bool:
+        try:
+            prefix = f'{season}/week{week}/'
+            response = self.s3_client.list_objects_v2(
+                Bucket='nfl-dfs',
+                Prefix=prefix,
+                MaxKeys=1  # We only need to know if at least one object exists
+            )
+            # If 'Contents' key exists in response, then objects were found
+            return 'Contents' in response and len(response['Contents']) > 0
+        except Exception as e:
+            logging.error(f'Error checking if directory exists for {season}/week{week} with exception {e}')
+            return False
+
     def download_file(self, season: int, week: int, filename: str) -> str:
         # Create a BytesIO object (in-memory binary stream)
         binary_data_stream = io.BytesIO()

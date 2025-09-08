@@ -6,6 +6,8 @@ import os
 import jwt
 import hashlib
 import optimizer as op_lib
+import nfl_week_helper
+
 # import local_backend as backend_lib
 import online_backend as backend_lib
 from optimizer_api_pb2 import OptimizerRequest, GetPlayersResponse
@@ -187,8 +189,11 @@ def verify_token_endpoint():
 @token_required
 def get_players():
     try:
+        week = nfl_week_helper.get_upcoming_nfl_week()
         player_pool = backend_lib.get_player_pool()
-        response = GetPlayersResponse(players=player_pool)
+        if len(player_pool.players) == 0:
+            logger.info(f"No players for week {week}")
+        response = GetPlayersResponse(players=player_pool, week=str(week))
         return Response(response.SerializeToString(), content_type='application/x-protobuf')
     except Exception as e:
         logger.error(f"Error in getPlayers: {e}")

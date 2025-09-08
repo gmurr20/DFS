@@ -24,4 +24,5 @@ message GetPlayersRequest {}
 
 message GetPlayersResponse {
     Players players = 1;
+    string week = 2;
 }

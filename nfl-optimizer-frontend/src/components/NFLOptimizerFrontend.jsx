@@ -124,6 +124,8 @@ const NFLOptimizerFrontend = () => {
   const [optimizing, setOptimizing] = useState(false);
   const [optimizedLineup, setOptimizedLineup] = useState(null);
 
+  const [week, setWeek] = useState('');
+
   // Optimizer settings
   const [randomness, setRandomness] = useState(0);
   const [numLineups, setNumLineups] = useState(1);
@@ -196,6 +198,13 @@ const NFLOptimizerFrontend = () => {
     });
   };
 
+  // Add this helper function to check if there are any players
+  const hasAnyPlayers = () => {
+    return Object.keys(players).some(position =>
+      position !== 'FLEX' && players[position].length > 0
+    );
+  };
+
   // API helper function with authentication
   const makeAuthenticatedRequest = async (url, options = {}) => {
     const token = getToken();
@@ -256,20 +265,24 @@ const NFLOptimizerFrontend = () => {
           DST: [],
         };
 
-        object.players.players.forEach(player => {
-          const formattedPlayer = {
-            id: player.id,
-            name: player.name,
-            team: player.team,
-            salary: player.salary,
-            projection: player.points || 0, // Default to 0 if no projection
-            status: 'available'
-          };
+        setWeek(object.week);
 
-          if (groupedPlayers[player.position]) {
-            groupedPlayers[player.position].push(formattedPlayer);
-          }
-        });
+        if (object.players && object.players.players && object.players.players.length > 0) {
+          object.players.players.forEach(player => {
+            const formattedPlayer = {
+              id: player.id,
+              name: player.name,
+              team: player.team,
+              salary: player.salary,
+              projection: player.points || 0, // Default to 0 if no projection
+              status: 'available'
+            };
+
+            if (groupedPlayers[player.position]) {
+              groupedPlayers[player.position].push(formattedPlayer);
+            }
+          });
+        }
 
         // Populate FLEX with all WR, RB, and TE players
         groupedPlayers.FLEX = [
@@ -734,6 +747,19 @@ const NFLOptimizerFrontend = () => {
               </button>
             </div>
 
+            {/* Week Display */}
+            {week && (
+              <div className="mt-4">
+                <div className="flex items-center justify-center">
+                  <div className="text-center">
+                    <h2 className="text-lg md:text-xl font-semibold text-gray-800">
+                      NFL Week {week} 2025
+                    </h2>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* Optimizer Settings */}
             <div className="mt-4 md:mt-6 bg-gray-50 rounded-lg p-3 md:p-4">
               <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4">Optimizer Settings</h3>
@@ -1080,169 +1106,188 @@ const NFLOptimizerFrontend = () => {
             </div>
 
             {/* Player Table */}
-            <div className="flex-1 p-3 md:p-6">
-              <div className="mb-4 md:mb-6">
-                <h2 className="text-xl md:text-2xl font-bold text-gray-900">{selectedPosition} Players</h2>
-                <div className="flex flex-col md:flex-row md:justify-between md:items-center mt-4 gap-4">
-                  <div className="text-sm text-gray-600">
-                    Showing {((currentPage - 1) * PLAYERS_PER_PAGE) + 1} to {Math.min(currentPage * PLAYERS_PER_PAGE, players[selectedPosition].length)} of {players[selectedPosition].length} players
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <button
-                      onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
-                      disabled={currentPage === 1}
-                      className="px-3 py-1 rounded border border-gray-300 text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
-                    >
-                      Previous
-                    </button>
-                    <span className="text-sm text-gray-600">
-                      Page {currentPage} of {getTotalPages(players[selectedPosition])}
-                    </span>
-                    <button
-                      onClick={() => setCurrentPage(Math.min(getTotalPages(players[selectedPosition]), currentPage + 1))}
-                      disabled={currentPage === getTotalPages(players[selectedPosition])}
-                      className="px-3 py-1 rounded border border-gray-300 text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
-                    >
-                      Next
-                    </button>
+            {hasAnyPlayers() ? (
+              <div className="flex-1 p-3 md:p-6">
+                <div className="mb-4 md:mb-6">
+                  <h2 className="text-xl md:text-2xl font-bold text-gray-900">{selectedPosition} Players</h2>
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-center mt-4 gap-4">
+                    <div className="text-sm text-gray-600">
+                      Showing {((currentPage - 1) * PLAYERS_PER_PAGE) + 1} to {Math.min(currentPage * PLAYERS_PER_PAGE, players[selectedPosition].length)} of {players[selectedPosition].length} players
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <button
+                        onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
+                        disabled={currentPage === 1}
+                        className="px-3 py-1 rounded border border-gray-300 text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
+                      >
+                        Previous
+                      </button>
+                      <span className="text-sm text-gray-600">
+                        Page {currentPage} of {getTotalPages(players[selectedPosition])}
+                      </span>
+                      <button
+                        onClick={() => setCurrentPage(Math.min(getTotalPages(players[selectedPosition]), currentPage + 1))}
+                        disabled={currentPage === getTotalPages(players[selectedPosition])}
+                        className="px-3 py-1 rounded border border-gray-300 text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
+                      >
+                        Next
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="overflow-x-auto shadow ring-1 ring-black ring-opacity-5 rounded-lg">
-                <table className="min-w-full divide-y divide-gray-300">
-                  <thead className="bg-gray-50">
-                    <tr>
-                      <th
-                        className="px-2 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group"
-                        onClick={() => handleSort('name')}
-                      >
-                        <div className="flex items-center justify-between">
-                          Player
-                          {getSortIcon('name')}
-                        </div>
-                      </th>
-                      <th
-                        className="px-2 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group"
-                        onClick={() => handleSort('team')}
-                      >
-                        <div className="flex items-center justify-between">
-                          Team
-                          {getSortIcon('team')}
-                        </div>
-                      </th>
-                      <th
-                        className="px-2 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group"
-                        onClick={() => handleSort('salary')}
-                      >
-                        <div className="flex items-center justify-between">
-                          Salary
-                          {getSortIcon('salary')}
-                        </div>
-                      </th>
-                      <th
-                        className="px-2 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group"
-                        onClick={() => handleSort('projection')}
-                      >
-                        <div className="flex items-center justify-between">
-                          Proj
-                          {getSortIcon('projection')}
-                        </div>
-                      </th>
-                      <th
-                        className="px-2 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group sm:table-cell"
-                        onClick={() => handleSort('value')}
-                      >
-                        <div className="flex items-center justify-between">
-                          Value
-                          {getSortIcon('value')}
-                        </div>
-                      </th>
-                      <th className="px-2 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">
-                        Actions
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="bg-white divide-y divide-gray-200">
-                    {getPaginatedPlayers(players[selectedPosition]).map((player) => (
-                      <tr
-                        key={player.id}
-                        className={`transition-colors ${getStatusColor(player.status)}`}
-                      >
-                        <td className="text-left px-2 md:px-6 py-4 whitespace-nowrap">
-                          <div className="flex items-center">
-                            <div className="flex-shrink-0 mr-2">
-                              {getStatusIcon(player.status)}
-                            </div>
-                            <div className="min-w-0">
-                              <div className="text-sm font-medium text-gray-900 truncate">
-                                <span className="md:hidden">{formatPlayerNameMobile(player.name)}</span>
-                                <span className="hidden md:inline">{player.name}</span>
-                                {selectedPosition === 'FLEX' && (
-                                  <span className="ml-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
-                                    {getCurrentPlayerPosition(player.id)}
-                                  </span>
-                                )}
+                <div className="overflow-x-auto shadow ring-1 ring-black ring-opacity-5 rounded-lg">
+                  <table className="min-w-full divide-y divide-gray-300">
+                    <thead className="bg-gray-50">
+                      <tr>
+                        <th
+                          className="px-2 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group"
+                          onClick={() => handleSort('name')}
+                        >
+                          <div className="flex items-center justify-between">
+                            Player
+                            {getSortIcon('name')}
+                          </div>
+                        </th>
+                        <th
+                          className="px-2 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group"
+                          onClick={() => handleSort('team')}
+                        >
+                          <div className="flex items-center justify-between">
+                            Team
+                            {getSortIcon('team')}
+                          </div>
+                        </th>
+                        <th
+                          className="px-2 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group"
+                          onClick={() => handleSort('salary')}
+                        >
+                          <div className="flex items-center justify-between">
+                            Salary
+                            {getSortIcon('salary')}
+                          </div>
+                        </th>
+                        <th
+                          className="px-2 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group"
+                          onClick={() => handleSort('projection')}
+                        >
+                          <div className="flex items-center justify-between">
+                            Proj
+                            {getSortIcon('projection')}
+                          </div>
+                        </th>
+                        <th
+                          className="px-2 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group sm:table-cell"
+                          onClick={() => handleSort('value')}
+                        >
+                          <div className="flex items-center justify-between">
+                            Value
+                            {getSortIcon('value')}
+                          </div>
+                        </th>
+                        <th className="px-2 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">
+                          Actions
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white divide-y divide-gray-200">
+                      {getPaginatedPlayers(players[selectedPosition]).map((player) => (
+                        <tr
+                          key={player.id}
+                          className={`transition-colors ${getStatusColor(player.status)}`}
+                        >
+                          <td className="text-left px-2 md:px-6 py-4 whitespace-nowrap">
+                            <div className="flex items-center">
+                              <div className="flex-shrink-0 mr-2">
+                                {getStatusIcon(player.status)}
+                              </div>
+                              <div className="min-w-0">
+                                <div className="text-sm font-medium text-gray-900 truncate">
+                                  <span className="md:hidden">{formatPlayerNameMobile(player.name)}</span>
+                                  <span className="hidden md:inline">{player.name}</span>
+                                  {selectedPosition === 'FLEX' && (
+                                    <span className="ml-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
+                                      {getCurrentPlayerPosition(player.id)}
+                                    </span>
+                                  )}
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </td>
-                        <td className="text-left px-2 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                          {player.team}
-                        </td>
-                        <td className="text-left px-2 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                          <span className="md:hidden">${(player.salary / 1000).toFixed(1)}K</span>
-                          <span className="hidden md:inline">${player.salary.toLocaleString()}</span>
-                        </td>
-                        <td className="text-left px-2 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                          <span className="md:hidden">{(player.projection || 0).toFixed(1)}</span>
-                          <span className="hidden md:inline">{(player.projection || 0).toFixed(2)}</span>
-                        </td>
-                        <td className="text-left px-2 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 sm:table-cell">
-                          <span className="md:hidden">{calculateValue(player.projection, player.salary).toFixed(1)}</span>
-                          <span className="hidden md:inline">{calculateValue(player.projection, player.salary).toFixed(2)}</span>
-                        </td>
-                        <td className="text-left px-2 md:px-6 py-4 whitespace-nowrap text-sm space-x-1 md:space-x-2">
-                          <button
-                            onClick={() => updatePlayerStatus(player.id,
-                              player.status === 'locked' ? 'available' : 'locked'
-                            )}
-                            disabled={player.status !== 'locked' && (
-                              !canLockPlayerInPosition(getCurrentPlayerPosition(player.id) || selectedPosition === 'FLEX' ? getCurrentPlayerPosition(player.id) : selectedPosition).allowed ||
-                              getAllLockedPlayers().length >= MAX_TOTAL_LOCKED ||
-                              calculateTotalSalary(getAllLockedPlayers(), player.id) > MAX_SALARY_CAP
-                            )}
-                            className={`inline-flex items-center px-2 md:px-3 py-1 rounded-md text-xs font-medium transition-colors ${player.status === 'locked'
-                              ? 'bg-green-100 text-green-700 hover:bg-green-200'
-                              : (!canLockPlayerInPosition(getCurrentPlayerPosition(player.id) || selectedPosition === 'FLEX' ? getCurrentPlayerPosition(player.id) : selectedPosition).allowed ||
+                          </td>
+                          <td className="text-left px-2 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            {player.team}
+                          </td>
+                          <td className="text-left px-2 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            <span className="md:hidden">${(player.salary / 1000).toFixed(1)}K</span>
+                            <span className="hidden md:inline">${player.salary.toLocaleString()}</span>
+                          </td>
+                          <td className="text-left px-2 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            <span className="md:hidden">{(player.projection || 0).toFixed(1)}</span>
+                            <span className="hidden md:inline">{(player.projection || 0).toFixed(2)}</span>
+                          </td>
+                          <td className="text-left px-2 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 sm:table-cell">
+                            <span className="md:hidden">{calculateValue(player.projection, player.salary).toFixed(1)}</span>
+                            <span className="hidden md:inline">{calculateValue(player.projection, player.salary).toFixed(2)}</span>
+                          </td>
+                          <td className="text-left px-2 md:px-6 py-4 whitespace-nowrap text-sm space-x-1 md:space-x-2">
+                            <button
+                              onClick={() => updatePlayerStatus(player.id,
+                                player.status === 'locked' ? 'available' : 'locked'
+                              )}
+                              disabled={player.status !== 'locked' && (
+                                !canLockPlayerInPosition(getCurrentPlayerPosition(player.id) || selectedPosition === 'FLEX' ? getCurrentPlayerPosition(player.id) : selectedPosition).allowed ||
                                 getAllLockedPlayers().length >= MAX_TOTAL_LOCKED ||
-                                calculateTotalSalary(getAllLockedPlayers(), player.id) > MAX_SALARY_CAP)
-                                ? 'bg-gray-50 text-gray-400 cursor-not-allowed'
-                                : 'bg-gray-100 text-gray-700 hover:bg-green-100 hover:text-green-700'
-                              }`}
-                          >
-                            <Lock className="w-3 h-3 mr-1" />
-                            <span className="hidden sm:inline">{player.status === 'locked' ? 'Locked' : 'Lock'}</span>
-                          </button>
-                          <button
-                            onClick={() => updatePlayerStatus(player.id,
-                              player.status === 'excluded' ? 'available' : 'excluded'
-                            )}
-                            className={`inline-flex items-center px-2 md:px-3 py-1 rounded-md text-xs font-medium transition-colors ${player.status === 'excluded'
-                              ? 'bg-red-100 text-red-700 hover:bg-red-200'
-                              : 'bg-gray-100 text-gray-700 hover:bg-red-100 hover:text-red-700'
-                              }`}
-                          >
-                            <X className="w-3 h-3 mr-1" />
-                            <span className="hidden sm:inline">{player.status === 'excluded' ? 'Excluded' : 'Exclude'}</span>
-                          </button>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                                calculateTotalSalary(getAllLockedPlayers(), player.id) > MAX_SALARY_CAP
+                              )}
+                              className={`inline-flex items-center px-2 md:px-3 py-1 rounded-md text-xs font-medium transition-colors ${player.status === 'locked'
+                                ? 'bg-green-100 text-green-700 hover:bg-green-200'
+                                : (!canLockPlayerInPosition(getCurrentPlayerPosition(player.id) || selectedPosition === 'FLEX' ? getCurrentPlayerPosition(player.id) : selectedPosition).allowed ||
+                                  getAllLockedPlayers().length >= MAX_TOTAL_LOCKED ||
+                                  calculateTotalSalary(getAllLockedPlayers(), player.id) > MAX_SALARY_CAP)
+                                  ? 'bg-gray-50 text-gray-400 cursor-not-allowed'
+                                  : 'bg-gray-100 text-gray-700 hover:bg-green-100 hover:text-green-700'
+                                }`}
+                            >
+                              <Lock className="w-3 h-3 mr-1" />
+                              <span className="hidden sm:inline">{player.status === 'locked' ? 'Locked' : 'Lock'}</span>
+                            </button>
+                            <button
+                              onClick={() => updatePlayerStatus(player.id,
+                                player.status === 'excluded' ? 'available' : 'excluded'
+                              )}
+                              className={`inline-flex items-center px-2 md:px-3 py-1 rounded-md text-xs font-medium transition-colors ${player.status === 'excluded'
+                                ? 'bg-red-100 text-red-700 hover:bg-red-200'
+                                : 'bg-gray-100 text-gray-700 hover:bg-red-100 hover:text-red-700'
+                                }`}
+                            >
+                              <X className="w-3 h-3 mr-1" />
+                              <span className="hidden sm:inline">{player.status === 'excluded' ? 'Excluded' : 'Exclude'}</span>
+                            </button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>) : (
+              <div className="flex flex-col items-center justify-center py-12 px-6">
+                <div className="text-center max-w-md">
+                  <div className="w-24 h-24 mx-auto mb-6 bg-gray-100 rounded-full flex items-center justify-center">
+                    <span className="text-4xl font-bold text-gray-400">!</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">No Player Data Available for Week {week}</h3>
+                  <p className="text-gray-600 mb-6">
+                    There is currently no player data available for this week. Please check back later or contact support if this issue persists.
+                  </p>
+                  <button
+                    onClick={() => window.location.reload()}
+                    className="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors"
+                  >
+                    Refresh Page
+                  </button>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

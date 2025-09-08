@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 import player_pb2 as player__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13optimizer_api.proto\x1a\x0cplayer.proto\"\x9c\x01\n\x10OptimizerRequest\x12\x17\n\x0fplayer_id_locks\x18\x01 \x03(\t\x12\x1a\n\x12player_id_excludes\x18\x02 \x03(\t\x12\x12\n\nrandomness\x18\x03 \x01(\x02\x12\x13\n\x0bnum_lineups\x18\x04 \x01(\x05\x12\r\n\x05stack\x18\x05 \x01(\x08\x12\x1b\n\x13no_opposing_defense\x18\x06 \x01(\x08\"-\n\x11OptimizerResponse\x12\x18\n\x07lineups\x18\x01 \x03(\x0b\x32\x07.Lineup\"\x13\n\x11GetPlayersRequest\"/\n\x12GetPlayersResponse\x12\x19\n\x07players\x18\x01 \x01(\x0b\x32\x08.Playersb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13optimizer_api.proto\x1a\x0cplayer.proto\"\x9c\x01\n\x10OptimizerRequest\x12\x17\n\x0fplayer_id_locks\x18\x01 \x03(\t\x12\x1a\n\x12player_id_excludes\x18\x02 \x03(\t\x12\x12\n\nrandomness\x18\x03 \x01(\x02\x12\x13\n\x0bnum_lineups\x18\x04 \x01(\x05\x12\r\n\x05stack\x18\x05 \x01(\x08\x12\x1b\n\x13no_opposing_defense\x18\x06 \x01(\x08\"-\n\x11OptimizerResponse\x12\x18\n\x07lineups\x18\x01 \x03(\x0b\x32\x07.Lineup\"\x13\n\x11GetPlayersRequest\"=\n\x12GetPlayersResponse\x12\x19\n\x07players\x18\x01 \x01(\x0b\x32\x08.Players\x12\x0c\n\x04week\x18\x02 \x01(\tb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,5 +39,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETPLAYERSREQUEST']._serialized_start=243
   _globals['_GETPLAYERSREQUEST']._serialized_end=262
   _globals['_GETPLAYERSRESPONSE']._serialized_start=264
-  _globals['_GETPLAYERSRESPONSE']._serialized_end=311
+  _globals['_GETPLAYERSRESPONSE']._serialized_end=325
 # @@protoc_insertion_point(module_scope)
