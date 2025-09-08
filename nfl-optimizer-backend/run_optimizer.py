@@ -14,11 +14,12 @@ optimizer = op_lib.Optimizer(player_pool=player_pool, spreads=get_spreads(), tea
 
 # Run Optimizer
 request = OptimizerRequest()
-# request.player_id_locks.append('4426348')
+request.player_id_locks.append('4426348')
 # request.player_id_locks.append('NYG')
-request.randomness = 0.0
-request.num_lineups = 1
+request.randomness = 0.5
+request.num_lineups = 5
 request.stack = True
+request.run_back = True
 request.no_opposing_defense = True
 
 response = optimizer.optimize(request)

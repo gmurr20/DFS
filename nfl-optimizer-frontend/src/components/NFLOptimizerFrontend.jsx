@@ -130,6 +130,7 @@ const NFLOptimizerFrontend = () => {
   const [randomness, setRandomness] = useState(0);
   const [numLineups, setNumLineups] = useState(1);
   const [stack, setStack] = useState(true);
+  const [runBack, setRunBack] = useState(true);
   const [noOpposingDefense, setNoOpposingDefense] = useState(true);
 
   // Check authentication on component mount
@@ -560,7 +561,8 @@ const NFLOptimizerFrontend = () => {
         randomness: randomness,
         numLineups: numLineups,
         stack: stack,
-        noOpposingDefense: noOpposingDefense
+        noOpposingDefense: noOpposingDefense,
+        runBack: runBack
       });
 
       console.log('OptimizerRequest:', request);
@@ -833,6 +835,23 @@ const NFLOptimizerFrontend = () => {
                     </label>
                   </div>
                   <p className="text-xs text-gray-500 mt-1">QB with same-team receivers/TEs</p>
+                </div>
+                {/* Run Back Checkbox */}
+                <div>
+                  <div className="flex items-center h-full">
+                    <label className="flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={runBack}
+                        onChange={(e) => setRunBack(e.target.checked)}
+                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+                      />
+                      <span className="ml-2 text-sm font-medium text-gray-700">
+                        Run it back
+                      </span>
+                    </label>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-1">Play an opposing player from your primary stack</p>
                 </div>
                 {/* No Opposing Defense Checkbox */}
                 <div>

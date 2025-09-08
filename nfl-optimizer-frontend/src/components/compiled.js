@@ -21,6 +21,7 @@ $root.OptimizerRequest = (function() {
      * @property {number|null} [numLineups] OptimizerRequest numLineups
      * @property {boolean|null} [stack] OptimizerRequest stack
      * @property {boolean|null} [noOpposingDefense] OptimizerRequest noOpposingDefense
+     * @property {boolean|null} [runBack] OptimizerRequest runBack
      */
 
     /**
@@ -89,6 +90,14 @@ $root.OptimizerRequest = (function() {
     OptimizerRequest.prototype.noOpposingDefense = false;
 
     /**
+     * OptimizerRequest runBack.
+     * @member {boolean} runBack
+     * @memberof OptimizerRequest
+     * @instance
+     */
+    OptimizerRequest.prototype.runBack = false;
+
+    /**
      * Creates a new OptimizerRequest instance using the specified properties.
      * @function create
      * @memberof OptimizerRequest
@@ -126,6 +135,8 @@ $root.OptimizerRequest = (function() {
             writer.uint32(/* id 5, wireType 0 =*/40).bool(message.stack);
         if (message.noOpposingDefense != null && Object.hasOwnProperty.call(message, "noOpposingDefense"))
             writer.uint32(/* id 6, wireType 0 =*/48).bool(message.noOpposingDefense);
+        if (message.runBack != null && Object.hasOwnProperty.call(message, "runBack"))
+            writer.uint32(/* id 7, wireType 0 =*/56).bool(message.runBack);
         return writer;
     };
 
@@ -190,6 +201,10 @@ $root.OptimizerRequest = (function() {
                     message.noOpposingDefense = reader.bool();
                     break;
                 }
+            case 7: {
+                    message.runBack = reader.bool();
+                    break;
+                }
             default:
                 reader.skipType(tag & 7);
                 break;
@@ -251,6 +266,9 @@ $root.OptimizerRequest = (function() {
         if (message.noOpposingDefense != null && message.hasOwnProperty("noOpposingDefense"))
             if (typeof message.noOpposingDefense !== "boolean")
                 return "noOpposingDefense: boolean expected";
+        if (message.runBack != null && message.hasOwnProperty("runBack"))
+            if (typeof message.runBack !== "boolean")
+                return "runBack: boolean expected";
         return null;
     };
 
@@ -288,6 +306,8 @@ $root.OptimizerRequest = (function() {
             message.stack = Boolean(object.stack);
         if (object.noOpposingDefense != null)
             message.noOpposingDefense = Boolean(object.noOpposingDefense);
+        if (object.runBack != null)
+            message.runBack = Boolean(object.runBack);
         return message;
     };
 
@@ -313,6 +333,7 @@ $root.OptimizerRequest = (function() {
             object.numLineups = 0;
             object.stack = false;
             object.noOpposingDefense = false;
+            object.runBack = false;
         }
         if (message.playerIdLocks && message.playerIdLocks.length) {
             object.playerIdLocks = [];
@@ -332,6 +353,8 @@ $root.OptimizerRequest = (function() {
             object.stack = message.stack;
         if (message.noOpposingDefense != null && message.hasOwnProperty("noOpposingDefense"))
             object.noOpposingDefense = message.noOpposingDefense;
+        if (message.runBack != null && message.hasOwnProperty("runBack"))
+            object.runBack = message.runBack;
         return object;
     };
 

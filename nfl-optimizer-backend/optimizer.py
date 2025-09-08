@@ -108,7 +108,25 @@ class Optimizer:
                     prob += (
                         pulp.lpSum([player_vars[rec['id']] for _, rec in same_team_receivers.iterrows()]) >= 
                         player_vars[qb_id]
-                    ), f"Stack_QB_{qb['name'].replace(' ', '_')}" 
+                    ), f"Stack_QB_{qb['name'].replace(' ', '_')}"
+            
+                if request.run_back:
+                    qb_opposing_team = qb['opposing_team']
+                    # Get all opposing RB/WR/TE from the same team
+                    opposing_team_flex = player_pool[
+                        (player_pool['team'] == qb_opposing_team) & 
+                        (player_pool['position'].isin(['RB', 'WR', 'TE']))
+                    ]
+                    if len(opposing_team_flex) > 0:
+                        # If this QB is selected, at least one receiver from same team must be selected
+                        # Using Big-M method: if QB selected (=1), then sum(receivers) >= 1
+                        # This translates to: sum(receivers) >= player_vars[qb_id]
+                        prob += (
+                            pulp.lpSum([player_vars[rec['id']] for _, rec in opposing_team_flex.iterrows()]) >= 
+                            player_vars[qb_id]
+                        ), f"Runback_QB_{qb['name'].replace(' ', '_')}"
+
+
         if request.no_opposing_defense:
             defenses = player_pool[player_pool['position'] == 'DST'] 
             for _, defense in defenses.iterrows():
@@ -153,7 +171,9 @@ class Optimizer:
             player_pool = simulate_projections_with_vegas_lines(player_pool=self.player_pool, week_matchups=self.matchups, randomness=randomness)
             iterations += 1
             potential_team = self.generate_optimal_lineup(player_pool, request)
-            if potential_team is None or potential_team in unique_teams:
+            if potential_team is None:
+                break
+            if potential_team in unique_teams:
                 randomness += .05
                 continue
             unique_teams.add(potential_team)

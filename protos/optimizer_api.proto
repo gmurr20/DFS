@@ -14,6 +14,8 @@ message OptimizerRequest {
     bool stack = 5;
 
     bool no_opposing_defense = 6;
+
+    bool run_back = 7;
 }
 
 message OptimizerResponse {
