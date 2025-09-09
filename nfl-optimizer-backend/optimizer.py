@@ -163,6 +163,9 @@ class Optimizer:
 
 
     def optimize(self, request: OptimizerRequest) -> OptimizerResponse:
+        response = OptimizerResponse()
+        if self.player_pool.empty:
+            return response
         unique_teams = set([])
         iterations = 1
         randomness = max(request.randomness, 0.0)
@@ -179,7 +182,6 @@ class Optimizer:
             unique_teams.add(potential_team)
             if randomness == 0.0:
                 randomness += .05
-        response = OptimizerResponse()
         for team in unique_teams:
             response.lineups.append(team.to_lineup())
         response.lineups.sort(key=lambda l: sum(p.sim_points for p in l.players), reverse=True)
