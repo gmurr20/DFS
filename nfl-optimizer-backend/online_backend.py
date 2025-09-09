@@ -8,7 +8,7 @@ S3_CLIENT = S3Client()
 
 def get_player_pool() -> Players:
     week = nfl_week_helper.get_upcoming_nfl_week()
-    if not S3_CLIENT.directory_exists(season=nfl_week_helper.SEASON, week=week):
+    if not S3_CLIENT.week_is_ready(season=nfl_week_helper.SEASON, week=week):
         return Players()
     player_pool_serialized = S3_CLIENT.download_file(season=nfl_week_helper.SEASON, week=week, filename='player_pool.binarypb')
     if player_pool_serialized is None:
@@ -21,7 +21,7 @@ def get_player_pool() -> Players:
 
 def get_spreads() -> WeekMatchups:
     week = nfl_week_helper.get_upcoming_nfl_week()
-    if not S3_CLIENT.directory_exists(season=nfl_week_helper.SEASON, week=week):
+    if not S3_CLIENT.week_is_ready(season=nfl_week_helper.SEASON, week=week):
         return WeekMatchups()
     matchups_serialized = S3_CLIENT.download_file(season=nfl_week_helper.SEASON, week=week, filename='week_matchups.binarypb')
     if matchups_serialized is None:

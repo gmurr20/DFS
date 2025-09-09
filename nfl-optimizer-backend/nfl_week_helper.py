@@ -3,32 +3,41 @@ import logging
 
 SEASON = 2025
 
+
 def get_upcoming_nfl_week():
     # NFL 2025 season specific dates
     nfl_2025_weeks = {
         1: [date(2025, 8, 1), date(2025, 9, 8)],
-        2: [date(2025, 9, 9), date(2025, 9, 15)],
-        3: [date(2025, 9, 16), date(2025, 9, 22)],
-        4: [date(2025, 9, 23), date(2025, 9, 29)],
-        5: [date(2025, 9, 30), date(2025, 10, 6)],
-        6: [date(2025, 10, 7), date(2025, 10, 13)],
-        7: [date(2025, 10, 14), date(2025, 10, 20)],
-        8: [date(2025, 10, 21), date(2025, 10, 27)],
-        9: [date(2025, 10, 28), date(2025, 11, 3)],
-        10: [date(2025, 11, 4), date(2025, 11, 10)],
+        2: [date(2025, 9, 9), date(2025, 9, 15)],    # Tue Sep 9 - Mon Sep 15
+        3: [date(2025, 9, 16), date(2025, 9, 22)],   # Tue Sep 16 - Mon Sep 22
+        4: [date(2025, 9, 23), date(2025, 9, 29)],   # Tue Sep 23 - Mon Sep 29
+        5: [date(2025, 9, 30), date(2025, 10, 6)],   # Tue Sep 30 - Mon Oct 6
+        6: [date(2025, 10, 7), date(2025, 10, 13)],  # Tue Oct 7 - Mon Oct 13
+        7: [date(2025, 10, 14), date(2025, 10, 20)],  # Tue Oct 14 - Mon Oct 20
+        8: [date(2025, 10, 21), date(2025, 10, 27)],  # Tue Oct 21 - Mon Oct 27
+        9: [date(2025, 10, 28), date(2025, 11, 3)],  # Tue Oct 28 - Mon Nov 3
+        10: [date(2025, 11, 4), date(2025, 11, 10)],  # Tue Nov 4 - Mon Nov 10
+        # Tue Nov 11 - Mon Nov 17
         11: [date(2025, 11, 11), date(2025, 11, 17)],
+        # Tue Nov 18 - Mon Nov 24
         12: [date(2025, 11, 18), date(2025, 11, 24)],
-        13: [date(2025, 11, 25), date(2025, 12, 1)],
-        14: [date(2025, 12, 2), date(2025, 12, 8)],
-        15: [date(2025, 12, 9), date(2025, 12, 15)],
+        13: [date(2025, 11, 25), date(2025, 12, 1)],  # Tue Nov 25 - Mon Dec 1
+        14: [date(2025, 12, 2), date(2025, 12, 8)],   # Tue Dec 2 - Mon Dec 8
+        15: [date(2025, 12, 9), date(2025, 12, 15)],  # Tue Dec 9 - Mon Dec 15
+        # Tue Dec 16 - Mon Dec 22
         16: [date(2025, 12, 16), date(2025, 12, 22)],
+        # Tue Dec 23 - Mon Dec 29
         17: [date(2025, 12, 23), date(2025, 12, 29)],
-        18: [date(2025, 12, 30), date(2026, 1, 5)],
+        18: [date(2025, 12, 30), date(2026, 1, 5)],   # Tue Dec 30 - Mon Jan 5
         # Playoffs
+        # Tue Jan 6 - Mon Jan 12 (Wild Card)
         19: [date(2026, 1, 6), date(2026, 1, 12)],
+        # Tue Jan 13 - Mon Jan 19 (Divisional)
         20: [date(2026, 1, 13), date(2026, 1, 19)],
+        # Tue Jan 20 - Mon Jan 26 (Conference)
         21: [date(2026, 1, 20), date(2026, 1, 26)],
-        21: [date(2026, 1, 27), date(2026, 2, 9)],
+        # Tue Jan 27 - Mon Feb 9 (Super Bowl week)
+        22: [date(2026, 1, 27), date(2026, 2, 9)],
     }
 
     curr_date = datetime.now().date()

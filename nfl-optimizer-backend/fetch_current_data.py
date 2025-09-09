@@ -30,6 +30,8 @@ def main(use_local: bool, upload: bool, week: int):
     # Create a logger
     logger = logging.getLogger(__name__)
 
+    logger.info(f'use_local={use_local}, upload={upload}, week={week}')
+
     # Ensure running in right directory
     if not os.path.exists('data'):
         print('PLEASE RUN IN nfl-optimizer-backend directory')
@@ -40,6 +42,7 @@ def main(use_local: bool, upload: bool, week: int):
     if week == 0 or week is None:
         week = get_upcoming_nfl_week()
     if week is None:
+        logger.info(f'Outside the NFL season {current_date}')
         exit(1)
     date_of_sunday_games = game_dates(week)[0]
 
@@ -55,7 +58,7 @@ def main(use_local: bool, upload: bool, week: int):
 
     # Grab DFS salaries
     dfs_data = None
-    if not use_local and not os.path.isfile(f'data/{SEASON}/week{week}/dfs_salaries.json'):
+    if not use_local:
         conn.request("GET", f"/getNFLDFS?date={current_date}", headers=headers)
         res = conn.getresponse()
         data = res.read()
@@ -141,7 +144,9 @@ def main(use_local: bool, upload: bool, week: int):
     write_binarypb_file(week=week, serialized_data=binary_data, file_name='player_pool')
     if upload and not s3_client.upload_file(season=SEASON, week=week, filename='player_pool.binarypb'):
         logging.error('Failed to upload player_pool.binarypb to S3')
+    exit(0)
 
 
 if __name__ == "__main__":
-    main(use_local=False, upload=True, week=2)
+    week = get_upcoming_nfl_week()
+    main(use_local=False, upload=True, week=week)

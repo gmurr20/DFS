@@ -22,16 +22,21 @@ class S3Client:
             logging.error(f'Error uploading with exception {e}')
             return False
     
-    def directory_exists(self, season: int, week: int) -> bool:
+    def week_is_ready(self, season: int, week: int) -> bool:
         try:
             prefix = f'{season}/week{week}/'
-            response = self.s3_client.list_objects_v2(
-                Bucket='nfl-dfs',
-                Prefix=prefix,
-                MaxKeys=1  # We only need to know if at least one object exists
-            )
-            # If 'Contents' key exists in response, then objects were found
-            return 'Contents' in response and len(response['Contents']) > 0
+            required_files = ['player_pool.binarypb', 'week_matchups.binarypb']
+            
+            # Check if both required files exist
+            for filename in required_files:
+                file_key = f'{prefix}{filename}'
+                try:
+                    self.s3_client.head_object(Bucket='nfl-dfs', Key=file_key)
+                except self.s3_client.exceptions.NoSuchKey:
+                    # If any required file is missing, return False
+                    return False
+            # If we get here, both files exist
+            return True  
         except Exception as e:
             logging.error(f'Error checking if directory exists for {season}/week{week} with exception {e}')
             return False

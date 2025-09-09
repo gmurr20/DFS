@@ -9,8 +9,7 @@ def get_projected_total(over_under: float, spread: float):
     return (over_under - spread) / 2.0
 
 def create_spreads_proto(json_data: json):
-    # books = ['ballybet', 'bet365', 'betmgm', 'betrivers', 'caesars_sportsbook', 'draftkings', 'espnbet', 'fanatics', 'fanduel']
-    books = ['draftkings']
+    books = ['ballybet', 'bet365', 'betmgm', 'betrivers', 'caesars_sportsbook', 'draftkings', 'espnbet', 'fanatics', 'fanduel']
     week_matchups = WeekMatchups()
     for game, spread_map in json_data['body'].items():
         teams = game[len('20250907_'):].split('@')
