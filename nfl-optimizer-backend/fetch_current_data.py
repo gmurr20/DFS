@@ -7,6 +7,7 @@ from nfl_week_helper import get_upcoming_nfl_week, game_dates, SEASON
 import os
 from json_to_proto import create_spreads_proto, create_player_pool
 from s3_client import S3Client
+import pandas as pd
 
 def write_json_file(week: int, json_data: json, file_name: str):
     os.makedirs(f'data/{SEASON}/week{week}', exist_ok=True)
@@ -130,8 +131,12 @@ def main(use_local: bool, upload: bool, week: int):
     if upload and not s3_client.upload_file(season=SEASON, week=week, filename='week_matchups.binarypb'):
         logging.error('Failed to upload week_matchups.binarypb to S3')
 
+    dk_df = None
+    if os.path.exists(f'data/{SEASON}/week{week}/DKSalaries.csv'):
+        dk_df = pd.read_csv(f'data/{SEASON}/week{week}/DKSalaries.csv')
+
     # Write player pool binarypb
-    players = create_player_pool(matchups=matchups_json, ff_projections=ff_projections, salaries_json=dfs_data)
+    players = create_player_pool(matchups=matchups_json, ff_projections=ff_projections, salaries_json=dfs_data, dk_df=dk_df)
     binary_data = players.SerializeToString()
     write_binarypb_file(week=week, serialized_data=binary_data, file_name='player_pool')
     if upload and not s3_client.upload_file(season=SEASON, week=week, filename='player_pool.binarypb'):
@@ -139,4 +144,4 @@ def main(use_local: bool, upload: bool, week: int):
 
 
 if __name__ == "__main__":
-    main(use_local=False, upload=False, week=2)
+    main(use_local=False, upload=True, week=2)

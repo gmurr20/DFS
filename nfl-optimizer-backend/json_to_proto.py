@@ -9,7 +9,8 @@ def get_projected_total(over_under: float, spread: float):
     return (over_under - spread) / 2.0
 
 def create_spreads_proto(json_data: json):
-    books = ['ballybet', 'bet365', 'betmgm', 'betrivers', 'caesars_sportsbook', 'draftkings', 'espnbet', 'fanatics', 'fanduel']
+    # books = ['ballybet', 'bet365', 'betmgm', 'betrivers', 'caesars_sportsbook', 'draftkings', 'espnbet', 'fanatics', 'fanduel']
+    books = ['draftkings']
     week_matchups = WeekMatchups()
     for game, spread_map in json_data['body'].items():
         teams = game[len('20250907_'):].split('@')
@@ -21,13 +22,11 @@ def create_spreads_proto(json_data: json):
         for book in books:
             if book not in spread_map:
                 continue
-            if 'totalOver' not in spread_map[book]:
+            if 'totalUnder' not in spread_map[book]:
                 continue
             if 'homeTeamSpread' not in spread_map[book]:
                 continue
-            if spread_map['homeTeamMLOdds'] == 'N/A':
-                continue
-            over_under_sum += float(spread_map[book]['totalOver'])
+            over_under_sum += float(spread_map[book]['totalUnder'])
             home_team_spread_sum += float(spread_map[book]['homeTeamSpread']) if spread_map[book]['homeTeamSpread'] != 'PK' else 0
             book_count += 1
         if book_count == 0:
@@ -110,7 +109,7 @@ def is_sunday_in_time_range_pandas(date_string, time_string):
     
     return is_sunday and is_in_range
 
-def create_player_pool(matchups: json, ff_projections: json, salaries_json: json) -> Players:
+def create_player_pool(matchups: json, ff_projections: json, salaries_json: json, dk_df: pd.DataFrame) -> Players:
     team_to_opposing_team = {}
     for matchup in matchups["body"]:
         is_main_slate = is_sunday_in_time_range_pandas(matchup["gameDate"], matchup["gameTime"])
@@ -133,6 +132,25 @@ def create_player_pool(matchups: json, ff_projections: json, salaries_json: json
         player_proto.salary = int(player["salary"])
         player_proto.opposing_team = team_to_opposing_team[player["team"]]
         player_dict[player_proto.id] = player_proto
+
+    # Use Draftkings data as source of truth for salary
+    if dk_df is not None:
+        for row in dk_df.itertuples():
+            # Only mainslate
+            if row.TeamAbbrev not in team_to_opposing_team:
+                continue
+            if row.Position == 'DST':
+                player_proto = Player()
+                player_proto.id = row.TeamAbbrev
+                player_proto.name = row.Name
+                player_proto.team = row.TeamAbbrev
+                player_proto.position = row.Position
+                player_proto.salary = int(row.Salary)
+                player_proto.opposing_team = team_to_opposing_team[row.TeamAbbrev]
+                player_dict[player_proto.id] = player_proto
+            else:
+                if str(row.ID) in player_dict:
+                    player_dict[str(row.ID)].salary = int(row.Salary)
 
     # Grab fantasy projections
     for id, player in ff_projections["body"]["playerProjections"].items():
