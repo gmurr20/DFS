@@ -131,6 +131,8 @@ def main(read_local: bool, write_local:bool, upload: bool, week: int):
         with open(f'data/{SEASON}/week{week}/vegas_odds.json', 'r') as file:
             vegas_odds = json.load(file)
 
+    logging.info('Fetched all data. DFS data JSON:')
+    logging.info(f'{dfs_data}')
     # Write Matchups binarypb
     matchups = create_spreads_proto(json_data=vegas_odds)
     binary_data = matchups.SerializeToString()
