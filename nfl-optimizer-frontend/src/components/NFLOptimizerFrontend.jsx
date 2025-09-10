@@ -529,7 +529,7 @@ const NFLOptimizerFrontend = () => {
         const firstName = nameParts[0];
         
         // Check if the name contains "Jr." and use full second name
-        if (fullName.includes('Jr.')) {
+        if (nameParts.length >= 3 && nameParts[2] === "Jr.") {
           const secondName = nameParts[1];
           return formatPlayerNameMobile(`${firstName} ${secondName}`);
         } else {
