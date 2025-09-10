@@ -523,11 +523,20 @@ const NFLOptimizerFrontend = () => {
 
   // Shortens the player name on mobile
   const formatPlayerNameMobile = (fullName) => {
-    const nameParts = fullName.split(' ');
-    if (nameParts.length >= 2) {
-      const firstName = nameParts[0];
-      const secondNameInitial = nameParts[1].charAt(0);
-      return `${firstName} ${secondNameInitial}`;
+    if (fullName.length > 12) {
+      const nameParts = fullName.split(' ');
+      if (nameParts.length >= 2) {
+        const firstName = nameParts[0];
+        
+        // Check if the name contains "Jr." and use full second name
+        if (fullName.includes('Jr.')) {
+          const secondName = nameParts[1];
+          return formatPlayerNameMobile(`${firstName} ${secondName}`);
+        } else {
+          const secondNameInitial = nameParts[1].charAt(0);
+          return `${firstName} ${secondNameInitial}.`;
+        }
+      }
     }
     return fullName;
   };
