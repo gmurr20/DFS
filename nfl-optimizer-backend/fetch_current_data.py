@@ -1,6 +1,5 @@
 import http.client
 import json
-from env_keys import RAPID_API
 from datetime import datetime
 import logging
 from nfl_week_helper import get_upcoming_nfl_week, game_dates, SEASON
@@ -8,6 +7,7 @@ import os
 from json_to_proto import create_spreads_proto, create_player_pool
 from s3_client import S3Client
 import pandas as pd
+from config import Config
 
 def write_json_file(week: int, json_data: json, file_name: str):
     os.makedirs(f'data/{SEASON}/week{week}', exist_ok=True)
@@ -52,7 +52,7 @@ def main(read_local: bool, write_local:bool, upload: bool, week: int):
     conn = http.client.HTTPSConnection(
         "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com")
     headers = {
-        'x-rapidapi-key': RAPID_API,
+        'x-rapidapi-key': Config.get('RAPID_API'),
         'x-rapidapi-host': "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com"
     }
 
