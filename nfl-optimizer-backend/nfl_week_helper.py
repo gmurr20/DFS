@@ -1,5 +1,6 @@
 from datetime import datetime, date
 import logging
+import pytz
 
 SEASON = 2025
 
@@ -40,7 +41,8 @@ def get_upcoming_nfl_week():
         22: [date(2026, 1, 27), date(2026, 2, 9)],
     }
 
-    curr_date = datetime.now().date()
+    central = pytz.timezone('US/Central')
+    curr_date = datetime.now(central).date()
 
     # Find the current week
     for week, date_range in nfl_2025_weeks.items():

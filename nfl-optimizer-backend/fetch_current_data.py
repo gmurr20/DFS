@@ -8,6 +8,7 @@ from json_to_proto import create_spreads_proto, create_player_pool
 from s3_client import S3Client
 import pandas as pd
 from config import Config
+import pytz
 
 def write_json_file(week: int, json_data: json, file_name: str):
     os.makedirs(f'data/{SEASON}/week{week}', exist_ok=True)
@@ -38,7 +39,8 @@ def main(read_local: bool, write_local:bool, upload: bool, week: int):
         exit(1)
 
     # Get current date and format as "YYYYMMDD"
-    current_date = datetime.now().strftime("%Y%m%d")
+    central = pytz.timezone('US/Central')
+    current_date = datetime.now(central).strftime("%Y%m%d")
     if week == 0 or week is None:
         week = get_upcoming_nfl_week()
     if week is None:
@@ -63,8 +65,8 @@ def main(read_local: bool, write_local:bool, upload: bool, week: int):
         res = conn.getresponse()
         data = res.read()
         dfs_data = json.loads(data.decode("utf-8"))
-        if dfs_data['statusCode'] != 200:
-            logger.error(f'Non 200 response from {dfs_data}. Response:\n{dfs_data}')
+        if dfs_data['statusCode'] != 200 or 'error' in dfs_data:
+            logger.error(f'Error response from {dfs_data}. Response:\n{dfs_data}')
             exit(1)
         if write_local:
             write_json_file(week=week, json_data=dfs_data, file_name='dfs_salaries')
@@ -82,9 +84,9 @@ def main(read_local: bool, write_local:bool, upload: bool, week: int):
         res = conn.getresponse()
         data = res.read()
         ff_projections = json.loads(data.decode("utf-8"))
-        if ff_projections['statusCode'] != 200:
+        if ff_projections['statusCode'] != 200 or 'error' in ff_projections:
             logger.error(
-                f'Non 200 response from /getNFLProjections week {week}. Response:\n{ff_projections}')
+                f'Error response from /getNFLProjections week {week}. Response:\n{ff_projections}')
             exit(1)
         if write_local:
             write_json_file(week=week, json_data=ff_projections, file_name='ff_projections')
@@ -102,8 +104,8 @@ def main(read_local: bool, write_local:bool, upload: bool, week: int):
         res = conn.getresponse()
         data = res.read()
         matchups_json = json.loads(data.decode("utf-8"))
-        if matchups_json['statusCode'] != 200:
-            logger.error(f'Non 200 response from /getNFLGamesForWeek week {week}. Response:\n{matchups_json}')
+        if matchups_json['statusCode'] != 200 or 'error' in matchups_json:
+            logger.error(f'Error response from /getNFLGamesForWeek week {week}. Response:\n{matchups_json}')
         if write_local:
             write_json_file(week=week, json_data=matchups_json, file_name='matchups')
         if upload and not s3_client.upload_file(season=SEASON, week=week, filename='matchups.json'):
@@ -120,7 +122,7 @@ def main(read_local: bool, write_local:bool, upload: bool, week: int):
         res = conn.getresponse()
         data = res.read()
         vegas_odds = json.loads(data.decode("utf-8"))
-        if vegas_odds['statusCode'] != 200:
+        if vegas_odds['statusCode'] != 200 or 'error' in vegas_odds:
             logging.error(f'Failed /getNFLBettingOdds. Response\n{vegas_odds}')
             exit(1)
         if write_local:
@@ -131,8 +133,7 @@ def main(read_local: bool, write_local:bool, upload: bool, week: int):
         with open(f'data/{SEASON}/week{week}/vegas_odds.json', 'r') as file:
             vegas_odds = json.load(file)
 
-    logging.info('Fetched all data. DFS data JSON:')
-    logging.info(f'{dfs_data}')
+    logging.info('Fetched all data')
     # Write Matchups binarypb
     matchups = create_spreads_proto(json_data=vegas_odds)
     binary_data = matchups.SerializeToString()
