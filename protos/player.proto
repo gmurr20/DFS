@@ -1,5 +1,12 @@
 syntax = "proto3";
 
+enum InjuryDesignation {
+  HEALTHY = 0;
+  QUESTIONABLE = 1;
+  OUT = 2;
+  IR = 3;
+}
+
 message Player {
   string id = 1;
 
@@ -16,6 +23,8 @@ message Player {
   string opposing_team = 7;
 
   float sim_points = 8;
+
+  InjuryDesignation injury_status = 9;
 }
 
 message Players {

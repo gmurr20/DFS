@@ -1024,6 +1024,24 @@ $root.GetPlayersResponse = (function() {
     return GetPlayersResponse;
 })();
 
+/**
+ * InjuryDesignation enum.
+ * @exports InjuryDesignation
+ * @enum {number}
+ * @property {number} HEALTHY=0 HEALTHY value
+ * @property {number} QUESTIONABLE=1 QUESTIONABLE value
+ * @property {number} OUT=2 OUT value
+ * @property {number} IR=3 IR value
+ */
+$root.InjuryDesignation = (function() {
+    var valuesById = {}, values = Object.create(valuesById);
+    values[valuesById[0] = "HEALTHY"] = 0;
+    values[valuesById[1] = "QUESTIONABLE"] = 1;
+    values[valuesById[2] = "OUT"] = 2;
+    values[valuesById[3] = "IR"] = 3;
+    return values;
+})();
+
 $root.Player = (function() {
 
     /**
@@ -1038,6 +1056,7 @@ $root.Player = (function() {
      * @property {number|null} [points] Player points
      * @property {string|null} [opposingTeam] Player opposingTeam
      * @property {number|null} [simPoints] Player simPoints
+     * @property {InjuryDesignation|null} [injuryStatus] Player injuryStatus
      */
 
     /**
@@ -1120,6 +1139,14 @@ $root.Player = (function() {
     Player.prototype.simPoints = 0;
 
     /**
+     * Player injuryStatus.
+     * @member {InjuryDesignation} injuryStatus
+     * @memberof Player
+     * @instance
+     */
+    Player.prototype.injuryStatus = 0;
+
+    /**
      * Creates a new Player instance using the specified properties.
      * @function create
      * @memberof Player
@@ -1159,6 +1186,8 @@ $root.Player = (function() {
             writer.uint32(/* id 7, wireType 2 =*/58).string(message.opposingTeam);
         if (message.simPoints != null && Object.hasOwnProperty.call(message, "simPoints"))
             writer.uint32(/* id 8, wireType 5 =*/69).float(message.simPoints);
+        if (message.injuryStatus != null && Object.hasOwnProperty.call(message, "injuryStatus"))
+            writer.uint32(/* id 9, wireType 0 =*/72).int32(message.injuryStatus);
         return writer;
     };
 
@@ -1227,6 +1256,10 @@ $root.Player = (function() {
                     message.simPoints = reader.float();
                     break;
                 }
+            case 9: {
+                    message.injuryStatus = reader.int32();
+                    break;
+                }
             default:
                 reader.skipType(tag & 7);
                 break;
@@ -1286,6 +1319,16 @@ $root.Player = (function() {
         if (message.simPoints != null && message.hasOwnProperty("simPoints"))
             if (typeof message.simPoints !== "number")
                 return "simPoints: number expected";
+        if (message.injuryStatus != null && message.hasOwnProperty("injuryStatus"))
+            switch (message.injuryStatus) {
+            default:
+                return "injuryStatus: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                break;
+            }
         return null;
     };
 
@@ -1317,6 +1360,30 @@ $root.Player = (function() {
             message.opposingTeam = String(object.opposingTeam);
         if (object.simPoints != null)
             message.simPoints = Number(object.simPoints);
+        switch (object.injuryStatus) {
+        default:
+            if (typeof object.injuryStatus === "number") {
+                message.injuryStatus = object.injuryStatus;
+                break;
+            }
+            break;
+        case "HEALTHY":
+        case 0:
+            message.injuryStatus = 0;
+            break;
+        case "QUESTIONABLE":
+        case 1:
+            message.injuryStatus = 1;
+            break;
+        case "OUT":
+        case 2:
+            message.injuryStatus = 2;
+            break;
+        case "IR":
+        case 3:
+            message.injuryStatus = 3;
+            break;
+        }
         return message;
     };
 
@@ -1342,6 +1409,7 @@ $root.Player = (function() {
             object.points = 0;
             object.opposingTeam = "";
             object.simPoints = 0;
+            object.injuryStatus = options.enums === String ? "HEALTHY" : 0;
         }
         if (message.id != null && message.hasOwnProperty("id"))
             object.id = message.id;
@@ -1359,6 +1427,8 @@ $root.Player = (function() {
             object.opposingTeam = message.opposingTeam;
         if (message.simPoints != null && message.hasOwnProperty("simPoints"))
             object.simPoints = options.json && !isFinite(message.simPoints) ? String(message.simPoints) : message.simPoints;
+        if (message.injuryStatus != null && message.hasOwnProperty("injuryStatus"))
+            object.injuryStatus = options.enums === String ? $root.InjuryDesignation[message.injuryStatus] === undefined ? message.injuryStatus : $root.InjuryDesignation[message.injuryStatus] : message.injuryStatus;
         return object;
     };
 

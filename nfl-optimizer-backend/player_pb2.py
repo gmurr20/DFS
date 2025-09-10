@@ -24,17 +24,19 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0cplayer.proto\"\x8d\x01\n\x06Player\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04team\x18\x03 \x01(\t\x12\x10\n\x08position\x18\x04 \x01(\t\x12\x0e\n\x06salary\x18\x05 \x01(\x05\x12\x0e\n\x06points\x18\x06 \x01(\x02\x12\x15\n\ropposing_team\x18\x07 \x01(\t\x12\x12\n\nsim_points\x18\x08 \x01(\x02\"#\n\x07Players\x12\x18\n\x07players\x18\x01 \x03(\x0b\x32\x07.Player\"\"\n\x06Lineup\x12\x18\n\x07players\x18\x01 \x03(\x0b\x32\x07.Playerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0cplayer.proto\"\xb8\x01\n\x06Player\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04team\x18\x03 \x01(\t\x12\x10\n\x08position\x18\x04 \x01(\t\x12\x0e\n\x06salary\x18\x05 \x01(\x05\x12\x0e\n\x06points\x18\x06 \x01(\x02\x12\x15\n\ropposing_team\x18\x07 \x01(\t\x12\x12\n\nsim_points\x18\x08 \x01(\x02\x12)\n\rinjury_status\x18\t \x01(\x0e\x32\x12.InjuryDesignation\"#\n\x07Players\x12\x18\n\x07players\x18\x01 \x03(\x0b\x32\x07.Player\"\"\n\x06Lineup\x12\x18\n\x07players\x18\x01 \x03(\x0b\x32\x07.Player*C\n\x11InjuryDesignation\x12\x0b\n\x07HEALTHY\x10\x00\x12\x10\n\x0cQUESTIONABLE\x10\x01\x12\x07\n\x03OUT\x10\x02\x12\x06\n\x02IR\x10\x03\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'player_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
+  _globals['_INJURYDESIGNATION']._serialized_start=276
+  _globals['_INJURYDESIGNATION']._serialized_end=343
   _globals['_PLAYER']._serialized_start=17
-  _globals['_PLAYER']._serialized_end=158
-  _globals['_PLAYERS']._serialized_start=160
-  _globals['_PLAYERS']._serialized_end=195
-  _globals['_LINEUP']._serialized_start=197
-  _globals['_LINEUP']._serialized_end=231
+  _globals['_PLAYER']._serialized_end=201
+  _globals['_PLAYERS']._serialized_start=203
+  _globals['_PLAYERS']._serialized_end=238
+  _globals['_LINEUP']._serialized_start=240
+  _globals['_LINEUP']._serialized_end=274
 # @@protoc_insertion_point(module_scope)

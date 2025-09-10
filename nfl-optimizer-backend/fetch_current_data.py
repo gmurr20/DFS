@@ -10,10 +10,12 @@ import pandas as pd
 from config import Config
 import pytz
 
+
 def write_json_file(week: int, json_data: json, file_name: str):
     os.makedirs(f'data/{SEASON}/week{week}', exist_ok=True)
     with open(f'data/{SEASON}/week{week}/{file_name}.json', 'w', encoding='utf-8') as f:
         json.dump(json_data, f, indent=2, ensure_ascii=False)
+
 
 def write_binarypb_file(week: int, serialized_data: str, file_name: str):
     os.makedirs(f'data/{SEASON}/week{week}', exist_ok=True)
@@ -21,7 +23,8 @@ def write_binarypb_file(week: int, serialized_data: str, file_name: str):
     with open(f'data/{SEASON}/week{week}/{file_name}.binarypb', 'wb') as f:
         f.write(serialized_data)
 
-def main(read_local: bool, write_local:bool, upload: bool, week: int):
+
+def main(read_local: bool, write_local: bool, upload: bool, week: int):
     # Basic configuration
     logging.basicConfig(
         level=logging.INFO,
@@ -31,7 +34,8 @@ def main(read_local: bool, write_local:bool, upload: bool, week: int):
     # Create a logger
     logger = logging.getLogger(__name__)
 
-    logger.info(f'read_local={read_local}, write_local={write_local}, upload={upload}, week={week}')
+    logger.info(
+        f'read_local={read_local}, write_local={write_local}, upload={upload}, week={week}')
 
     # Ensure running in right directory
     if not os.path.exists('data'):
@@ -66,10 +70,12 @@ def main(read_local: bool, write_local:bool, upload: bool, week: int):
         data = res.read()
         dfs_data = json.loads(data.decode("utf-8"))
         if dfs_data['statusCode'] != 200 or 'error' in dfs_data:
-            logger.error(f'Error response from {dfs_data}. Response:\n{dfs_data}')
+            logger.error(
+                f'Error response from {dfs_data}. Response:\n{dfs_data}')
             exit(1)
         if write_local:
-            write_json_file(week=week, json_data=dfs_data, file_name='dfs_salaries')
+            write_json_file(week=week, json_data=dfs_data,
+                            file_name='dfs_salaries')
         if upload and not s3_client.upload_file(season=SEASON, week=week, filename='dfs_salaries.json'):
             logging.error('Failed to upload dfs_salaries.json to S3')
     else:
@@ -89,7 +95,8 @@ def main(read_local: bool, write_local:bool, upload: bool, week: int):
                 f'Error response from /getNFLProjections week {week}. Response:\n{ff_projections}')
             exit(1)
         if write_local:
-            write_json_file(week=week, json_data=ff_projections, file_name='ff_projections')
+            write_json_file(week=week, json_data=ff_projections,
+                            file_name='ff_projections')
         if upload and not s3_client.upload_file(season=SEASON, week=week, filename='ff_projections.json'):
             logging.error('Failed to upload ff_projections.json to S3')
     else:
@@ -100,14 +107,17 @@ def main(read_local: bool, write_local:bool, upload: bool, week: int):
     seasonType = 'reg' if week <= 18 else 'post'
     matchups_json = None
     if not read_local and not os.path.isfile(f'data/{SEASON}/week{week}/matchups.json'):
-        conn.request("GET", f"/getNFLGamesForWeek?week={week}&seasonType={seasonType}", headers=headers)
+        conn.request(
+            "GET", f"/getNFLGamesForWeek?week={week}&seasonType={seasonType}", headers=headers)
         res = conn.getresponse()
         data = res.read()
         matchups_json = json.loads(data.decode("utf-8"))
         if matchups_json['statusCode'] != 200 or 'error' in matchups_json:
-            logger.error(f'Error response from /getNFLGamesForWeek week {week}. Response:\n{matchups_json}')
+            logger.error(
+                f'Error response from /getNFLGamesForWeek week {week}. Response:\n{matchups_json}')
         if write_local:
-            write_json_file(week=week, json_data=matchups_json, file_name='matchups')
+            write_json_file(week=week, json_data=matchups_json,
+                            file_name='matchups')
         if upload and not s3_client.upload_file(season=SEASON, week=week, filename='matchups.json'):
             logging.error('Failed to upload matchups.json to S3')
     else:
@@ -118,7 +128,8 @@ def main(read_local: bool, write_local:bool, upload: bool, week: int):
     # Grab Vegas Odds
     vegas_odds = None
     if not read_local:
-        conn.request("GET", f"/getNFLBettingOdds?gameDate={date_of_sunday_games}&itemFormat=map&impliedTotals=true&playerProps=false", headers=headers)
+        conn.request(
+            "GET", f"/getNFLBettingOdds?gameDate={date_of_sunday_games}&itemFormat=map&impliedTotals=true&playerProps=false", headers=headers)
         res = conn.getresponse()
         data = res.read()
         vegas_odds = json.loads(data.decode("utf-8"))
@@ -126,19 +137,34 @@ def main(read_local: bool, write_local:bool, upload: bool, week: int):
             logging.error(f'Failed /getNFLBettingOdds. Response\n{vegas_odds}')
             exit(1)
         if write_local:
-            write_json_file(week=week, json_data=vegas_odds, file_name='vegas_odds')
+            write_json_file(week=week, json_data=vegas_odds,
+                            file_name='vegas_odds')
         if upload and not s3_client.upload_file(season=SEASON, week=week, filename='vegas_odds.json'):
             logging.error('Failed to upload vegas_odds.json to S3')
     else:
         with open(f'data/{SEASON}/week{week}/vegas_odds.json', 'r') as file:
             vegas_odds = json.load(file)
 
+    # Grab player information
+    # This JSON is long so we don't store it in git or S3
+    nfl_player_statuses = None
+    if not read_local:
+        conn.request("GET", f"/getNFLPlayerList", headers=headers)
+        res = conn.getresponse()
+        data = res.read()
+        nfl_player_statuses = json.loads(data.decode("utf-8"))
+        if nfl_player_statuses['statusCode'] != 200 or 'error' in nfl_player_statuses:
+            logging.error(
+                f'Failed /getNFLPlayerList. Response\n{nfl_player_statuses}')
+            exit(1)
+
     logging.info('Fetched all data')
     # Write Matchups binarypb
     matchups = create_spreads_proto(json_data=vegas_odds)
     binary_data = matchups.SerializeToString()
     if write_local:
-        write_binarypb_file(week=week, serialized_data=binary_data, file_name='week_matchups')
+        write_binarypb_file(
+            week=week, serialized_data=binary_data, file_name='week_matchups')
     if upload and not s3_client.upload_file(season=SEASON, week=week, filename='week_matchups.binarypb'):
         logging.error('Failed to upload week_matchups.binarypb to S3')
 
@@ -147,10 +173,12 @@ def main(read_local: bool, write_local:bool, upload: bool, week: int):
         dk_df = pd.read_csv(f'data/{SEASON}/week{week}/DKSalaries.csv')
 
     # Write player pool binarypb
-    players = create_player_pool(matchups=matchups_json, ff_projections=ff_projections, salaries_json=dfs_data, dk_df=dk_df)
+    players = create_player_pool(matchups=matchups_json, ff_projections=ff_projections,
+                                 salaries_json=dfs_data, player_status_json=nfl_player_statuses, dk_df=dk_df)
     binary_data = players.SerializeToString()
     if write_local:
-        write_binarypb_file(week=week, serialized_data=binary_data, file_name='player_pool')
+        write_binarypb_file(
+            week=week, serialized_data=binary_data, file_name='player_pool')
     if upload and not s3_client.upload_file(season=SEASON, week=week, filename='player_pool.binarypb'):
         logging.error('Failed to upload player_pool.binarypb to S3')
     exit(0)
@@ -158,4 +186,4 @@ def main(read_local: bool, write_local:bool, upload: bool, week: int):
 
 if __name__ == "__main__":
     week = get_upcoming_nfl_week()
-    main(read_local=False, write_local=False, upload=True, week=week)
+    main(read_local=False, write_local=True, upload=True, week=week)

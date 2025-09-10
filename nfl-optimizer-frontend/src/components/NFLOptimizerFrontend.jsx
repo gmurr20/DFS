@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Lock, X, ChevronUp, ChevronDown, Eye, EyeOff } from 'lucide-react';
 
 import { GetPlayersResponse, OptimizerRequest, OptimizerResponse } from './compiled.js';
@@ -274,9 +274,11 @@ const NFLOptimizerFrontend = () => {
               id: player.id,
               name: player.name,
               team: player.team,
+              opposingTeam: player.opposingTeam,
               salary: player.salary,
               projection: player.points || 0, // Default to 0 if no projection
-              status: 'available'
+              status: 'available',
+              injuryStatus: player.injuryStatus
             };
 
             if (groupedPlayers[player.position]) {
@@ -527,7 +529,7 @@ const NFLOptimizerFrontend = () => {
       const nameParts = fullName.split(' ');
       if (nameParts.length >= 2) {
         const firstName = nameParts[0];
-        
+
         // Check if the name contains "Jr." and use full second name
         if (nameParts.length >= 3 && nameParts[2] === "Jr.") {
           const secondName = nameParts[1];
@@ -539,6 +541,33 @@ const NFLOptimizerFrontend = () => {
       }
     }
     return fullName;
+  };
+
+  // Get string from player status
+  const getPlayerStatus = (player) => {
+    if (player.injuryStatus === "OUT") {
+      return "OUT";
+    }
+    else if (player.injuryStatus === "IR") {
+      return "IR";
+    }
+    else if (player.injuryStatus === "QUESTIONABLE") {
+      return "Q";
+    }
+    return "";
+  };
+
+  const getPlayerStatusMobile = (player) => {
+    if (player.injuryStatus === "OUT") {
+      return "O";
+    }
+    else if (player.injuryStatus === "IR") {
+      return "IR";
+    }
+    else if (player.injuryStatus === "QUESTIONABLE") {
+      return "Q";
+    }
+    return "";
   };
 
   // Function to handle lineup optimization
@@ -1187,6 +1216,15 @@ const NFLOptimizerFrontend = () => {
                           </div>
                         </th>
                         <th
+                          className="px-2 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group hidden md:table-cell"
+                          onClick={() => handleSort('opposingTeam')}
+                        >
+                          <div className="flex items-center justify-between">
+                            Opp
+                            {getSortIcon('opposingTeam')}
+                          </div>
+                        </th>
+                        <th
                           className="px-2 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100 group"
                           onClick={() => handleSort('salary')}
                         >
@@ -1233,6 +1271,8 @@ const NFLOptimizerFrontend = () => {
                                 <div className="text-sm font-medium text-gray-900 truncate">
                                   <span className="md:hidden">{formatPlayerNameMobile(player.name)}</span>
                                   <span className="hidden md:inline">{player.name}</span>
+                                  <span className="ml-2 text-red-600 hidden md:inline">{getPlayerStatus(player)}</span>
+                                  <span className="ml-2 text-red-600 md:hidden">{getPlayerStatusMobile(player)}</span>
                                   {selectedPosition === 'FLEX' && (
                                     <span className="ml-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
                                       {getCurrentPlayerPosition(player.id)}
@@ -1244,6 +1284,9 @@ const NFLOptimizerFrontend = () => {
                           </td>
                           <td className="text-left px-2 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                             {player.team}
+                          </td>
+                          <td className="text-left px-2 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 hidden md:table-cell">
+                            {player.opposingTeam}
                           </td>
                           <td className="text-left px-2 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                             <span className="md:hidden">${(player.salary / 1000).toFixed(1)}K</span>

@@ -1,6 +1,6 @@
 import json
 from team_matchup_pb2 import TeamMatchup, WeekMatchups
-from player_pb2 import Player, Players
+from player_pb2 import Player, Players, InjuryDesignation
 import pandas as pd
 from ff_overrides import player_to_pts_override
 import logging
@@ -108,7 +108,7 @@ def is_sunday_in_time_range_pandas(date_string, time_string):
     
     return is_sunday and is_in_range
 
-def create_player_pool(matchups: json, ff_projections: json, salaries_json: json, dk_df: pd.DataFrame) -> Players:
+def create_player_pool(matchups: json, ff_projections: json, salaries_json: json, player_status_json: json, dk_df: pd.DataFrame) -> Players:
     team_to_opposing_team = {}
     for matchup in matchups["body"]:
         is_main_slate = is_sunday_in_time_range_pandas(matchup["gameDate"], matchup["gameTime"])
@@ -165,6 +165,21 @@ def create_player_pool(matchups: json, ff_projections: json, salaries_json: json
             # print(f"Can't find DST {team_id}")
             continue
         player_dict[team_id].points = calculate_draftkings_dst_points(dst)
+    
+    # Add status and adjust points
+    if player_status_json is not None:
+        status_map = {'Questionable': InjuryDesignation.QUESTIONABLE,
+              'Out': InjuryDesignation.OUT, 'Injured Reserve': InjuryDesignation.IR}
+        for player_info in player_status_json['body']:
+            id = player_info['playerID']
+            if 'injury' not in player_info:
+                continue
+            designation = player_info['injury']['designation']
+            if designation not in status_map or id not in player_dict:
+                continue
+            player_dict[id].injury_status = status_map[designation]
+            if player_dict[id].injury_status in [InjuryDesignation.IR, InjuryDesignation.OUT]:
+                player_dict[id].points = 0
 
     # Clean data to player pool
     player_pool = Players()
