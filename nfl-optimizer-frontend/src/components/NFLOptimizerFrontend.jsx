@@ -526,8 +526,8 @@ const NFLOptimizerFrontend = () => {
     const nameParts = fullName.split(' ');
     if (nameParts.length >= 2) {
       const firstName = nameParts[0];
-      const lastInitial = nameParts[nameParts.length - 1].charAt(0);
-      return `${firstName} ${lastInitial}.`;
+      const secondNameInitial = nameParts[1].charAt(0);
+      return `${firstName} ${secondNameInitial}`;
     }
     return fullName;
   };
