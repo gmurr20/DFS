@@ -38,6 +38,7 @@ class Team:
                 player_proto.salary = player['salary']
                 player_proto.points = player['points']
                 player_proto.sim_points = player['simulated_projection']
+                player_proto.injury_status = player['injury_status']
                 if player_proto.position in min_count_per_flex and len(position_to_player[player_proto.position]) >= min_count_per_flex[player_proto.position]:
                     position_to_player['FLEX'].append(player_proto)
                 else:

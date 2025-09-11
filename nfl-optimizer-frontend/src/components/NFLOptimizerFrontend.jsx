@@ -966,7 +966,8 @@ const NFLOptimizerFrontend = () => {
                                 {position}
                               </span>
                               <span className="text-sm font-medium text-gray-900 truncate">{player.name}</span>
-                              <span className="text-xs text-gray-500 hidden sm:inline">({player.team})</span>
+                              <span className="text-xs text-gray-500 sm:inline">({player.team})</span>
+                              <span className="text-xs text-red-500 sm:inline">{getPlayerStatus(player)}</span>
                             </div>
                             <div className="flex items-center space-x-2">
                               <span className="text-xs text-gray-600">${player.salary.toLocaleString()}</span>
@@ -1013,7 +1014,8 @@ const NFLOptimizerFrontend = () => {
                                 {position}
                               </span>
                               <span className="text-sm font-medium text-gray-900 truncate">{player.name}</span>
-                              <span className="text-xs text-gray-500 hidden sm:inline">({player.team})</span>
+                              <span className="text-xs text-gray-500 sm:inline">({player.team})</span>
+                              <span className="text-xs text-red-500 sm:inline">{getPlayerStatus(player)}</span>
                             </div>
                             <div className="flex items-center space-x-2">
                               <span className="text-xs text-gray-600">${player.salary.toLocaleString()}</span>
@@ -1071,7 +1073,7 @@ const NFLOptimizerFrontend = () => {
                                   </span>
                                   <div className="min-w-0">
                                     <span className="text-xs font-medium text-gray-900 truncate block">
-                                      {player.name} ({player.team})
+                                      {player.name} ({player.team})  <span className="text-red-900">{getPlayerStatus(player)}</span>
                                     </span>
                                   </div>
                                 </div>

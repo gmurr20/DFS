@@ -43,7 +43,8 @@ class Optimizer:
                 'salary': player.salary,
                 'points': player.points,
                 'team': player.team,
-                'opposing_team': player.opposing_team
+                'opposing_team': player.opposing_team,
+                'injury_status': player.injury_status
             }
             player_data.append(row)
         df = pd.DataFrame(player_data)
