@@ -554,6 +554,9 @@ const NFLOptimizerFrontend = () => {
     else if (player.injuryStatus === "QUESTIONABLE") {
       return "Q";
     }
+    else if (player.injuryStatus === "DOUBTFUL") {
+      return "D";
+    }
     return "";
   };
 
@@ -566,6 +569,9 @@ const NFLOptimizerFrontend = () => {
     }
     else if (player.injuryStatus === "QUESTIONABLE") {
       return "Q";
+    }
+    else if (player.injuryStatus === "DOUBTFUL") {
+      return "D";
     }
     return "";
   };

@@ -1032,6 +1032,7 @@ $root.GetPlayersResponse = (function() {
  * @property {number} QUESTIONABLE=1 QUESTIONABLE value
  * @property {number} OUT=2 OUT value
  * @property {number} IR=3 IR value
+ * @property {number} DOUBTFUL=4 DOUBTFUL value
  */
 $root.InjuryDesignation = (function() {
     var valuesById = {}, values = Object.create(valuesById);
@@ -1039,6 +1040,7 @@ $root.InjuryDesignation = (function() {
     values[valuesById[1] = "QUESTIONABLE"] = 1;
     values[valuesById[2] = "OUT"] = 2;
     values[valuesById[3] = "IR"] = 3;
+    values[valuesById[4] = "DOUBTFUL"] = 4;
     return values;
 })();
 
@@ -1327,6 +1329,7 @@ $root.Player = (function() {
             case 1:
             case 2:
             case 3:
+            case 4:
                 break;
             }
         return null;
@@ -1382,6 +1385,10 @@ $root.Player = (function() {
         case "IR":
         case 3:
             message.injuryStatus = 3;
+            break;
+        case "DOUBTFUL":
+        case 4:
+            message.injuryStatus = 4;
             break;
         }
         return message;

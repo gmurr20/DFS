@@ -1,7 +1,7 @@
 {
   "statusCode": 200,
   "body": {
-    "date": "20250910",
+    "date": "20250911",
     "draftkings": [
       {
         "team": "NE",
@@ -6066,6 +6066,22 @@
         "longName": "Silas Bolden",
         "playerID": "4590532",
         "teamID": "13"
+      },
+      {
+        "team": "IND",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Ameer Abdullah",
+        "playerID": "2576336",
+        "teamID": "14"
+      },
+      {
+        "team": "DEN",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Deuce Vaughn",
+        "playerID": "4431453",
+        "teamID": "10"
       }
     ],
     "fanduel": [

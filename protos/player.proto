@@ -5,6 +5,7 @@ enum InjuryDesignation {
   QUESTIONABLE = 1;
   OUT = 2;
   IR = 3;
+  DOUBTFUL = 4;
 }
 
 message Player {

@@ -5,11 +5,14 @@ import pandas as pd
 from ff_overrides import player_to_pts_override
 import logging
 
+
 def get_projected_total(over_under: float, spread: float):
     return (over_under - spread) / 2.0
 
+
 def create_spreads_proto(json_data: json):
-    books = ['ballybet', 'bet365', 'betmgm', 'betrivers', 'caesars_sportsbook', 'draftkings', 'espnbet', 'fanatics', 'fanduel']
+    books = ['ballybet', 'bet365', 'betmgm', 'betrivers',
+             'caesars_sportsbook', 'draftkings', 'espnbet', 'fanatics', 'fanduel']
     week_matchups = WeekMatchups()
     for game, spread_map in json_data['body'].items():
         teams = game[len('20250907_'):].split('@')
@@ -26,31 +29,38 @@ def create_spreads_proto(json_data: json):
             if 'homeTeamSpread' not in spread_map[book]:
                 continue
             over_under_sum += float(spread_map[book]['totalUnder'])
-            home_team_spread_sum += float(spread_map[book]['homeTeamSpread']) if spread_map[book]['homeTeamSpread'] != 'PK' else 0
+            home_team_spread_sum += float(spread_map[book]['homeTeamSpread']
+                                          ) if spread_map[book]['homeTeamSpread'] != 'PK' else 0
             book_count += 1
         if book_count == 0:
             logging.error(f'{game} has no spread yet. Default to 44')
         over_under = over_under_sum / book_count if book_count != 0 else 44
-        home_team_spread = home_team_spread_sum / book_count if book_count != 0 else -.5
+        home_team_spread = home_team_spread_sum / \
+            book_count if book_count != 0 else -.5
         home_team = TeamMatchup()
         home_team.team = home
         home_team.opposing_team = away
         home_team.is_home = True
-        home_team.projected_team_total = get_projected_total(over_under, home_team_spread)
-        home_team.projected_opposing_team_total = get_projected_total(over_under, -1 * home_team_spread)
+        home_team.projected_team_total = get_projected_total(
+            over_under, home_team_spread)
+        home_team.projected_opposing_team_total = get_projected_total(
+            over_under, -1 * home_team_spread)
         home_team.over_under = over_under
         home_team.spread = home_team_spread
         away_team = TeamMatchup()
         away_team.team = away
         away_team.opposing_team = home
         away_team.is_home = False
-        away_team.projected_team_total = get_projected_total(over_under, -1 * home_team_spread)
-        away_team.projected_opposing_team_total = get_projected_total(over_under, home_team_spread)
+        away_team.projected_team_total = get_projected_total(
+            over_under, -1 * home_team_spread)
+        away_team.projected_opposing_team_total = get_projected_total(
+            over_under, home_team_spread)
         away_team.over_under = over_under
         away_team.spread = -1.0 * home_team_spread
         week_matchups.matchups.append(home_team)
         week_matchups.matchups.append(away_team)
     return week_matchups
+
 
 def calculate_draftkings_dst_points(stats):
     # DraftKings scoring values
@@ -61,7 +71,7 @@ def calculate_draftkings_dst_points(stats):
     RETURN_TD_POINTS = 6
     SAFETY_POINTS = 2
     BLOCKED_KICK_POINTS = 2
-    
+
     # Points allowed scoring
     def points_allowed_score(pts_against):
         if pts_against == 0:
@@ -78,7 +88,7 @@ def calculate_draftkings_dst_points(stats):
             return -1
         else:  # 35+
             return -4
-    
+
     # Calculate points for each category
     sack_pts = float(stats["sacks"]) * SACK_POINTS
     int_pts = float(stats["interceptions"]) * INTERCEPTION_POINTS
@@ -88,30 +98,35 @@ def calculate_draftkings_dst_points(stats):
     safety_pts = float(stats["safeties"]) * SAFETY_POINTS
     block_kick_pts = float(stats["blockKick"]) * BLOCKED_KICK_POINTS
     pts_allowed_pts = points_allowed_score(float(stats["ptsAgainst"]))
-    
+
     # Total fantasy points
-    return (sack_pts + int_pts + fumble_pts + def_td_pts + 
-                   return_td_pts + safety_pts + block_kick_pts + pts_allowed_pts)
+    return (sack_pts + int_pts + fumble_pts + def_td_pts +
+            return_td_pts + safety_pts + block_kick_pts + pts_allowed_pts)
 
 # This is a hack to only grab main slate games
+
+
 def is_sunday_in_time_range_pandas(date_string, time_string):
     # Parse date
     date = pd.to_datetime(date_string, format='%Y%m%d')
-    
+
     # Parse time (pandas handles 12-hour format well)
     time_normalized = time_string.upper().replace('P', 'PM').replace('A', 'AM')
     time_obj = pd.to_datetime(time_normalized, format='%I:%M%p').time()
-    
+
     # Check conditions
     is_sunday = date.day_name() == 'Sunday'
-    is_in_range = pd.to_datetime('1:00 PM', format='%I:%M %p').time() <= time_obj <= pd.to_datetime('5:00 PM', format='%I:%M %p').time()
-    
+    is_in_range = pd.to_datetime('1:00 PM', format='%I:%M %p').time(
+    ) <= time_obj <= pd.to_datetime('5:00 PM', format='%I:%M %p').time()
+
     return is_sunday and is_in_range
+
 
 def create_player_pool(matchups: json, ff_projections: json, salaries_json: json, player_status_json: json, dk_df: pd.DataFrame) -> Players:
     team_to_opposing_team = {}
     for matchup in matchups["body"]:
-        is_main_slate = is_sunday_in_time_range_pandas(matchup["gameDate"], matchup["gameTime"])
+        is_main_slate = is_sunday_in_time_range_pandas(
+            matchup["gameDate"], matchup["gameTime"])
         if not is_main_slate:
             continue
         team_to_opposing_team[matchup["away"]] = matchup["home"]
@@ -165,11 +180,11 @@ def create_player_pool(matchups: json, ff_projections: json, salaries_json: json
             # print(f"Can't find DST {team_id}")
             continue
         player_dict[team_id].points = calculate_draftkings_dst_points(dst)
-    
+
     # Add status and adjust points
     if player_status_json is not None:
         status_map = {'Questionable': InjuryDesignation.QUESTIONABLE,
-              'Out': InjuryDesignation.OUT, 'Injured Reserve': InjuryDesignation.IR}
+                      'Out': InjuryDesignation.OUT, 'Injured Reserve': InjuryDesignation.IR, 'Doubtful': InjuryDesignation.DOUBTFUL}
         for player_info in player_status_json['body']:
             id = player_info['playerID']
             if 'injury' not in player_info:
@@ -185,5 +200,5 @@ def create_player_pool(matchups: json, ff_projections: json, salaries_json: json
     player_pool = Players()
     for _, player in player_dict.items():
         player_pool.players.append(player)
-    
+
     return player_pool
