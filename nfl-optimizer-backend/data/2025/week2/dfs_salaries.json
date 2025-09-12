@@ -1,7 +1,7 @@
 {
   "statusCode": 200,
   "body": {
-    "date": "20250911",
+    "date": "20250912",
     "draftkings": [
       {
         "team": "NE",
@@ -292,11 +292,27 @@
         "teamID": "2"
       },
       {
+        "team": "ATL",
+        "salary": "3500",
+        "pos": "WR",
+        "longName": "KhaDarel Hodge",
+        "playerID": "3047876",
+        "teamID": "2"
+      },
+      {
         "team": "LV",
         "salary": "3300",
         "pos": "TE",
         "longName": "Michael Mayer",
         "playerID": "4429086",
+        "teamID": "17"
+      },
+      {
+        "team": "LV",
+        "salary": "3400",
+        "pos": "WR",
+        "longName": "Tre Tucker",
+        "playerID": "4428718",
         "teamID": "17"
       },
       {
@@ -578,14 +594,6 @@
         "longName": "Xavier Hutchinson",
         "playerID": "4686422",
         "teamID": "13"
-      },
-      {
-        "team": "LV",
-        "salary": "3300",
-        "pos": "WR",
-        "longName": "Tre Tucker",
-        "playerID": "4428718",
-        "teamID": "17"
       },
       {
         "team": "LAC",
@@ -2484,12 +2492,12 @@
         "teamID": "27"
       },
       {
-        "team": "NYJ",
+        "team": "NYG",
         "salary": "3000",
         "pos": "WR",
         "longName": "Xavier Gipson",
         "playerID": "4427278",
-        "teamID": "25"
+        "teamID": "24"
       },
       {
         "team": "NE",
@@ -3492,14 +3500,6 @@
         "teamID": "17"
       },
       {
-        "team": "ATL",
-        "salary": "3200",
-        "pos": "WR",
-        "longName": "KhaDarel Hodge",
-        "playerID": "3047876",
-        "teamID": "2"
-      },
-      {
         "team": "LV",
         "salary": "2500",
         "pos": "TE",
@@ -3986,14 +3986,6 @@
         "longName": "Ashton Jeanty",
         "playerID": "4890973",
         "teamID": "17"
-      },
-      {
-        "team": "LAC",
-        "salary": "2700",
-        "pos": "TE",
-        "longName": "Oronde Gadsden II",
-        "playerID": "4595342",
-        "teamID": "18"
       },
       {
         "team": "MIN",
@@ -4604,6 +4596,14 @@
         "teamID": "30"
       },
       {
+        "team": "LAC",
+        "salary": "2800",
+        "pos": "TE",
+        "longName": "Will Dissly",
+        "playerID": "3127292",
+        "teamID": "18"
+      },
+      {
         "team": "MIN",
         "salary": "7700",
         "pos": "WR",
@@ -4676,12 +4676,28 @@
         "teamID": "12"
       },
       {
+        "team": "LAC",
+        "salary": "2600",
+        "pos": "TE",
+        "longName": "Oronde Gadsden II",
+        "playerID": "4595342",
+        "teamID": "18"
+      },
+      {
         "team": "GB",
         "salary": "4800",
         "pos": "WR",
         "longName": "Matthew Golden",
         "playerID": "4701936",
         "teamID": "12"
+      },
+      {
+        "team": "LAC",
+        "salary": "3200",
+        "pos": "WR",
+        "longName": "Tre' Harris",
+        "playerID": "4686612",
+        "teamID": "18"
       },
       {
         "team": "KC",
@@ -4996,14 +5012,6 @@
         "teamID": "18"
       },
       {
-        "team": "LAC",
-        "salary": "2700",
-        "pos": "TE",
-        "longName": "Will Dissly",
-        "playerID": "3127292",
-        "teamID": "18"
-      },
-      {
         "team": "GB",
         "salary": "6500",
         "pos": "RB",
@@ -5081,14 +5089,6 @@
         "pos": "RB",
         "longName": "Omarion Hampton",
         "playerID": "4685382",
-        "teamID": "18"
-      },
-      {
-        "team": "LAC",
-        "salary": "3100",
-        "pos": "WR",
-        "longName": "Tre' Harris",
-        "playerID": "4686612",
         "teamID": "18"
       },
       {
@@ -8806,12 +8806,12 @@
         "teamID": "27"
       },
       {
-        "team": "NYJ",
+        "team": "NYG",
         "salary": "4100",
         "pos": "WR",
         "longName": "Xavier Gipson",
         "playerID": "4427278",
-        "teamID": "25"
+        "teamID": "24"
       },
       {
         "team": "NE",
@@ -14360,12 +14360,12 @@
         "teamID": "16"
       },
       {
-        "team": "NYJ",
+        "team": "NYG",
         "salary": "10",
         "pos": "WR",
         "longName": "Xavier Gipson",
         "playerID": "4427278",
-        "teamID": "25"
+        "teamID": "24"
       },
       {
         "team": "KC",

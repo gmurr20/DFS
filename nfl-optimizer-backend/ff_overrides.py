@@ -1,6 +1,10 @@
 
 
 player_to_pts_override = {
-    # George Kittle
-    # "3040151": 0,
+    # CMC
+    "3117251": 23.0,
+    # Ridley
+    "3925357": 13.0,
+    # Ricky P
+    "4428209": 14.0
 }
