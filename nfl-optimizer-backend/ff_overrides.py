@@ -6,5 +6,7 @@ player_to_pts_override = {
     # Ridley
     "3925357": 13.0,
     # Ricky P
-    "4428209": 14.0
+    "4428209": 14.0,
+    # Travis H
+    "4685415": 12.7
 }
