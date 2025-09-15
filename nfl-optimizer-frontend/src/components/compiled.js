@@ -22,6 +22,7 @@ $root.OptimizerRequest = (function() {
      * @property {boolean|null} [stack] OptimizerRequest stack
      * @property {boolean|null} [noOpposingDefense] OptimizerRequest noOpposingDefense
      * @property {boolean|null} [runBack] OptimizerRequest runBack
+     * @property {Array.<string>|null} [teamsToExclude] OptimizerRequest teamsToExclude
      */
 
     /**
@@ -35,6 +36,7 @@ $root.OptimizerRequest = (function() {
     function OptimizerRequest(properties) {
         this.playerIdLocks = [];
         this.playerIdExcludes = [];
+        this.teamsToExclude = [];
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -98,6 +100,14 @@ $root.OptimizerRequest = (function() {
     OptimizerRequest.prototype.runBack = false;
 
     /**
+     * OptimizerRequest teamsToExclude.
+     * @member {Array.<string>} teamsToExclude
+     * @memberof OptimizerRequest
+     * @instance
+     */
+    OptimizerRequest.prototype.teamsToExclude = $util.emptyArray;
+
+    /**
      * Creates a new OptimizerRequest instance using the specified properties.
      * @function create
      * @memberof OptimizerRequest
@@ -137,6 +147,9 @@ $root.OptimizerRequest = (function() {
             writer.uint32(/* id 6, wireType 0 =*/48).bool(message.noOpposingDefense);
         if (message.runBack != null && Object.hasOwnProperty.call(message, "runBack"))
             writer.uint32(/* id 7, wireType 0 =*/56).bool(message.runBack);
+        if (message.teamsToExclude != null && message.teamsToExclude.length)
+            for (var i = 0; i < message.teamsToExclude.length; ++i)
+                writer.uint32(/* id 8, wireType 2 =*/66).string(message.teamsToExclude[i]);
         return writer;
     };
 
@@ -205,6 +218,12 @@ $root.OptimizerRequest = (function() {
                     message.runBack = reader.bool();
                     break;
                 }
+            case 8: {
+                    if (!(message.teamsToExclude && message.teamsToExclude.length))
+                        message.teamsToExclude = [];
+                    message.teamsToExclude.push(reader.string());
+                    break;
+                }
             default:
                 reader.skipType(tag & 7);
                 break;
@@ -269,6 +288,13 @@ $root.OptimizerRequest = (function() {
         if (message.runBack != null && message.hasOwnProperty("runBack"))
             if (typeof message.runBack !== "boolean")
                 return "runBack: boolean expected";
+        if (message.teamsToExclude != null && message.hasOwnProperty("teamsToExclude")) {
+            if (!Array.isArray(message.teamsToExclude))
+                return "teamsToExclude: array expected";
+            for (var i = 0; i < message.teamsToExclude.length; ++i)
+                if (!$util.isString(message.teamsToExclude[i]))
+                    return "teamsToExclude: string[] expected";
+        }
         return null;
     };
 
@@ -308,6 +334,13 @@ $root.OptimizerRequest = (function() {
             message.noOpposingDefense = Boolean(object.noOpposingDefense);
         if (object.runBack != null)
             message.runBack = Boolean(object.runBack);
+        if (object.teamsToExclude) {
+            if (!Array.isArray(object.teamsToExclude))
+                throw TypeError(".OptimizerRequest.teamsToExclude: array expected");
+            message.teamsToExclude = [];
+            for (var i = 0; i < object.teamsToExclude.length; ++i)
+                message.teamsToExclude[i] = String(object.teamsToExclude[i]);
+        }
         return message;
     };
 
@@ -327,6 +360,7 @@ $root.OptimizerRequest = (function() {
         if (options.arrays || options.defaults) {
             object.playerIdLocks = [];
             object.playerIdExcludes = [];
+            object.teamsToExclude = [];
         }
         if (options.defaults) {
             object.randomness = 0;
@@ -355,6 +389,11 @@ $root.OptimizerRequest = (function() {
             object.noOpposingDefense = message.noOpposingDefense;
         if (message.runBack != null && message.hasOwnProperty("runBack"))
             object.runBack = message.runBack;
+        if (message.teamsToExclude && message.teamsToExclude.length) {
+            object.teamsToExclude = [];
+            for (var j = 0; j < message.teamsToExclude.length; ++j)
+                object.teamsToExclude[j] = message.teamsToExclude[j];
+        }
         return object;
     };
 
@@ -1022,6 +1061,417 @@ $root.GetPlayersResponse = (function() {
     };
 
     return GetPlayersResponse;
+})();
+
+$root.GetMatchupsRequest = (function() {
+
+    /**
+     * Properties of a GetMatchupsRequest.
+     * @exports IGetMatchupsRequest
+     * @interface IGetMatchupsRequest
+     */
+
+    /**
+     * Constructs a new GetMatchupsRequest.
+     * @exports GetMatchupsRequest
+     * @classdesc Represents a GetMatchupsRequest.
+     * @implements IGetMatchupsRequest
+     * @constructor
+     * @param {IGetMatchupsRequest=} [properties] Properties to set
+     */
+    function GetMatchupsRequest(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * Creates a new GetMatchupsRequest instance using the specified properties.
+     * @function create
+     * @memberof GetMatchupsRequest
+     * @static
+     * @param {IGetMatchupsRequest=} [properties] Properties to set
+     * @returns {GetMatchupsRequest} GetMatchupsRequest instance
+     */
+    GetMatchupsRequest.create = function create(properties) {
+        return new GetMatchupsRequest(properties);
+    };
+
+    /**
+     * Encodes the specified GetMatchupsRequest message. Does not implicitly {@link GetMatchupsRequest.verify|verify} messages.
+     * @function encode
+     * @memberof GetMatchupsRequest
+     * @static
+     * @param {IGetMatchupsRequest} message GetMatchupsRequest message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    GetMatchupsRequest.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        return writer;
+    };
+
+    /**
+     * Encodes the specified GetMatchupsRequest message, length delimited. Does not implicitly {@link GetMatchupsRequest.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof GetMatchupsRequest
+     * @static
+     * @param {IGetMatchupsRequest} message GetMatchupsRequest message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    GetMatchupsRequest.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a GetMatchupsRequest message from the specified reader or buffer.
+     * @function decode
+     * @memberof GetMatchupsRequest
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {GetMatchupsRequest} GetMatchupsRequest
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    GetMatchupsRequest.decode = function decode(reader, length, error) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.GetMatchupsRequest();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            if (tag === error)
+                break;
+            switch (tag >>> 3) {
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a GetMatchupsRequest message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof GetMatchupsRequest
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {GetMatchupsRequest} GetMatchupsRequest
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    GetMatchupsRequest.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a GetMatchupsRequest message.
+     * @function verify
+     * @memberof GetMatchupsRequest
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    GetMatchupsRequest.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        return null;
+    };
+
+    /**
+     * Creates a GetMatchupsRequest message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof GetMatchupsRequest
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {GetMatchupsRequest} GetMatchupsRequest
+     */
+    GetMatchupsRequest.fromObject = function fromObject(object) {
+        if (object instanceof $root.GetMatchupsRequest)
+            return object;
+        return new $root.GetMatchupsRequest();
+    };
+
+    /**
+     * Creates a plain object from a GetMatchupsRequest message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof GetMatchupsRequest
+     * @static
+     * @param {GetMatchupsRequest} message GetMatchupsRequest
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    GetMatchupsRequest.toObject = function toObject() {
+        return {};
+    };
+
+    /**
+     * Converts this GetMatchupsRequest to JSON.
+     * @function toJSON
+     * @memberof GetMatchupsRequest
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    GetMatchupsRequest.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for GetMatchupsRequest
+     * @function getTypeUrl
+     * @memberof GetMatchupsRequest
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    GetMatchupsRequest.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/GetMatchupsRequest";
+    };
+
+    return GetMatchupsRequest;
+})();
+
+$root.GetMatchupsResponse = (function() {
+
+    /**
+     * Properties of a GetMatchupsResponse.
+     * @exports IGetMatchupsResponse
+     * @interface IGetMatchupsResponse
+     * @property {IWeekMatchups|null} [matchups] GetMatchupsResponse matchups
+     * @property {string|null} [week] GetMatchupsResponse week
+     */
+
+    /**
+     * Constructs a new GetMatchupsResponse.
+     * @exports GetMatchupsResponse
+     * @classdesc Represents a GetMatchupsResponse.
+     * @implements IGetMatchupsResponse
+     * @constructor
+     * @param {IGetMatchupsResponse=} [properties] Properties to set
+     */
+    function GetMatchupsResponse(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * GetMatchupsResponse matchups.
+     * @member {IWeekMatchups|null|undefined} matchups
+     * @memberof GetMatchupsResponse
+     * @instance
+     */
+    GetMatchupsResponse.prototype.matchups = null;
+
+    /**
+     * GetMatchupsResponse week.
+     * @member {string} week
+     * @memberof GetMatchupsResponse
+     * @instance
+     */
+    GetMatchupsResponse.prototype.week = "";
+
+    /**
+     * Creates a new GetMatchupsResponse instance using the specified properties.
+     * @function create
+     * @memberof GetMatchupsResponse
+     * @static
+     * @param {IGetMatchupsResponse=} [properties] Properties to set
+     * @returns {GetMatchupsResponse} GetMatchupsResponse instance
+     */
+    GetMatchupsResponse.create = function create(properties) {
+        return new GetMatchupsResponse(properties);
+    };
+
+    /**
+     * Encodes the specified GetMatchupsResponse message. Does not implicitly {@link GetMatchupsResponse.verify|verify} messages.
+     * @function encode
+     * @memberof GetMatchupsResponse
+     * @static
+     * @param {IGetMatchupsResponse} message GetMatchupsResponse message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    GetMatchupsResponse.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.matchups != null && Object.hasOwnProperty.call(message, "matchups"))
+            $root.WeekMatchups.encode(message.matchups, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.week != null && Object.hasOwnProperty.call(message, "week"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.week);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified GetMatchupsResponse message, length delimited. Does not implicitly {@link GetMatchupsResponse.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof GetMatchupsResponse
+     * @static
+     * @param {IGetMatchupsResponse} message GetMatchupsResponse message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    GetMatchupsResponse.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a GetMatchupsResponse message from the specified reader or buffer.
+     * @function decode
+     * @memberof GetMatchupsResponse
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {GetMatchupsResponse} GetMatchupsResponse
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    GetMatchupsResponse.decode = function decode(reader, length, error) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.GetMatchupsResponse();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            if (tag === error)
+                break;
+            switch (tag >>> 3) {
+            case 1: {
+                    message.matchups = $root.WeekMatchups.decode(reader, reader.uint32());
+                    break;
+                }
+            case 2: {
+                    message.week = reader.string();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a GetMatchupsResponse message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof GetMatchupsResponse
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {GetMatchupsResponse} GetMatchupsResponse
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    GetMatchupsResponse.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a GetMatchupsResponse message.
+     * @function verify
+     * @memberof GetMatchupsResponse
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    GetMatchupsResponse.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.matchups != null && message.hasOwnProperty("matchups")) {
+            var error = $root.WeekMatchups.verify(message.matchups);
+            if (error)
+                return "matchups." + error;
+        }
+        if (message.week != null && message.hasOwnProperty("week"))
+            if (!$util.isString(message.week))
+                return "week: string expected";
+        return null;
+    };
+
+    /**
+     * Creates a GetMatchupsResponse message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof GetMatchupsResponse
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {GetMatchupsResponse} GetMatchupsResponse
+     */
+    GetMatchupsResponse.fromObject = function fromObject(object) {
+        if (object instanceof $root.GetMatchupsResponse)
+            return object;
+        var message = new $root.GetMatchupsResponse();
+        if (object.matchups != null) {
+            if (typeof object.matchups !== "object")
+                throw TypeError(".GetMatchupsResponse.matchups: object expected");
+            message.matchups = $root.WeekMatchups.fromObject(object.matchups);
+        }
+        if (object.week != null)
+            message.week = String(object.week);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a GetMatchupsResponse message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof GetMatchupsResponse
+     * @static
+     * @param {GetMatchupsResponse} message GetMatchupsResponse
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    GetMatchupsResponse.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.matchups = null;
+            object.week = "";
+        }
+        if (message.matchups != null && message.hasOwnProperty("matchups"))
+            object.matchups = $root.WeekMatchups.toObject(message.matchups, options);
+        if (message.week != null && message.hasOwnProperty("week"))
+            object.week = message.week;
+        return object;
+    };
+
+    /**
+     * Converts this GetMatchupsResponse to JSON.
+     * @function toJSON
+     * @memberof GetMatchupsResponse
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    GetMatchupsResponse.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for GetMatchupsResponse
+     * @function getTypeUrl
+     * @memberof GetMatchupsResponse
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    GetMatchupsResponse.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/GetMatchupsResponse";
+    };
+
+    return GetMatchupsResponse;
 })();
 
 /**
@@ -1918,6 +2368,613 @@ $root.Lineup = (function() {
     };
 
     return Lineup;
+})();
+
+$root.TeamMatchup = (function() {
+
+    /**
+     * Properties of a TeamMatchup.
+     * @exports ITeamMatchup
+     * @interface ITeamMatchup
+     * @property {string|null} [team] TeamMatchup team
+     * @property {string|null} [opposingTeam] TeamMatchup opposingTeam
+     * @property {boolean|null} [isHome] TeamMatchup isHome
+     * @property {number|null} [projectedTeamTotal] TeamMatchup projectedTeamTotal
+     * @property {number|null} [projectedOpposingTeamTotal] TeamMatchup projectedOpposingTeamTotal
+     * @property {number|null} [overUnder] TeamMatchup overUnder
+     * @property {number|null} [spread] TeamMatchup spread
+     * @property {number|Long|null} [gametimeEpoch] TeamMatchup gametimeEpoch
+     */
+
+    /**
+     * Constructs a new TeamMatchup.
+     * @exports TeamMatchup
+     * @classdesc Represents a TeamMatchup.
+     * @implements ITeamMatchup
+     * @constructor
+     * @param {ITeamMatchup=} [properties] Properties to set
+     */
+    function TeamMatchup(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * TeamMatchup team.
+     * @member {string} team
+     * @memberof TeamMatchup
+     * @instance
+     */
+    TeamMatchup.prototype.team = "";
+
+    /**
+     * TeamMatchup opposingTeam.
+     * @member {string} opposingTeam
+     * @memberof TeamMatchup
+     * @instance
+     */
+    TeamMatchup.prototype.opposingTeam = "";
+
+    /**
+     * TeamMatchup isHome.
+     * @member {boolean} isHome
+     * @memberof TeamMatchup
+     * @instance
+     */
+    TeamMatchup.prototype.isHome = false;
+
+    /**
+     * TeamMatchup projectedTeamTotal.
+     * @member {number} projectedTeamTotal
+     * @memberof TeamMatchup
+     * @instance
+     */
+    TeamMatchup.prototype.projectedTeamTotal = 0;
+
+    /**
+     * TeamMatchup projectedOpposingTeamTotal.
+     * @member {number} projectedOpposingTeamTotal
+     * @memberof TeamMatchup
+     * @instance
+     */
+    TeamMatchup.prototype.projectedOpposingTeamTotal = 0;
+
+    /**
+     * TeamMatchup overUnder.
+     * @member {number} overUnder
+     * @memberof TeamMatchup
+     * @instance
+     */
+    TeamMatchup.prototype.overUnder = 0;
+
+    /**
+     * TeamMatchup spread.
+     * @member {number} spread
+     * @memberof TeamMatchup
+     * @instance
+     */
+    TeamMatchup.prototype.spread = 0;
+
+    /**
+     * TeamMatchup gametimeEpoch.
+     * @member {number|Long} gametimeEpoch
+     * @memberof TeamMatchup
+     * @instance
+     */
+    TeamMatchup.prototype.gametimeEpoch = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+    /**
+     * Creates a new TeamMatchup instance using the specified properties.
+     * @function create
+     * @memberof TeamMatchup
+     * @static
+     * @param {ITeamMatchup=} [properties] Properties to set
+     * @returns {TeamMatchup} TeamMatchup instance
+     */
+    TeamMatchup.create = function create(properties) {
+        return new TeamMatchup(properties);
+    };
+
+    /**
+     * Encodes the specified TeamMatchup message. Does not implicitly {@link TeamMatchup.verify|verify} messages.
+     * @function encode
+     * @memberof TeamMatchup
+     * @static
+     * @param {ITeamMatchup} message TeamMatchup message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    TeamMatchup.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.team != null && Object.hasOwnProperty.call(message, "team"))
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.team);
+        if (message.opposingTeam != null && Object.hasOwnProperty.call(message, "opposingTeam"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.opposingTeam);
+        if (message.isHome != null && Object.hasOwnProperty.call(message, "isHome"))
+            writer.uint32(/* id 3, wireType 0 =*/24).bool(message.isHome);
+        if (message.projectedTeamTotal != null && Object.hasOwnProperty.call(message, "projectedTeamTotal"))
+            writer.uint32(/* id 4, wireType 5 =*/37).float(message.projectedTeamTotal);
+        if (message.projectedOpposingTeamTotal != null && Object.hasOwnProperty.call(message, "projectedOpposingTeamTotal"))
+            writer.uint32(/* id 5, wireType 5 =*/45).float(message.projectedOpposingTeamTotal);
+        if (message.overUnder != null && Object.hasOwnProperty.call(message, "overUnder"))
+            writer.uint32(/* id 6, wireType 5 =*/53).float(message.overUnder);
+        if (message.spread != null && Object.hasOwnProperty.call(message, "spread"))
+            writer.uint32(/* id 7, wireType 5 =*/61).float(message.spread);
+        if (message.gametimeEpoch != null && Object.hasOwnProperty.call(message, "gametimeEpoch"))
+            writer.uint32(/* id 8, wireType 0 =*/64).int64(message.gametimeEpoch);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified TeamMatchup message, length delimited. Does not implicitly {@link TeamMatchup.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof TeamMatchup
+     * @static
+     * @param {ITeamMatchup} message TeamMatchup message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    TeamMatchup.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a TeamMatchup message from the specified reader or buffer.
+     * @function decode
+     * @memberof TeamMatchup
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {TeamMatchup} TeamMatchup
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    TeamMatchup.decode = function decode(reader, length, error) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.TeamMatchup();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            if (tag === error)
+                break;
+            switch (tag >>> 3) {
+            case 1: {
+                    message.team = reader.string();
+                    break;
+                }
+            case 2: {
+                    message.opposingTeam = reader.string();
+                    break;
+                }
+            case 3: {
+                    message.isHome = reader.bool();
+                    break;
+                }
+            case 4: {
+                    message.projectedTeamTotal = reader.float();
+                    break;
+                }
+            case 5: {
+                    message.projectedOpposingTeamTotal = reader.float();
+                    break;
+                }
+            case 6: {
+                    message.overUnder = reader.float();
+                    break;
+                }
+            case 7: {
+                    message.spread = reader.float();
+                    break;
+                }
+            case 8: {
+                    message.gametimeEpoch = reader.int64();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a TeamMatchup message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof TeamMatchup
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {TeamMatchup} TeamMatchup
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    TeamMatchup.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a TeamMatchup message.
+     * @function verify
+     * @memberof TeamMatchup
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    TeamMatchup.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.team != null && message.hasOwnProperty("team"))
+            if (!$util.isString(message.team))
+                return "team: string expected";
+        if (message.opposingTeam != null && message.hasOwnProperty("opposingTeam"))
+            if (!$util.isString(message.opposingTeam))
+                return "opposingTeam: string expected";
+        if (message.isHome != null && message.hasOwnProperty("isHome"))
+            if (typeof message.isHome !== "boolean")
+                return "isHome: boolean expected";
+        if (message.projectedTeamTotal != null && message.hasOwnProperty("projectedTeamTotal"))
+            if (typeof message.projectedTeamTotal !== "number")
+                return "projectedTeamTotal: number expected";
+        if (message.projectedOpposingTeamTotal != null && message.hasOwnProperty("projectedOpposingTeamTotal"))
+            if (typeof message.projectedOpposingTeamTotal !== "number")
+                return "projectedOpposingTeamTotal: number expected";
+        if (message.overUnder != null && message.hasOwnProperty("overUnder"))
+            if (typeof message.overUnder !== "number")
+                return "overUnder: number expected";
+        if (message.spread != null && message.hasOwnProperty("spread"))
+            if (typeof message.spread !== "number")
+                return "spread: number expected";
+        if (message.gametimeEpoch != null && message.hasOwnProperty("gametimeEpoch"))
+            if (!$util.isInteger(message.gametimeEpoch) && !(message.gametimeEpoch && $util.isInteger(message.gametimeEpoch.low) && $util.isInteger(message.gametimeEpoch.high)))
+                return "gametimeEpoch: integer|Long expected";
+        return null;
+    };
+
+    /**
+     * Creates a TeamMatchup message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof TeamMatchup
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {TeamMatchup} TeamMatchup
+     */
+    TeamMatchup.fromObject = function fromObject(object) {
+        if (object instanceof $root.TeamMatchup)
+            return object;
+        var message = new $root.TeamMatchup();
+        if (object.team != null)
+            message.team = String(object.team);
+        if (object.opposingTeam != null)
+            message.opposingTeam = String(object.opposingTeam);
+        if (object.isHome != null)
+            message.isHome = Boolean(object.isHome);
+        if (object.projectedTeamTotal != null)
+            message.projectedTeamTotal = Number(object.projectedTeamTotal);
+        if (object.projectedOpposingTeamTotal != null)
+            message.projectedOpposingTeamTotal = Number(object.projectedOpposingTeamTotal);
+        if (object.overUnder != null)
+            message.overUnder = Number(object.overUnder);
+        if (object.spread != null)
+            message.spread = Number(object.spread);
+        if (object.gametimeEpoch != null)
+            if ($util.Long)
+                (message.gametimeEpoch = $util.Long.fromValue(object.gametimeEpoch)).unsigned = false;
+            else if (typeof object.gametimeEpoch === "string")
+                message.gametimeEpoch = parseInt(object.gametimeEpoch, 10);
+            else if (typeof object.gametimeEpoch === "number")
+                message.gametimeEpoch = object.gametimeEpoch;
+            else if (typeof object.gametimeEpoch === "object")
+                message.gametimeEpoch = new $util.LongBits(object.gametimeEpoch.low >>> 0, object.gametimeEpoch.high >>> 0).toNumber();
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a TeamMatchup message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof TeamMatchup
+     * @static
+     * @param {TeamMatchup} message TeamMatchup
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    TeamMatchup.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.team = "";
+            object.opposingTeam = "";
+            object.isHome = false;
+            object.projectedTeamTotal = 0;
+            object.projectedOpposingTeamTotal = 0;
+            object.overUnder = 0;
+            object.spread = 0;
+            if ($util.Long) {
+                var long = new $util.Long(0, 0, false);
+                object.gametimeEpoch = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+            } else
+                object.gametimeEpoch = options.longs === String ? "0" : 0;
+        }
+        if (message.team != null && message.hasOwnProperty("team"))
+            object.team = message.team;
+        if (message.opposingTeam != null && message.hasOwnProperty("opposingTeam"))
+            object.opposingTeam = message.opposingTeam;
+        if (message.isHome != null && message.hasOwnProperty("isHome"))
+            object.isHome = message.isHome;
+        if (message.projectedTeamTotal != null && message.hasOwnProperty("projectedTeamTotal"))
+            object.projectedTeamTotal = options.json && !isFinite(message.projectedTeamTotal) ? String(message.projectedTeamTotal) : message.projectedTeamTotal;
+        if (message.projectedOpposingTeamTotal != null && message.hasOwnProperty("projectedOpposingTeamTotal"))
+            object.projectedOpposingTeamTotal = options.json && !isFinite(message.projectedOpposingTeamTotal) ? String(message.projectedOpposingTeamTotal) : message.projectedOpposingTeamTotal;
+        if (message.overUnder != null && message.hasOwnProperty("overUnder"))
+            object.overUnder = options.json && !isFinite(message.overUnder) ? String(message.overUnder) : message.overUnder;
+        if (message.spread != null && message.hasOwnProperty("spread"))
+            object.spread = options.json && !isFinite(message.spread) ? String(message.spread) : message.spread;
+        if (message.gametimeEpoch != null && message.hasOwnProperty("gametimeEpoch"))
+            if (typeof message.gametimeEpoch === "number")
+                object.gametimeEpoch = options.longs === String ? String(message.gametimeEpoch) : message.gametimeEpoch;
+            else
+                object.gametimeEpoch = options.longs === String ? $util.Long.prototype.toString.call(message.gametimeEpoch) : options.longs === Number ? new $util.LongBits(message.gametimeEpoch.low >>> 0, message.gametimeEpoch.high >>> 0).toNumber() : message.gametimeEpoch;
+        return object;
+    };
+
+    /**
+     * Converts this TeamMatchup to JSON.
+     * @function toJSON
+     * @memberof TeamMatchup
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    TeamMatchup.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for TeamMatchup
+     * @function getTypeUrl
+     * @memberof TeamMatchup
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    TeamMatchup.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/TeamMatchup";
+    };
+
+    return TeamMatchup;
+})();
+
+$root.WeekMatchups = (function() {
+
+    /**
+     * Properties of a WeekMatchups.
+     * @exports IWeekMatchups
+     * @interface IWeekMatchups
+     * @property {Array.<ITeamMatchup>|null} [matchups] WeekMatchups matchups
+     */
+
+    /**
+     * Constructs a new WeekMatchups.
+     * @exports WeekMatchups
+     * @classdesc Represents a WeekMatchups.
+     * @implements IWeekMatchups
+     * @constructor
+     * @param {IWeekMatchups=} [properties] Properties to set
+     */
+    function WeekMatchups(properties) {
+        this.matchups = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * WeekMatchups matchups.
+     * @member {Array.<ITeamMatchup>} matchups
+     * @memberof WeekMatchups
+     * @instance
+     */
+    WeekMatchups.prototype.matchups = $util.emptyArray;
+
+    /**
+     * Creates a new WeekMatchups instance using the specified properties.
+     * @function create
+     * @memberof WeekMatchups
+     * @static
+     * @param {IWeekMatchups=} [properties] Properties to set
+     * @returns {WeekMatchups} WeekMatchups instance
+     */
+    WeekMatchups.create = function create(properties) {
+        return new WeekMatchups(properties);
+    };
+
+    /**
+     * Encodes the specified WeekMatchups message. Does not implicitly {@link WeekMatchups.verify|verify} messages.
+     * @function encode
+     * @memberof WeekMatchups
+     * @static
+     * @param {IWeekMatchups} message WeekMatchups message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    WeekMatchups.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.matchups != null && message.matchups.length)
+            for (var i = 0; i < message.matchups.length; ++i)
+                $root.TeamMatchup.encode(message.matchups[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        return writer;
+    };
+
+    /**
+     * Encodes the specified WeekMatchups message, length delimited. Does not implicitly {@link WeekMatchups.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof WeekMatchups
+     * @static
+     * @param {IWeekMatchups} message WeekMatchups message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    WeekMatchups.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a WeekMatchups message from the specified reader or buffer.
+     * @function decode
+     * @memberof WeekMatchups
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {WeekMatchups} WeekMatchups
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    WeekMatchups.decode = function decode(reader, length, error) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.WeekMatchups();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            if (tag === error)
+                break;
+            switch (tag >>> 3) {
+            case 1: {
+                    if (!(message.matchups && message.matchups.length))
+                        message.matchups = [];
+                    message.matchups.push($root.TeamMatchup.decode(reader, reader.uint32()));
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a WeekMatchups message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof WeekMatchups
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {WeekMatchups} WeekMatchups
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    WeekMatchups.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a WeekMatchups message.
+     * @function verify
+     * @memberof WeekMatchups
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    WeekMatchups.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.matchups != null && message.hasOwnProperty("matchups")) {
+            if (!Array.isArray(message.matchups))
+                return "matchups: array expected";
+            for (var i = 0; i < message.matchups.length; ++i) {
+                var error = $root.TeamMatchup.verify(message.matchups[i]);
+                if (error)
+                    return "matchups." + error;
+            }
+        }
+        return null;
+    };
+
+    /**
+     * Creates a WeekMatchups message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof WeekMatchups
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {WeekMatchups} WeekMatchups
+     */
+    WeekMatchups.fromObject = function fromObject(object) {
+        if (object instanceof $root.WeekMatchups)
+            return object;
+        var message = new $root.WeekMatchups();
+        if (object.matchups) {
+            if (!Array.isArray(object.matchups))
+                throw TypeError(".WeekMatchups.matchups: array expected");
+            message.matchups = [];
+            for (var i = 0; i < object.matchups.length; ++i) {
+                if (typeof object.matchups[i] !== "object")
+                    throw TypeError(".WeekMatchups.matchups: object expected");
+                message.matchups[i] = $root.TeamMatchup.fromObject(object.matchups[i]);
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a WeekMatchups message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof WeekMatchups
+     * @static
+     * @param {WeekMatchups} message WeekMatchups
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    WeekMatchups.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults)
+            object.matchups = [];
+        if (message.matchups && message.matchups.length) {
+            object.matchups = [];
+            for (var j = 0; j < message.matchups.length; ++j)
+                object.matchups[j] = $root.TeamMatchup.toObject(message.matchups[j], options);
+        }
+        return object;
+    };
+
+    /**
+     * Converts this WeekMatchups to JSON.
+     * @function toJSON
+     * @memberof WeekMatchups
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    WeekMatchups.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for WeekMatchups
+     * @function getTypeUrl
+     * @memberof WeekMatchups
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    WeekMatchups.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/WeekMatchups";
+    };
+
+    return WeekMatchups;
 })();
 
 module.exports = $root;
