@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "player.proto";
+import "team_matchup.proto";
 
 message OptimizerRequest {
     repeated string player_id_locks = 1;
