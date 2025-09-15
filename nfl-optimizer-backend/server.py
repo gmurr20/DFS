@@ -11,6 +11,7 @@ import nfl_week_helper
 # import local_backend as backend_lib
 import online_backend as backend_lib
 from optimizer_api_pb2 import OptimizerRequest, GetPlayersResponse, GetMatchupsRequest, GetMatchupsResponse
+from team_matchup_pb2 import WeekMatchups
 from functools import wraps
 # from env_keys import SECRET_KEY, ADMIN_PASSWORD
 from config import Config
@@ -241,7 +242,16 @@ def get_matchups():
         spreads = backend_lib.get_spreads()
         if len(spreads.matchups) == 0:
             logger.info(f"No matchups for week {week}")
-        response = GetMatchupsResponse(matchups=spreads, week=str(week))
+        # Only 1 matchup should show up
+        prune_response = WeekMatchups()
+        team_set = set()
+        for matchup in spreads.matchups:
+            if matchup.team in team_set or matchup.opposing_team in team_set:
+                continue
+            team_set.add(matchup.team)
+            team_set.add(matchup.opposing_team)
+            prune_response.matchups.append(matchup)
+        response = GetMatchupsResponse(matchups=prune_response, week=str(week))
         return Response(response.SerializeToString(), content_type='application/x-protobuf')
     except Exception as e:
         logger.error(f"Error in getMatchups: {e}")

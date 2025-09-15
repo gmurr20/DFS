@@ -50,7 +50,7 @@ def main(read_local: bool, write_local: bool, upload: bool, week: int):
     if week is None:
         logger.info(f'Outside the NFL season {current_date}')
         exit(1)
-    date_of_sunday_games = game_dates(week)[0]
+    # date_of_sunday_games = game_dates(week)[0]
 
     s3_client = S3Client()
 
@@ -124,18 +124,28 @@ def main(read_local: bool, write_local: bool, upload: bool, week: int):
         logging.info(f'Skipping /getNFLGames call for week {week}')
         with open(f'data/{SEASON}/week{week}/matchups.json', 'r') as file:
             matchups_json = json.load(file)
+    
+    unique_dates = set([])
+    for matchup in matchups_json['body']:
+        unique_dates.add(matchup['gameDate'])
+    logging.info(f'Game dates for NFL week {week}: {unique_dates}')
 
     # Grab Vegas Odds
-    vegas_odds = None
+    vegas_odds = {}
     if not read_local:
-        conn.request(
-            "GET", f"/getNFLBettingOdds?gameDate={date_of_sunday_games}&itemFormat=map&impliedTotals=true&playerProps=false", headers=headers)
-        res = conn.getresponse()
-        data = res.read()
-        vegas_odds = json.loads(data.decode("utf-8"))
-        if vegas_odds['statusCode'] != 200 or 'error' in vegas_odds:
-            logging.error(f'Failed /getNFLBettingOdds. Response\n{vegas_odds}')
-            exit(1)
+        combined_body = {}
+        for date in unique_dates:
+            conn.request(
+                "GET", f"/getNFLBettingOdds?gameDate={date}&itemFormat=map&impliedTotals=true&playerProps=false", headers=headers)
+            res = conn.getresponse()
+            data = res.read()
+            single_date_vegas_odds = json.loads(data.decode("utf-8"))
+            if single_date_vegas_odds['statusCode'] != 200 or 'error' in single_date_vegas_odds:
+                logging.error(f'Failed /getNFLBettingOdds{date}. Response\n{single_date_vegas_odds}')
+                exit(1)
+            for key, val in single_date_vegas_odds['body'].items():
+                combined_body[key] = val
+        vegas_odds = {'statusCode' : 200, 'body': combined_body}
         if write_local:
             write_json_file(week=week, json_data=vegas_odds,
                             file_name='vegas_odds')

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Lock, X, ChevronUp, ChevronDown, Eye, EyeOff } from 'lucide-react';
 
-import { GetPlayersResponse, OptimizerRequest, OptimizerResponse } from './compiled.js';
+import { GetPlayersResponse, OptimizerRequest, OptimizerResponse, GetMatchupsResponse } from './compiled.js';
 
 const FLASK_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8888';
 
@@ -126,6 +126,13 @@ const NFLOptimizerFrontend = () => {
 
   const [week, setWeek] = useState('');
 
+  const [matchups, setMatchups] = useState([]);
+  const [excludedTeams, setExcludedTeams] = useState(new Set());
+  const [showMatchups, setShowMatchups] = useState(false);
+  const [contestPreset, setContestPreset] = useState('main');
+  const [availablePresets, setAvailablePresets] = useState([]);
+  const [dataLoaded, setDataLoaded] = useState({ players: false, matchups: false });
+
   // Optimizer settings
   const [randomness, setRandomness] = useState(0);
   const [numLineups, setNumLineups] = useState(1);
@@ -197,6 +204,8 @@ const NFLOptimizerFrontend = () => {
       FLEX: [],
       DST: [],
     });
+    setMatchups([]);
+    setExcludedTeams(new Set());
   };
 
   // Add this helper function to check if there are any players
@@ -295,6 +304,7 @@ const NFLOptimizerFrontend = () => {
         ];
 
         setPlayers(groupedPlayers);
+        setDataLoaded(prev => ({ ...prev, players: true }));
         setError(null);
       } catch (err) {
         console.error('Error fetching players:', err);
@@ -308,6 +318,54 @@ const NFLOptimizerFrontend = () => {
 
     fetchPlayers();
   }, [isAuthenticated]);
+
+  // Fetch matchups from API
+  useEffect(() => {
+    if (!isAuthenticated) return;
+
+    const fetchMatchups = async () => {
+      try {
+        const response = await makeAuthenticatedRequest(`${FLASK_BASE_URL}/getMatchups`);
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        // Get the response as array buffer for protobuf parsing
+        const arrayBuffer = await response.arrayBuffer();
+        const message = GetMatchupsResponse.decode(new Uint8Array(arrayBuffer));
+        const object = GetMatchupsResponse.toObject(message, {
+          longs: String,
+          enums: String,
+          bytes: String
+        });
+
+        if (object.matchups && object.matchups.matchups) {
+          setMatchups(object.matchups.matchups);
+          const presets = categorizeGamesByTime(object.matchups.matchups);
+          setAvailablePresets(presets);
+          setDataLoaded(prev => ({ ...prev, matchups: true }));
+        }
+      } catch (err) {
+        console.error('Error fetching matchups:', err);
+        // Don't set error state for matchups since it's not critical
+      }
+    };
+
+    fetchMatchups();
+  }, [isAuthenticated]);
+
+  useEffect(() => {
+  if (dataLoaded.players && dataLoaded.matchups && availablePresets.length > 0) {
+    const defaultPreset = 'main';
+    const presetExists = availablePresets.find(p => p.key === defaultPreset);
+    
+    if (presetExists && contestPreset === defaultPreset) {
+      console.log('Applying default preset after both data sets loaded');
+      applyContestPreset(defaultPreset);
+    }
+  }
+}, [dataLoaded.players, dataLoaded.matchups, availablePresets]);
 
   const [selectedPosition, setSelectedPosition] = useState('QB');
   const [sortConfig, setSortConfig] = useState({ key: 'salary', direction: 'desc' });
@@ -335,6 +393,148 @@ const NFLOptimizerFrontend = () => {
   const MAX_FLEX = 1;
   const MAX_TOTAL_LOCKED = 9;
   const MAX_SALARY_CAP = 50000;
+
+  const toggleTeamExclusion = (team) => {
+    setExcludedTeams(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(team)) {
+        newSet.delete(team);
+      } else {
+        newSet.add(team);
+      }
+      return newSet;
+    });
+  };
+
+  const clearTeamExclusions = () => {
+    setExcludedTeams(new Set());
+    applyContestPreset(contestPreset);
+  };
+
+  // Format game time from epoch timestamp
+  const formatGameTime = (epochTime) => {
+    if (!epochTime) return 'TBD';
+    const date = new Date(parseInt(epochTime) * 1000);
+    return date.toLocaleString('en-US', {
+      weekday: 'short',
+      month: 'short',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit',
+    });
+  };
+
+  // Format spread display
+  const formatSpread = (spread, team, opposingTeam, isHome) => {
+    if (!spread) return 'N/A';
+    const spreadValue = parseFloat(spread);
+    if (spreadValue === 0) return 'PK';
+
+    // If spread is positive, the team is favored by that amount
+    // If spread is negative, the team is an underdog by that amount
+    const displayTeam = isHome ? team : opposingTeam;
+    const roundedSpread = Math.abs(spreadValue).toFixed(1);
+
+    if (spreadValue > 0) {
+      return `${displayTeam} -${roundedSpread}`;
+    } else {
+      return `${displayTeam} +${roundedSpread}`;
+    }
+  };
+
+  const categorizeGamesByTime = (matchups) => {
+    const presets = {
+      main: { name: "Main Slate", teams: [] },
+      all: { name: 'All Games', teams: [] },
+      thursday: { name: 'Thursday Night', teams: [] },
+      friday: { name: 'Friday', teams: [] },
+      saturday: { name: 'Saturday', teams: [] },
+      early: { name: 'Early Only', teams: [] },
+      late: { name: 'Afternoon Only', teams: [] },
+      sunday_night: { name: 'Sunday Night', teams: [] },
+      monday_night: { name: 'Monday Night', teams: [] }
+    };
+
+    matchups.forEach(matchup => {
+      if (!matchup.gametimeEpoch) return;
+
+      const gameDate = new Date(parseInt(matchup.gametimeEpoch) * 1000);
+
+      const formatter = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/Chicago',
+        weekday: 'long',
+        hour: 'numeric',
+        hour12: false
+      });
+
+      const parts = formatter.formatToParts(gameDate);
+      const dayOfWeek = parts.find(part => part.type === 'weekday').value;
+      const hour = parts.find(part => part.type === 'hour').value;
+
+      const teams = [matchup.team, matchup.opposingTeam];
+
+      // Thursday games
+      if (dayOfWeek === 'Thursday') {
+        presets.thursday.teams.push(...teams);
+      }
+      // Sunday games
+      else if (dayOfWeek === 'Sunday') {
+        if (hour >= 18 && hour <= 23) { // 6pm-11pm CT (Sunday Night)
+          presets.sunday_night.teams.push(...teams);
+        } else if (hour >= 12 && hour <= 14) { // 12pm-2pm CT
+          presets.early.teams.push(...teams);
+          presets.main.teams.push(...teams);
+        } else if (hour >= 15 && hour <= 17) { // 3pm-5pm CT
+          presets.late.teams.push(...teams);
+          presets.main.teams.push(...teams);
+        }
+      }
+      else if (dayOfWeek === 'Monday') {
+        presets.monday_night.teams.push(...teams);
+      }
+      else if (dayOfWeek === 'Friday') {
+        presets.friday.teams.push(...teams);
+      }
+      else if (dayOfWeek === 'Saturday') {
+        presets.saturday.teams.push(...teams);
+      }
+      else {
+        console.error('Game on unknown day:', dayOfWeek);
+      }
+    });
+
+    // Filter out empty presets and return only those with games
+    return Object.entries(presets)
+      .filter(([key, preset]) => key === 'all' || preset.teams.length > 0)
+      .map(([key, preset]) => ({ key, ...preset }));
+  };
+
+  const applyContestPreset = (presetKey) => {
+    console.log('applyContestPreset', presetKey);
+    setContestPreset(presetKey);
+
+    if (presetKey === 'all') {
+      setExcludedTeams(new Set());
+      return;
+    }
+
+    const selectedPreset = availablePresets.find(p => p.key === presetKey);
+    if (!selectedPreset) return;
+
+    // Get all teams from all matchups
+    const allTeams = new Set();
+    matchups.forEach(matchup => {
+      allTeams.add(matchup.team);
+      allTeams.add(matchup.opposingTeam);
+    });
+
+    // Exclude teams that are NOT in the selected preset
+    const teamsInPreset = new Set(selectedPreset.teams);
+    const teamsToExclude = [...allTeams].filter(team => !teamsInPreset.has(team));
+
+    setExcludedTeams(new Set(teamsToExclude));
+    setCurrentPage(1); // Reset pagination
+  };
 
   // Show loading state during initial auth check
   if (loading && !isAuthenticated) {
@@ -447,6 +647,7 @@ const NFLOptimizerFrontend = () => {
   };
 
   const clearAllFilters = () => {
+    clearTeamExclusions();
     setPlayers(prevPlayers => {
       const newPlayers = { ...prevPlayers };
       Object.keys(newPlayers).forEach(position => {
@@ -606,7 +807,8 @@ const NFLOptimizerFrontend = () => {
         numLineups: numLineups,
         stack: stack,
         noOpposingDefense: noOpposingDefense,
-        runBack: runBack
+        runBack: runBack,
+        teamsToExclude: Array.from(excludedTeams)
       });
 
       console.log('OptimizerRequest:', request);
@@ -683,16 +885,27 @@ const NFLOptimizerFrontend = () => {
     });
   };
 
+  // Add this helper function to filter players based on excluded teams
+  const getFilteredPlayers = (playerList) => {
+    if (excludedTeams.size === 0) return playerList;
+    return playerList.filter(player => !excludedTeams.has(player.team));
+  };
+
+  // Update your existing getPaginatedPlayers function
   const getPaginatedPlayers = (playerList) => {
-    const sortedPlayers = getSortedPlayers(playerList);
+    const filteredPlayers = getFilteredPlayers(playerList);
+    const sortedPlayers = getSortedPlayers(filteredPlayers);
     const startIndex = (currentPage - 1) * PLAYERS_PER_PAGE;
     const endIndex = startIndex + PLAYERS_PER_PAGE;
     return sortedPlayers.slice(startIndex, endIndex);
   };
 
+  // Update getTotalPages to use filtered count
   const getTotalPages = (playerList) => {
-    return Math.ceil(playerList.length / PLAYERS_PER_PAGE);
+    const filteredPlayers = getFilteredPlayers(playerList);
+    return Math.ceil(filteredPlayers.length / PLAYERS_PER_PAGE);
   };
+
 
   // Reset to page 1 when position changes
   const handlePositionChange = (position) => {
@@ -916,6 +1129,143 @@ const NFLOptimizerFrontend = () => {
                 </div>
               </div>
             </div>
+
+            {/* Matchups Dropdown */}
+            {matchups.length > 0 && (
+              <div className="mt-4 md:mt-6">
+                <div className="bg-gray-50 rounded-lg border border-gray-200">
+                  <button
+                    onClick={() => setShowMatchups(!showMatchups)}
+                    className="w-full px-3 md:px-4 py-2 md:py-3 flex items-center justify-between text-left hover:bg-gray-100 transition-colors rounded-lg"
+                  >
+                    <div className="flex items-center space-x-2">
+                      <h3 className="text-sm md:text-base font-semibold text-gray-900">
+                        Week {week} Matchups
+                      </h3>
+                      {excludedTeams.size > 0 && (
+                        <span className="bg-red-100 text-red-800 text-xs font-medium px-2 py-1 rounded-full">
+                          {excludedTeams.size} teams excluded
+                        </span>
+                      )}
+                    </div>
+                    <ChevronDown className={`w-4 h-4 text-gray-500 transition-transform ${showMatchups ? 'rotate-180' : ''}`} />
+                  </button>
+
+                  {showMatchups && (
+                    <div className="border-t border-gray-200 p-3 md:p-4 bg-white rounded-b-lg">
+                      {excludedTeams.size > 0 && (
+                        <div className="mb-3 flex justify-end">
+                          <button
+                            onClick={clearTeamExclusions}
+                            className="bg-red-600 text-white px-2 py-1 rounded text-xs font-medium hover:bg-red-700 transition-colors"
+                          >
+                            Clear Exclusions
+                          </button>
+                        </div>
+                      )}
+
+
+                      {/* Contest Presets */}
+                      {availablePresets.length > 1 && (
+                        <div className="mt-4 md:mt-6">
+                          <h3 className="text-sm md:text-base font-semibold text-gray-900 mb-3">Contest</h3>
+                          <div className="flex flex-wrap gap-2">
+                            {availablePresets.map(preset => (
+                              <button
+                                key={preset.key}
+                                onClick={() => applyContestPreset(preset.key)}
+                                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${contestPreset === preset.key
+                                  ? 'bg-blue-600 text-white'
+                                  : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
+                                  }`}
+                              >
+                                {preset.name}
+                                {preset.teams.length > 0 && (
+                                  <span className="ml-1 text-xs opacity-75">
+                                    ({preset.teams.length / 2} games)
+                                  </span>
+                                )}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                      {/* Compact Table */}
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-xs md:text-sm">
+                          <thead>
+                            <tr className="border-b border-gray-200">
+                              <th className="text-left py-2 font-medium text-gray-700">Matchup</th>
+                              <th className="text-left py-2 font-medium text-gray-700 hidden sm:table-cell">Time</th>
+                              <th className="text-left py-2 font-medium text-gray-700">Spread</th>
+                              <th className="text-left py-2 font-medium text-gray-700">O/U</th>
+                              <th className="text-left py-2 font-medium text-gray-700">Exclude</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-gray-100">
+                            {matchups.map((matchup, index) => (
+                              <tr key={index} className="hover:bg-gray-50">
+                                <td className="py-2 pr-2">
+                                  <div className="text-gray-900">
+                                    {matchup.isHome ? (
+                                      <span className="text-xs md:text-sm">
+                                        {matchup.opposingTeam} @ {matchup.team}
+                                      </span>
+                                    ) : (
+                                      <span className="text-xs md:text-sm">
+                                        {matchup.team} @ {matchup.opposingTeam}
+                                      </span>
+                                    )}
+                                  </div>
+                                  <div className="text-xs text-gray-500 sm:hidden">
+                                    {formatGameTime(matchup.gametimeEpoch)}
+                                  </div>
+                                </td>
+                                <td className="py-2 pr-2 text-gray-700 hidden sm:table-cell">
+                                  {formatGameTime(matchup.gametimeEpoch)}
+                                </td>
+                                <td className="py-2 pr-2 text-gray-700">
+                                  {formatSpread(matchup.spread, matchup.team, matchup.opposingTeam, matchup.isHome)}
+                                </td>
+                                <td className="py-2 pr-2 text-gray-700">
+                                  {matchup.overUnder ? parseFloat(matchup.overUnder).toFixed(1) : 'N/A'}
+                                </td>
+                                <td className="py-2">
+                                  <div className="flex items-center space-x-1">
+                                    <button
+                                      onClick={() => toggleTeamExclusion(matchup.team)}
+                                      className={`inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium transition-colors ${excludedTeams.has(matchup.team)
+                                        ? 'bg-red-100 text-red-700 hover:bg-red-200'
+                                        : 'bg-gray-100 text-gray-600 hover:bg-red-100 hover:text-red-700'
+                                        }`}
+                                      title={excludedTeams.has(matchup.team) ? `Remove ${matchup.team} exclusion` : `Exclude ${matchup.team}`}
+                                    >
+                                      <X className="w-2.5 h-2.5 mr-0.5" />
+                                      {matchup.team}
+                                    </button>
+                                    <button
+                                      onClick={() => toggleTeamExclusion(matchup.opposingTeam)}
+                                      className={`inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium transition-colors ${excludedTeams.has(matchup.opposingTeam)
+                                        ? 'bg-red-100 text-red-700 hover:bg-red-200'
+                                        : 'bg-gray-100 text-gray-600 hover:bg-red-100 hover:text-red-700'
+                                        }`}
+                                      title={excludedTeams.has(matchup.opposingTeam) ? `Remove ${matchup.opposingTeam} exclusion` : `Exclude ${matchup.opposingTeam}`}
+                                    >
+                                      <X className="w-2.5 h-2.5 mr-0.5" />
+                                      {matchup.opposingTeam}
+                                    </button>
+                                  </div>
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
 
             {/* Summary and Controls */}
             <div className="mt-4 md:mt-6">
