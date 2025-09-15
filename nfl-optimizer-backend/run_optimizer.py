@@ -16,11 +16,12 @@ optimizer = op_lib.Optimizer(player_pool=player_pool, spreads=get_spreads(), tea
 request = OptimizerRequest()
 # request.player_id_locks.append('4426348')
 # request.player_id_locks.append('NYG')
-request.randomness = 0.5
-request.num_lineups = 5
+request.randomness = 0.0
+request.num_lineups = 1
 request.stack = True
 request.run_back = True
 request.no_opposing_defense = True
+# request.teams_to_exclude.append('CAR')
 
 response = optimizer.optimize(request)
 

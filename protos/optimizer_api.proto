@@ -16,6 +16,8 @@ message OptimizerRequest {
     bool no_opposing_defense = 6;
 
     bool run_back = 7;
+
+    repeated string teams_to_exclude = 8;
 }
 
 message OptimizerResponse {
@@ -27,4 +29,10 @@ message GetPlayersRequest {}
 message GetPlayersResponse {
     Players players = 1;
     string week = 2;
+}
+
+message GetMatchupsRequest {}
+
+message GetMatchupsResponse {
+    WeekMatchups matchups = 1;
 }

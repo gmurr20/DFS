@@ -50,12 +50,6 @@ class Optimizer:
         df = pd.DataFrame(player_data)
         return df
     
-    # def _add_randomness_to_player_pool(self, randomness: float):
-    #     randomized_pool = self.player_pool.copy(deep=True)
-    #     my_func = partial(randomize_points, randomness)
-    #     randomized_pool['simulated_projection'] = randomized_pool['points'].apply(my_func)
-    #     return randomized_pool
-    
     def generate_optimal_lineup(self, player_pool: pd.DataFrame, request: OptimizerRequest):
         # 1. Define the problem
         prob = pulp.LpProblem("DraftKings Lineup Optimizer", pulp.LpMaximize)
@@ -85,6 +79,9 @@ class Optimizer:
         prob += pulp.lpSum([player_vars[p_id] for p_id in player_vars]) == self.num_players, "Total Players Selected"
 
         # Constraint 3: Passed in requirements
+        for team in request.teams_to_exclude:
+            players_on_team = player_pool[player_pool['team'] == team]
+            prob += pulp.lpSum([player_vars[player['id']] for _, player in players_on_team.iterrows()]) == 0, f'Exclude {team}'
         for lock in request.player_id_locks:
             prob += player_vars[lock] == 1, f'{player_vars[lock]} player lock'
         for exclude in request.player_id_excludes:
