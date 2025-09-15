@@ -125,10 +125,11 @@ def is_sunday_in_time_range_pandas(date_string, time_string):
 def create_player_pool(matchups: json, ff_projections: json, salaries_json: json, player_status_json: json, dk_df: pd.DataFrame) -> Players:
     team_to_opposing_team = {}
     for matchup in matchups["body"]:
-        is_main_slate = is_sunday_in_time_range_pandas(
-            matchup["gameDate"], matchup["gameTime"])
-        if not is_main_slate:
-            continue
+        # Remove main slate filtering
+        # is_main_slate = is_sunday_in_time_range_pandas(
+        #     matchup["gameDate"], matchup["gameTime"])
+        # if not is_main_slate:
+        #     continue
         team_to_opposing_team[matchup["away"]] = matchup["home"]
         team_to_opposing_team[matchup["home"]] = matchup["away"]
 
