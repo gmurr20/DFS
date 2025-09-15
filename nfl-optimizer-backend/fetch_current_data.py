@@ -160,7 +160,7 @@ def main(read_local: bool, write_local: bool, upload: bool, week: int):
 
     logging.info('Fetched all data')
     # Write Matchups binarypb
-    matchups = create_spreads_proto(json_data=vegas_odds)
+    matchups = create_spreads_proto(json_data=vegas_odds, matchup_json=matchups_json)
     binary_data = matchups.SerializeToString()
     if write_local:
         write_binarypb_file(
@@ -186,4 +186,4 @@ def main(read_local: bool, write_local: bool, upload: bool, week: int):
 
 if __name__ == "__main__":
     week = get_upcoming_nfl_week()
-    main(read_local=False, write_local=True, upload=True, week=week)
+    main(read_local=False, write_local=False, upload=True, week=week)

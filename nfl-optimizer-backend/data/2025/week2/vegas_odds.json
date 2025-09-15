@@ -2,7 +2,7 @@
   "statusCode": 200,
   "body": {
     "20250914_ATL@MIN": {
-      "last_updated_e_time": "1757901622.4056234",
+      "last_updated_e_time": "1757905879.023162",
       "betmgm": {
         "totalUnder": "44.5",
         "awayTeamSpread": "+3.5",
@@ -45,7 +45,7 @@
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
         "awayTeamMLOdds": "+138",
-        "homeTeamMLOdds": "-166",
+        "homeTeamMLOdds": "-164",
         "totalOver": "44.5",
         "impliedTotals": {
           "awayTotal": "20.5",

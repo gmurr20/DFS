@@ -10,10 +10,15 @@ def get_projected_total(over_under: float, spread: float):
     return (over_under - spread) / 2.0
 
 
-def create_spreads_proto(json_data: json):
+def create_spreads_proto(json_data: json, matchup_json: json):
+    team_to_gametime = {}
+    for matchup in matchup_json["body"]:
+        team_to_gametime[matchup['home']] = int(float(matchup["gameTime_epoch"]))
+        team_to_gametime[matchup['away']] = int(float(matchup["gameTime_epoch"]))
+
     books = ['ballybet', 'bet365', 'betmgm', 'betrivers',
              'caesars_sportsbook', 'draftkings', 'espnbet', 'fanatics', 'fanduel']
-    week_matchups = WeekMatchups()
+    week_matchups = []
     for game, spread_map in json_data['body'].items():
         teams = game[len('20250907_'):].split('@')
         away = teams[0]
@@ -47,6 +52,7 @@ def create_spreads_proto(json_data: json):
             over_under, -1 * home_team_spread)
         home_team.over_under = over_under
         home_team.spread = home_team_spread
+        home_team.gametime_epoch = team_to_gametime[home]
         away_team = TeamMatchup()
         away_team.team = away
         away_team.opposing_team = home
@@ -57,9 +63,11 @@ def create_spreads_proto(json_data: json):
             over_under, home_team_spread)
         away_team.over_under = over_under
         away_team.spread = -1.0 * home_team_spread
-        week_matchups.matchups.append(home_team)
-        week_matchups.matchups.append(away_team)
-    return week_matchups
+        away_team.gametime_epoch = team_to_gametime[away]
+        week_matchups.append(home_team)
+        week_matchups.append(away_team)
+    sorted_matchups = sorted(week_matchups, key=lambda x: x.gametime_epoch)
+    return WeekMatchups(matchups=sorted_matchups)
 
 
 def calculate_draftkings_dst_points(stats):
