@@ -235,7 +235,7 @@ def optimize_lineup():
 
 @app.route('/getMatchups', methods=['GET'])
 @token_required
-def get_players():
+def get_matchups():
     try:
         week = nfl_week_helper.get_upcoming_nfl_week()
         spreads = backend_lib.get_spreads()
