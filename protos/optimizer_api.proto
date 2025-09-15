@@ -36,4 +36,5 @@ message GetMatchupsRequest {}
 
 message GetMatchupsResponse {
     WeekMatchups matchups = 1;
+    string week = 2;
 }

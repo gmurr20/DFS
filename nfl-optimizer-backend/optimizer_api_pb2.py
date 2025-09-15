@@ -26,7 +26,7 @@ import player_pb2 as player__pb2
 import team_matchup_pb2 as team__matchup__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13optimizer_api.proto\x1a\x0cplayer.proto\x1a\x12team_matchup.proto\"\xc8\x01\n\x10OptimizerRequest\x12\x17\n\x0fplayer_id_locks\x18\x01 \x03(\t\x12\x1a\n\x12player_id_excludes\x18\x02 \x03(\t\x12\x12\n\nrandomness\x18\x03 \x01(\x02\x12\x13\n\x0bnum_lineups\x18\x04 \x01(\x05\x12\r\n\x05stack\x18\x05 \x01(\x08\x12\x1b\n\x13no_opposing_defense\x18\x06 \x01(\x08\x12\x10\n\x08run_back\x18\x07 \x01(\x08\x12\x18\n\x10teams_to_exclude\x18\x08 \x03(\t\"-\n\x11OptimizerResponse\x12\x18\n\x07lineups\x18\x01 \x03(\x0b\x32\x07.Lineup\"\x13\n\x11GetPlayersRequest\"=\n\x12GetPlayersResponse\x12\x19\n\x07players\x18\x01 \x01(\x0b\x32\x08.Players\x12\x0c\n\x04week\x18\x02 \x01(\t\"\x14\n\x12GetMatchupsRequest\"6\n\x13GetMatchupsResponse\x12\x1f\n\x08matchups\x18\x01 \x01(\x0b\x32\r.WeekMatchupsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13optimizer_api.proto\x1a\x0cplayer.proto\x1a\x12team_matchup.proto\"\xc8\x01\n\x10OptimizerRequest\x12\x17\n\x0fplayer_id_locks\x18\x01 \x03(\t\x12\x1a\n\x12player_id_excludes\x18\x02 \x03(\t\x12\x12\n\nrandomness\x18\x03 \x01(\x02\x12\x13\n\x0bnum_lineups\x18\x04 \x01(\x05\x12\r\n\x05stack\x18\x05 \x01(\x08\x12\x1b\n\x13no_opposing_defense\x18\x06 \x01(\x08\x12\x10\n\x08run_back\x18\x07 \x01(\x08\x12\x18\n\x10teams_to_exclude\x18\x08 \x03(\t\"-\n\x11OptimizerResponse\x12\x18\n\x07lineups\x18\x01 \x03(\x0b\x32\x07.Lineup\"\x13\n\x11GetPlayersRequest\"=\n\x12GetPlayersResponse\x12\x19\n\x07players\x18\x01 \x01(\x0b\x32\x08.Players\x12\x0c\n\x04week\x18\x02 \x01(\t\"\x14\n\x12GetMatchupsRequest\"D\n\x13GetMatchupsResponse\x12\x1f\n\x08matchups\x18\x01 \x01(\x0b\x32\r.WeekMatchups\x12\x0c\n\x04week\x18\x02 \x01(\tb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -44,5 +44,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETMATCHUPSREQUEST']._serialized_start=391
   _globals['_GETMATCHUPSREQUEST']._serialized_end=411
   _globals['_GETMATCHUPSRESPONSE']._serialized_start=413
-  _globals['_GETMATCHUPSRESPONSE']._serialized_end=467
+  _globals['_GETMATCHUPSRESPONSE']._serialized_end=481
 # @@protoc_insertion_point(module_scope)

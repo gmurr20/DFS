@@ -10,7 +10,7 @@ import nfl_week_helper
 
 # import local_backend as backend_lib
 import online_backend as backend_lib
-from optimizer_api_pb2 import OptimizerRequest, GetPlayersResponse
+from optimizer_api_pb2 import OptimizerRequest, GetPlayersResponse, GetMatchupsRequest, GetMatchupsResponse
 from functools import wraps
 # from env_keys import SECRET_KEY, ADMIN_PASSWORD
 from config import Config
@@ -233,6 +233,19 @@ def optimize_lineup():
         logger.error(f"Error in optimize: {e}")
         return create_protobuf_error_response("Internal server error", 500)
 
+@app.route('/getMatchups', methods=['GET'])
+@token_required
+def get_players():
+    try:
+        week = nfl_week_helper.get_upcoming_nfl_week()
+        spreads = backend_lib.get_spreads()
+        if len(spreads.matchups) == 0:
+            logger.info(f"No matchups for week {week}")
+        response = GetMatchupsResponse(matchups=spreads, week=str(week))
+        return Response(response.SerializeToString(), content_type='application/x-protobuf')
+    except Exception as e:
+        logger.error(f"Error in getMatchups: {e}")
+        return create_protobuf_error_response("Internal server error", 500)
 
 if __name__ == '__main__':
     logger.info(
