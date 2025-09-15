@@ -356,16 +356,16 @@ const NFLOptimizerFrontend = () => {
   }, [isAuthenticated]);
 
   useEffect(() => {
-  if (dataLoaded.players && dataLoaded.matchups && availablePresets.length > 0) {
-    const defaultPreset = 'main';
-    const presetExists = availablePresets.find(p => p.key === defaultPreset);
-    
-    if (presetExists && contestPreset === defaultPreset) {
-      console.log('Applying default preset after both data sets loaded');
-      applyContestPreset(defaultPreset);
+    if (dataLoaded.players && dataLoaded.matchups && availablePresets.length > 0) {
+      const defaultPreset = 'main';
+      const presetExists = availablePresets.find(p => p.key === defaultPreset);
+
+      if (presetExists && contestPreset === defaultPreset) {
+        console.log('Applying default preset after both data sets loaded');
+        applyContestPreset(defaultPreset);
+      }
     }
-  }
-}, [dataLoaded.players, dataLoaded.matchups, availablePresets]);
+  }, [dataLoaded.players, dataLoaded.matchups, availablePresets]);
 
   const [selectedPosition, setSelectedPosition] = useState('QB');
   const [sortConfig, setSortConfig] = useState({ key: 'salary', direction: 'desc' });
@@ -436,16 +436,16 @@ const NFLOptimizerFrontend = () => {
     const roundedSpread = Math.abs(spreadValue).toFixed(1);
 
     if (spreadValue > 0) {
-      return `${displayTeam} -${roundedSpread}`;
-    } else {
       return `${displayTeam} +${roundedSpread}`;
+    } else {
+      return `${displayTeam} -${roundedSpread}`;
     }
   };
 
   const categorizeGamesByTime = (matchups) => {
     const presets = {
-      main: { name: "Main Slate", teams: [] },
       all: { name: 'All Games', teams: [] },
+      main: { name: "Main Slate", teams: [] },
       thursday: { name: 'Thursday Night', teams: [] },
       friday: { name: 'Friday', teams: [] },
       saturday: { name: 'Saturday', teams: [] },
@@ -1153,36 +1153,24 @@ const NFLOptimizerFrontend = () => {
 
                   {showMatchups && (
                     <div className="border-t border-gray-200 p-3 md:p-4 bg-white rounded-b-lg">
-                      {excludedTeams.size > 0 && (
-                        <div className="mb-3 flex justify-end">
-                          <button
-                            onClick={clearTeamExclusions}
-                            className="bg-red-600 text-white px-2 py-1 rounded text-xs font-medium hover:bg-red-700 transition-colors"
-                          >
-                            Clear Exclusions
-                          </button>
-                        </div>
-                      )}
-
-
-                      {/* Contest Presets */}
+                      {/* Contest Presets - Top on Mobile */}
                       {availablePresets.length > 1 && (
-                        <div className="mt-4 md:mt-6">
-                          <h3 className="text-sm md:text-base font-semibold text-gray-900 mb-3">Contest</h3>
-                          <div className="flex flex-wrap gap-2">
+                        <div className="mb-4 lg:hidden">
+                          <h3 className="text-sm font-semibold text-gray-900 mb-2">Contest</h3>
+                          <div className="flex flex-wrap gap-1">
                             {availablePresets.map(preset => (
                               <button
                                 key={preset.key}
                                 onClick={() => applyContestPreset(preset.key)}
-                                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${contestPreset === preset.key
+                                className={`px-2 py-1 rounded text-xs font-medium transition-colors ${contestPreset === preset.key
                                   ? 'bg-blue-600 text-white'
                                   : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
                                   }`}
                               >
                                 {preset.name}
                                 {preset.teams.length > 0 && (
-                                  <span className="ml-1 text-xs opacity-75">
-                                    ({preset.teams.length / 2} games)
+                                  <span className="ml-1 opacity-75">
+                                    ({preset.teams.length / 2})
                                   </span>
                                 )}
                               </button>
@@ -1190,76 +1178,111 @@ const NFLOptimizerFrontend = () => {
                           </div>
                         </div>
                       )}
-                      {/* Compact Table */}
-                      <div className="overflow-x-auto">
-                        <table className="w-full text-xs md:text-sm">
-                          <thead>
-                            <tr className="border-b border-gray-200">
-                              <th className="text-left py-2 font-medium text-gray-700">Matchup</th>
-                              <th className="text-left py-2 font-medium text-gray-700 hidden sm:table-cell">Time</th>
-                              <th className="text-left py-2 font-medium text-gray-700">Spread</th>
-                              <th className="text-left py-2 font-medium text-gray-700">O/U</th>
-                              <th className="text-left py-2 font-medium text-gray-700">Exclude</th>
-                            </tr>
-                          </thead>
-                          <tbody className="divide-y divide-gray-100">
-                            {matchups.map((matchup, index) => (
-                              <tr key={index} className="hover:bg-gray-50">
-                                <td className="py-2 pr-2">
-                                  <div className="text-gray-900">
-                                    {matchup.isHome ? (
-                                      <span className="text-xs md:text-sm">
-                                        {matchup.opposingTeam} @ {matchup.team}
-                                      </span>
-                                    ) : (
-                                      <span className="text-xs md:text-sm">
-                                        {matchup.team} @ {matchup.opposingTeam}
-                                      </span>
-                                    )}
-                                  </div>
-                                  <div className="text-xs text-gray-500 sm:hidden">
-                                    {formatGameTime(matchup.gametimeEpoch)}
-                                  </div>
-                                </td>
-                                <td className="py-2 pr-2 text-gray-700 hidden sm:table-cell">
-                                  {formatGameTime(matchup.gametimeEpoch)}
-                                </td>
-                                <td className="py-2 pr-2 text-gray-700">
-                                  {formatSpread(matchup.spread, matchup.team, matchup.opposingTeam, matchup.isHome)}
-                                </td>
-                                <td className="py-2 pr-2 text-gray-700">
-                                  {matchup.overUnder ? parseFloat(matchup.overUnder).toFixed(1) : 'N/A'}
-                                </td>
-                                <td className="py-2">
-                                  <div className="flex items-center space-x-1">
-                                    <button
-                                      onClick={() => toggleTeamExclusion(matchup.team)}
-                                      className={`inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium transition-colors ${excludedTeams.has(matchup.team)
-                                        ? 'bg-red-100 text-red-700 hover:bg-red-200'
-                                        : 'bg-gray-100 text-gray-600 hover:bg-red-100 hover:text-red-700'
-                                        }`}
-                                      title={excludedTeams.has(matchup.team) ? `Remove ${matchup.team} exclusion` : `Exclude ${matchup.team}`}
-                                    >
-                                      <X className="w-2.5 h-2.5 mr-0.5" />
-                                      {matchup.team}
-                                    </button>
-                                    <button
-                                      onClick={() => toggleTeamExclusion(matchup.opposingTeam)}
-                                      className={`inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium transition-colors ${excludedTeams.has(matchup.opposingTeam)
-                                        ? 'bg-red-100 text-red-700 hover:bg-red-200'
-                                        : 'bg-gray-100 text-gray-600 hover:bg-red-100 hover:text-red-700'
-                                        }`}
-                                      title={excludedTeams.has(matchup.opposingTeam) ? `Remove ${matchup.opposingTeam} exclusion` : `Exclude ${matchup.opposingTeam}`}
-                                    >
-                                      <X className="w-2.5 h-2.5 mr-0.5" />
-                                      {matchup.opposingTeam}
-                                    </button>
-                                  </div>
-                                </td>
+
+                      {/* Table and Presets Side by Side on Desktop */}
+                      <div className="flex flex-col lg:flex-row gap-4">
+                        {/* Table */}
+                        <div className="flex-1 overflow-x-auto">
+                          <table className="w-full text-xs md:text-sm">
+                            <thead>
+                              <tr className="border-b border-gray-200">
+                                <th className="text-left py-2 pr-4 font-medium text-gray-700">Matchup</th>
+                                <th className="text-left py-2 pr-3 font-medium text-gray-700 hidden sm:table-cell">Time</th>
+                                <th className="text-left py-2 pr-3 font-medium text-gray-700">Spread</th>
+                                <th className="text-left py-2 pr-3 font-medium text-gray-700">O/U</th>
+                                <th className="text-left py-2 font-medium text-gray-700">Exclude</th>
                               </tr>
-                            ))}
-                          </tbody>
-                        </table>
+                            </thead>
+                            <tbody className="divide-y divide-gray-100">
+                              {matchups.map((matchup, index) => (
+                                <tr key={index} className="hover:bg-gray-50">
+                                  <td className="py-2 pr-4 text-left">
+                                    <div className="text-gray-900">
+                                      {matchup.isHome ? (
+                                        <span className="text-xs md:text-sm">
+                                          {matchup.opposingTeam}&nbsp;@&nbsp;{matchup.team}
+                                        </span>
+                                      ) : (
+                                        <span className="text-xs md:text-sm">
+                                          {matchup.team}&nbsp;@&nbsp;{matchup.opposingTeam}
+                                        </span>
+                                      )}
+                                    </div>
+                                    <div className="text-xs text-gray-500 sm:hidden">
+                                      {formatGameTime(matchup.gametimeEpoch)}
+                                    </div>
+                                  </td>
+                                  <td className="py-2 pr-3 text-gray-700 hidden sm:table-cell text-left">
+                                    {formatGameTime(matchup.gametimeEpoch)}
+                                  </td>
+                                  <td className="py-2 pr-3 text-gray-700 text-left">
+                                    {formatSpread(matchup.spread, matchup.team, matchup.opposingTeam, matchup.isHome)}
+                                  </td>
+                                  <td className="py-2 pr-3 text-gray-700 text-left">
+                                    {matchup.overUnder ? parseFloat(matchup.overUnder).toFixed(1) : 'N/A'}
+                                  </td>
+                                  <td className="py-2 text-left">
+                                    <div className="flex items-center space-x-1">
+                                      <button
+                                        onClick={() => toggleTeamExclusion(matchup.team)}
+                                        className={`inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium transition-colors ${excludedTeams.has(matchup.team)
+                                            ? 'bg-red-100 text-red-700 hover:bg-red-200'
+                                            : 'bg-gray-100 text-gray-600 hover:bg-red-100 hover:text-red-700'
+                                          }`}
+                                        title={excludedTeams.has(matchup.team) ? `Remove ${matchup.team} exclusion` : `Exclude ${matchup.team}`}
+                                      >
+                                        <X className="w-2.5 h-2.5 mr-0.5" />
+                                        {matchup.team}
+                                      </button>
+                                      <button
+                                        onClick={() => toggleTeamExclusion(matchup.opposingTeam)}
+                                        className={`inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium transition-colors ${excludedTeams.has(matchup.opposingTeam)
+                                            ? 'bg-red-100 text-red-700 hover:bg-red-200'
+                                            : 'bg-gray-100 text-gray-600 hover:bg-red-100 hover:text-red-700'
+                                          }`}
+                                        title={excludedTeams.has(matchup.opposingTeam) ? `Remove ${matchup.opposingTeam} exclusion` : `Exclude ${matchup.opposingTeam}`}
+                                      >
+                                        <X className="w-2.5 h-2.5 mr-0.5" />
+                                        {matchup.opposingTeam}
+                                      </button>
+                                    </div>
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+
+                        {/* Contest Presets Sidebar - Desktop Only */}
+                        {availablePresets.length > 1 && (
+                          <div className="hidden lg:block lg:w-64 lg:flex-shrink-0">
+                            <div className="bg-gray-50 rounded-lg p-3">
+                              <h3 className="text-sm font-semibold text-gray-900 mb-3">Contest Selection</h3>
+                              <div className="space-y-2">
+                                {availablePresets.map(preset => (
+                                  <button
+                                    key={preset.key}
+                                    onClick={() => applyContestPreset(preset.key)}
+                                    className={`w-full text-left px-3 py-2 rounded-md text-sm font-medium transition-colors ${contestPreset === preset.key
+                                      ? 'bg-blue-600 text-white'
+                                      : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
+                                      }`}
+                                  >
+                                    <div className="flex items-center justify-between">
+                                      <span>{preset.name}</span>
+                                      {preset.teams.length > 0 && (
+                                        <span className="text-xs opacity-75">
+                                          {preset.teams.length / 2}
+                                          &nbsp;games
+                                        </span>
+                                      )}
+                                    </div>
+                                  </button>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </div>
                   )}
