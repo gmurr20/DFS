@@ -1,7 +1,7 @@
 {
   "statusCode": 200,
   "body": {
-    "date": "20250912",
+    "date": "20250913",
     "draftkings": [
       {
         "team": "NE",
@@ -2660,12 +2660,12 @@
         "teamID": "26"
       },
       {
-        "team": "NE",
+        "team": "NO",
         "salary": "3000",
         "pos": "WR",
         "longName": "Ja'Lynn Polk",
         "playerID": "4430637",
-        "teamID": "22"
+        "teamID": "23"
       },
       {
         "team": "CIN",
@@ -6095,11 +6095,19 @@
       },
       {
         "team": "TB",
-        "salary": "6300",
+        "salary": "6400",
         "pos": "WR",
         "longName": "Emeka Egbuka",
         "playerID": "4567750",
         "teamID": "30"
+      },
+      {
+        "team": "LV",
+        "salary": "5600",
+        "pos": "TE",
+        "longName": "Michael Mayer",
+        "playerID": "4429086",
+        "teamID": "17"
       },
       {
         "team": "KC",
@@ -6124,6 +6132,14 @@
         "longName": "Dylan Sampson",
         "playerID": "5081397",
         "teamID": "8"
+      },
+      {
+        "team": "LAC",
+        "salary": "6400",
+        "pos": "RB",
+        "longName": "Omarion Hampton",
+        "playerID": "4685382",
+        "teamID": "18"
       },
       {
         "team": "SF",
@@ -6174,14 +6190,6 @@
         "teamID": "31"
       },
       {
-        "team": "LAC",
-        "salary": "8100",
-        "pos": "QB",
-        "longName": "Justin Herbert",
-        "playerID": "4038941",
-        "teamID": "18"
-      },
-      {
         "team": "CAR",
         "salary": "5000",
         "pos": "WR",
@@ -6220,6 +6228,14 @@
         "longName": "Cedric Tillman",
         "playerID": "4369863",
         "teamID": "8"
+      },
+      {
+        "team": "LAC",
+        "salary": "8000",
+        "pos": "QB",
+        "longName": "Justin Herbert",
+        "playerID": "4038941",
+        "teamID": "18"
       },
       {
         "team": "HOU",
@@ -6294,6 +6310,22 @@
         "teamID": "6"
       },
       {
+        "team": "HOU",
+        "salary": "6000",
+        "pos": "RB",
+        "longName": "Nick Chubb",
+        "playerID": "3128720",
+        "teamID": "13"
+      },
+      {
+        "team": "LV",
+        "salary": "7000",
+        "pos": "RB",
+        "longName": "Ashton Jeanty",
+        "playerID": "4890973",
+        "teamID": "17"
+      },
+      {
         "team": "SF",
         "salary": "4700",
         "pos": "TE",
@@ -6335,19 +6367,11 @@
       },
       {
         "team": "LV",
-        "salary": "5000",
-        "pos": "TE",
-        "longName": "Michael Mayer",
-        "playerID": "4429086",
+        "salary": "6700",
+        "pos": "WR",
+        "longName": "Jakobi Meyers",
+        "playerID": "3916433",
         "teamID": "17"
-      },
-      {
-        "team": "LAC",
-        "salary": "6000",
-        "pos": "RB",
-        "longName": "Omarion Hampton",
-        "playerID": "4685382",
-        "teamID": "18"
       },
       {
         "team": "CHI",
@@ -6406,6 +6430,14 @@
         "teamID": "14"
       },
       {
+        "team": "LAC",
+        "salary": "6500",
+        "pos": "WR",
+        "longName": "Keenan Allen",
+        "playerID": "15818",
+        "teamID": "18"
+      },
+      {
         "team": "MIN",
         "salary": "5300",
         "pos": "RB",
@@ -6419,14 +6451,6 @@
         "pos": "WR",
         "longName": "Tre Tucker",
         "playerID": "4428718",
-        "teamID": "17"
-      },
-      {
-        "team": "LV",
-        "salary": "6800",
-        "pos": "RB",
-        "longName": "Ashton Jeanty",
-        "playerID": "4890973",
         "teamID": "17"
       },
       {
@@ -6646,14 +6670,6 @@
         "teamID": "31"
       },
       {
-        "team": "LAC",
-        "salary": "6400",
-        "pos": "WR",
-        "longName": "Keenan Allen",
-        "playerID": "15818",
-        "teamID": "18"
-      },
-      {
         "team": "LV",
         "salary": "7300",
         "pos": "QB",
@@ -6662,12 +6678,12 @@
         "teamID": "17"
       },
       {
-        "team": "LV",
-        "salary": "6500",
-        "pos": "WR",
-        "longName": "Jakobi Meyers",
-        "playerID": "3916433",
-        "teamID": "17"
+        "team": "HOU",
+        "salary": "5200",
+        "pos": "TE",
+        "longName": "Dalton Schultz",
+        "playerID": "3117256",
+        "teamID": "13"
       },
       {
         "team": "ATL",
@@ -6692,6 +6708,14 @@
         "longName": "Michael Penix Jr.",
         "playerID": "4360423",
         "teamID": "2"
+      },
+      {
+        "team": "LAC",
+        "salary": "6000",
+        "pos": "WR",
+        "longName": "Quentin Johnston",
+        "playerID": "4429025",
+        "teamID": "18"
       },
       {
         "team": "ATL",
@@ -6894,20 +6918,20 @@
         "teamID": "20"
       },
       {
+        "team": "TB",
+        "salary": "7700",
+        "pos": "WR",
+        "longName": "Mike Evans",
+        "playerID": "16737",
+        "teamID": "30"
+      },
+      {
         "team": "MIN",
         "salary": "5800",
         "pos": "WR",
         "longName": "Adam Thielen",
         "playerID": "16460",
         "teamID": "21"
-      },
-      {
-        "team": "HOU",
-        "salary": "5600",
-        "pos": "RB",
-        "longName": "Nick Chubb",
-        "playerID": "3128720",
-        "teamID": "13"
       },
       {
         "team": "ATL",
@@ -6924,14 +6948,6 @@
         "longName": "J.J. McCarthy",
         "playerID": "4433970",
         "teamID": "21"
-      },
-      {
-        "team": "LAC",
-        "salary": "5900",
-        "pos": "WR",
-        "longName": "Quentin Johnston",
-        "playerID": "4429025",
-        "teamID": "18"
       },
       {
         "team": "ATL",
@@ -7300,14 +7316,6 @@
         "longName": "Kyle Williams",
         "playerID": "4613202",
         "teamID": "22"
-      },
-      {
-        "team": "TB",
-        "salary": "7600",
-        "pos": "WR",
-        "longName": "Mike Evans",
-        "playerID": "16737",
-        "teamID": "30"
       },
       {
         "team": "LAC",
@@ -8974,12 +8982,12 @@
         "teamID": "26"
       },
       {
-        "team": "NE",
+        "team": "NO",
         "salary": "4000",
         "pos": "WR",
         "longName": "Ja'Lynn Polk",
         "playerID": "4430637",
-        "teamID": "22"
+        "teamID": "23"
       },
       {
         "team": "DET",
@@ -9726,14 +9734,6 @@
         "teamID": "18"
       },
       {
-        "team": "HOU",
-        "salary": "4900",
-        "pos": "TE",
-        "longName": "Dalton Schultz",
-        "playerID": "3117256",
-        "teamID": "13"
-      },
-      {
         "team": "LV",
         "salary": "4000",
         "pos": "TE",
@@ -9828,6 +9828,14 @@
         "longName": "Trey Lance",
         "playerID": "4383351",
         "teamID": "18"
+      },
+      {
+        "team": "HOU",
+        "salary": "7900",
+        "pos": "WR",
+        "longName": "Nico Collins",
+        "playerID": "4258173",
+        "teamID": "13"
       },
       {
         "team": "ATL",
@@ -10862,14 +10870,6 @@
         "teamID": "21"
       },
       {
-        "team": "HOU",
-        "salary": "7800",
-        "pos": "WR",
-        "longName": "Nico Collins",
-        "playerID": "4258173",
-        "teamID": "13"
-      },
-      {
         "team": "ATL",
         "salary": "5100",
         "pos": "TE",
@@ -10932,14 +10932,6 @@
         "longName": "Carlos Washington Jr.",
         "playerID": "4248425",
         "teamID": "2"
-      },
-      {
-        "team": "TB",
-        "salary": "7600",
-        "pos": "RB",
-        "longName": "Bucky Irving",
-        "playerID": "4596448",
-        "teamID": "30"
       },
       {
         "team": "LAC",
@@ -11347,6 +11339,14 @@
         "pos": "WR",
         "longName": "Ryan Miller",
         "playerID": "4369466",
+        "teamID": "30"
+      },
+      {
+        "team": "TB",
+        "salary": "7500",
+        "pos": "RB",
+        "longName": "Bucky Irving",
+        "playerID": "4596448",
         "teamID": "30"
       },
       {
