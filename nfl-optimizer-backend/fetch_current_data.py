@@ -196,4 +196,4 @@ def main(read_local: bool, write_local: bool, upload: bool, week: int):
 
 if __name__ == "__main__":
     week = get_upcoming_nfl_week()
-    main(read_local=False, write_local=True, upload=True, week=week)
+    main(read_local=False, write_local=False, upload=True, week=week)

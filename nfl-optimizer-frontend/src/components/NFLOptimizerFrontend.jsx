@@ -1518,7 +1518,7 @@ const NFLOptimizerFrontend = () => {
                       : 'text-gray-600 hover:bg-gray-100 border border-gray-300'
                       }`}
                   >
-                    {position} ({players[position].length})
+                    {position} ({getFilteredPlayers(players[position]).length})
                   </button>
                 ))}
               </div>
@@ -1537,7 +1537,7 @@ const NFLOptimizerFrontend = () => {
                       : 'text-gray-600 hover:bg-gray-100'
                       }`}
                   >
-                    {position} ({players[position].length})
+                    {position} ({getFilteredPlayers(players[position]).length})
                   </button>
                 ))}
               </nav>

@@ -159,17 +159,21 @@ def create_player_pool(matchups: json, ff_projections: json, salaries_json: json
     # Use Draftkings data as source of truth for salary
     if dk_df is not None:
         for row in dk_df.itertuples():
+            # Mismatch in CSV vs API for WSH abbreviation
+            team_abbrev = row.TeamAbbrev
+            if team_abbrev == 'WAS':
+                team_abbrev = 'WSH'
             # Only mainslate
-            if row.TeamAbbrev not in team_to_opposing_team:
+            if team_abbrev not in team_to_opposing_team:
                 continue
             if row.Position == 'DST':
                 player_proto = Player()
-                player_proto.id = row.TeamAbbrev
+                player_proto.id = team_abbrev
                 player_proto.name = row.Name
-                player_proto.team = row.TeamAbbrev
+                player_proto.team = team_abbrev
                 player_proto.position = row.Position
                 player_proto.salary = int(row.Salary)
-                player_proto.opposing_team = team_to_opposing_team[row.TeamAbbrev]
+                player_proto.opposing_team = team_to_opposing_team[team_abbrev]
                 player_dict[player_proto.id] = player_proto
             else:
                 if str(row.ID) in player_dict:
