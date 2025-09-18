@@ -1,508 +1,338 @@
 {
   "statusCode": 200,
   "body": {
-    "20250922_DET@BAL": {
-      "awayTeam": "DET",
-      "ballybet": {
-        "totalUnder": "51.5",
-        "awayTeamSpread": "+5",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-5",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+200",
-        "homeTeamMLOdds": "-250",
-        "totalOver": "51.5",
-        "impliedTotals": {
-          "awayTotal": "23.25",
-          "homeTotal": "28.25"
-        }
-      },
-      "bet365": {
-        "totalUnder": "51.5",
-        "awayTeamSpread": "+5",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-5",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+205",
-        "homeTeamMLOdds": "-250",
-        "totalOver": "51.5",
-        "impliedTotals": {
-          "awayTotal": "23.25",
-          "homeTotal": "28.25"
-        }
-      },
-      "betmgm": {
-        "totalUnder": "51.5",
-        "awayTeamSpread": "+5.5",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-5.5",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+200",
-        "homeTeamMLOdds": "-250",
-        "totalOver": "51.5",
-        "impliedTotals": {
-          "awayTotal": "23.0",
-          "homeTotal": "28.5"
-        }
-      },
-      "betrivers": {
-        "totalUnder": "51.5",
-        "awayTeamSpread": "+5",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-5",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+200",
-        "homeTeamMLOdds": "-250",
-        "totalOver": "51.5",
-        "impliedTotals": {
-          "awayTotal": "23.25",
-          "homeTotal": "28.25"
-        }
-      },
-      "caesars_sportsbook": {
-        "totalUnder": "51.5",
-        "awayTeamSpread": "+5",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-5",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+205",
-        "homeTeamMLOdds": "-250",
-        "totalOver": "51.5",
-        "impliedTotals": {
-          "awayTotal": "23.25",
-          "homeTotal": "28.25"
-        }
-      },
-      "draftkings": {
-        "totalUnder": "51.5",
-        "awayTeamSpread": "+4.5",
-        "awayTeamSpreadOdds": "-108",
-        "homeTeamSpread": "-4.5",
-        "homeTeamSpreadOdds": "-112",
-        "totalOverOdds": "-115",
-        "totalUnderOdds": "-105",
-        "awayTeamMLOdds": "+185",
-        "homeTeamMLOdds": "-225",
-        "totalOver": "51.5",
-        "impliedTotals": {
-          "awayTotal": "23.5",
-          "homeTotal": "28.0"
-        }
-      },
-      "espnbet": {
-        "totalUnder": "52.5",
-        "awayTeamSpread": "+4.5",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-4.5",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-105",
-        "totalUnderOdds": "-115",
-        "awayTeamMLOdds": "+200",
-        "homeTeamMLOdds": "-240",
-        "totalOver": "52.5",
-        "impliedTotals": {
-          "awayTotal": "24.0",
-          "homeTotal": "28.5"
-        }
-      },
-      "fanatics": {
-        "totalUnder": "52",
-        "awayTeamSpread": "+5",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-5",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+200",
-        "homeTeamMLOdds": "-250",
-        "totalOver": "52",
-        "impliedTotals": {
-          "awayTotal": "23.5",
-          "homeTotal": "28.5"
-        }
-      },
-      "fanduel": {
-        "totalUnder": "51.5",
-        "awayTeamSpread": "+5.5",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-5.5",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-115",
-        "totalUnderOdds": "-105",
-        "awayTeamMLOdds": "+215",
-        "homeTeamMLOdds": "-260",
-        "totalOver": "51.5",
-        "impliedTotals": {
-          "awayTotal": "23.0",
-          "homeTotal": "28.5"
-        }
-      },
-      "gameDate": "20250922",
-      "homeTeam": "BAL",
-      "last_updated_e_time": "1758063680.3555348",
-      "teamIDAway": "11",
-      "teamIDHome": "3",
-      "gameID": "20250922_DET@BAL"
-    },
     "20250918_MIA@BUF": {
-      "awayTeam": "MIA",
-      "ballybet": {
-        "totalUnder": "49.5",
-        "awayTeamSpread": "+12",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-12",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-112",
-        "totalUnderOdds": "-109",
-        "awayTeamMLOdds": "+510",
-        "homeTeamMLOdds": "-770",
-        "totalOver": "49.5",
-        "impliedTotals": {
-          "awayTotal": "18.75",
-          "homeTotal": "30.75"
-        }
-      },
-      "bet365": {
-        "totalUnder": "49.5",
+      "last_updated_e_time": "1758234965.6070487",
+      "betmgm": {
+        "totalUnder": "50.5",
         "awayTeamSpread": "+11.5",
         "awayTeamSpreadOdds": "-105",
         "homeTeamSpread": "-11.5",
-        "homeTeamSpreadOdds": "-115",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+575",
-        "homeTeamMLOdds": "-850",
-        "totalOver": "49.5",
-        "impliedTotals": {
-          "awayTotal": "19.0",
-          "homeTotal": "30.5"
-        }
-      },
-      "betmgm": {
-        "totalUnder": "49.5",
-        "awayTeamSpread": "+12.5",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-12.5",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+575",
-        "homeTeamMLOdds": "-800",
-        "totalOver": "49.5",
-        "impliedTotals": {
-          "awayTotal": "18.5",
-          "homeTotal": "31.0"
-        }
-      },
-      "betrivers": {
-        "totalUnder": "49.5",
-        "awayTeamSpread": "+12",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-12",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-112",
-        "totalUnderOdds": "-109",
-        "awayTeamMLOdds": "+510",
-        "homeTeamMLOdds": "-770",
-        "totalOver": "49.5",
-        "impliedTotals": {
-          "awayTotal": "18.75",
-          "homeTotal": "30.75"
-        }
-      },
-      "caesars_sportsbook": {
-        "totalUnder": "49.5",
-        "awayTeamSpread": "+12",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-12",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+550",
-        "homeTeamMLOdds": "-800",
-        "totalOver": "49.5",
-        "impliedTotals": {
-          "awayTotal": "18.75",
-          "homeTotal": "30.75"
-        }
-      },
-      "draftkings": {
-        "totalUnder": "49.5",
-        "awayTeamSpread": "+12.5",
-        "awayTeamSpreadOdds": "-108",
-        "homeTeamSpread": "-12.5",
-        "homeTeamSpreadOdds": "-112",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+575",
-        "homeTeamMLOdds": "-850",
-        "totalOver": "49.5",
-        "impliedTotals": {
-          "awayTotal": "18.5",
-          "homeTotal": "31.0"
-        }
-      },
-      "espnbet": {
-        "totalUnder": "49.5",
-        "awayTeamSpread": "+12.5",
-        "awayTeamSpreadOdds": "-115",
-        "homeTeamSpread": "-12.5",
         "homeTeamSpreadOdds": "-105",
-        "totalOverOdds": "-115",
-        "totalUnderOdds": "-105",
-        "awayTeamMLOdds": "+550",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+600",
         "homeTeamMLOdds": "-900",
-        "totalOver": "49.5",
+        "totalOver": "50.5",
         "impliedTotals": {
-          "awayTotal": "18.5",
+          "awayTotal": "19.5",
           "homeTotal": "31.0"
         }
       },
-      "fanatics": {
-        "totalUnder": "49.5",
-        "awayTeamSpread": "+12.5",
+      "bet365": {
+        "totalUnder": "50.5",
+        "awayTeamSpread": "+11.5",
         "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-12.5",
+        "homeTeamSpread": "-11.5",
         "homeTeamSpreadOdds": "-110",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+550",
-        "homeTeamMLOdds": "-800",
-        "totalOver": "49.5",
-        "impliedTotals": {
-          "awayTotal": "18.5",
-          "homeTotal": "31.0"
-        }
-      },
-      "fanduel": {
-        "totalUnder": "49.5",
-        "awayTeamSpread": "+11.5",
-        "awayTeamSpreadOdds": "-106",
-        "homeTeamSpread": "-11.5",
-        "homeTeamSpreadOdds": "-114",
-        "totalOverOdds": "-118",
-        "totalUnderOdds": "-104",
-        "awayTeamMLOdds": "+590",
+        "awayTeamMLOdds": "+575",
         "homeTeamMLOdds": "-850",
-        "totalOver": "49.5",
+        "totalOver": "50.5",
         "impliedTotals": {
-          "awayTotal": "19.0",
-          "homeTotal": "30.5"
+          "awayTotal": "19.5",
+          "homeTotal": "31.0"
         }
       },
       "gameDate": "20250918",
-      "homeTeam": "BUF",
-      "last_updated_e_time": "1758063680.353822",
-      "teamIDAway": "20",
-      "teamIDHome": "4",
-      "gameID": "20250918_MIA@BUF"
-    },
-    "20250921_ARI@SF": {
-      "last_updated_e_time": "1758063680.3553386",
-      "betmgm": {
-        "totalUnder": "43.5",
-        "awayTeamSpread": "+1.5",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-1.5",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "even",
-        "homeTeamMLOdds": "-120",
-        "totalOver": "43.5",
-        "impliedTotals": {
-          "awayTotal": "21.0",
-          "homeTotal": "22.5"
-        }
-      },
-      "bet365": {
-        "totalUnder": "43.5",
-        "awayTeamSpread": "+1.5",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-1.5",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+105",
-        "homeTeamMLOdds": "-125",
-        "totalOver": "43.5",
-        "impliedTotals": {
-          "awayTotal": "21.0",
-          "homeTotal": "22.5"
-        }
-      },
-      "gameDate": "20250921",
       "fanduel": {
-        "totalUnder": "43.5",
-        "awayTeamSpread": "+1.5",
-        "awayTeamSpreadOdds": "-115",
-        "homeTeamSpread": "-1.5",
-        "homeTeamSpreadOdds": "-105",
+        "totalUnder": "50.5",
+        "awayTeamSpread": "+11.5",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "-11.5",
+        "homeTeamSpreadOdds": "-110",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-100",
-        "homeTeamMLOdds": "-118",
-        "totalOver": "43.5",
+        "awayTeamMLOdds": "+540",
+        "homeTeamMLOdds": "-850",
+        "totalOver": "50.5",
         "impliedTotals": {
-          "awayTotal": "21.0",
-          "homeTotal": "22.5"
+          "awayTotal": "19.5",
+          "homeTotal": "31.0"
         }
       },
       "fanatics": {
-        "totalUnder": "44",
-        "awayTeamSpread": "+1.5",
+        "totalUnder": "50",
+        "awayTeamSpread": "+12",
         "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-1.5",
+        "homeTeamSpread": "-12",
         "homeTeamSpreadOdds": "-110",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+110",
-        "homeTeamMLOdds": "-130",
-        "totalOver": "44",
+        "awayTeamMLOdds": "+560",
+        "homeTeamMLOdds": "-830",
+        "totalOver": "50",
         "impliedTotals": {
-          "awayTotal": "21.25",
-          "homeTotal": "22.75"
+          "awayTotal": "19.0",
+          "homeTotal": "31.0"
         }
       },
-      "teamIDHome": "28",
+      "teamIDHome": "4",
       "ballybet": {
-        "totalUnder": "43.5",
-        "awayTeamSpread": "+1.5",
+        "totalUnder": "50.5",
+        "awayTeamSpread": "+12",
         "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-1.5",
+        "homeTeamSpread": "-12",
         "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+102",
-        "homeTeamMLOdds": "-124",
-        "totalOver": "43.5",
+        "totalOverOdds": "-112",
+        "totalUnderOdds": "-109",
+        "awayTeamMLOdds": "+600",
+        "homeTeamMLOdds": "-910",
+        "totalOver": "50.5",
         "impliedTotals": {
-          "awayTotal": "21.0",
-          "homeTotal": "22.5"
+          "awayTotal": "19.25",
+          "homeTotal": "31.25"
         }
       },
-      "teamIDAway": "1",
-      "homeTeam": "SF",
+      "teamIDAway": "20",
+      "homeTeam": "BUF",
       "espnbet": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "+1.5",
-        "awayTeamSpreadOdds": "-115",
-        "homeTeamSpread": "-1.5",
+        "totalUnder": "50.5",
+        "awayTeamSpread": "+11.5",
+        "awayTeamSpreadOdds": "-120",
+        "homeTeamSpread": "-11.5",
         "homeTeamSpreadOdds": "-105",
         "totalOverOdds": "-105",
         "totalUnderOdds": "-115",
-        "awayTeamMLOdds": "+105",
-        "homeTeamMLOdds": "-125",
-        "totalOver": "44.5",
+        "awayTeamMLOdds": "+500",
+        "homeTeamMLOdds": "-750",
+        "totalOver": "50.5",
         "impliedTotals": {
-          "awayTotal": "21.5",
-          "homeTotal": "23.0"
+          "awayTotal": "19.5",
+          "homeTotal": "31.0"
         }
       },
       "betrivers": {
-        "totalUnder": "43.5",
-        "awayTeamSpread": "+1.5",
+        "totalUnder": "50.5",
+        "awayTeamSpread": "+12",
         "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-1.5",
+        "homeTeamSpread": "-12",
         "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+102",
-        "homeTeamMLOdds": "-124",
-        "totalOver": "43.5",
+        "totalOverOdds": "-112",
+        "totalUnderOdds": "-109",
+        "awayTeamMLOdds": "+600",
+        "homeTeamMLOdds": "-910",
+        "totalOver": "50.5",
         "impliedTotals": {
-          "awayTotal": "21.0",
-          "homeTotal": "22.5"
+          "awayTotal": "19.25",
+          "homeTotal": "31.25"
         }
       },
       "caesars_sportsbook": {
-        "totalUnder": "43.5",
-        "awayTeamSpread": "+1.5",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-1.5",
-        "homeTeamSpreadOdds": "-110",
+        "totalUnder": "50.5",
+        "awayTeamSpread": "+11.5",
+        "awayTeamSpreadOdds": "-105",
+        "homeTeamSpread": "-11.5",
+        "homeTeamSpreadOdds": "-115",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+110",
-        "homeTeamMLOdds": "-130",
-        "totalOver": "43.5",
+        "awayTeamMLOdds": "+600",
+        "homeTeamMLOdds": "-900",
+        "totalOver": "50.5",
         "impliedTotals": {
-          "awayTotal": "21.0",
-          "homeTotal": "22.5"
+          "awayTotal": "19.5",
+          "homeTotal": "31.0"
         }
       },
-      "gameID": "20250921_ARI@SF",
-      "awayTeam": "ARI",
+      "gameID": "20250918_MIA@BUF",
+      "awayTeam": "MIA",
       "draftkings": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "+1.5",
+        "totalUnder": "49.5",
+        "awayTeamSpread": "+12.5",
         "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-1.5",
+        "homeTeamSpread": "-12.5",
         "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-105",
-        "totalUnderOdds": "-115",
-        "awayTeamMLOdds": "+114",
-        "homeTeamMLOdds": "-135",
-        "totalOver": "44.5",
+        "totalOverOdds": "-118",
+        "totalUnderOdds": "-102",
+        "awayTeamMLOdds": "+550",
+        "homeTeamMLOdds": "-800",
+        "totalOver": "49.5",
         "impliedTotals": {
-          "awayTotal": "21.5",
-          "homeTotal": "23.0"
+          "awayTotal": "18.5",
+          "homeTotal": "31.0"
         }
       }
     },
-    "20250921_ATL@CAR": {
-      "last_updated_e_time": "1758063680.3542223",
-      "betmgm": {
-        "totalUnder": "43.5",
-        "awayTeamSpread": "-6",
+    "20250921_ARI@SF": {
+      "awayTeam": "ARI",
+      "ballybet": {
+        "totalUnder": "45.5",
+        "awayTeamSpread": "+2.5",
         "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "+6",
+        "homeTeamSpread": "-2.5",
         "homeTeamSpreadOdds": "-110",
+        "totalOverOdds": "-113",
+        "totalUnderOdds": "-108",
+        "awayTeamMLOdds": "+125",
+        "homeTeamMLOdds": "-155",
+        "totalOver": "45.5",
+        "impliedTotals": {
+          "awayTotal": "21.5",
+          "homeTotal": "24.0"
+        }
+      },
+      "bet365": {
+        "totalUnder": "46",
+        "awayTeamSpread": "+2.5",
+        "awayTeamSpreadOdds": "even",
+        "homeTeamSpread": "-2.5",
+        "homeTeamSpreadOdds": "-120",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-285",
-        "homeTeamMLOdds": "+225",
+        "awayTeamMLOdds": "+125",
+        "homeTeamMLOdds": "-150",
+        "totalOver": "46",
+        "impliedTotals": {
+          "awayTotal": "21.75",
+          "homeTotal": "24.25"
+        }
+      },
+      "betmgm": {
+        "totalUnder": "45.5",
+        "awayTeamSpread": "+2.5",
+        "awayTeamSpreadOdds": "-105",
+        "homeTeamSpread": "-2.5",
+        "homeTeamSpreadOdds": "-115",
+        "totalOverOdds": "-115",
+        "totalUnderOdds": "-105",
+        "awayTeamMLOdds": "+135",
+        "homeTeamMLOdds": "-160",
+        "totalOver": "45.5",
+        "impliedTotals": {
+          "awayTotal": "21.5",
+          "homeTotal": "24.0"
+        }
+      },
+      "betrivers": {
+        "totalUnder": "45.5",
+        "awayTeamSpread": "+2.5",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "-2.5",
+        "homeTeamSpreadOdds": "-110",
+        "totalOverOdds": "-113",
+        "totalUnderOdds": "-108",
+        "awayTeamMLOdds": "+125",
+        "homeTeamMLOdds": "-155",
+        "totalOver": "45.5",
+        "impliedTotals": {
+          "awayTotal": "21.5",
+          "homeTotal": "24.0"
+        }
+      },
+      "caesars_sportsbook": {
+        "totalUnder": "46",
+        "awayTeamSpread": "+2.5",
+        "awayTeamSpreadOdds": "even",
+        "homeTeamSpread": "-2.5",
+        "homeTeamSpreadOdds": "-120",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+135",
+        "homeTeamMLOdds": "-160",
+        "totalOver": "46",
+        "impliedTotals": {
+          "awayTotal": "21.75",
+          "homeTotal": "24.25"
+        }
+      },
+      "draftkings": {
+        "totalUnder": "46.5",
+        "awayTeamSpread": "+3",
+        "awayTeamSpreadOdds": "-120",
+        "homeTeamSpread": "-3",
+        "homeTeamSpreadOdds": "even",
+        "totalOverOdds": "-105",
+        "totalUnderOdds": "-115",
+        "awayTeamMLOdds": "+136",
+        "homeTeamMLOdds": "-162",
+        "totalOver": "46.5",
+        "impliedTotals": {
+          "awayTotal": "21.75",
+          "homeTotal": "24.75"
+        }
+      },
+      "espnbet": {
+        "totalUnder": "45.5",
+        "awayTeamSpread": "+2.5",
+        "awayTeamSpreadOdds": "+105",
+        "homeTeamSpread": "-2.5",
+        "homeTeamSpreadOdds": "-125",
+        "totalOverOdds": "-115",
+        "totalUnderOdds": "-105",
+        "awayTeamMLOdds": "+130",
+        "homeTeamMLOdds": "-150",
+        "totalOver": "45.5",
+        "impliedTotals": {
+          "awayTotal": "21.5",
+          "homeTotal": "24.0"
+        }
+      },
+      "fanatics": {
+        "totalUnder": "45.5",
+        "awayTeamSpread": "+2.5",
+        "awayTeamSpreadOdds": "even",
+        "homeTeamSpread": "-2.5",
+        "homeTeamSpreadOdds": "-120",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+125",
+        "homeTeamMLOdds": "-150",
+        "totalOver": "45.5",
+        "impliedTotals": {
+          "awayTotal": "21.5",
+          "homeTotal": "24.0"
+        }
+      },
+      "fanduel": {
+        "totalUnder": "44.5",
+        "awayTeamSpread": "+2.5",
+        "awayTeamSpreadOdds": "-105",
+        "homeTeamSpread": "-2.5",
+        "homeTeamSpreadOdds": "-115",
+        "totalOverOdds": "-120",
+        "totalUnderOdds": "-102",
+        "awayTeamMLOdds": "+124",
+        "homeTeamMLOdds": "-146",
+        "totalOver": "44.5",
+        "impliedTotals": {
+          "awayTotal": "21.0",
+          "homeTotal": "23.5"
+        }
+      },
+      "gameDate": "20250921",
+      "homeTeam": "SF",
+      "last_updated_e_time": "1758234965.6095183",
+      "teamIDAway": "1",
+      "teamIDHome": "28",
+      "gameID": "20250921_ARI@SF"
+    },
+    "20250921_ATL@CAR": {
+      "awayTeam": "ATL",
+      "ballybet": {
+        "totalUnder": "43.5",
+        "awayTeamSpread": "-5.5",
+        "awayTeamSpreadOdds": "-112",
+        "homeTeamSpread": "+5.5",
+        "homeTeamSpreadOdds": "-109",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "-245",
+        "homeTeamMLOdds": "+200",
         "totalOver": "43.5",
         "impliedTotals": {
-          "awayTotal": "24.75",
-          "homeTotal": "18.75"
+          "awayTotal": "24.5",
+          "homeTotal": "19.0"
         }
       },
       "bet365": {
         "totalUnder": "43.5",
-        "awayTeamSpread": "-6",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "+6",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-260",
-        "homeTeamMLOdds": "+210",
-        "totalOver": "43.5",
-        "impliedTotals": {
-          "awayTotal": "24.75",
-          "homeTotal": "18.75"
-        }
-      },
-      "gameDate": "20250921",
-      "fanduel": {
-        "totalUnder": "43.5",
         "awayTeamSpread": "-5.5",
         "awayTeamSpreadOdds": "-110",
         "homeTeamSpread": "+5.5",
         "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-105",
-        "totalUnderOdds": "-115",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
         "awayTeamMLOdds": "-245",
         "homeTeamMLOdds": "+200",
         "totalOver": "43.5",
@@ -511,119 +341,136 @@
           "homeTotal": "19.0"
         }
       },
-      "fanatics": {
+      "betmgm": {
         "totalUnder": "43.5",
-        "awayTeamSpread": "-6",
+        "awayTeamSpread": "-5.5",
         "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "+6",
+        "homeTeamSpread": "+5.5",
         "homeTeamSpreadOdds": "-110",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-260",
-        "homeTeamMLOdds": "+210",
-        "totalOver": "43.5",
-        "impliedTotals": {
-          "awayTotal": "24.75",
-          "homeTotal": "18.75"
-        }
-      },
-      "teamIDHome": "5",
-      "ballybet": {
-        "totalUnder": "43.5",
-        "awayTeamSpread": "-5.5",
-        "awayTeamSpreadOdds": "-109",
-        "homeTeamSpread": "+5.5",
-        "homeTeamSpreadOdds": "-112",
-        "totalOverOdds": "-107",
-        "totalUnderOdds": "-114",
-        "awayTeamMLOdds": "-245",
-        "homeTeamMLOdds": "+200",
-        "totalOver": "43.5",
-        "impliedTotals": {
-          "awayTotal": "24.5",
-          "homeTotal": "19.0"
-        }
-      },
-      "teamIDAway": "2",
-      "homeTeam": "CAR",
-      "espnbet": {
-        "totalUnder": "43.5",
-        "awayTeamSpread": "-6.5",
-        "awayTeamSpreadOdds": "-105",
-        "homeTeamSpread": "+6.5",
-        "homeTeamSpreadOdds": "-115",
-        "totalOverOdds": "-105",
-        "totalUnderOdds": "-115",
-        "awayTeamMLOdds": "-275",
-        "homeTeamMLOdds": "+225",
-        "totalOver": "43.5",
-        "impliedTotals": {
-          "awayTotal": "25.0",
-          "homeTotal": "18.5"
-        }
-      },
-      "betrivers": {
-        "totalUnder": "43.5",
-        "awayTeamSpread": "-5.5",
-        "awayTeamSpreadOdds": "-109",
-        "homeTeamSpread": "+5.5",
-        "homeTeamSpreadOdds": "-112",
-        "totalOverOdds": "-107",
-        "totalUnderOdds": "-114",
-        "awayTeamMLOdds": "-245",
-        "homeTeamMLOdds": "+200",
-        "totalOver": "43.5",
-        "impliedTotals": {
-          "awayTotal": "24.5",
-          "homeTotal": "19.0"
-        }
-      },
-      "caesars_sportsbook": {
-        "totalUnder": "43.5",
-        "awayTeamSpread": "-6",
-        "awayTeamSpreadOdds": "-108",
-        "homeTeamSpread": "+6",
-        "homeTeamSpreadOdds": "-112",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-256",
-        "homeTeamMLOdds": "+205",
-        "totalOver": "43.5",
-        "impliedTotals": {
-          "awayTotal": "24.75",
-          "homeTotal": "18.75"
-        }
-      },
-      "gameID": "20250921_ATL@CAR",
-      "awayTeam": "ATL",
-      "draftkings": {
-        "totalUnder": "43.5",
-        "awayTeamSpread": "-6",
-        "awayTeamSpreadOdds": "-108",
-        "homeTeamSpread": "+6",
-        "homeTeamSpreadOdds": "-112",
-        "totalOverOdds": "-108",
-        "totalUnderOdds": "-112",
         "awayTeamMLOdds": "-250",
         "homeTeamMLOdds": "+200",
         "totalOver": "43.5",
         "impliedTotals": {
-          "awayTotal": "24.75",
-          "homeTotal": "18.75"
+          "awayTotal": "24.5",
+          "homeTotal": "19.0"
         }
-      }
-    },
-    "20250921_CIN@MIN": {
-      "last_updated_e_time": "1758063680.3545332",
-      "betmgm": {
-        "totalUnder": "42",
-        "awayTeamSpread": "+3",
-        "awayTeamSpreadOdds": "-115",
-        "homeTeamSpread": "-3",
-        "homeTeamSpreadOdds": "-105",
+      },
+      "betrivers": {
+        "totalUnder": "43.5",
+        "awayTeamSpread": "-5.5",
+        "awayTeamSpreadOdds": "-112",
+        "homeTeamSpread": "+5.5",
+        "homeTeamSpreadOdds": "-109",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+130",
+        "awayTeamMLOdds": "-245",
+        "homeTeamMLOdds": "+200",
+        "totalOver": "43.5",
+        "impliedTotals": {
+          "awayTotal": "24.5",
+          "homeTotal": "19.0"
+        }
+      },
+      "caesars_sportsbook": {
+        "totalUnder": "43.5",
+        "awayTeamSpread": "-5.5",
+        "awayTeamSpreadOdds": "-104",
+        "homeTeamSpread": "+5.5",
+        "homeTeamSpreadOdds": "-116",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "-238",
+        "homeTeamMLOdds": "+195",
+        "totalOver": "43.5",
+        "impliedTotals": {
+          "awayTotal": "24.5",
+          "homeTotal": "19.0"
+        }
+      },
+      "draftkings": {
+        "totalUnder": "43.5",
+        "awayTeamSpread": "-5.5",
+        "awayTeamSpreadOdds": "-105",
+        "homeTeamSpread": "+5.5",
+        "homeTeamSpreadOdds": "-115",
+        "totalOverOdds": "-118",
+        "totalUnderOdds": "-102",
+        "awayTeamMLOdds": "-218",
+        "homeTeamMLOdds": "+180",
+        "totalOver": "43.5",
+        "impliedTotals": {
+          "awayTotal": "24.5",
+          "homeTotal": "19.0"
+        }
+      },
+      "espnbet": {
+        "totalUnder": "44.5",
+        "awayTeamSpread": "-5.5",
+        "awayTeamSpreadOdds": "-105",
+        "homeTeamSpread": "+5.5",
+        "homeTeamSpreadOdds": "-115",
+        "totalOverOdds": "even",
+        "totalUnderOdds": "-120",
+        "awayTeamMLOdds": "-240",
+        "homeTeamMLOdds": "+200",
+        "totalOver": "44.5",
+        "impliedTotals": {
+          "awayTotal": "25.0",
+          "homeTotal": "19.5"
+        }
+      },
+      "fanatics": {
+        "totalUnder": "44",
+        "awayTeamSpread": "-5",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "+5",
+        "homeTeamSpreadOdds": "-110",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "-240",
+        "homeTeamMLOdds": "+190",
+        "totalOver": "44",
+        "impliedTotals": {
+          "awayTotal": "24.5",
+          "homeTotal": "19.5"
+        }
+      },
+      "fanduel": {
+        "totalUnder": "43.5",
+        "awayTeamSpread": "-5.5",
+        "awayTeamSpreadOdds": "-105",
+        "homeTeamSpread": "+5.5",
+        "homeTeamSpreadOdds": "-115",
+        "totalOverOdds": "-105",
+        "totalUnderOdds": "-115",
+        "awayTeamMLOdds": "-225",
+        "homeTeamMLOdds": "+188",
+        "totalOver": "43.5",
+        "impliedTotals": {
+          "awayTotal": "24.5",
+          "homeTotal": "19.0"
+        }
+      },
+      "gameDate": "20250921",
+      "homeTeam": "CAR",
+      "last_updated_e_time": "1758234965.60745",
+      "teamIDAway": "2",
+      "teamIDHome": "5",
+      "gameID": "20250921_ATL@CAR"
+    },
+    "20250921_CIN@MIN": {
+      "awayTeam": "CIN",
+      "ballybet": {
+        "totalUnder": "42",
+        "awayTeamSpread": "+3",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "-3",
+        "homeTeamSpreadOdds": "-110",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+125",
         "homeTeamMLOdds": "-155",
         "totalOver": "42",
         "impliedTotals": {
@@ -634,12 +481,108 @@
       "bet365": {
         "totalUnder": "42.5",
         "awayTeamSpread": "+3",
+        "awayTeamSpreadOdds": "-115",
+        "homeTeamSpread": "-3",
+        "homeTeamSpreadOdds": "-105",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+125",
+        "homeTeamMLOdds": "-150",
+        "totalOver": "42.5",
+        "impliedTotals": {
+          "awayTotal": "19.75",
+          "homeTotal": "22.75"
+        }
+      },
+      "betmgm": {
+        "totalUnder": "42.5",
+        "awayTeamSpread": "+3",
+        "awayTeamSpreadOdds": "-120",
+        "homeTeamSpread": "-3",
+        "homeTeamSpreadOdds": "even",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+125",
+        "homeTeamMLOdds": "-150",
+        "totalOver": "42.5",
+        "impliedTotals": {
+          "awayTotal": "19.75",
+          "homeTotal": "22.75"
+        }
+      },
+      "betrivers": {
+        "totalUnder": "42",
+        "awayTeamSpread": "+3",
         "awayTeamSpreadOdds": "-110",
         "homeTeamSpread": "-3",
         "homeTeamSpreadOdds": "-110",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+135",
+        "awayTeamMLOdds": "+125",
+        "homeTeamMLOdds": "-155",
+        "totalOver": "42",
+        "impliedTotals": {
+          "awayTotal": "19.5",
+          "homeTotal": "22.5"
+        }
+      },
+      "caesars_sportsbook": {
+        "totalUnder": "42.5",
+        "awayTeamSpread": "+3",
+        "awayTeamSpreadOdds": "-114",
+        "homeTeamSpread": "-3",
+        "homeTeamSpreadOdds": "-106",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+130",
+        "homeTeamMLOdds": "-154",
+        "totalOver": "42.5",
+        "impliedTotals": {
+          "awayTotal": "19.75",
+          "homeTotal": "22.75"
+        }
+      },
+      "draftkings": {
+        "totalUnder": "42.5",
+        "awayTeamSpread": "+3",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "-3",
+        "homeTeamSpreadOdds": "-110",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+136",
+        "homeTeamMLOdds": "-162",
+        "totalOver": "42.5",
+        "impliedTotals": {
+          "awayTotal": "19.75",
+          "homeTotal": "22.75"
+        }
+      },
+      "espnbet": {
+        "totalUnder": "41.5",
+        "awayTeamSpread": "+2.5",
+        "awayTeamSpreadOdds": "+110",
+        "homeTeamSpread": "-2.5",
+        "homeTeamSpreadOdds": "-130",
+        "totalOverOdds": "-120",
+        "totalUnderOdds": "even",
+        "awayTeamMLOdds": "+130",
+        "homeTeamMLOdds": "-150",
+        "totalOver": "41.5",
+        "impliedTotals": {
+          "awayTotal": "19.5",
+          "homeTotal": "22.0"
+        }
+      },
+      "fanatics": {
+        "totalUnder": "42.5",
+        "awayTeamSpread": "+3",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "-3",
+        "homeTeamSpreadOdds": "-110",
+        "totalOverOdds": "-105",
+        "totalUnderOdds": "-115",
+        "awayTeamMLOdds": "+130",
         "homeTeamMLOdds": "-160",
         "totalOver": "42.5",
         "impliedTotals": {
@@ -647,15 +590,14 @@
           "homeTotal": "22.75"
         }
       },
-      "gameDate": "20250921",
       "fanduel": {
         "totalUnder": "42.5",
         "awayTeamSpread": "+3",
         "awayTeamSpreadOdds": "-115",
         "homeTeamSpread": "-3",
         "homeTeamSpreadOdds": "-105",
-        "totalOverOdds": "-106",
-        "totalUnderOdds": "-114",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
         "awayTeamMLOdds": "+126",
         "homeTeamMLOdds": "-148",
         "totalOver": "42.5",
@@ -664,415 +606,355 @@
           "homeTotal": "22.75"
         }
       },
-      "fanatics": {
-        "totalUnder": "42.5",
-        "awayTeamSpread": "+3",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-3",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+130",
-        "homeTeamMLOdds": "-160",
-        "totalOver": "42.5",
-        "impliedTotals": {
-          "awayTotal": "19.75",
-          "homeTotal": "22.75"
-        }
-      },
-      "teamIDHome": "21",
-      "ballybet": {
-        "totalUnder": "41.5",
-        "awayTeamSpread": "+3",
-        "awayTeamSpreadOdds": "-109",
-        "homeTeamSpread": "-3",
-        "homeTeamSpreadOdds": "-112",
-        "totalOverOdds": "-113",
-        "totalUnderOdds": "-108",
-        "awayTeamMLOdds": "+128",
-        "homeTeamMLOdds": "-155",
-        "totalOver": "41.5",
-        "impliedTotals": {
-          "awayTotal": "19.25",
-          "homeTotal": "22.25"
-        }
-      },
-      "teamIDAway": "7",
+      "gameDate": "20250921",
       "homeTeam": "MIN",
-      "espnbet": {
-        "totalUnder": "42.5",
-        "awayTeamSpread": "+2.5",
-        "awayTeamSpreadOdds": "+110",
-        "homeTeamSpread": "-2.5",
-        "homeTeamSpreadOdds": "-130",
-        "totalOverOdds": "-105",
-        "totalUnderOdds": "-115",
-        "awayTeamMLOdds": "+130",
-        "homeTeamMLOdds": "-150",
-        "totalOver": "42.5",
-        "impliedTotals": {
-          "awayTotal": "20.0",
-          "homeTotal": "22.5"
-        }
-      },
-      "betrivers": {
-        "totalUnder": "41.5",
-        "awayTeamSpread": "+3",
-        "awayTeamSpreadOdds": "-109",
-        "homeTeamSpread": "-3",
-        "homeTeamSpreadOdds": "-112",
-        "totalOverOdds": "-113",
-        "totalUnderOdds": "-108",
-        "awayTeamMLOdds": "+128",
-        "homeTeamMLOdds": "-155",
-        "totalOver": "41.5",
-        "impliedTotals": {
-          "awayTotal": "19.25",
-          "homeTotal": "22.25"
-        }
-      },
-      "caesars_sportsbook": {
-        "totalUnder": "42.5",
-        "awayTeamSpread": "+3",
-        "awayTeamSpreadOdds": "-112",
-        "homeTeamSpread": "-3",
-        "homeTeamSpreadOdds": "-108",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+130",
-        "homeTeamMLOdds": "-161",
-        "totalOver": "42.5",
-        "impliedTotals": {
-          "awayTotal": "19.75",
-          "homeTotal": "22.75"
-        }
-      },
-      "gameID": "20250921_CIN@MIN",
-      "awayTeam": "CIN",
-      "draftkings": {
-        "totalUnder": "42.5",
-        "awayTeamSpread": "+3",
-        "awayTeamSpreadOdds": "-102",
-        "homeTeamSpread": "-3",
-        "homeTeamSpreadOdds": "-118",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+140",
-        "homeTeamMLOdds": "-166",
-        "totalOver": "42.5",
-        "impliedTotals": {
-          "awayTotal": "19.75",
-          "homeTotal": "22.75"
-        }
-      }
+      "last_updated_e_time": "1758234965.6080358",
+      "teamIDAway": "7",
+      "teamIDHome": "21",
+      "gameID": "20250921_CIN@MIN"
     },
     "20250921_DAL@CHI": {
-      "last_updated_e_time": "1758063680.3552413",
-      "betmgm": {
-        "totalUnder": "50",
-        "awayTeamSpread": "+1",
-        "awayTeamSpreadOdds": "-115",
-        "homeTeamSpread": "-1",
-        "homeTeamSpreadOdds": "-105",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-110",
-        "homeTeamMLOdds": "-110",
-        "totalOver": "50",
-        "impliedTotals": {
-          "awayTotal": "24.5",
-          "homeTotal": "25.5"
-        }
-      },
-      "bet365": {
-        "totalUnder": "50",
-        "awayTeamSpread": "+1",
-        "awayTeamSpreadOdds": "-115",
-        "homeTeamSpread": "-1",
-        "homeTeamSpreadOdds": "-105",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-110",
-        "homeTeamMLOdds": "-110",
-        "totalOver": "50",
-        "impliedTotals": {
-          "awayTotal": "24.5",
-          "homeTotal": "25.5"
-        }
-      },
-      "gameDate": "20250921",
-      "fanduel": {
+      "awayTeam": "DAL",
+      "ballybet": {
         "totalUnder": "50.5",
-        "awayTeamSpread": "+1.5",
-        "awayTeamSpreadOdds": "-122",
-        "homeTeamSpread": "-1.5",
-        "homeTeamSpreadOdds": "-100",
-        "totalOverOdds": "-104",
-        "totalUnderOdds": "-118",
-        "awayTeamMLOdds": "-108",
-        "homeTeamMLOdds": "-110",
-        "totalOver": "50.5",
-        "impliedTotals": {
-          "awayTotal": "24.5",
-          "homeTotal": "26.0"
-        }
-      },
-      "fanatics": {
-        "totalUnder": "50",
         "awayTeamSpread": "-0.5",
         "awayTeamSpreadOdds": "-110",
         "homeTeamSpread": "+0.5",
         "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-110",
-        "homeTeamMLOdds": "-110",
-        "totalOver": "50",
-        "impliedTotals": {
-          "awayTotal": "25.25",
-          "homeTotal": "24.75"
-        }
-      },
-      "teamIDHome": "6",
-      "ballybet": {
-        "totalUnder": "50",
-        "awayTeamSpread": "-1",
-        "awayTeamSpreadOdds": "-108",
-        "homeTeamSpread": "+1",
-        "homeTeamSpreadOdds": "-113",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-114",
-        "homeTeamMLOdds": "-107",
-        "totalOver": "50",
+        "totalOverOdds": "-109",
+        "totalUnderOdds": "-112",
+        "awayTeamMLOdds": "-112",
+        "homeTeamMLOdds": "-108",
+        "totalOver": "50.5",
         "impliedTotals": {
           "awayTotal": "25.5",
-          "homeTotal": "24.5"
-        }
-      },
-      "teamIDAway": "9",
-      "homeTeam": "CHI",
-      "espnbet": {
-        "totalUnder": "49.5",
-        "awayTeamSpread": "+1.5",
-        "awayTeamSpreadOdds": "-120",
-        "homeTeamSpread": "-1.5",
-        "homeTeamSpreadOdds": "even",
-        "totalOverOdds": "-120",
-        "totalUnderOdds": "even",
-        "awayTeamMLOdds": "-105",
-        "homeTeamMLOdds": "-115",
-        "totalOver": "49.5",
-        "impliedTotals": {
-          "awayTotal": "24.0",
-          "homeTotal": "25.5"
-        }
-      },
-      "betrivers": {
-        "totalUnder": "50",
-        "awayTeamSpread": "-1",
-        "awayTeamSpreadOdds": "-108",
-        "homeTeamSpread": "+1",
-        "homeTeamSpreadOdds": "-113",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-114",
-        "homeTeamMLOdds": "-107",
-        "totalOver": "50",
-        "impliedTotals": {
-          "awayTotal": "25.5",
-          "homeTotal": "24.5"
-        }
-      },
-      "caesars_sportsbook": {
-        "totalUnder": "50",
-        "awayTeamSpread": "PK",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "PK",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-110",
-        "homeTeamMLOdds": "-110",
-        "totalOver": "50",
-        "impliedTotals": {}
-      },
-      "gameID": "20250921_DAL@CHI",
-      "awayTeam": "DAL",
-      "draftkings": {
-        "totalUnder": "49.5",
-        "awayTeamSpread": "+1.5",
-        "awayTeamSpreadOdds": "-112",
-        "homeTeamSpread": "-1.5",
-        "homeTeamSpreadOdds": "-108",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "even",
-        "homeTeamMLOdds": "-120",
-        "totalOver": "49.5",
-        "impliedTotals": {
-          "awayTotal": "24.0",
-          "homeTotal": "25.5"
-        }
-      }
-    },
-    "20250921_DEN@LAC": {
-      "last_updated_e_time": "1758063680.355043",
-      "betmgm": {
-        "totalUnder": "46",
-        "awayTeamSpread": "+2.5",
-        "awayTeamSpreadOdds": "-105",
-        "homeTeamSpread": "-2.5",
-        "homeTeamSpreadOdds": "-115",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+120",
-        "homeTeamMLOdds": "-145",
-        "totalOver": "46",
-        "impliedTotals": {
-          "awayTotal": "21.75",
-          "homeTotal": "24.25"
+          "homeTotal": "25.0"
         }
       },
       "bet365": {
-        "totalUnder": "46",
-        "awayTeamSpread": "+2.5",
-        "awayTeamSpreadOdds": "even",
-        "homeTeamSpread": "-2.5",
-        "homeTeamSpreadOdds": "-120",
+        "totalUnder": "50.5",
+        "awayTeamSpread": "-1",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "+1",
+        "homeTeamSpreadOdds": "-110",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+130",
-        "homeTeamMLOdds": "-155",
-        "totalOver": "46",
+        "awayTeamMLOdds": "-115",
+        "homeTeamMLOdds": "-105",
+        "totalOver": "50.5",
         "impliedTotals": {
-          "awayTotal": "21.75",
-          "homeTotal": "24.25"
+          "awayTotal": "25.75",
+          "homeTotal": "24.75"
         }
       },
-      "gameDate": "20250921",
-      "fanduel": {
-        "totalUnder": "45.5",
-        "awayTeamSpread": "+2.5",
-        "awayTeamSpreadOdds": "-104",
-        "homeTeamSpread": "-2.5",
-        "homeTeamSpreadOdds": "-118",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+130",
-        "homeTeamMLOdds": "-154",
-        "totalOver": "45.5",
-        "impliedTotals": {
-          "awayTotal": "21.5",
-          "homeTotal": "24.0"
-        }
-      },
-      "fanatics": {
-        "totalUnder": "46",
-        "awayTeamSpread": "+3",
-        "awayTeamSpreadOdds": "-115",
-        "homeTeamSpread": "-3",
-        "homeTeamSpreadOdds": "-105",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+130",
-        "homeTeamMLOdds": "-160",
-        "totalOver": "46",
-        "impliedTotals": {
-          "awayTotal": "21.5",
-          "homeTotal": "24.5"
-        }
-      },
-      "teamIDHome": "18",
-      "ballybet": {
-        "totalUnder": "46",
-        "awayTeamSpread": "+2.5",
+      "betmgm": {
+        "totalUnder": "50.5",
+        "awayTeamSpread": "-1",
         "awayTeamSpreadOdds": "-105",
-        "homeTeamSpread": "-2.5",
-        "homeTeamSpreadOdds": "-117",
-        "totalOverOdds": "-113",
-        "totalUnderOdds": "-108",
-        "awayTeamMLOdds": "+125",
-        "homeTeamMLOdds": "-152",
-        "totalOver": "46",
+        "homeTeamSpread": "+1",
+        "homeTeamSpreadOdds": "-115",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "-115",
+        "homeTeamMLOdds": "-105",
+        "totalOver": "50.5",
         "impliedTotals": {
-          "awayTotal": "21.75",
-          "homeTotal": "24.25"
-        }
-      },
-      "teamIDAway": "10",
-      "homeTeam": "LAC",
-      "espnbet": {
-        "totalUnder": "45.5",
-        "awayTeamSpread": "+2.5",
-        "awayTeamSpreadOdds": "even",
-        "homeTeamSpread": "-2.5",
-        "homeTeamSpreadOdds": "-120",
-        "totalOverOdds": "-120",
-        "totalUnderOdds": "even",
-        "awayTeamMLOdds": "+125",
-        "homeTeamMLOdds": "-145",
-        "totalOver": "45.5",
-        "impliedTotals": {
-          "awayTotal": "21.5",
-          "homeTotal": "24.0"
+          "awayTotal": "25.75",
+          "homeTotal": "24.75"
         }
       },
       "betrivers": {
-        "totalUnder": "46",
-        "awayTeamSpread": "+2.5",
-        "awayTeamSpreadOdds": "-105",
-        "homeTeamSpread": "-2.5",
-        "homeTeamSpreadOdds": "-117",
-        "totalOverOdds": "-113",
-        "totalUnderOdds": "-108",
-        "awayTeamMLOdds": "+125",
-        "homeTeamMLOdds": "-152",
-        "totalOver": "46",
+        "totalUnder": "50.5",
+        "awayTeamSpread": "-0.5",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "+0.5",
+        "homeTeamSpreadOdds": "-110",
+        "totalOverOdds": "-109",
+        "totalUnderOdds": "-112",
+        "awayTeamMLOdds": "-112",
+        "homeTeamMLOdds": "-108",
+        "totalOver": "50.5",
         "impliedTotals": {
-          "awayTotal": "21.75",
-          "homeTotal": "24.25"
+          "awayTotal": "25.5",
+          "homeTotal": "25.0"
         }
       },
       "caesars_sportsbook": {
-        "totalUnder": "46",
-        "awayTeamSpread": "+2.5",
-        "awayTeamSpreadOdds": "even",
-        "homeTeamSpread": "-2.5",
-        "homeTeamSpreadOdds": "-120",
+        "totalUnder": "50.5",
+        "awayTeamSpread": "-1",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "+1",
+        "homeTeamSpreadOdds": "-110",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+130",
-        "homeTeamMLOdds": "-155",
-        "totalOver": "46",
+        "awayTeamMLOdds": "-115",
+        "homeTeamMLOdds": "-105",
+        "totalOver": "50.5",
         "impliedTotals": {
-          "awayTotal": "21.75",
-          "homeTotal": "24.25"
+          "awayTotal": "25.75",
+          "homeTotal": "24.75"
         }
       },
-      "gameID": "20250921_DEN@LAC",
-      "awayTeam": "DEN",
       "draftkings": {
-        "totalUnder": "45.5",
-        "awayTeamSpread": "+2.5",
-        "awayTeamSpreadOdds": "-108",
-        "homeTeamSpread": "-2.5",
-        "homeTeamSpreadOdds": "-112",
+        "totalUnder": "50.5",
+        "awayTeamSpread": "-1.5",
+        "awayTeamSpreadOdds": "-102",
+        "homeTeamSpread": "+1.5",
+        "homeTeamSpreadOdds": "-118",
+        "totalOverOdds": "-112",
+        "totalUnderOdds": "-108",
+        "awayTeamMLOdds": "-118",
+        "homeTeamMLOdds": "-102",
+        "totalOver": "50.5",
+        "impliedTotals": {
+          "awayTotal": "26.0",
+          "homeTotal": "24.5"
+        }
+      },
+      "espnbet": {
+        "totalUnder": "50.5",
+        "awayTeamSpread": "-1.5",
+        "awayTeamSpreadOdds": "even",
+        "homeTeamSpread": "+1.5",
+        "homeTeamSpreadOdds": "-120",
         "totalOverOdds": "-115",
         "totalUnderOdds": "-105",
-        "awayTeamMLOdds": "+124",
+        "awayTeamMLOdds": "-120",
+        "homeTeamMLOdds": "even",
+        "totalOver": "50.5",
+        "impliedTotals": {
+          "awayTotal": "26.0",
+          "homeTotal": "24.5"
+        }
+      },
+      "fanatics": {
+        "totalUnder": "50.5",
+        "awayTeamSpread": "-1",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "+1",
+        "homeTeamSpreadOdds": "-110",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "-115",
+        "homeTeamMLOdds": "-105",
+        "totalOver": "50.5",
+        "impliedTotals": {
+          "awayTotal": "25.75",
+          "homeTotal": "24.75"
+        }
+      },
+      "fanduel": {
+        "totalUnder": "50.5",
+        "awayTeamSpread": "-1.5",
+        "awayTeamSpreadOdds": "-104",
+        "homeTeamSpread": "+1.5",
+        "homeTeamSpreadOdds": "-118",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "-116",
+        "homeTeamMLOdds": "-102",
+        "totalOver": "50.5",
+        "impliedTotals": {
+          "awayTotal": "26.0",
+          "homeTotal": "24.5"
+        }
+      },
+      "gameDate": "20250921",
+      "homeTeam": "CHI",
+      "last_updated_e_time": "1758234965.6093333",
+      "teamIDAway": "9",
+      "teamIDHome": "6",
+      "gameID": "20250921_DAL@CHI"
+    },
+    "20250921_DEN@LAC": {
+      "awayTeam": "DEN",
+      "ballybet": {
+        "totalUnder": "45.5",
+        "awayTeamSpread": "+2.5",
+        "awayTeamSpreadOdds": "-109",
+        "homeTeamSpread": "-2.5",
+        "homeTeamSpreadOdds": "-112",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+120",
         "homeTeamMLOdds": "-148",
         "totalOver": "45.5",
         "impliedTotals": {
           "awayTotal": "21.5",
           "homeTotal": "24.0"
         }
-      }
+      },
+      "bet365": {
+        "totalUnder": "46",
+        "awayTeamSpread": "+3",
+        "awayTeamSpreadOdds": "-120",
+        "homeTeamSpread": "-3",
+        "homeTeamSpreadOdds": "even",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+125",
+        "homeTeamMLOdds": "-150",
+        "totalOver": "46",
+        "impliedTotals": {
+          "awayTotal": "21.5",
+          "homeTotal": "24.5"
+        }
+      },
+      "betmgm": {
+        "totalUnder": "46",
+        "awayTeamSpread": "+3",
+        "awayTeamSpreadOdds": "-120",
+        "homeTeamSpread": "-3",
+        "homeTeamSpreadOdds": "even",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+130",
+        "homeTeamMLOdds": "-155",
+        "totalOver": "46",
+        "impliedTotals": {
+          "awayTotal": "21.5",
+          "homeTotal": "24.5"
+        }
+      },
+      "betrivers": {
+        "totalUnder": "45.5",
+        "awayTeamSpread": "+2.5",
+        "awayTeamSpreadOdds": "-109",
+        "homeTeamSpread": "-2.5",
+        "homeTeamSpreadOdds": "-112",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+120",
+        "homeTeamMLOdds": "-148",
+        "totalOver": "45.5",
+        "impliedTotals": {
+          "awayTotal": "21.5",
+          "homeTotal": "24.0"
+        }
+      },
+      "caesars_sportsbook": {
+        "totalUnder": "46",
+        "awayTeamSpread": "+3",
+        "awayTeamSpreadOdds": "-120",
+        "homeTeamSpread": "-3",
+        "homeTeamSpreadOdds": "even",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+130",
+        "homeTeamMLOdds": "-155",
+        "totalOver": "46",
+        "impliedTotals": {
+          "awayTotal": "21.5",
+          "homeTotal": "24.5"
+        }
+      },
+      "draftkings": {
+        "totalUnder": "45.5",
+        "awayTeamSpread": "+2.5",
+        "awayTeamSpreadOdds": "-105",
+        "homeTeamSpread": "-2.5",
+        "homeTeamSpreadOdds": "-115",
+        "totalOverOdds": "-115",
+        "totalUnderOdds": "-105",
+        "awayTeamMLOdds": "+130",
+        "homeTeamMLOdds": "-155",
+        "totalOver": "45.5",
+        "impliedTotals": {
+          "awayTotal": "21.5",
+          "homeTotal": "24.0"
+        }
+      },
+      "espnbet": {
+        "totalUnder": "45.5",
+        "awayTeamSpread": "+2.5",
+        "awayTeamSpreadOdds": "-105",
+        "homeTeamSpread": "-2.5",
+        "homeTeamSpreadOdds": "-115",
+        "totalOverOdds": "-115",
+        "totalUnderOdds": "-105",
+        "awayTeamMLOdds": "+120",
+        "homeTeamMLOdds": "-140",
+        "totalOver": "45.5",
+        "impliedTotals": {
+          "awayTotal": "21.5",
+          "homeTotal": "24.0"
+        }
+      },
+      "fanatics": {
+        "totalUnder": "46",
+        "awayTeamSpread": "+3",
+        "awayTeamSpreadOdds": "-115",
+        "homeTeamSpread": "-3",
+        "homeTeamSpreadOdds": "-105",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+125",
+        "homeTeamMLOdds": "-150",
+        "totalOver": "46",
+        "impliedTotals": {
+          "awayTotal": "21.5",
+          "homeTotal": "24.5"
+        }
+      },
+      "fanduel": {
+        "totalUnder": "45.5",
+        "awayTeamSpread": "+2.5",
+        "awayTeamSpreadOdds": "-102",
+        "homeTeamSpread": "-2.5",
+        "homeTeamSpreadOdds": "-120",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+132",
+        "homeTeamMLOdds": "-156",
+        "totalOver": "45.5",
+        "impliedTotals": {
+          "awayTotal": "21.5",
+          "homeTotal": "24.0"
+        }
+      },
+      "gameDate": "20250921",
+      "homeTeam": "LAC",
+      "last_updated_e_time": "1758234965.6089594",
+      "teamIDAway": "10",
+      "teamIDHome": "18",
+      "gameID": "20250921_DEN@LAC"
     },
     "20250921_GB@CLE": {
-      "last_updated_e_time": "1758063680.3544345",
+      "awayTeam": "GB",
+      "ballybet": {
+        "totalUnder": "41.5",
+        "awayTeamSpread": "-8",
+        "awayTeamSpreadOdds": "-108",
+        "homeTeamSpread": "+8",
+        "homeTeamSpreadOdds": "-113",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "-455",
+        "homeTeamMLOdds": "+335",
+        "totalOver": "41.5",
+        "impliedTotals": {
+          "awayTotal": "24.75",
+          "homeTotal": "16.75"
+        }
+      },
+      "bet365": {
+        "totalUnder": "41.5",
+        "awayTeamSpread": "-7.5",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "+7.5",
+        "homeTeamSpreadOdds": "-110",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "-450",
+        "homeTeamMLOdds": "+350",
+        "totalOver": "41.5",
+        "impliedTotals": {
+          "awayTotal": "24.5",
+          "homeTotal": "17.0"
+        }
+      },
       "betmgm": {
-        "totalUnder": "42",
+        "totalUnder": "41.5",
         "awayTeamSpread": "-8",
         "awayTeamSpreadOdds": "-110",
         "homeTeamSpread": "+8",
@@ -1081,167 +963,151 @@
         "totalUnderOdds": "-110",
         "awayTeamMLOdds": "-425",
         "homeTeamMLOdds": "+325",
-        "totalOver": "42",
-        "impliedTotals": {
-          "awayTotal": "25.0",
-          "homeTotal": "17.0"
-        }
-      },
-      "bet365": {
-        "totalUnder": "42",
-        "awayTeamSpread": "-7.5",
-        "awayTeamSpreadOdds": "-105",
-        "homeTeamSpread": "+7.5",
-        "homeTeamSpreadOdds": "-115",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-425",
-        "homeTeamMLOdds": "+325",
-        "totalOver": "42",
+        "totalOver": "41.5",
         "impliedTotals": {
           "awayTotal": "24.75",
-          "homeTotal": "17.25"
+          "homeTotal": "16.75"
         }
       },
-      "gameDate": "20250921",
-      "fanduel": {
-        "totalUnder": "42.5",
-        "awayTeamSpread": "-8.5",
-        "awayTeamSpreadOdds": "-105",
-        "homeTeamSpread": "+8.5",
-        "homeTeamSpreadOdds": "-115",
-        "totalOverOdds": "-104",
-        "totalUnderOdds": "-118",
-        "awayTeamMLOdds": "-420",
-        "homeTeamMLOdds": "+330",
-        "totalOver": "42.5",
-        "impliedTotals": {
-          "awayTotal": "25.5",
-          "homeTotal": "17.0"
-        }
-      },
-      "fanatics": {
-        "totalUnder": "42",
-        "awayTeamSpread": "-7.5",
-        "awayTeamSpreadOdds": "-105",
-        "homeTeamSpread": "+7.5",
-        "homeTeamSpreadOdds": "-115",
+      "betrivers": {
+        "totalUnder": "41.5",
+        "awayTeamSpread": "-8",
+        "awayTeamSpreadOdds": "-108",
+        "homeTeamSpread": "+8",
+        "homeTeamSpreadOdds": "-113",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-425",
-        "homeTeamMLOdds": "+330",
-        "totalOver": "42",
-        "impliedTotals": {
-          "awayTotal": "24.75",
-          "homeTotal": "17.25"
-        }
-      },
-      "teamIDHome": "8",
-      "ballybet": {
-        "totalUnder": "42.5",
-        "awayTeamSpread": "-7.5",
-        "awayTeamSpreadOdds": "-113",
-        "homeTeamSpread": "+7.5",
-        "homeTeamSpreadOdds": "-108",
-        "totalOverOdds": "-108",
-        "totalUnderOdds": "-113",
         "awayTeamMLOdds": "-455",
         "homeTeamMLOdds": "+335",
-        "totalOver": "42.5",
+        "totalOver": "41.5",
         "impliedTotals": {
-          "awayTotal": "25.0",
-          "homeTotal": "17.5"
+          "awayTotal": "24.75",
+          "homeTotal": "16.75"
         }
       },
-      "teamIDAway": "12",
-      "homeTeam": "CLE",
-      "espnbet": {
+      "caesars_sportsbook": {
         "totalUnder": "41.5",
         "awayTeamSpread": "-7.5",
-        "awayTeamSpreadOdds": "-105",
+        "awayTeamSpreadOdds": "-110",
         "homeTeamSpread": "+7.5",
-        "homeTeamSpreadOdds": "-115",
-        "totalOverOdds": "-115",
-        "totalUnderOdds": "-105",
-        "awayTeamMLOdds": "-425",
-        "homeTeamMLOdds": "+320",
+        "homeTeamSpreadOdds": "-110",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "-455",
+        "homeTeamMLOdds": "+345",
         "totalOver": "41.5",
         "impliedTotals": {
           "awayTotal": "24.5",
           "homeTotal": "17.0"
         }
       },
-      "betrivers": {
-        "totalUnder": "42.5",
-        "awayTeamSpread": "-7.5",
-        "awayTeamSpreadOdds": "-113",
-        "homeTeamSpread": "+7.5",
-        "homeTeamSpreadOdds": "-108",
-        "totalOverOdds": "-108",
-        "totalUnderOdds": "-113",
-        "awayTeamMLOdds": "-455",
-        "homeTeamMLOdds": "+335",
-        "totalOver": "42.5",
+      "draftkings": {
+        "totalUnder": "41.5",
+        "awayTeamSpread": "-8.5",
+        "awayTeamSpreadOdds": "-108",
+        "homeTeamSpread": "+8.5",
+        "homeTeamSpreadOdds": "-112",
+        "totalOverOdds": "-112",
+        "totalUnderOdds": "-108",
+        "awayTeamMLOdds": "-485",
+        "homeTeamMLOdds": "+380",
+        "totalOver": "41.5",
         "impliedTotals": {
           "awayTotal": "25.0",
-          "homeTotal": "17.5"
+          "homeTotal": "16.5"
         }
       },
-      "caesars_sportsbook": {
-        "totalUnder": "42",
+      "espnbet": {
+        "totalUnder": "41.5",
         "awayTeamSpread": "-7.5",
         "awayTeamSpreadOdds": "-105",
         "homeTeamSpread": "+7.5",
         "homeTeamSpreadOdds": "-115",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-430",
-        "homeTeamMLOdds": "+328",
-        "totalOver": "42",
+        "totalOverOdds": "even",
+        "totalUnderOdds": "-120",
+        "awayTeamMLOdds": "-450",
+        "homeTeamMLOdds": "+340",
+        "totalOver": "41.5",
         "impliedTotals": {
-          "awayTotal": "24.75",
-          "homeTotal": "17.25"
-        }
-      },
-      "gameID": "20250921_GB@CLE",
-      "awayTeam": "GB",
-      "draftkings": {
-        "totalUnder": "42.5",
-        "awayTeamSpread": "-8.5",
-        "awayTeamSpreadOdds": "-112",
-        "homeTeamSpread": "+8.5",
-        "homeTeamSpreadOdds": "-108",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-520",
-        "homeTeamMLOdds": "+390",
-        "totalOver": "42.5",
-        "impliedTotals": {
-          "awayTotal": "25.5",
+          "awayTotal": "24.5",
           "homeTotal": "17.0"
         }
-      }
-    },
-    "20250921_HOU@JAX": {
-      "last_updated_e_time": "1758063680.3549469",
-      "betmgm": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "+1",
-        "awayTeamSpreadOdds": "-105",
-        "homeTeamSpread": "-1",
-        "homeTeamSpreadOdds": "-115",
+      },
+      "fanatics": {
+        "totalUnder": "41.5",
+        "awayTeamSpread": "-7.5",
+        "awayTeamSpreadOdds": "-115",
+        "homeTeamSpread": "+7.5",
+        "homeTeamSpreadOdds": "-105",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "even",
-        "homeTeamMLOdds": "-120",
-        "totalOver": "44.5",
+        "awayTeamMLOdds": "-450",
+        "homeTeamMLOdds": "+330",
+        "totalOver": "41.5",
         "impliedTotals": {
-          "awayTotal": "21.75",
+          "awayTotal": "24.5",
+          "homeTotal": "17.0"
+        }
+      },
+      "fanduel": {
+        "totalUnder": "41.5",
+        "awayTeamSpread": "-7.5",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "+7.5",
+        "homeTeamSpreadOdds": "-110",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "-450",
+        "homeTeamMLOdds": "+350",
+        "totalOver": "41.5",
+        "impliedTotals": {
+          "awayTotal": "24.5",
+          "homeTotal": "17.0"
+        }
+      },
+      "gameDate": "20250921",
+      "homeTeam": "CLE",
+      "last_updated_e_time": "1758234965.607829",
+      "teamIDAway": "12",
+      "teamIDHome": "8",
+      "gameID": "20250921_GB@CLE"
+    },
+    "20250921_HOU@JAX": {
+      "awayTeam": "HOU",
+      "ballybet": {
+        "totalUnder": "44",
+        "awayTeamSpread": "+1.5",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "-1.5",
+        "homeTeamSpreadOdds": "-110",
+        "totalOverOdds": "-109",
+        "totalUnderOdds": "-112",
+        "awayTeamMLOdds": "+102",
+        "homeTeamMLOdds": "-124",
+        "totalOver": "44",
+        "impliedTotals": {
+          "awayTotal": "21.25",
           "homeTotal": "22.75"
         }
       },
       "bet365": {
-        "totalUnder": "44.5",
+        "totalUnder": "44",
+        "awayTeamSpread": "+1.5",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "-1.5",
+        "homeTeamSpreadOdds": "-110",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+110",
+        "homeTeamMLOdds": "-130",
+        "totalOver": "44",
+        "impliedTotals": {
+          "awayTotal": "21.25",
+          "homeTotal": "22.75"
+        }
+      },
+      "betmgm": {
+        "totalUnder": "44",
         "awayTeamSpread": "+1.5",
         "awayTeamSpreadOdds": "-110",
         "homeTeamSpread": "-1.5",
@@ -1250,122 +1116,68 @@
         "totalUnderOdds": "-110",
         "awayTeamMLOdds": "+105",
         "homeTeamMLOdds": "-125",
+        "totalOver": "44",
+        "impliedTotals": {
+          "awayTotal": "21.25",
+          "homeTotal": "22.75"
+        }
+      },
+      "betrivers": {
+        "totalUnder": "44",
+        "awayTeamSpread": "+1.5",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "-1.5",
+        "homeTeamSpreadOdds": "-110",
+        "totalOverOdds": "-109",
+        "totalUnderOdds": "-112",
+        "awayTeamMLOdds": "+102",
+        "homeTeamMLOdds": "-124",
+        "totalOver": "44",
+        "impliedTotals": {
+          "awayTotal": "21.25",
+          "homeTotal": "22.75"
+        }
+      },
+      "caesars_sportsbook": {
+        "totalUnder": "44",
+        "awayTeamSpread": "+1.5",
+        "awayTeamSpreadOdds": "-109",
+        "homeTeamSpread": "-1.5",
+        "homeTeamSpreadOdds": "-111",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+105",
+        "homeTeamMLOdds": "-125",
+        "totalOver": "44",
+        "impliedTotals": {
+          "awayTotal": "21.25",
+          "homeTotal": "22.75"
+        }
+      },
+      "draftkings": {
+        "totalUnder": "44.5",
+        "awayTeamSpread": "+1.5",
+        "awayTeamSpreadOdds": "-112",
+        "homeTeamSpread": "-1.5",
+        "homeTeamSpreadOdds": "-108",
+        "totalOverOdds": "-102",
+        "totalUnderOdds": "-118",
+        "awayTeamMLOdds": "+105",
+        "homeTeamMLOdds": "-125",
         "totalOver": "44.5",
         "impliedTotals": {
           "awayTotal": "21.5",
           "homeTotal": "23.0"
         }
       },
-      "gameDate": "20250921",
-      "fanduel": {
-        "totalUnder": "43.5",
+      "espnbet": {
+        "totalUnder": "44.5",
         "awayTeamSpread": "+1.5",
         "awayTeamSpreadOdds": "-115",
         "homeTeamSpread": "-1.5",
         "homeTeamSpreadOdds": "-105",
-        "totalOverOdds": "-115",
-        "totalUnderOdds": "-105",
-        "awayTeamMLOdds": "+102",
-        "homeTeamMLOdds": "-120",
-        "totalOver": "43.5",
-        "impliedTotals": {
-          "awayTotal": "21.0",
-          "homeTotal": "22.5"
-        }
-      },
-      "fanatics": {
-        "totalUnder": "44",
-        "awayTeamSpread": "+1.5",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-1.5",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+105",
-        "homeTeamMLOdds": "-125",
-        "totalOver": "44",
-        "impliedTotals": {
-          "awayTotal": "21.25",
-          "homeTotal": "22.75"
-        }
-      },
-      "teamIDHome": "15",
-      "ballybet": {
-        "totalUnder": "44",
-        "awayTeamSpread": "+1",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-1",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-112",
-        "totalUnderOdds": "-109",
-        "awayTeamMLOdds": "-104",
-        "homeTeamMLOdds": "-118",
-        "totalOver": "44",
-        "impliedTotals": {
-          "awayTotal": "21.5",
-          "homeTotal": "22.5"
-        }
-      },
-      "teamIDAway": "13",
-      "homeTeam": "JAX",
-      "espnbet": {
-        "totalUnder": "43.5",
-        "awayTeamSpread": "+1.5",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-1.5",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-115",
-        "totalUnderOdds": "-105",
-        "awayTeamMLOdds": "+105",
-        "homeTeamMLOdds": "-125",
-        "totalOver": "43.5",
-        "impliedTotals": {
-          "awayTotal": "21.0",
-          "homeTotal": "22.5"
-        }
-      },
-      "betrivers": {
-        "totalUnder": "44",
-        "awayTeamSpread": "+1",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-1",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-112",
-        "totalUnderOdds": "-109",
-        "awayTeamMLOdds": "-104",
-        "homeTeamMLOdds": "-118",
-        "totalOver": "44",
-        "impliedTotals": {
-          "awayTotal": "21.5",
-          "homeTotal": "22.5"
-        }
-      },
-      "caesars_sportsbook": {
-        "totalUnder": "44",
-        "awayTeamSpread": "+1.5",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-1.5",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "even",
-        "homeTeamMLOdds": "-122",
-        "totalOver": "44",
-        "impliedTotals": {
-          "awayTotal": "21.25",
-          "homeTotal": "22.75"
-        }
-      },
-      "gameID": "20250921_HOU@JAX",
-      "awayTeam": "HOU",
-      "draftkings": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "+1.5",
-        "awayTeamSpreadOdds": "-112",
-        "homeTeamSpread": "-1.5",
-        "homeTeamSpreadOdds": "-108",
-        "totalOverOdds": "-105",
-        "totalUnderOdds": "-115",
+        "totalOverOdds": "even",
+        "totalUnderOdds": "-120",
         "awayTeamMLOdds": "even",
         "homeTeamMLOdds": "-120",
         "totalOver": "44.5",
@@ -1373,104 +1185,90 @@
           "awayTotal": "21.5",
           "homeTotal": "23.0"
         }
-      }
-    },
-    "20250921_IND@TEN": {
-      "last_updated_e_time": "1758063680.353947",
-      "betmgm": {
-        "totalUnder": "43.5",
-        "awayTeamSpread": "-3.5",
-        "awayTeamSpreadOdds": "-105",
-        "homeTeamSpread": "+3.5",
-        "homeTeamSpreadOdds": "-115",
+      },
+      "fanatics": {
+        "totalUnder": "44",
+        "awayTeamSpread": "+1.5",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "-1.5",
+        "homeTeamSpreadOdds": "-110",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-190",
-        "homeTeamMLOdds": "+154",
+        "awayTeamMLOdds": "+105",
+        "homeTeamMLOdds": "-125",
+        "totalOver": "44",
+        "impliedTotals": {
+          "awayTotal": "21.25",
+          "homeTotal": "22.75"
+        }
+      },
+      "fanduel": {
+        "totalUnder": "44.5",
+        "awayTeamSpread": "+1.5",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "-1.5",
+        "homeTeamSpreadOdds": "-110",
+        "totalOverOdds": "-105",
+        "totalUnderOdds": "-115",
+        "awayTeamMLOdds": "+106",
+        "homeTeamMLOdds": "-124",
+        "totalOver": "44.5",
+        "impliedTotals": {
+          "awayTotal": "21.5",
+          "homeTotal": "23.0"
+        }
+      },
+      "gameDate": "20250921",
+      "homeTeam": "JAX",
+      "last_updated_e_time": "1758234965.60876",
+      "teamIDAway": "13",
+      "teamIDHome": "15",
+      "gameID": "20250921_HOU@JAX"
+    },
+    "20250921_IND@TEN": {
+      "awayTeam": "IND",
+      "ballybet": {
+        "totalUnder": "43.5",
+        "awayTeamSpread": "-4",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "+4",
+        "homeTeamSpreadOdds": "-110",
+        "totalOverOdds": "-112",
+        "totalUnderOdds": "-109",
+        "awayTeamMLOdds": "-210",
+        "homeTeamMLOdds": "+170",
         "totalOver": "43.5",
         "impliedTotals": {
-          "awayTotal": "23.5",
-          "homeTotal": "20.0"
+          "awayTotal": "23.75",
+          "homeTotal": "19.75"
         }
       },
       "bet365": {
         "totalUnder": "43.5",
-        "awayTeamSpread": "-3.5",
-        "awayTeamSpreadOdds": "-105",
-        "homeTeamSpread": "+3.5",
-        "homeTeamSpreadOdds": "-115",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-190",
-        "homeTeamMLOdds": "+160",
-        "totalOver": "43.5",
-        "impliedTotals": {
-          "awayTotal": "23.5",
-          "homeTotal": "20.0"
-        }
-      },
-      "gameDate": "20250921",
-      "fanduel": {
-        "totalUnder": "43.5",
-        "awayTeamSpread": "-3.5",
+        "awayTeamSpread": "-4",
         "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "+3.5",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-106",
-        "totalUnderOdds": "-114",
-        "awayTeamMLOdds": "-180",
-        "homeTeamMLOdds": "+152",
-        "totalOver": "43.5",
-        "impliedTotals": {
-          "awayTotal": "23.5",
-          "homeTotal": "20.0"
-        }
-      },
-      "fanatics": {
-        "totalUnder": "43.5",
-        "awayTeamSpread": "-3.5",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "+3.5",
+        "homeTeamSpread": "+4",
         "homeTeamSpreadOdds": "-110",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-190",
-        "homeTeamMLOdds": "+160",
+        "awayTeamMLOdds": "-205",
+        "homeTeamMLOdds": "+170",
         "totalOver": "43.5",
         "impliedTotals": {
-          "awayTotal": "23.5",
-          "homeTotal": "20.0"
+          "awayTotal": "23.75",
+          "homeTotal": "19.75"
         }
       },
-      "teamIDHome": "31",
-      "ballybet": {
+      "betmgm": {
         "totalUnder": "43.5",
         "awayTeamSpread": "-3.5",
-        "awayTeamSpreadOdds": "-112",
+        "awayTeamSpreadOdds": "-115",
         "homeTeamSpread": "+3.5",
-        "homeTeamSpreadOdds": "-109",
+        "homeTeamSpreadOdds": "-105",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-195",
-        "homeTeamMLOdds": "+160",
-        "totalOver": "43.5",
-        "impliedTotals": {
-          "awayTotal": "23.5",
-          "homeTotal": "20.0"
-        }
-      },
-      "teamIDAway": "14",
-      "homeTeam": "TEN",
-      "espnbet": {
-        "totalUnder": "43.5",
-        "awayTeamSpread": "-3.5",
-        "awayTeamSpreadOdds": "-120",
-        "homeTeamSpread": "+3.5",
-        "homeTeamSpreadOdds": "even",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-195",
-        "homeTeamMLOdds": "+165",
+        "awayTeamMLOdds": "-210",
+        "homeTeamMLOdds": "+170",
         "totalOver": "43.5",
         "impliedTotals": {
           "awayTotal": "23.5",
@@ -1479,57 +1277,141 @@
       },
       "betrivers": {
         "totalUnder": "43.5",
-        "awayTeamSpread": "-3.5",
-        "awayTeamSpreadOdds": "-112",
-        "homeTeamSpread": "+3.5",
-        "homeTeamSpreadOdds": "-109",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-195",
-        "homeTeamMLOdds": "+160",
+        "awayTeamSpread": "-4",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "+4",
+        "homeTeamSpreadOdds": "-110",
+        "totalOverOdds": "-112",
+        "totalUnderOdds": "-109",
+        "awayTeamMLOdds": "-210",
+        "homeTeamMLOdds": "+170",
         "totalOver": "43.5",
         "impliedTotals": {
-          "awayTotal": "23.5",
-          "homeTotal": "20.0"
+          "awayTotal": "23.75",
+          "homeTotal": "19.75"
         }
       },
       "caesars_sportsbook": {
         "totalUnder": "43.5",
-        "awayTeamSpread": "-3.5",
-        "awayTeamSpreadOdds": "-111",
-        "homeTeamSpread": "+3.5",
+        "awayTeamSpread": "-4",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "+4",
         "homeTeamSpreadOdds": "-110",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-189",
-        "homeTeamMLOdds": "+155",
+        "awayTeamMLOdds": "-204",
+        "homeTeamMLOdds": "+165",
         "totalOver": "43.5",
         "impliedTotals": {
-          "awayTotal": "23.5",
-          "homeTotal": "20.0"
+          "awayTotal": "23.75",
+          "homeTotal": "19.75"
         }
       },
-      "gameID": "20250921_IND@TEN",
-      "awayTeam": "IND",
       "draftkings": {
         "totalUnder": "43.5",
-        "awayTeamSpread": "-3.5",
-        "awayTeamSpreadOdds": "-112",
-        "homeTeamSpread": "+3.5",
-        "homeTeamSpreadOdds": "-108",
+        "awayTeamSpread": "-4.5",
+        "awayTeamSpreadOdds": "-105",
+        "homeTeamSpread": "+4.5",
+        "homeTeamSpreadOdds": "-115",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-192",
-        "homeTeamMLOdds": "+160",
+        "awayTeamMLOdds": "-205",
+        "homeTeamMLOdds": "+170",
         "totalOver": "43.5",
         "impliedTotals": {
-          "awayTotal": "23.5",
-          "homeTotal": "20.0"
+          "awayTotal": "24.0",
+          "homeTotal": "19.5"
         }
-      }
+      },
+      "espnbet": {
+        "totalUnder": "43.5",
+        "awayTeamSpread": "-4.5",
+        "awayTeamSpreadOdds": "even",
+        "homeTeamSpread": "+4.5",
+        "homeTeamSpreadOdds": "-120",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "-200",
+        "homeTeamMLOdds": "+170",
+        "totalOver": "43.5",
+        "impliedTotals": {
+          "awayTotal": "24.0",
+          "homeTotal": "19.5"
+        }
+      },
+      "fanatics": {
+        "totalUnder": "43.5",
+        "awayTeamSpread": "-4.5",
+        "awayTeamSpreadOdds": "-105",
+        "homeTeamSpread": "+4.5",
+        "homeTeamSpreadOdds": "-115",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "-210",
+        "homeTeamMLOdds": "+175",
+        "totalOver": "43.5",
+        "impliedTotals": {
+          "awayTotal": "24.0",
+          "homeTotal": "19.5"
+        }
+      },
+      "fanduel": {
+        "totalUnder": "43.5",
+        "awayTeamSpread": "-4.5",
+        "awayTeamSpreadOdds": "-104",
+        "homeTeamSpread": "+4.5",
+        "homeTeamSpreadOdds": "-118",
+        "totalOverOdds": "-106",
+        "totalUnderOdds": "-114",
+        "awayTeamMLOdds": "-205",
+        "homeTeamMLOdds": "+172",
+        "totalOver": "43.5",
+        "impliedTotals": {
+          "awayTotal": "24.0",
+          "homeTotal": "19.5"
+        }
+      },
+      "gameDate": "20250921",
+      "homeTeam": "TEN",
+      "last_updated_e_time": "1758234965.6072588",
+      "teamIDAway": "14",
+      "teamIDHome": "31",
+      "gameID": "20250921_IND@TEN"
     },
     "20250921_KC@NYG": {
-      "last_updated_e_time": "1758063680.3554382",
+      "awayTeam": "KC",
+      "ballybet": {
+        "totalUnder": "44.5",
+        "awayTeamSpread": "-6",
+        "awayTeamSpreadOdds": "-109",
+        "homeTeamSpread": "+6",
+        "homeTeamSpreadOdds": "-112",
+        "totalOverOdds": "-113",
+        "totalUnderOdds": "-108",
+        "awayTeamMLOdds": "-305",
+        "homeTeamMLOdds": "+235",
+        "totalOver": "44.5",
+        "impliedTotals": {
+          "awayTotal": "25.25",
+          "homeTotal": "19.25"
+        }
+      },
+      "bet365": {
+        "totalUnder": "45",
+        "awayTeamSpread": "-6",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "+6",
+        "homeTeamSpreadOdds": "-110",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "-290",
+        "homeTeamMLOdds": "+235",
+        "totalOver": "45",
+        "impliedTotals": {
+          "awayTotal": "25.5",
+          "homeTotal": "19.5"
+        }
+      },
       "betmgm": {
         "totalUnder": "45.5",
         "awayTeamSpread": "-6.5",
@@ -1546,7 +1428,23 @@
           "homeTotal": "19.5"
         }
       },
-      "bet365": {
+      "betrivers": {
+        "totalUnder": "44.5",
+        "awayTeamSpread": "-6",
+        "awayTeamSpreadOdds": "-109",
+        "homeTeamSpread": "+6",
+        "homeTeamSpreadOdds": "-112",
+        "totalOverOdds": "-113",
+        "totalUnderOdds": "-108",
+        "awayTeamMLOdds": "-305",
+        "homeTeamMLOdds": "+235",
+        "totalOver": "44.5",
+        "impliedTotals": {
+          "awayTotal": "25.25",
+          "homeTotal": "19.25"
+        }
+      },
+      "caesars_sportsbook": {
         "totalUnder": "45",
         "awayTeamSpread": "-6",
         "awayTeamSpreadOdds": "-115",
@@ -1554,135 +1452,119 @@
         "homeTeamSpreadOdds": "-105",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-280",
-        "homeTeamMLOdds": "+230",
+        "awayTeamMLOdds": "-320",
+        "homeTeamMLOdds": "+250",
         "totalOver": "45",
         "impliedTotals": {
           "awayTotal": "25.5",
           "homeTotal": "19.5"
         }
       },
-      "gameDate": "20250921",
-      "fanduel": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "-5.5",
-        "awayTeamSpreadOdds": "-118",
-        "homeTeamSpread": "+5.5",
-        "homeTeamSpreadOdds": "-104",
-        "totalOverOdds": "-115",
-        "totalUnderOdds": "-105",
-        "awayTeamMLOdds": "-255",
-        "homeTeamMLOdds": "+210",
-        "totalOver": "44.5",
-        "impliedTotals": {
-          "awayTotal": "25.0",
-          "homeTotal": "19.5"
-        }
-      },
-      "fanatics": {
+      "draftkings": {
         "totalUnder": "45.5",
         "awayTeamSpread": "-6",
         "awayTeamSpreadOdds": "-110",
         "homeTeamSpread": "+6",
         "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-275",
-        "homeTeamMLOdds": "+220",
+        "totalOverOdds": "-108",
+        "totalUnderOdds": "-112",
+        "awayTeamMLOdds": "-325",
+        "homeTeamMLOdds": "+260",
         "totalOver": "45.5",
         "impliedTotals": {
           "awayTotal": "25.75",
           "homeTotal": "19.75"
         }
       },
-      "teamIDHome": "24",
-      "ballybet": {
-        "totalUnder": "45",
-        "awayTeamSpread": "-6",
-        "awayTeamSpreadOdds": "-108",
-        "homeTeamSpread": "+6",
-        "homeTeamSpreadOdds": "-113",
-        "totalOverOdds": "-109",
-        "totalUnderOdds": "-112",
-        "awayTeamMLOdds": "-295",
-        "homeTeamMLOdds": "+230",
-        "totalOver": "45",
-        "impliedTotals": {
-          "awayTotal": "25.5",
-          "homeTotal": "19.5"
-        }
-      },
-      "teamIDAway": "16",
-      "homeTeam": "NYG",
       "espnbet": {
         "totalUnder": "45.5",
         "awayTeamSpread": "-6.5",
         "awayTeamSpreadOdds": "even",
         "homeTeamSpread": "+6.5",
         "homeTeamSpreadOdds": "-120",
-        "totalOverOdds": "-105",
-        "totalUnderOdds": "-115",
-        "awayTeamMLOdds": "-275",
-        "homeTeamMLOdds": "+225",
+        "totalOverOdds": "even",
+        "totalUnderOdds": "-120",
+        "awayTeamMLOdds": "-290",
+        "homeTeamMLOdds": "+240",
         "totalOver": "45.5",
         "impliedTotals": {
           "awayTotal": "26.0",
           "homeTotal": "19.5"
         }
       },
-      "betrivers": {
+      "fanatics": {
         "totalUnder": "45",
-        "awayTeamSpread": "-6",
-        "awayTeamSpreadOdds": "-108",
-        "homeTeamSpread": "+6",
-        "homeTeamSpreadOdds": "-113",
-        "totalOverOdds": "-109",
-        "totalUnderOdds": "-112",
-        "awayTeamMLOdds": "-295",
-        "homeTeamMLOdds": "+230",
-        "totalOver": "45",
-        "impliedTotals": {
-          "awayTotal": "25.5",
-          "homeTotal": "19.5"
-        }
-      },
-      "caesars_sportsbook": {
-        "totalUnder": "45",
-        "awayTeamSpread": "-6",
-        "awayTeamSpreadOdds": "-115",
-        "homeTeamSpread": "+6",
-        "homeTeamSpreadOdds": "-105",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-292",
-        "homeTeamMLOdds": "+235",
-        "totalOver": "45",
-        "impliedTotals": {
-          "awayTotal": "25.5",
-          "homeTotal": "19.5"
-        }
-      },
-      "gameID": "20250921_KC@NYG",
-      "awayTeam": "KC",
-      "draftkings": {
-        "totalUnder": "45.5",
         "awayTeamSpread": "-6.5",
         "awayTeamSpreadOdds": "-105",
         "homeTeamSpread": "+6.5",
         "homeTeamSpreadOdds": "-115",
-        "totalOverOdds": "-108",
-        "totalUnderOdds": "-112",
-        "awayTeamMLOdds": "-285",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "-300",
         "homeTeamMLOdds": "+230",
-        "totalOver": "45.5",
+        "totalOver": "45",
         "impliedTotals": {
-          "awayTotal": "26.0",
+          "awayTotal": "25.75",
+          "homeTotal": "19.25"
+        }
+      },
+      "fanduel": {
+        "totalUnder": "44.5",
+        "awayTeamSpread": "-5.5",
+        "awayTeamSpreadOdds": "-120",
+        "homeTeamSpread": "+5.5",
+        "homeTeamSpreadOdds": "-102",
+        "totalOverOdds": "-115",
+        "totalUnderOdds": "-105",
+        "awayTeamMLOdds": "-270",
+        "homeTeamMLOdds": "+220",
+        "totalOver": "44.5",
+        "impliedTotals": {
+          "awayTotal": "25.0",
           "homeTotal": "19.5"
         }
-      }
+      },
+      "gameDate": "20250921",
+      "homeTeam": "NYG",
+      "last_updated_e_time": "1758234965.6097023",
+      "teamIDAway": "16",
+      "teamIDHome": "24",
+      "gameID": "20250921_KC@NYG"
     },
     "20250921_LAR@PHI": {
-      "last_updated_e_time": "1758063680.3546379",
+      "awayTeam": "LAR",
+      "ballybet": {
+        "totalUnder": "44.5",
+        "awayTeamSpread": "+3.5",
+        "awayTeamSpreadOdds": "-117",
+        "homeTeamSpread": "-3.5",
+        "homeTeamSpreadOdds": "-105",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+155",
+        "homeTeamMLOdds": "-190",
+        "totalOver": "44.5",
+        "impliedTotals": {
+          "awayTotal": "20.5",
+          "homeTotal": "24.0"
+        }
+      },
+      "bet365": {
+        "totalUnder": "44.5",
+        "awayTeamSpread": "+3",
+        "awayTeamSpreadOdds": "+105",
+        "homeTeamSpread": "-3",
+        "homeTeamSpreadOdds": "-125",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+160",
+        "homeTeamMLOdds": "-190",
+        "totalOver": "44.5",
+        "impliedTotals": {
+          "awayTotal": "20.75",
+          "homeTotal": "23.75"
+        }
+      },
       "betmgm": {
         "totalUnder": "44.5",
         "awayTeamSpread": "+3.5",
@@ -1699,100 +1581,16 @@
           "homeTotal": "24.0"
         }
       },
-      "bet365": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "+3.5",
-        "awayTeamSpreadOdds": "-115",
-        "homeTeamSpread": "-3.5",
-        "homeTeamSpreadOdds": "-105",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+160",
-        "homeTeamMLOdds": "-190",
-        "totalOver": "44.5",
-        "impliedTotals": {
-          "awayTotal": "20.5",
-          "homeTotal": "24.0"
-        }
-      },
-      "gameDate": "20250921",
-      "fanduel": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "+3.5",
-        "awayTeamSpreadOdds": "-120",
-        "homeTeamSpread": "-3.5",
-        "homeTeamSpreadOdds": "-102",
-        "totalOverOdds": "-112",
-        "totalUnderOdds": "-108",
-        "awayTeamMLOdds": "+148",
-        "homeTeamMLOdds": "-174",
-        "totalOver": "44.5",
-        "impliedTotals": {
-          "awayTotal": "20.5",
-          "homeTotal": "24.0"
-        }
-      },
-      "fanatics": {
-        "totalUnder": "44",
-        "awayTeamSpread": "+3.5",
-        "awayTeamSpreadOdds": "-115",
-        "homeTeamSpread": "-3.5",
-        "homeTeamSpreadOdds": "-105",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+150",
-        "homeTeamMLOdds": "-180",
-        "totalOver": "44",
-        "impliedTotals": {
-          "awayTotal": "20.25",
-          "homeTotal": "23.75"
-        }
-      },
-      "teamIDHome": "27",
-      "ballybet": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "+3.5",
-        "awayTeamSpreadOdds": "-112",
-        "homeTeamSpread": "-3.5",
-        "homeTeamSpreadOdds": "-109",
-        "totalOverOdds": "-109",
-        "totalUnderOdds": "-112",
-        "awayTeamMLOdds": "+160",
-        "homeTeamMLOdds": "-195",
-        "totalOver": "44.5",
-        "impliedTotals": {
-          "awayTotal": "20.5",
-          "homeTotal": "24.0"
-        }
-      },
-      "teamIDAway": "19",
-      "homeTeam": "PHI",
-      "espnbet": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "+3.5",
-        "awayTeamSpreadOdds": "-120",
-        "homeTeamSpread": "-3.5",
-        "homeTeamSpreadOdds": "even",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+160",
-        "homeTeamMLOdds": "-190",
-        "totalOver": "44.5",
-        "impliedTotals": {
-          "awayTotal": "20.5",
-          "homeTotal": "24.0"
-        }
-      },
       "betrivers": {
         "totalUnder": "44.5",
         "awayTeamSpread": "+3.5",
-        "awayTeamSpreadOdds": "-112",
+        "awayTeamSpreadOdds": "-117",
         "homeTeamSpread": "-3.5",
-        "homeTeamSpreadOdds": "-109",
-        "totalOverOdds": "-109",
-        "totalUnderOdds": "-112",
-        "awayTeamMLOdds": "+160",
-        "homeTeamMLOdds": "-195",
+        "homeTeamSpreadOdds": "-105",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+155",
+        "homeTeamMLOdds": "-190",
         "totalOver": "44.5",
         "impliedTotals": {
           "awayTotal": "20.5",
@@ -1801,181 +1599,26 @@
       },
       "caesars_sportsbook": {
         "totalUnder": "44.5",
-        "awayTeamSpread": "+3.5",
-        "awayTeamSpreadOdds": "-115",
-        "homeTeamSpread": "-3.5",
-        "homeTeamSpreadOdds": "-105",
+        "awayTeamSpread": "+3",
+        "awayTeamSpreadOdds": "+105",
+        "homeTeamSpread": "-3",
+        "homeTeamSpreadOdds": "-125",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
         "awayTeamMLOdds": "+152",
         "homeTeamMLOdds": "-180",
         "totalOver": "44.5",
         "impliedTotals": {
-          "awayTotal": "20.5",
-          "homeTotal": "24.0"
+          "awayTotal": "20.75",
+          "homeTotal": "23.75"
         }
       },
-      "gameID": "20250921_LAR@PHI",
-      "awayTeam": "LAR",
       "draftkings": {
         "totalUnder": "44.5",
         "awayTeamSpread": "+3.5",
         "awayTeamSpreadOdds": "-115",
         "homeTeamSpread": "-3.5",
         "homeTeamSpreadOdds": "-105",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+150",
-        "homeTeamMLOdds": "-180",
-        "totalOver": "44.5",
-        "impliedTotals": {
-          "awayTotal": "20.5",
-          "homeTotal": "24.0"
-        }
-      }
-    },
-    "20250921_LV@WSH": {
-      "last_updated_e_time": "1758063680.3543303",
-      "betmgm": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "+3.5",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-3.5",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+155",
-        "homeTeamMLOdds": "-190",
-        "totalOver": "44.5",
-        "impliedTotals": {
-          "awayTotal": "20.5",
-          "homeTotal": "24.0"
-        }
-      },
-      "bet365": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "+3.5",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-3.5",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+155",
-        "homeTeamMLOdds": "-185",
-        "totalOver": "44.5",
-        "impliedTotals": {
-          "awayTotal": "20.5",
-          "homeTotal": "24.0"
-        }
-      },
-      "gameDate": "20250921",
-      "fanduel": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "+3.5",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-3.5",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+156",
-        "homeTeamMLOdds": "-186",
-        "totalOver": "44.5",
-        "impliedTotals": {
-          "awayTotal": "20.5",
-          "homeTotal": "24.0"
-        }
-      },
-      "fanatics": {
-        "totalUnder": "44",
-        "awayTeamSpread": "+3.5",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-3.5",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+160",
-        "homeTeamMLOdds": "-190",
-        "totalOver": "44",
-        "impliedTotals": {
-          "awayTotal": "20.25",
-          "homeTotal": "23.75"
-        }
-      },
-      "teamIDHome": "32",
-      "ballybet": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "+3.5",
-        "awayTeamSpreadOdds": "-109",
-        "homeTeamSpread": "-3.5",
-        "homeTeamSpreadOdds": "-112",
-        "totalOverOdds": "-108",
-        "totalUnderOdds": "-113",
-        "awayTeamMLOdds": "+160",
-        "homeTeamMLOdds": "-195",
-        "totalOver": "44.5",
-        "impliedTotals": {
-          "awayTotal": "20.5",
-          "homeTotal": "24.0"
-        }
-      },
-      "teamIDAway": "17",
-      "homeTeam": "WSH",
-      "espnbet": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "+3.5",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-3.5",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "even",
-        "totalUnderOdds": "-120",
-        "awayTeamMLOdds": "+155",
-        "homeTeamMLOdds": "-185",
-        "totalOver": "44.5",
-        "impliedTotals": {
-          "awayTotal": "20.5",
-          "homeTotal": "24.0"
-        }
-      },
-      "betrivers": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "+3.5",
-        "awayTeamSpreadOdds": "-109",
-        "homeTeamSpread": "-3.5",
-        "homeTeamSpreadOdds": "-112",
-        "totalOverOdds": "-108",
-        "totalUnderOdds": "-113",
-        "awayTeamMLOdds": "+160",
-        "homeTeamMLOdds": "-195",
-        "totalOver": "44.5",
-        "impliedTotals": {
-          "awayTotal": "20.5",
-          "homeTotal": "24.0"
-        }
-      },
-      "caesars_sportsbook": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "+3.5",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-3.5",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+158",
-        "homeTeamMLOdds": "-190",
-        "totalOver": "44.5",
-        "impliedTotals": {
-          "awayTotal": "20.5",
-          "homeTotal": "24.0"
-        }
-      },
-      "gameID": "20250921_LV@WSH",
-      "awayTeam": "LV",
-      "draftkings": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "+3.5",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-3.5",
-        "homeTeamSpreadOdds": "-110",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
         "awayTeamMLOdds": "+154",
@@ -1985,20 +1628,227 @@
           "awayTotal": "20.5",
           "homeTotal": "24.0"
         }
-      }
-    },
-    "20250921_NO@SEA": {
-      "last_updated_e_time": "1758063680.3551419",
-      "betmgm": {
-        "totalUnder": "41.5",
-        "awayTeamSpread": "+7.5",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-7.5",
-        "homeTeamSpreadOdds": "-110",
+      },
+      "espnbet": {
+        "totalUnder": "44.5",
+        "awayTeamSpread": "+3.5",
+        "awayTeamSpreadOdds": "-120",
+        "homeTeamSpread": "-3.5",
+        "homeTeamSpreadOdds": "even",
+        "totalOverOdds": "-115",
+        "totalUnderOdds": "-105",
+        "awayTeamMLOdds": "+160",
+        "homeTeamMLOdds": "-190",
+        "totalOver": "44.5",
+        "impliedTotals": {
+          "awayTotal": "20.5",
+          "homeTotal": "24.0"
+        }
+      },
+      "fanatics": {
+        "totalUnder": "44.5",
+        "awayTeamSpread": "+3.5",
+        "awayTeamSpreadOdds": "-115",
+        "homeTeamSpread": "-3.5",
+        "homeTeamSpreadOdds": "-105",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+310",
-        "homeTeamMLOdds": "-400",
+        "awayTeamMLOdds": "+160",
+        "homeTeamMLOdds": "-190",
+        "totalOver": "44.5",
+        "impliedTotals": {
+          "awayTotal": "20.5",
+          "homeTotal": "24.0"
+        }
+      },
+      "fanduel": {
+        "totalUnder": "44.5",
+        "awayTeamSpread": "+3.5",
+        "awayTeamSpreadOdds": "-118",
+        "homeTeamSpread": "-3.5",
+        "homeTeamSpreadOdds": "-104",
+        "totalOverOdds": "-112",
+        "totalUnderOdds": "-108",
+        "awayTeamMLOdds": "+160",
+        "homeTeamMLOdds": "-190",
+        "totalOver": "44.5",
+        "impliedTotals": {
+          "awayTotal": "20.5",
+          "homeTotal": "24.0"
+        }
+      },
+      "gameDate": "20250921",
+      "homeTeam": "PHI",
+      "last_updated_e_time": "1758234965.6082075",
+      "teamIDAway": "19",
+      "teamIDHome": "27",
+      "gameID": "20250921_LAR@PHI"
+    },
+    "20250921_LV@WSH": {
+      "awayTeam": "LV",
+      "ballybet": {
+        "totalUnder": "44",
+        "awayTeamSpread": "+3.5",
+        "awayTeamSpreadOdds": "-113",
+        "homeTeamSpread": "-3.5",
+        "homeTeamSpreadOdds": "-108",
+        "totalOverOdds": "-113",
+        "totalUnderOdds": "-108",
+        "awayTeamMLOdds": "+145",
+        "homeTeamMLOdds": "-180",
+        "totalOver": "44",
+        "impliedTotals": {
+          "awayTotal": "20.25",
+          "homeTotal": "23.75"
+        }
+      },
+      "bet365": {
+        "totalUnder": "44",
+        "awayTeamSpread": "+3.5",
+        "awayTeamSpreadOdds": "-120",
+        "homeTeamSpread": "-3.5",
+        "homeTeamSpreadOdds": "even",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+150",
+        "homeTeamMLOdds": "-180",
+        "totalOver": "44",
+        "impliedTotals": {
+          "awayTotal": "20.25",
+          "homeTotal": "23.75"
+        }
+      },
+      "betmgm": {
+        "totalUnder": "44",
+        "awayTeamSpread": "+3.5",
+        "awayTeamSpreadOdds": "-115",
+        "homeTeamSpread": "-3.5",
+        "homeTeamSpreadOdds": "-105",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+150",
+        "homeTeamMLOdds": "-185",
+        "totalOver": "44",
+        "impliedTotals": {
+          "awayTotal": "20.25",
+          "homeTotal": "23.75"
+        }
+      },
+      "betrivers": {
+        "totalUnder": "44",
+        "awayTeamSpread": "+3.5",
+        "awayTeamSpreadOdds": "-113",
+        "homeTeamSpread": "-3.5",
+        "homeTeamSpreadOdds": "-108",
+        "totalOverOdds": "-113",
+        "totalUnderOdds": "-108",
+        "awayTeamMLOdds": "+145",
+        "homeTeamMLOdds": "-180",
+        "totalOver": "44",
+        "impliedTotals": {
+          "awayTotal": "20.25",
+          "homeTotal": "23.75"
+        }
+      },
+      "caesars_sportsbook": {
+        "totalUnder": "44",
+        "awayTeamSpread": "+3.5",
+        "awayTeamSpreadOdds": "-120",
+        "homeTeamSpread": "-3.5",
+        "homeTeamSpreadOdds": "even",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+150",
+        "homeTeamMLOdds": "-178",
+        "totalOver": "44",
+        "impliedTotals": {
+          "awayTotal": "20.25",
+          "homeTotal": "23.75"
+        }
+      },
+      "draftkings": {
+        "totalUnder": "44.5",
+        "awayTeamSpread": "+3.5",
+        "awayTeamSpreadOdds": "-115",
+        "homeTeamSpread": "-3.5",
+        "homeTeamSpreadOdds": "-105",
+        "totalOverOdds": "-102",
+        "totalUnderOdds": "-118",
+        "awayTeamMLOdds": "+145",
+        "homeTeamMLOdds": "-175",
+        "totalOver": "44.5",
+        "impliedTotals": {
+          "awayTotal": "20.5",
+          "homeTotal": "24.0"
+        }
+      },
+      "espnbet": {
+        "totalUnder": "44.5",
+        "awayTeamSpread": "+3.5",
+        "awayTeamSpreadOdds": "-115",
+        "homeTeamSpread": "-3.5",
+        "homeTeamSpreadOdds": "-105",
+        "totalOverOdds": "-105",
+        "totalUnderOdds": "-115",
+        "awayTeamMLOdds": "+150",
+        "homeTeamMLOdds": "-175",
+        "totalOver": "44.5",
+        "impliedTotals": {
+          "awayTotal": "20.5",
+          "homeTotal": "24.0"
+        }
+      },
+      "fanatics": {
+        "totalUnder": "44.5",
+        "awayTeamSpread": "+3.5",
+        "awayTeamSpreadOdds": "-115",
+        "homeTeamSpread": "-3.5",
+        "homeTeamSpreadOdds": "-105",
+        "totalOverOdds": "-105",
+        "totalUnderOdds": "-115",
+        "awayTeamMLOdds": "+130",
+        "homeTeamMLOdds": "-160",
+        "totalOver": "44.5",
+        "impliedTotals": {
+          "awayTotal": "20.5",
+          "homeTotal": "24.0"
+        }
+      },
+      "fanduel": {
+        "totalUnder": "44.5",
+        "awayTeamSpread": "+3.5",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "-3.5",
+        "homeTeamSpreadOdds": "-110",
+        "totalOverOdds": "-102",
+        "totalUnderOdds": "-120",
+        "awayTeamMLOdds": "+156",
+        "homeTeamMLOdds": "-186",
+        "totalOver": "44.5",
+        "impliedTotals": {
+          "awayTotal": "20.5",
+          "homeTotal": "24.0"
+        }
+      },
+      "gameDate": "20250921",
+      "homeTeam": "WSH",
+      "last_updated_e_time": "1758234965.6076338",
+      "teamIDAway": "17",
+      "teamIDHome": "32",
+      "gameID": "20250921_LV@WSH"
+    },
+    "20250921_NO@SEA": {
+      "awayTeam": "NO",
+      "ballybet": {
+        "totalUnder": "41.5",
+        "awayTeamSpread": "+7.5",
+        "awayTeamSpreadOdds": "-115",
+        "homeTeamSpread": "-7.5",
+        "homeTeamSpreadOdds": "-106",
+        "totalOverOdds": "-112",
+        "totalUnderOdds": "-109",
+        "awayTeamMLOdds": "+300",
+        "homeTeamMLOdds": "-385",
         "totalOver": "41.5",
         "impliedTotals": {
           "awayTotal": "17.0",
@@ -2021,24 +1871,7 @@
           "homeTotal": "24.5"
         }
       },
-      "gameDate": "20250921",
-      "fanduel": {
-        "totalUnder": "41.5",
-        "awayTeamSpread": "+7",
-        "awayTeamSpreadOdds": "-100",
-        "homeTeamSpread": "-7",
-        "homeTeamSpreadOdds": "-122",
-        "totalOverOdds": "-105",
-        "totalUnderOdds": "-115",
-        "awayTeamMLOdds": "+295",
-        "homeTeamMLOdds": "-370",
-        "totalOver": "41.5",
-        "impliedTotals": {
-          "awayTotal": "17.25",
-          "homeTotal": "24.25"
-        }
-      },
-      "fanatics": {
+      "betmgm": {
         "totalUnder": "41.5",
         "awayTeamSpread": "+7.5",
         "awayTeamSpreadOdds": "-110",
@@ -2046,42 +1879,7 @@
         "homeTeamSpreadOdds": "-110",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+300",
-        "homeTeamMLOdds": "-375",
-        "totalOver": "41.5",
-        "impliedTotals": {
-          "awayTotal": "17.0",
-          "homeTotal": "24.5"
-        }
-      },
-      "teamIDHome": "29",
-      "ballybet": {
-        "totalUnder": "41.5",
-        "awayTeamSpread": "+7.5",
-        "awayTeamSpreadOdds": "-117",
-        "homeTeamSpread": "-7.5",
-        "homeTeamSpreadOdds": "-105",
-        "totalOverOdds": "-112",
-        "totalUnderOdds": "-109",
-        "awayTeamMLOdds": "+265",
-        "homeTeamMLOdds": "-345",
-        "totalOver": "41.5",
-        "impliedTotals": {
-          "awayTotal": "17.0",
-          "homeTotal": "24.5"
-        }
-      },
-      "teamIDAway": "23",
-      "homeTeam": "SEA",
-      "espnbet": {
-        "totalUnder": "41.5",
-        "awayTeamSpread": "+7.5",
-        "awayTeamSpreadOdds": "-115",
-        "homeTeamSpread": "-7.5",
-        "homeTeamSpreadOdds": "-105",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+300",
+        "awayTeamMLOdds": "+310",
         "homeTeamMLOdds": "-400",
         "totalOver": "41.5",
         "impliedTotals": {
@@ -2092,13 +1890,13 @@
       "betrivers": {
         "totalUnder": "41.5",
         "awayTeamSpread": "+7.5",
-        "awayTeamSpreadOdds": "-117",
+        "awayTeamSpreadOdds": "-115",
         "homeTeamSpread": "-7.5",
-        "homeTeamSpreadOdds": "-105",
+        "homeTeamSpreadOdds": "-106",
         "totalOverOdds": "-112",
         "totalUnderOdds": "-109",
-        "awayTeamMLOdds": "+265",
-        "homeTeamMLOdds": "-345",
+        "awayTeamMLOdds": "+300",
+        "homeTeamMLOdds": "-385",
         "totalOver": "41.5",
         "impliedTotals": {
           "awayTotal": "17.0",
@@ -2121,53 +1919,217 @@
           "homeTotal": "24.5"
         }
       },
-      "gameID": "20250921_NO@SEA",
-      "awayTeam": "NO",
       "draftkings": {
         "totalUnder": "41.5",
         "awayTeamSpread": "+7.5",
         "awayTeamSpreadOdds": "-115",
         "homeTeamSpread": "-7.5",
         "homeTeamSpreadOdds": "-105",
-        "totalOverOdds": "-108",
-        "totalUnderOdds": "-112",
-        "awayTeamMLOdds": "+300",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+295",
         "homeTeamMLOdds": "-380",
         "totalOver": "41.5",
         "impliedTotals": {
           "awayTotal": "17.0",
           "homeTotal": "24.5"
         }
-      }
+      },
+      "espnbet": {
+        "totalUnder": "41.5",
+        "awayTeamSpread": "+7.5",
+        "awayTeamSpreadOdds": "-115",
+        "homeTeamSpread": "-7.5",
+        "homeTeamSpreadOdds": "-105",
+        "totalOverOdds": "-115",
+        "totalUnderOdds": "-105",
+        "awayTeamMLOdds": "+290",
+        "homeTeamMLOdds": "-380",
+        "totalOver": "41.5",
+        "impliedTotals": {
+          "awayTotal": "17.0",
+          "homeTotal": "24.5"
+        }
+      },
+      "fanatics": {
+        "totalUnder": "41.5",
+        "awayTeamSpread": "+7.5",
+        "awayTeamSpreadOdds": "-115",
+        "homeTeamSpread": "-7.5",
+        "homeTeamSpreadOdds": "-105",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+300",
+        "homeTeamMLOdds": "-375",
+        "totalOver": "41.5",
+        "impliedTotals": {
+          "awayTotal": "17.0",
+          "homeTotal": "24.5"
+        }
+      },
+      "fanduel": {
+        "totalUnder": "41.5",
+        "awayTeamSpread": "+7.5",
+        "awayTeamSpreadOdds": "-115",
+        "homeTeamSpread": "-7.5",
+        "homeTeamSpreadOdds": "-105",
+        "totalOverOdds": "-105",
+        "totalUnderOdds": "-115",
+        "awayTeamMLOdds": "+310",
+        "homeTeamMLOdds": "-390",
+        "totalOver": "41.5",
+        "impliedTotals": {
+          "awayTotal": "17.0",
+          "homeTotal": "24.5"
+        }
+      },
+      "gameDate": "20250921",
+      "homeTeam": "SEA",
+      "last_updated_e_time": "1758234965.6091487",
+      "teamIDAway": "23",
+      "teamIDHome": "29",
+      "gameID": "20250921_NO@SEA"
     },
     "20250921_NYJ@TB": {
-      "last_updated_e_time": "1758063680.3548486",
-      "betmgm": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "+7",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-7",
-        "homeTeamSpreadOdds": "-110",
+      "awayTeam": "NYJ",
+      "ballybet": {
+        "totalUnder": "43.5",
+        "awayTeamSpread": "+6.5",
+        "awayTeamSpreadOdds": "-108",
+        "homeTeamSpread": "-6.5",
+        "homeTeamSpreadOdds": "-113",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
         "awayTeamMLOdds": "+260",
-        "homeTeamMLOdds": "-325",
-        "totalOver": "44.5",
+        "homeTeamMLOdds": "-335",
+        "totalOver": "43.5",
         "impliedTotals": {
-          "awayTotal": "18.75",
-          "homeTotal": "25.75"
+          "awayTotal": "18.5",
+          "homeTotal": "25.0"
         }
       },
       "bet365": {
-        "totalUnder": "44.5",
+        "totalUnder": "43.5",
         "awayTeamSpread": "+6.5",
-        "awayTeamSpreadOdds": "even",
+        "awayTeamSpreadOdds": "-105",
         "homeTeamSpread": "-6.5",
-        "homeTeamSpreadOdds": "-120",
+        "homeTeamSpreadOdds": "-115",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
         "awayTeamMLOdds": "+260",
         "homeTeamMLOdds": "-320",
+        "totalOver": "43.5",
+        "impliedTotals": {
+          "awayTotal": "18.5",
+          "homeTotal": "25.0"
+        }
+      },
+      "betmgm": {
+        "totalUnder": "43.5",
+        "awayTeamSpread": "+7",
+        "awayTeamSpreadOdds": "-120",
+        "homeTeamSpread": "-7",
+        "homeTeamSpreadOdds": "even",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+260",
+        "homeTeamMLOdds": "-325",
+        "totalOver": "43.5",
+        "impliedTotals": {
+          "awayTotal": "18.25",
+          "homeTotal": "25.25"
+        }
+      },
+      "betrivers": {
+        "totalUnder": "43.5",
+        "awayTeamSpread": "+6.5",
+        "awayTeamSpreadOdds": "-108",
+        "homeTeamSpread": "-6.5",
+        "homeTeamSpreadOdds": "-113",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+260",
+        "homeTeamMLOdds": "-335",
+        "totalOver": "43.5",
+        "impliedTotals": {
+          "awayTotal": "18.5",
+          "homeTotal": "25.0"
+        }
+      },
+      "caesars_sportsbook": {
+        "totalUnder": "43.5",
+        "awayTeamSpread": "+6.5",
+        "awayTeamSpreadOdds": "-105",
+        "homeTeamSpread": "-6.5",
+        "homeTeamSpreadOdds": "-115",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+260",
+        "homeTeamMLOdds": "-335",
+        "totalOver": "43.5",
+        "impliedTotals": {
+          "awayTotal": "18.5",
+          "homeTotal": "25.0"
+        }
+      },
+      "draftkings": {
+        "totalUnder": "43.5",
+        "awayTeamSpread": "+7",
+        "awayTeamSpreadOdds": "-115",
+        "homeTeamSpread": "-7",
+        "homeTeamSpreadOdds": "-105",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+260",
+        "homeTeamMLOdds": "-325",
+        "totalOver": "43.5",
+        "impliedTotals": {
+          "awayTotal": "18.25",
+          "homeTotal": "25.25"
+        }
+      },
+      "espnbet": {
+        "totalUnder": "43.5",
+        "awayTeamSpread": "+6.5",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "-6.5",
+        "homeTeamSpreadOdds": "-110",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+240",
+        "homeTeamMLOdds": "-290",
+        "totalOver": "43.5",
+        "impliedTotals": {
+          "awayTotal": "18.5",
+          "homeTotal": "25.0"
+        }
+      },
+      "fanatics": {
+        "totalUnder": "43.5",
+        "awayTeamSpread": "+6.5",
+        "awayTeamSpreadOdds": "-105",
+        "homeTeamSpread": "-6.5",
+        "homeTeamSpreadOdds": "-115",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+240",
+        "homeTeamMLOdds": "-300",
+        "totalOver": "43.5",
+        "impliedTotals": {
+          "awayTotal": "18.5",
+          "homeTotal": "25.0"
+        }
+      },
+      "fanduel": {
+        "totalUnder": "44.5",
+        "awayTeamSpread": "+6.5",
+        "awayTeamSpreadOdds": "-105",
+        "homeTeamSpread": "-6.5",
+        "homeTeamSpreadOdds": "-115",
+        "totalOverOdds": "-102",
+        "totalUnderOdds": "-120",
+        "awayTeamMLOdds": "+270",
+        "homeTeamMLOdds": "-335",
         "totalOver": "44.5",
         "impliedTotals": {
           "awayTotal": "19.0",
@@ -2175,148 +2137,52 @@
         }
       },
       "gameDate": "20250921",
-      "fanduel": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "+6.5",
-        "awayTeamSpreadOdds": "-102",
-        "homeTeamSpread": "-6.5",
-        "homeTeamSpreadOdds": "-120",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+270",
-        "homeTeamMLOdds": "-335",
-        "totalOver": "44.5",
-        "impliedTotals": {
-          "awayTotal": "19.0",
-          "homeTotal": "25.5"
-        }
-      },
-      "fanatics": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "+7",
-        "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "-7",
-        "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+250",
-        "homeTeamMLOdds": "-325",
-        "totalOver": "44.5",
-        "impliedTotals": {
-          "awayTotal": "18.75",
-          "homeTotal": "25.75"
-        }
-      },
-      "teamIDHome": "30",
-      "ballybet": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "+7",
-        "awayTeamSpreadOdds": "-105",
-        "homeTeamSpread": "-7",
-        "homeTeamSpreadOdds": "-117",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+270",
-        "homeTeamMLOdds": "-360",
-        "totalOver": "44.5",
-        "impliedTotals": {
-          "awayTotal": "18.75",
-          "homeTotal": "25.75"
-        }
-      },
-      "teamIDAway": "25",
       "homeTeam": "TB",
-      "espnbet": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "+6.5",
-        "awayTeamSpreadOdds": "-105",
-        "homeTeamSpread": "-6.5",
-        "homeTeamSpreadOdds": "-115",
-        "totalOverOdds": "-105",
-        "totalUnderOdds": "-115",
-        "awayTeamMLOdds": "+250",
-        "homeTeamMLOdds": "-300",
-        "totalOver": "44.5",
-        "impliedTotals": {
-          "awayTotal": "19.0",
-          "homeTotal": "25.5"
-        }
-      },
-      "betrivers": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "+7",
-        "awayTeamSpreadOdds": "-105",
-        "homeTeamSpread": "-7",
-        "homeTeamSpreadOdds": "-117",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+270",
-        "homeTeamMLOdds": "-360",
-        "totalOver": "44.5",
-        "impliedTotals": {
-          "awayTotal": "18.75",
-          "homeTotal": "25.75"
-        }
-      },
-      "caesars_sportsbook": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "+6.5",
-        "awayTeamSpreadOdds": "even",
-        "homeTeamSpread": "-6.5",
-        "homeTeamSpreadOdds": "-120",
-        "totalOverOdds": "-110",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "+260",
-        "homeTeamMLOdds": "-335",
-        "totalOver": "44.5",
-        "impliedTotals": {
-          "awayTotal": "19.0",
-          "homeTotal": "25.5"
-        }
-      },
-      "gameID": "20250921_NYJ@TB",
-      "awayTeam": "NYJ",
-      "draftkings": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "+7",
-        "awayTeamSpreadOdds": "-105",
-        "homeTeamSpread": "-7",
-        "homeTeamSpreadOdds": "-115",
-        "totalOverOdds": "-108",
-        "totalUnderOdds": "-112",
-        "awayTeamMLOdds": "+285",
-        "homeTeamMLOdds": "-360",
-        "totalOver": "44.5",
-        "impliedTotals": {
-          "awayTotal": "18.75",
-          "homeTotal": "25.75"
-        }
-      }
+      "last_updated_e_time": "1758234965.6085815",
+      "teamIDAway": "25",
+      "teamIDHome": "30",
+      "gameID": "20250921_NYJ@TB"
     },
     "20250921_PIT@NE": {
-      "last_updated_e_time": "1758063680.3547537",
-      "betmgm": {
-        "totalUnder": "44",
+      "awayTeam": "PIT",
+      "ballybet": {
+        "totalUnder": "44.5",
         "awayTeamSpread": "-1.5",
         "awayTeamSpreadOdds": "-110",
         "homeTeamSpread": "+1.5",
         "homeTeamSpreadOdds": "-110",
-        "totalOverOdds": "-118",
-        "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-125",
-        "homeTeamMLOdds": "+105",
-        "totalOver": "44",
+        "totalOverOdds": "-109",
+        "totalUnderOdds": "-112",
+        "awayTeamMLOdds": "-122",
+        "homeTeamMLOdds": "+102",
+        "totalOver": "44.5",
         "impliedTotals": {
-          "awayTotal": "22.75",
-          "homeTotal": "21.25"
+          "awayTotal": "23.0",
+          "homeTotal": "21.5"
         }
       },
       "bet365": {
         "totalUnder": "44.5",
         "awayTeamSpread": "-1.5",
-        "awayTeamSpreadOdds": "-110",
+        "awayTeamSpreadOdds": "-115",
         "homeTeamSpread": "+1.5",
-        "homeTeamSpreadOdds": "-110",
+        "homeTeamSpreadOdds": "-105",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "-125",
+        "homeTeamMLOdds": "+105",
+        "totalOver": "44.5",
+        "impliedTotals": {
+          "awayTotal": "23.0",
+          "homeTotal": "21.5"
+        }
+      },
+      "betmgm": {
+        "totalUnder": "44.5",
+        "awayTeamSpread": "-1.5",
+        "awayTeamSpreadOdds": "-115",
+        "homeTeamSpread": "+1.5",
+        "homeTeamSpreadOdds": "-105",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
         "awayTeamMLOdds": "-130",
@@ -2327,7 +2193,86 @@
           "homeTotal": "21.5"
         }
       },
-      "gameDate": "20250921",
+      "betrivers": {
+        "totalUnder": "44.5",
+        "awayTeamSpread": "-1.5",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "+1.5",
+        "homeTeamSpreadOdds": "-110",
+        "totalOverOdds": "-109",
+        "totalUnderOdds": "-112",
+        "awayTeamMLOdds": "-122",
+        "homeTeamMLOdds": "+102",
+        "totalOver": "44.5",
+        "impliedTotals": {
+          "awayTotal": "23.0",
+          "homeTotal": "21.5"
+        }
+      },
+      "caesars_sportsbook": {
+        "totalUnder": "44.5",
+        "awayTeamSpread": "-1.5",
+        "awayTeamSpreadOdds": "-115",
+        "homeTeamSpread": "+1.5",
+        "homeTeamSpreadOdds": "-105",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "-125",
+        "homeTeamMLOdds": "+105",
+        "totalOver": "44.5",
+        "impliedTotals": {
+          "awayTotal": "23.0",
+          "homeTotal": "21.5"
+        }
+      },
+      "draftkings": {
+        "totalUnder": "44.5",
+        "awayTeamSpread": "-1.5",
+        "awayTeamSpreadOdds": "-115",
+        "homeTeamSpread": "+1.5",
+        "homeTeamSpreadOdds": "-105",
+        "totalOverOdds": "-112",
+        "totalUnderOdds": "-108",
+        "awayTeamMLOdds": "-125",
+        "homeTeamMLOdds": "+105",
+        "totalOver": "44.5",
+        "impliedTotals": {
+          "awayTotal": "23.0",
+          "homeTotal": "21.5"
+        }
+      },
+      "espnbet": {
+        "totalUnder": "44.5",
+        "awayTeamSpread": "-1.5",
+        "awayTeamSpreadOdds": "-115",
+        "homeTeamSpread": "+1.5",
+        "homeTeamSpreadOdds": "-105",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "-130",
+        "homeTeamMLOdds": "+110",
+        "totalOver": "44.5",
+        "impliedTotals": {
+          "awayTotal": "23.0",
+          "homeTotal": "21.5"
+        }
+      },
+      "fanatics": {
+        "totalUnder": "44.5",
+        "awayTeamSpread": "-2.5",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "+2.5",
+        "homeTeamSpreadOdds": "-110",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "-140",
+        "homeTeamMLOdds": "+115",
+        "totalOver": "44.5",
+        "impliedTotals": {
+          "awayTotal": "23.5",
+          "homeTotal": "21.0"
+        }
+      },
       "fanduel": {
         "totalUnder": "44.5",
         "awayTeamSpread": "-1.5",
@@ -2344,107 +2289,165 @@
           "homeTotal": "21.5"
         }
       },
-      "fanatics": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "-2.5",
+      "gameDate": "20250921",
+      "homeTeam": "NE",
+      "last_updated_e_time": "1758234965.6083972",
+      "teamIDAway": "26",
+      "teamIDHome": "22",
+      "gameID": "20250921_PIT@NE"
+    },
+    "20250922_DET@BAL": {
+      "awayTeam": "DET",
+      "ballybet": {
+        "totalUnder": "52.5",
+        "awayTeamSpread": "+5",
+        "awayTeamSpreadOdds": "-113",
+        "homeTeamSpread": "-5",
+        "homeTeamSpreadOdds": "-108",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+195",
+        "homeTeamMLOdds": "-245",
+        "totalOver": "52.5",
+        "impliedTotals": {
+          "awayTotal": "23.75",
+          "homeTotal": "28.75"
+        }
+      },
+      "bet365": {
+        "totalUnder": "53",
+        "awayTeamSpread": "+4.5",
+        "awayTeamSpreadOdds": "-105",
+        "homeTeamSpread": "-4.5",
+        "homeTeamSpreadOdds": "-115",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+195",
+        "homeTeamMLOdds": "-240",
+        "totalOver": "53",
+        "impliedTotals": {
+          "awayTotal": "24.25",
+          "homeTotal": "28.75"
+        }
+      },
+      "betmgm": {
+        "totalUnder": "53.5",
+        "awayTeamSpread": "+4.5",
         "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "+2.5",
+        "homeTeamSpread": "-4.5",
         "homeTeamSpreadOdds": "-110",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-130",
-        "homeTeamMLOdds": "+110",
-        "totalOver": "44.5",
+        "awayTeamMLOdds": "+200",
+        "homeTeamMLOdds": "-235",
+        "totalOver": "53.5",
         "impliedTotals": {
-          "awayTotal": "23.5",
-          "homeTotal": "21.0"
-        }
-      },
-      "teamIDHome": "22",
-      "ballybet": {
-        "totalUnder": "44",
-        "awayTeamSpread": "-2",
-        "awayTeamSpreadOdds": "-109",
-        "homeTeamSpread": "+2",
-        "homeTeamSpreadOdds": "-112",
-        "totalOverOdds": "-108",
-        "totalUnderOdds": "-113",
-        "awayTeamMLOdds": "-127",
-        "homeTeamMLOdds": "+106",
-        "totalOver": "44",
-        "impliedTotals": {
-          "awayTotal": "23.0",
-          "homeTotal": "21.0"
-        }
-      },
-      "teamIDAway": "26",
-      "homeTeam": "NE",
-      "espnbet": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "-1.5",
-        "awayTeamSpreadOdds": "-115",
-        "homeTeamSpread": "+1.5",
-        "homeTeamSpreadOdds": "-105",
-        "totalOverOdds": "-115",
-        "totalUnderOdds": "-105",
-        "awayTeamMLOdds": "-130",
-        "homeTeamMLOdds": "+110",
-        "totalOver": "44.5",
-        "impliedTotals": {
-          "awayTotal": "23.0",
-          "homeTotal": "21.5"
+          "awayTotal": "24.5",
+          "homeTotal": "29.0"
         }
       },
       "betrivers": {
-        "totalUnder": "44",
-        "awayTeamSpread": "-2",
-        "awayTeamSpreadOdds": "-109",
-        "homeTeamSpread": "+2",
-        "homeTeamSpreadOdds": "-112",
-        "totalOverOdds": "-108",
-        "totalUnderOdds": "-113",
-        "awayTeamMLOdds": "-127",
-        "homeTeamMLOdds": "+106",
-        "totalOver": "44",
+        "totalUnder": "52.5",
+        "awayTeamSpread": "+5",
+        "awayTeamSpreadOdds": "-113",
+        "homeTeamSpread": "-5",
+        "homeTeamSpreadOdds": "-108",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+195",
+        "homeTeamMLOdds": "-245",
+        "totalOver": "52.5",
         "impliedTotals": {
-          "awayTotal": "23.0",
-          "homeTotal": "21.0"
+          "awayTotal": "23.75",
+          "homeTotal": "28.75"
         }
       },
       "caesars_sportsbook": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "-1.5",
+        "totalUnder": "53",
+        "awayTeamSpread": "+4.5",
         "awayTeamSpreadOdds": "-110",
-        "homeTeamSpread": "+1.5",
+        "homeTeamSpread": "-4.5",
         "homeTeamSpreadOdds": "-110",
         "totalOverOdds": "-110",
         "totalUnderOdds": "-110",
-        "awayTeamMLOdds": "-130",
-        "homeTeamMLOdds": "+110",
-        "totalOver": "44.5",
+        "awayTeamMLOdds": "+196",
+        "homeTeamMLOdds": "-240",
+        "totalOver": "53",
         "impliedTotals": {
-          "awayTotal": "23.0",
-          "homeTotal": "21.5"
+          "awayTotal": "24.25",
+          "homeTotal": "28.75"
         }
       },
-      "gameID": "20250921_PIT@NE",
-      "awayTeam": "PIT",
       "draftkings": {
-        "totalUnder": "44.5",
-        "awayTeamSpread": "-2.5",
+        "totalUnder": "53.5",
+        "awayTeamSpread": "+4.5",
+        "awayTeamSpreadOdds": "-108",
+        "homeTeamSpread": "-4.5",
+        "homeTeamSpreadOdds": "-112",
+        "totalOverOdds": "-105",
+        "totalUnderOdds": "-115",
+        "awayTeamMLOdds": "+190",
+        "homeTeamMLOdds": "-230",
+        "totalOver": "53.5",
+        "impliedTotals": {
+          "awayTotal": "24.5",
+          "homeTotal": "29.0"
+        }
+      },
+      "espnbet": {
+        "totalUnder": "53.5",
+        "awayTeamSpread": "+4.5",
         "awayTeamSpreadOdds": "-105",
-        "homeTeamSpread": "+2.5",
+        "homeTeamSpread": "-4.5",
         "homeTeamSpreadOdds": "-115",
-        "totalOverOdds": "-112",
-        "totalUnderOdds": "-108",
-        "awayTeamMLOdds": "-122",
-        "homeTeamMLOdds": "+102",
-        "totalOver": "44.5",
+        "totalOverOdds": "even",
+        "totalUnderOdds": "-120",
+        "awayTeamMLOdds": "+195",
+        "homeTeamMLOdds": "-230",
+        "totalOver": "53.5",
+        "impliedTotals": {
+          "awayTotal": "24.5",
+          "homeTotal": "29.0"
+        }
+      },
+      "fanatics": {
+        "totalUnder": "53",
+        "awayTeamSpread": "+4.5",
+        "awayTeamSpreadOdds": "-110",
+        "homeTeamSpread": "-4.5",
+        "homeTeamSpreadOdds": "-110",
+        "totalOverOdds": "-110",
+        "totalUnderOdds": "-110",
+        "awayTeamMLOdds": "+175",
+        "homeTeamMLOdds": "-210",
+        "totalOver": "53",
+        "impliedTotals": {
+          "awayTotal": "24.25",
+          "homeTotal": "28.75"
+        }
+      },
+      "fanduel": {
+        "totalUnder": "52.5",
+        "awayTeamSpread": "+5.5",
+        "awayTeamSpreadOdds": "-112",
+        "homeTeamSpread": "-5.5",
+        "homeTeamSpreadOdds": "-108",
+        "totalOverOdds": "-115",
+        "totalUnderOdds": "-105",
+        "awayTeamMLOdds": "+198",
+        "homeTeamMLOdds": "-240",
+        "totalOver": "52.5",
         "impliedTotals": {
           "awayTotal": "23.5",
-          "homeTotal": "21.0"
+          "homeTotal": "29.0"
         }
-      }
+      },
+      "gameDate": "20250922",
+      "homeTeam": "BAL",
+      "last_updated_e_time": "1758234965.609883",
+      "teamIDAway": "11",
+      "teamIDHome": "3",
+      "gameID": "20250922_DET@BAL"
     }
   }
 }

@@ -13,8 +13,10 @@ def get_projected_total(over_under: float, spread: float):
 def create_spreads_proto(json_data: json, matchup_json: json):
     team_to_gametime = {}
     for matchup in matchup_json["body"]:
-        team_to_gametime[matchup['home']] = int(float(matchup["gameTime_epoch"]))
-        team_to_gametime[matchup['away']] = int(float(matchup["gameTime_epoch"]))
+        team_to_gametime[matchup['home']] = int(
+            float(matchup["gameTime_epoch"]))
+        team_to_gametime[matchup['away']] = int(
+            float(matchup["gameTime_epoch"]))
 
     books = ['ballybet', 'bet365', 'betmgm', 'betrivers',
              'caesars_sportsbook', 'draftkings', 'espnbet', 'fanatics', 'fanduel']
@@ -186,6 +188,8 @@ def create_player_pool(matchups: json, ff_projections: json, salaries_json: json
             continue
         player_dict[id].points = float(player["fantasyPointsDefault"]["PPR"])
         if id in player_to_pts_override:
+            logging.info(
+                f'Player {player["longName"]}, Projected {player_dict[id].points}, Override {player_to_pts_override[id]}')
             player_dict[id].points = player_to_pts_override[id]
     for id, dst in ff_projections["body"]["teamDefenseProjections"].items():
         team_id = dst["teamAbv"]

@@ -1,7 +1,7 @@
 {
   "statusCode": 200,
   "body": {
-    "date": "20250916",
+    "date": "20250918",
     "draftkings": [
       {
         "team": "CIN",
@@ -3388,12 +3388,12 @@
         "teamID": "22"
       },
       {
-        "team": "CLE",
+        "team": "HOU",
         "salary": "2500",
         "pos": "TE",
         "longName": "Brenden Bates",
         "playerID": "4362603",
-        "teamID": "8"
+        "teamID": "13"
       },
       {
         "team": "TB",
@@ -9366,12 +9366,12 @@
         "teamID": "22"
       },
       {
-        "team": "CLE",
+        "team": "HOU",
         "salary": "4000",
         "pos": "TE",
         "longName": "Brenden Bates",
         "playerID": "4362603",
-        "teamID": "8"
+        "teamID": "13"
       },
       {
         "team": "TB",
