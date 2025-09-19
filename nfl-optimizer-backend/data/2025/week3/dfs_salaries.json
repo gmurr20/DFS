@@ -1,7 +1,7 @@
 {
   "statusCode": 200,
   "body": {
-    "date": "20250918",
+    "date": "20250919",
     "draftkings": [
       {
         "team": "CIN",
@@ -6074,6 +6074,30 @@
         "longName": "Cornelius Johnson",
         "playerID": "4426479",
         "teamID": "3"
+      },
+      {
+        "team": "DET",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Ross Dwelley",
+        "playerID": "3120303",
+        "teamID": "11"
+      },
+      {
+        "team": "DET",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Malik Cunningham",
+        "playerID": "4240069",
+        "teamID": "11"
+      },
+      {
+        "team": "NYG",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Dalen Cambre",
+        "playerID": "4570296",
+        "teamID": "24"
       }
     ],
     "fanduel": [
