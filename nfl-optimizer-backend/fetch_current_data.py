@@ -177,6 +177,7 @@ def main(read_local: bool, write_local: bool, upload: bool, week: int):
             week=week, serialized_data=binary_data, file_name='week_matchups')
     if upload and not s3_client.upload_file(season=SEASON, week=week, filename='week_matchups.binarypb'):
         logging.error('Failed to upload week_matchups.binarypb to S3')
+        exit(1)
 
     dk_df = None
     if os.path.exists(f'data/{SEASON}/week{week}/DKSalaries.csv'):
@@ -191,6 +192,7 @@ def main(read_local: bool, write_local: bool, upload: bool, week: int):
             week=week, serialized_data=binary_data, file_name='player_pool')
     if upload and not s3_client.upload_file(season=SEASON, week=week, filename='player_pool.binarypb'):
         logging.error('Failed to upload player_pool.binarypb to S3')
+        exit(1)
     exit(0)
 
 
