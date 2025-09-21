@@ -12,5 +12,5 @@ player_to_pts_override = {
     # Jordan Mason
     "4360569": 17.5,
     # K Walker
-    "4567048": 17.4
+    "4567048": 17.4,
 }

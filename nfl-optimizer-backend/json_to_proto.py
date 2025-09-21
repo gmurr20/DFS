@@ -191,6 +191,7 @@ def create_player_pool(matchups: json, ff_projections: json, salaries_json: json
             logging.info(
                 f'Player {player["longName"]}, Projected {player_dict[id].points}, Override {player_to_pts_override[id]}')
             player_dict[id].points = player_to_pts_override[id]
+            print(player_dict[id])
     for id, dst in ff_projections["body"]["teamDefenseProjections"].items():
         team_id = dst["teamAbv"]
         if team_id not in player_dict:
