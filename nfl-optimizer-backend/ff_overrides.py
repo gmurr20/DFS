@@ -10,7 +10,7 @@ player_to_pts_override = {
     # CMC
     "3117251": 22.5,
     # Jordan Mason
-    "4360569": 16.0,
-    # Jauan Jennings
-    "3886598": 13.7,
+    "4360569": 17.5,
+    # K Walker
+    "4567048": 17.4
 }
