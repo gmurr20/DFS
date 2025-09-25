@@ -449,6 +449,7 @@ const NFLOptimizerFrontend = () => {
       thursday: { name: 'Thursday Night', teams: [] },
       friday: { name: 'Friday', teams: [] },
       saturday: { name: 'Saturday', teams: [] },
+      international: {name: 'International', teams: []},
       early: { name: 'Early Only', teams: [] },
       late: { name: 'Afternoon Only', teams: [] },
       sunday_night: { name: 'Sunday Night', teams: [] },
@@ -479,7 +480,10 @@ const NFLOptimizerFrontend = () => {
       }
       // Sunday games
       else if (dayOfWeek === 'Sunday') {
-        if (hour >= 18 && hour <= 23) { // 6pm-11pm CT (Sunday Night)
+        if (hour < 12) { // Before 12 CT (international game)
+          presets.international.teams.push(...teams);
+        }
+        else if (hour >= 18 && hour <= 23) { // 6pm-11pm CT (Sunday Night)
           presets.sunday_night.teams.push(...teams);
         } else if (hour >= 12 && hour <= 14) { // 12pm-2pm CT
           presets.early.teams.push(...teams);
