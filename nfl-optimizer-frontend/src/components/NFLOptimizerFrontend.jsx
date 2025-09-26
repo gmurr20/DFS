@@ -999,7 +999,7 @@ const NFLOptimizerFrontend = () => {
                 </div>
                 <div>
                   <h1 className="text-xl md:text-3xl font-bold text-gray-900">DFS Optimizer</h1>
-                  <p className="text-gray-600 mt-1 text-sm md:text-base">It's milly maker time</p>
+                  <p className="text-gray-600 mt-1 text-sm md:text-base">It's Gmilli maker time</p>
                 </div>
               </div>
               <button
