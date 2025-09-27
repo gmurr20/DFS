@@ -13,13 +13,16 @@ class S3Client:
             aws_secret_access_key=Config.get(key='AWS_SECRET_KEY')
         )
 
-    def upload_file(self, season: int, week: int, filename: str) -> bool:
+    def upload_file(self, season: int, week: int, filename: str, data: str) -> bool:
         try:
-            self.s3_client.upload_file(
-                f'data/{season}/week{week}/{filename}', 'nfl-dfs', f'{season}/week{week}/{filename}')
+            self.s3_client.put_object(
+                Bucket='nfl-dfs',
+                Key=f'{season}/week{week}/{filename}',
+                Body=data
+            )
             return True
         except Exception as e:
-            logging.error(f'Error uploading with exception {e}')
+            logging.error(f'Error uploading data with exception {e}')
             return False
     
     def week_is_ready(self, season: int, week: int) -> bool:

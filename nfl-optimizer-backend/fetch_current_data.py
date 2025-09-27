@@ -76,7 +76,7 @@ def main(read_local: bool, write_local: bool, upload: bool, week: int):
         if write_local:
             write_json_file(week=week, json_data=dfs_data,
                             file_name='dfs_salaries')
-        if upload and not s3_client.upload_file(season=SEASON, week=week, filename='dfs_salaries.json'):
+        if upload and not s3_client.upload_file(season=SEASON, week=week, filename='dfs_salaries.json', data=str(dfs_data)):
             logging.error('Failed to upload dfs_salaries.json to S3')
     else:
         logging.info('Skipping /getNFLDFS call')
@@ -97,7 +97,7 @@ def main(read_local: bool, write_local: bool, upload: bool, week: int):
         if write_local:
             write_json_file(week=week, json_data=ff_projections,
                             file_name='ff_projections')
-        if upload and not s3_client.upload_file(season=SEASON, week=week, filename='ff_projections.json'):
+        if upload and not s3_client.upload_file(season=SEASON, week=week, filename='ff_projections.json', data=str(ff_projections)):
             logging.error('Failed to upload ff_projections.json to S3')
     else:
         with open(f'data/{SEASON}/week{week}/ff_projections.json', 'r') as file:
@@ -118,7 +118,7 @@ def main(read_local: bool, write_local: bool, upload: bool, week: int):
         if write_local:
             write_json_file(week=week, json_data=matchups_json,
                             file_name='matchups')
-        if upload and not s3_client.upload_file(season=SEASON, week=week, filename='matchups.json'):
+        if upload and not s3_client.upload_file(season=SEASON, week=week, filename='matchups.json', data=str(matchups_json)):
             logging.error('Failed to upload matchups.json to S3')
     else:
         logging.info(f'Skipping /getNFLGames call for week {week}')
@@ -149,7 +149,7 @@ def main(read_local: bool, write_local: bool, upload: bool, week: int):
         if write_local:
             write_json_file(week=week, json_data=vegas_odds,
                             file_name='vegas_odds')
-        if upload and not s3_client.upload_file(season=SEASON, week=week, filename='vegas_odds.json'):
+        if upload and not s3_client.upload_file(season=SEASON, week=week, filename='vegas_odds.json', data=str(vegas_odds)):
             logging.error('Failed to upload vegas_odds.json to S3')
     else:
         with open(f'data/{SEASON}/week{week}/vegas_odds.json', 'r') as file:
@@ -175,7 +175,7 @@ def main(read_local: bool, write_local: bool, upload: bool, week: int):
     if write_local:
         write_binarypb_file(
             week=week, serialized_data=binary_data, file_name='week_matchups')
-    if upload and not s3_client.upload_file(season=SEASON, week=week, filename='week_matchups.binarypb'):
+    if upload and not s3_client.upload_file(season=SEASON, week=week, filename='week_matchups.binarypb', data=binary_data):
         logging.error('Failed to upload week_matchups.binarypb to S3')
         exit(1)
 
@@ -190,7 +190,7 @@ def main(read_local: bool, write_local: bool, upload: bool, week: int):
     if write_local:
         write_binarypb_file(
             week=week, serialized_data=binary_data, file_name='player_pool')
-    if upload and not s3_client.upload_file(season=SEASON, week=week, filename='player_pool.binarypb'):
+    if upload and not s3_client.upload_file(season=SEASON, week=week, filename='player_pool.binarypb', data=binary_data):
         logging.error('Failed to upload player_pool.binarypb to S3')
         exit(1)
     exit(0)
