@@ -20,5 +20,10 @@ player_to_pts_override = {
     # Ayomanor
     "4883647": 9.5,
     # Westbrook Ikhine
-    "3929785": 4.0
+    "3929785": 4.0,
+    # Goedert
+    "3121023": 13.0,
+    # T Warren
+    "4431459": 13.5,
+
 }
