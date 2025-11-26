@@ -446,7 +446,7 @@ const NFLOptimizerFrontend = () => {
     const presets = {
       all: { name: 'All Games', teams: [] },
       main: { name: "Main Slate", teams: [] },
-      thursday: { name: 'Thursday Night', teams: [] },
+      thursday: { name: 'Thursday', teams: [] },
       friday: { name: 'Friday', teams: [] },
       saturday: { name: 'Saturday', teams: [] },
       international: {name: 'International', teams: []},
