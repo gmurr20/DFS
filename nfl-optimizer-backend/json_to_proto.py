@@ -40,7 +40,8 @@ def create_spreads_proto(json_data: json, matchup_json: json):
                                           ) if spread_map[book]['homeTeamSpread'] != 'PK' else 0
             book_count += 1
         if book_count == 0:
-            logging.error(f'{game} has no spread yet. Default to 44')
+            logging.error(f'{game} has no spread yet')
+            continue
         over_under = over_under_sum / book_count if book_count != 0 else 44
         home_team_spread = home_team_spread_sum / \
             book_count if book_count != 0 else -.5
