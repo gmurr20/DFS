@@ -107,14 +107,15 @@ def main(read_local: bool, write_local: bool, upload: bool, week: int):
     seasonType = 'reg' if week <= 18 else 'post'
     matchups_json = None
     if not read_local and not os.path.isfile(f'data/{SEASON}/week{week}/matchups.json'):
+        nflGamesWeek = week if week <= 18 else week - 18
         conn.request(
-            "GET", f"/getNFLGamesForWeek?week={week}&seasonType={seasonType}", headers=headers)
+            "GET", f"/getNFLGamesForWeek?week={nflGamesWeek}&seasonType={seasonType}", headers=headers)
         res = conn.getresponse()
         data = res.read()
         matchups_json = json.loads(data.decode("utf-8"))
         if matchups_json['statusCode'] != 200 or 'error' in matchups_json:
             logger.error(
-                f'Error response from /getNFLGamesForWeek week {week}. Response:\n{matchups_json}')
+                f'Error response from /getNFLGamesForWeek week {nflGamesWeek}. Response:\n{matchups_json}')
         if write_local:
             write_json_file(week=week, json_data=matchups_json,
                             file_name='matchups')

@@ -1,0 +1,6204 @@
+{
+  "statusCode": 200,
+  "body": {
+    "date": "20260108",
+    "draftkings": [
+      {
+        "team": "CHI",
+        "salary": "4400",
+        "pos": "TE",
+        "longName": "Colston Loveland",
+        "playerID": "4723086",
+        "teamID": "6"
+      },
+      {
+        "team": "SF",
+        "salary": "4500",
+        "pos": "QB",
+        "longName": "Mac Jones",
+        "playerID": "4241464",
+        "teamID": "28"
+      },
+      {
+        "team": "PIT",
+        "salary": "3000",
+        "pos": "TE",
+        "longName": "Jonnu Smith",
+        "playerID": "3054212",
+        "teamID": "26"
+      },
+      {
+        "team": "CAR",
+        "salary": "5000",
+        "pos": "QB",
+        "longName": "Bryce Young",
+        "playerID": "4685720",
+        "teamID": "5"
+      },
+      {
+        "team": "CHI",
+        "salary": "5800",
+        "pos": "WR",
+        "longName": "Rome Odunze",
+        "playerID": "4431299",
+        "teamID": "6"
+      },
+      {
+        "team": "CAR",
+        "salary": "6000",
+        "pos": "WR",
+        "longName": "Tetairoa McMillan",
+        "playerID": "4685472",
+        "teamID": "5"
+      },
+      {
+        "team": "CAR",
+        "salary": "4500",
+        "pos": "WR",
+        "longName": "Jalen Coker",
+        "playerID": "4695883",
+        "teamID": "5"
+      },
+      {
+        "team": "SF",
+        "salary": "6200",
+        "pos": "TE",
+        "longName": "George Kittle",
+        "playerID": "3040151",
+        "teamID": "28"
+      },
+      {
+        "team": "PHI",
+        "salary": "4200",
+        "pos": "TE",
+        "longName": "Dallas Goedert",
+        "playerID": "3121023",
+        "teamID": "27"
+      },
+      {
+        "team": "HOU",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Dalton Schultz",
+        "playerID": "3117256",
+        "teamID": "13"
+      },
+      {
+        "team": "HOU",
+        "salary": "7200",
+        "pos": "WR",
+        "longName": "Nico Collins",
+        "playerID": "4258173",
+        "teamID": "13"
+      },
+      {
+        "team": "PIT",
+        "salary": "3500",
+        "pos": "TE",
+        "longName": "Pat Freiermuth",
+        "playerID": "4361411",
+        "teamID": "26"
+      },
+      {
+        "team": "NE",
+        "salary": "5800",
+        "pos": "RB",
+        "longName": "Rhamondre Stevenson",
+        "playerID": "4569173",
+        "teamID": "22"
+      },
+      {
+        "team": "PIT",
+        "salary": "3400",
+        "pos": "WR",
+        "longName": "Calvin Austin III",
+        "playerID": "4243389",
+        "teamID": "26"
+      },
+      {
+        "team": "CAR",
+        "salary": "4500",
+        "pos": "RB",
+        "longName": "Chuba Hubbard",
+        "playerID": "4241416",
+        "teamID": "5"
+      },
+      {
+        "team": "CAR",
+        "salary": "2800",
+        "pos": "TE",
+        "longName": "Tommy Tremble",
+        "playerID": "4372780",
+        "teamID": "5"
+      },
+      {
+        "team": "PIT",
+        "salary": "3600",
+        "pos": "WR",
+        "longName": "Adam Thielen",
+        "playerID": "16460",
+        "teamID": "26"
+      },
+      {
+        "team": "PIT",
+        "salary": "3200",
+        "pos": "WR",
+        "longName": "Marquez Valdes-Scantling",
+        "playerID": "3051738",
+        "teamID": "26"
+      },
+      {
+        "team": "PHI",
+        "salary": "6900",
+        "pos": "WR",
+        "longName": "A.J. Brown",
+        "playerID": "4047646",
+        "teamID": "27"
+      },
+      {
+        "team": "PHI",
+        "salary": "5900",
+        "pos": "WR",
+        "longName": "DeVonta Smith",
+        "playerID": "4241478",
+        "teamID": "27"
+      },
+      {
+        "team": "PHI",
+        "salary": "3900",
+        "pos": "WR",
+        "longName": "Jahan Dotson",
+        "playerID": "4361409",
+        "teamID": "27"
+      },
+      {
+        "team": "PIT",
+        "salary": "5900",
+        "pos": "RB",
+        "longName": "Kenneth Gainwell",
+        "playerID": "4371733",
+        "teamID": "26"
+      },
+      {
+        "team": "JAX",
+        "salary": "3900",
+        "pos": "TE",
+        "longName": "Brenton Strange",
+        "playerID": "4430539",
+        "teamID": "15"
+      },
+      {
+        "team": "LAR",
+        "salary": "6900",
+        "pos": "QB",
+        "longName": "Matthew Stafford",
+        "playerID": "12483",
+        "teamID": "19"
+      },
+      {
+        "team": "CAR",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Andy Dalton",
+        "playerID": "14012",
+        "teamID": "5"
+      },
+      {
+        "team": "CHI",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Case Keenum",
+        "playerID": "15168",
+        "teamID": "6"
+      },
+      {
+        "team": "LAR",
+        "salary": "6500",
+        "pos": "WR",
+        "longName": "Davante Adams",
+        "playerID": "16800",
+        "teamID": "19"
+      },
+      {
+        "team": "LAR",
+        "salary": "3200",
+        "pos": "TE",
+        "longName": "Tyler Higbee",
+        "playerID": "2573401",
+        "teamID": "19"
+      },
+      {
+        "team": "LAR",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Nick Vannett",
+        "playerID": "2576399",
+        "teamID": "19"
+      },
+      {
+        "team": "CAR",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "David Moore",
+        "playerID": "4212909",
+        "teamID": "5"
+      },
+      {
+        "team": "CAR",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Mike White",
+        "playerID": "3051381",
+        "teamID": "5"
+      },
+      {
+        "team": "CHI",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Durham Smythe",
+        "playerID": "3052897",
+        "teamID": "6"
+      },
+      {
+        "team": "CAR",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Hunter Renfrow",
+        "playerID": "3135321",
+        "teamID": "5"
+      },
+      {
+        "team": "CHI",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Travis Homer",
+        "playerID": "4037457",
+        "teamID": "6"
+      },
+      {
+        "team": "CHI",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Stephen Carlson",
+        "playerID": "3948283",
+        "teamID": "6"
+      },
+      {
+        "team": "CHI",
+        "salary": "2900",
+        "pos": "TE",
+        "longName": "Cole Kmet",
+        "playerID": "4258595",
+        "teamID": "6"
+      },
+      {
+        "team": "LAR",
+        "salary": "3700",
+        "pos": "TE",
+        "longName": "Colby Parkinson",
+        "playerID": "4242557",
+        "teamID": "19"
+      },
+      {
+        "team": "CAR",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Dan Chisena",
+        "playerID": "3929637",
+        "teamID": "5"
+      },
+      {
+        "team": "GB",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Josh Whyle",
+        "playerID": "4360086",
+        "teamID": "12"
+      },
+      {
+        "team": "LAR",
+        "salary": "2700",
+        "pos": "TE",
+        "longName": "Terrance Ferguson",
+        "playerID": "4570037",
+        "teamID": "19"
+      },
+      {
+        "team": "GB",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "MarShawn Lloyd",
+        "playerID": "4429023",
+        "teamID": "12"
+      },
+      {
+        "team": "LAR",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Jordan Whittington",
+        "playerID": "4569382",
+        "teamID": "19"
+      },
+      {
+        "team": "CAR",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Ainias Smith",
+        "playerID": "4428532",
+        "teamID": "5"
+      },
+      {
+        "team": "CAR",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "James Mitchell",
+        "playerID": "4361988",
+        "teamID": "5"
+      },
+      {
+        "team": "LAR",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Mark Redman",
+        "playerID": "4431346",
+        "teamID": "19"
+      },
+      {
+        "team": "LAR",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Davis Allen",
+        "playerID": "4426553",
+        "teamID": "19"
+      },
+      {
+        "team": "LAR",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Stetson Bennett IV",
+        "playerID": "4259553",
+        "teamID": "19"
+      },
+      {
+        "team": "GB",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Pierre Strong Jr.",
+        "playerID": "4249836",
+        "teamID": "12"
+      },
+      {
+        "team": "GB",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "John FitzPatrick",
+        "playerID": "4379401",
+        "teamID": "12"
+      },
+      {
+        "team": "CAR",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Ja'Tavion Sanders",
+        "playerID": "4431588",
+        "teamID": "5"
+      },
+      {
+        "team": "LAR",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Jarquez Hunter",
+        "playerID": "4710341",
+        "teamID": "19"
+      },
+      {
+        "team": "CHI",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Brittain Brown",
+        "playerID": "4036032",
+        "teamID": "6"
+      },
+      {
+        "team": "CHI",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Maurice Alexander",
+        "playerID": "3914307",
+        "teamID": "6"
+      },
+      {
+        "team": "GB",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Clayton Tune",
+        "playerID": "4360175",
+        "teamID": "12"
+      },
+      {
+        "team": "GB",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Tucker Kraft",
+        "playerID": "4572680",
+        "teamID": "12"
+      },
+      {
+        "team": "CHI",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Roschon Johnson",
+        "playerID": "4426386",
+        "teamID": "6"
+      },
+      {
+        "team": "CAR",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Trevor Etienne",
+        "playerID": "4685350",
+        "teamID": "5"
+      },
+      {
+        "team": "LAR",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Tyler Scott",
+        "playerID": "4565908",
+        "teamID": "19"
+      },
+      {
+        "team": "LAR",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Xavier Smith",
+        "playerID": "4386544",
+        "teamID": "19"
+      },
+      {
+        "team": "CAR",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Brycen Tremayne",
+        "playerID": "4360763",
+        "teamID": "5"
+      },
+      {
+        "team": "GB",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Isaiah Neyor",
+        "playerID": "4428116",
+        "teamID": "12"
+      },
+      {
+        "team": "CAR",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Jonathon Brooks",
+        "playerID": "4678008",
+        "teamID": "5"
+      },
+      {
+        "team": "CAR",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Mitchell Evans",
+        "playerID": "4683243",
+        "teamID": "5"
+      },
+      {
+        "team": "GB",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Savion Williams",
+        "playerID": "4431487",
+        "teamID": "12"
+      },
+      {
+        "team": "GB",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Will Sheppard",
+        "playerID": "4608679",
+        "teamID": "12"
+      },
+      {
+        "team": "CAR",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Jimmy Horn Jr.",
+        "playerID": "4708486",
+        "teamID": "5"
+      },
+      {
+        "team": "CHI",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "JP Richardson",
+        "playerID": "4685183",
+        "teamID": "6"
+      },
+      {
+        "team": "CAR",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Montrell Johnson Jr.",
+        "playerID": "4684625",
+        "teamID": "5"
+      },
+      {
+        "team": "CAR",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Anthony Tyus III",
+        "playerID": "4709392",
+        "teamID": "5"
+      },
+      {
+        "team": "GB",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Jakobie Keeney-James",
+        "playerID": "5178972",
+        "teamID": "12"
+      },
+      {
+        "team": "CAR",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Bryce Pierre",
+        "playerID": "5082648",
+        "teamID": "5"
+      },
+      {
+        "team": "LAR",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Tru Edwards",
+        "playerID": "4875786",
+        "teamID": "19"
+      },
+      {
+        "team": "LAR",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Brennan Presley",
+        "playerID": "4431342",
+        "teamID": "19"
+      },
+      {
+        "team": "CHI",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Deion Hankins",
+        "playerID": "4575667",
+        "teamID": "6"
+      },
+      {
+        "team": "CAR",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Ja'seem Reed",
+        "playerID": "4876995",
+        "teamID": "5"
+      },
+      {
+        "team": "GB",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Drake Dabney",
+        "playerID": "4429466",
+        "teamID": "12"
+      },
+      {
+        "team": "CHI",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Thomas Gordon",
+        "playerID": "4569615",
+        "teamID": "6"
+      },
+      {
+        "team": "SF",
+        "salary": "4000",
+        "pos": "FB",
+        "longName": "Kyle Juszczyk",
+        "playerID": "16002",
+        "teamID": "28"
+      },
+      {
+        "team": "BUF",
+        "salary": "3500",
+        "pos": "WR",
+        "longName": "Brandin Cooks",
+        "playerID": "16731",
+        "teamID": "4"
+      },
+      {
+        "team": "NE",
+        "salary": "6300",
+        "pos": "WR",
+        "longName": "Stefon Diggs",
+        "playerID": "2976212",
+        "teamID": "22"
+      },
+      {
+        "team": "NE",
+        "salary": "4500",
+        "pos": "TE",
+        "longName": "Hunter Henry",
+        "playerID": "3046439",
+        "teamID": "22"
+      },
+      {
+        "team": "NE",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Austin Hooper",
+        "playerID": "3043275",
+        "teamID": "22"
+      },
+      {
+        "team": "SF",
+        "salary": "3300",
+        "pos": "WR",
+        "longName": "Demarcus Robinson",
+        "playerID": "3043116",
+        "teamID": "28"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Joshua Dobbs",
+        "playerID": "3044720",
+        "teamID": "22"
+      },
+      {
+        "team": "BUF",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Curtis Samuel",
+        "playerID": "3121427",
+        "teamID": "4"
+      },
+      {
+        "team": "NE",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Mack Hollins",
+        "playerID": "2991662",
+        "teamID": "22"
+      },
+      {
+        "team": "SF",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Trent Taylor",
+        "playerID": "3040569",
+        "teamID": "28"
+      },
+      {
+        "team": "JAX",
+        "salary": "3100",
+        "pos": "WR",
+        "longName": "Tim Patrick",
+        "playerID": "3134353",
+        "teamID": "15"
+      },
+      {
+        "team": "JAX",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Nick Mullens",
+        "playerID": "3059989",
+        "teamID": "15"
+      },
+      {
+        "team": "JAX",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Johnny Mundt",
+        "playerID": "3052096",
+        "teamID": "15"
+      },
+      {
+        "team": "HOU",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Dare Ogunbowale",
+        "playerID": "2983509",
+        "teamID": "13"
+      },
+      {
+        "team": "PIT",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Mason Rudolph",
+        "playerID": "3116407",
+        "teamID": "26"
+      },
+      {
+        "team": "LAC",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Royce Freeman",
+        "playerID": "3122672",
+        "teamID": "18"
+      },
+      {
+        "team": "HOU",
+        "salary": "4800",
+        "pos": "RB",
+        "longName": "Nick Chubb",
+        "playerID": "3128720",
+        "teamID": "13"
+      },
+      {
+        "team": "HOU",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Braxton Berrios",
+        "playerID": "3123075",
+        "teamID": "13"
+      },
+      {
+        "team": "BUF",
+        "salary": "7000",
+        "pos": "QB",
+        "longName": "Josh Allen",
+        "playerID": "3918298",
+        "teamID": "4"
+      },
+      {
+        "team": "JAX",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Jordan Akins",
+        "playerID": "3128452",
+        "teamID": "15"
+      },
+      {
+        "team": "LAC",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Tyler Conklin",
+        "playerID": "3915486",
+        "teamID": "18"
+      },
+      {
+        "team": "HOU",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Justin Watson",
+        "playerID": "3118892",
+        "teamID": "13"
+      },
+      {
+        "team": "LAC",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Will Dissly",
+        "playerID": "3127292",
+        "teamID": "18"
+      },
+      {
+        "team": "SF",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Malik Turner",
+        "playerID": "3115928",
+        "teamID": "28"
+      },
+      {
+        "team": "PIT",
+        "salary": "5400",
+        "pos": "WR",
+        "longName": "DK Metcalf",
+        "playerID": "4047650",
+        "teamID": "26"
+      },
+      {
+        "team": "BUF",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Mecole Hardman Jr.",
+        "playerID": "4035004",
+        "teamID": "4"
+      },
+      {
+        "team": "HOU",
+        "salary": "2500",
+        "pos": "FB",
+        "longName": "Jakob Johnson",
+        "playerID": "3115349",
+        "teamID": "13"
+      },
+      {
+        "team": "PIT",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Scotty Miller",
+        "playerID": "3914397",
+        "teamID": "26"
+      },
+      {
+        "team": "PIT",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Donald Parham Jr.",
+        "playerID": "3912092",
+        "teamID": "26"
+      },
+      {
+        "team": "PIT",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Matt Sokol",
+        "playerID": "3121378",
+        "teamID": "26"
+      },
+      {
+        "team": "SF",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Brandon Aiyuk",
+        "playerID": "4360438",
+        "teamID": "28"
+      },
+      {
+        "team": "LAC",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Najee Harris",
+        "playerID": "4241457",
+        "teamID": "18"
+      },
+      {
+        "team": "PHI",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "AJ Dillon",
+        "playerID": "4239934",
+        "teamID": "27"
+      },
+      {
+        "team": "HOU",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Harrison Bryant",
+        "playerID": "4040774",
+        "teamID": "13"
+      },
+      {
+        "team": "HOU",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Quintez Cephus",
+        "playerID": "4035793",
+        "teamID": "13"
+      },
+      {
+        "team": "BUF",
+        "salary": "3300",
+        "pos": "WR",
+        "longName": "Gabe Davis",
+        "playerID": "4243537",
+        "teamID": "4"
+      },
+      {
+        "team": "PIT",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Trey Sermon",
+        "playerID": "4241401",
+        "teamID": "26"
+      },
+      {
+        "team": "SF",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Luke Farrell",
+        "playerID": "4040612",
+        "teamID": "28"
+      },
+      {
+        "team": "SF",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Patrick Taylor Jr.",
+        "playerID": "4039358",
+        "teamID": "28"
+      },
+      {
+        "team": "SF",
+        "salary": "5600",
+        "pos": "WR",
+        "longName": "Jauan Jennings",
+        "playerID": "3886598",
+        "teamID": "28"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Antonio Gibson",
+        "playerID": "4360294",
+        "teamID": "22"
+      },
+      {
+        "team": "PHI",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Quez Watkins",
+        "playerID": "4050373",
+        "teamID": "27"
+      },
+      {
+        "team": "BUF",
+        "salary": "4000",
+        "pos": "FB",
+        "longName": "Reggie Gilliam",
+        "playerID": "4039505",
+        "teamID": "4"
+      },
+      {
+        "team": "SF",
+        "salary": "5000",
+        "pos": "RB",
+        "longName": "Brian Robinson Jr.",
+        "playerID": "4241474",
+        "teamID": "28"
+      },
+      {
+        "team": "JAX",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Dyami Brown",
+        "playerID": "4361577",
+        "teamID": "15"
+      },
+      {
+        "team": "HOU",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Brevin Jordan",
+        "playerID": "4362504",
+        "teamID": "13"
+      },
+      {
+        "team": "JAX",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Hunter Long",
+        "playerID": "4239944",
+        "teamID": "15"
+      },
+      {
+        "team": "HOU",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Davis Mills",
+        "playerID": "4242546",
+        "teamID": "13"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Elijah Mitchell",
+        "playerID": "4241555",
+        "teamID": "22"
+      },
+      {
+        "team": "JAX",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Quintin Morris",
+        "playerID": "4244049",
+        "teamID": "15"
+      },
+      {
+        "team": "PHI",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Kylen Granson",
+        "playerID": "4039160",
+        "teamID": "27"
+      },
+      {
+        "team": "PIT",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Ben Skowronek",
+        "playerID": "4035656",
+        "teamID": "26"
+      },
+      {
+        "team": "BUF",
+        "salary": "3400",
+        "pos": "WR",
+        "longName": "Joshua Palmer",
+        "playerID": "4242433",
+        "teamID": "4"
+      },
+      {
+        "team": "SF",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Javon Baker",
+        "playerID": "4692022",
+        "teamID": "28"
+      },
+      {
+        "team": "LAC",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "DJ Uiagalelei",
+        "playerID": "4429020",
+        "teamID": "18"
+      },
+      {
+        "team": "HOU",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Luke Lachey",
+        "playerID": "4432338",
+        "teamID": "13"
+      },
+      {
+        "team": "SF",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Adrian Martinez",
+        "playerID": "4361182",
+        "teamID": "28"
+      },
+      {
+        "team": "PHI",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Sam Howell",
+        "playerID": "4426875",
+        "teamID": "27"
+      },
+      {
+        "team": "PHI",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Kyle McCord",
+        "playerID": "4433971",
+        "teamID": "27"
+      },
+      {
+        "team": "JAX",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Ja'Quinden Jackson",
+        "playerID": "4690972",
+        "teamID": "15"
+      },
+      {
+        "team": "HOU",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Graham Mertz",
+        "playerID": "4426335",
+        "teamID": "13"
+      },
+      {
+        "team": "PHI",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Terrace Marshall Jr.",
+        "playerID": "4362630",
+        "teamID": "27"
+      },
+      {
+        "team": "JAX",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Austin Trammell",
+        "playerID": "4244856",
+        "teamID": "15"
+      },
+      {
+        "team": "NE",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Brandon Smith",
+        "playerID": "4240577",
+        "teamID": "22"
+      },
+      {
+        "team": "JAX",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Tim Jones",
+        "playerID": "4245131",
+        "teamID": "15"
+      },
+      {
+        "team": "SF",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Skyy Moore",
+        "playerID": "4430191",
+        "teamID": "28"
+      },
+      {
+        "team": "PIT",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Skylar Thompson",
+        "playerID": "4036419",
+        "teamID": "26"
+      },
+      {
+        "team": "PHI",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Danny Gray",
+        "playerID": "4689546",
+        "teamID": "27"
+      },
+      {
+        "team": "PHI",
+        "salary": "2600",
+        "pos": "TE",
+        "longName": "Grant Calcaterra",
+        "playerID": "4241374",
+        "teamID": "27"
+      },
+      {
+        "team": "PIT",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Brandon Johnson",
+        "playerID": "4035198",
+        "teamID": "26"
+      },
+      {
+        "team": "PHI",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Britain Covey",
+        "playerID": "3926231",
+        "teamID": "27"
+      },
+      {
+        "team": "PHI",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Cameron Latu",
+        "playerID": "4372026",
+        "teamID": "27"
+      },
+      {
+        "team": "PIT",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Connor Heyward",
+        "playerID": "4241961",
+        "teamID": "26"
+      },
+      {
+        "team": "LAC",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Tucker Fisk",
+        "playerID": "4242558",
+        "teamID": "18"
+      },
+      {
+        "team": "HOU",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Cade Stover",
+        "playerID": "4426496",
+        "teamID": "13"
+      },
+      {
+        "team": "SF",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Jacob Cowing",
+        "playerID": "4575665",
+        "teamID": "28"
+      },
+      {
+        "team": "PHI",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Johnny Wilson",
+        "playerID": "4686104",
+        "teamID": "27"
+      },
+      {
+        "team": "HOU",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Xavier Hutchinson",
+        "playerID": "4686422",
+        "teamID": "13"
+      },
+      {
+        "team": "LAC",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Derius Davis",
+        "playerID": "4362477",
+        "teamID": "18"
+      },
+      {
+        "team": "HOU",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Tank Dell",
+        "playerID": "4366031",
+        "teamID": "13"
+      },
+      {
+        "team": "PIT",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Lew Nichols",
+        "playerID": "4428119",
+        "teamID": "26"
+      },
+      {
+        "team": "SF",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Brayden Willis",
+        "playerID": "4360290",
+        "teamID": "28"
+      },
+      {
+        "team": "HOU",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Jared Wayne",
+        "playerID": "4430681",
+        "teamID": "13"
+      },
+      {
+        "team": "LAC",
+        "salary": "4000",
+        "pos": "FB",
+        "longName": "Scott Matlock",
+        "playerID": "4373684",
+        "teamID": "18"
+      },
+      {
+        "team": "PHI",
+        "salary": "4000",
+        "pos": "FB",
+        "longName": "Ben VanSumeren",
+        "playerID": "4372070",
+        "teamID": "27"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Tommy DeVito",
+        "playerID": "4240391",
+        "teamID": "22"
+      },
+      {
+        "team": "PHI",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "E.J. Jenkins",
+        "playerID": "4248557",
+        "teamID": "27"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Deneric Prince",
+        "playerID": "4372526",
+        "teamID": "22"
+      },
+      {
+        "team": "BUF",
+        "salary": "3100",
+        "pos": "WR",
+        "longName": "Tyrell Shavers",
+        "playerID": "4241476",
+        "teamID": "4"
+      },
+      {
+        "team": "PIT",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Will Howard",
+        "playerID": "4429955",
+        "teamID": "26"
+      },
+      {
+        "team": "BUF",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Frank Gore Jr.",
+        "playerID": "4429805",
+        "teamID": "4"
+      },
+      {
+        "team": "BUF",
+        "salary": "3200",
+        "pos": "WR",
+        "longName": "Keon Coleman",
+        "playerID": "4635008",
+        "teamID": "4"
+      },
+      {
+        "team": "JAX",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Travis Hunter",
+        "playerID": "4685415",
+        "teamID": "15"
+      },
+      {
+        "team": "PIT",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Roman Wilson",
+        "playerID": "4431492",
+        "teamID": "26"
+      },
+      {
+        "team": "SF",
+        "salary": "5100",
+        "pos": "WR",
+        "longName": "Ricky Pearsall",
+        "playerID": "4428209",
+        "teamID": "28"
+      },
+      {
+        "team": "LAC",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Tanner McLachlan",
+        "playerID": "4384171",
+        "teamID": "18"
+      },
+      {
+        "team": "JAX",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Joshua Cephus",
+        "playerID": "4426893",
+        "teamID": "15"
+      },
+      {
+        "team": "JAX",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Carter Bradley",
+        "playerID": "4362260",
+        "teamID": "15"
+      },
+      {
+        "team": "PIT",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "John Rhys Plumlee",
+        "playerID": "4426494",
+        "teamID": "26"
+      },
+      {
+        "team": "SF",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Isaac Guerendo",
+        "playerID": "4372561",
+        "teamID": "28"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Jack Westover",
+        "playerID": "4361100",
+        "teamID": "22"
+      },
+      {
+        "team": "LAC",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "JaQuae Jackson",
+        "playerID": "5160748",
+        "teamID": "18"
+      },
+      {
+        "team": "LAC",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Thomas Yassmin",
+        "playerID": "4361027",
+        "teamID": "18"
+      },
+      {
+        "team": "HOU",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "British Brooks",
+        "playerID": "4373273",
+        "teamID": "13"
+      },
+      {
+        "team": "NE",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "John Jiles",
+        "playerID": "4887705",
+        "teamID": "22"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Terrell Jennings",
+        "playerID": "4427600",
+        "teamID": "22"
+      },
+      {
+        "team": "SF",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Kurtis Rourke",
+        "playerID": "4430431",
+        "teamID": "28"
+      },
+      {
+        "team": "PIT",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Kaleb Johnson",
+        "playerID": "4819231",
+        "teamID": "26"
+      },
+      {
+        "team": "NE",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "CJ Dippre",
+        "playerID": "4596545",
+        "teamID": "22"
+      },
+      {
+        "team": "BUF",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Keleki Latu",
+        "playerID": "4688552",
+        "teamID": "4"
+      },
+      {
+        "team": "SF",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Jordan James",
+        "playerID": "4685397",
+        "teamID": "28"
+      },
+      {
+        "team": "NE",
+        "salary": "3300",
+        "pos": "WR",
+        "longName": "Efton Chism III",
+        "playerID": "4695193",
+        "teamID": "22"
+      },
+      {
+        "team": "HOU",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Josh Kelly",
+        "playerID": "4575558",
+        "teamID": "13"
+      },
+      {
+        "team": "SF",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Jordan Watkins",
+        "playerID": "4431466",
+        "teamID": "28"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Lan Larison",
+        "playerID": "4698253",
+        "teamID": "22"
+      },
+      {
+        "team": "SF",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Junior Bergen",
+        "playerID": "4887918",
+        "teamID": "28"
+      },
+      {
+        "team": "BUF",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Stephen Gosnell",
+        "playerID": "4432215",
+        "teamID": "4"
+      },
+      {
+        "team": "JAX",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Patrick Herbert",
+        "playerID": "4429811",
+        "teamID": "15"
+      },
+      {
+        "team": "JAX",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Chandler Brayboy",
+        "playerID": "4573243",
+        "teamID": "15"
+      },
+      {
+        "team": "LAC",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Amar Johnson",
+        "playerID": "4878878",
+        "teamID": "18"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "FB",
+        "longName": "Brock Lampe",
+        "playerID": "4875767",
+        "teamID": "22"
+      },
+      {
+        "team": "NE",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Marshall Lang",
+        "playerID": "4566195",
+        "teamID": "22"
+      },
+      {
+        "team": "NE",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Jeremiah Webb",
+        "playerID": "4572655",
+        "teamID": "22"
+      },
+      {
+        "team": "PIT",
+        "salary": "3000",
+        "pos": "RB",
+        "longName": "Max Hurleman",
+        "playerID": "4694237",
+        "teamID": "26"
+      },
+      {
+        "team": "LAC",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Dalevon Campbell",
+        "playerID": "4569372",
+        "teamID": "18"
+      },
+      {
+        "team": "GB",
+        "salary": "3700",
+        "pos": "WR",
+        "longName": "Matthew Golden",
+        "playerID": "4701936",
+        "teamID": "12"
+      },
+      {
+        "team": "CAR",
+        "salary": "3300",
+        "pos": "WR",
+        "longName": "Xavier Legette",
+        "playerID": "4430034",
+        "teamID": "5"
+      },
+      {
+        "team": "JAX",
+        "salary": "5500",
+        "pos": "WR",
+        "longName": "Jakobi Meyers",
+        "playerID": "3916433",
+        "teamID": "15"
+      },
+      {
+        "team": "JAX",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "DeeJay Dallas",
+        "playerID": "4240631",
+        "teamID": "15"
+      },
+      {
+        "team": "LAC",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Jaret Patterson",
+        "playerID": "4362452",
+        "teamID": "18"
+      },
+      {
+        "team": "NE",
+        "salary": "6000",
+        "pos": "RB",
+        "longName": "TreVeyon Henderson",
+        "playerID": "4432710",
+        "teamID": "22"
+      },
+      {
+        "team": "JAX",
+        "salary": "5000",
+        "pos": "WR",
+        "longName": "Parker Washington",
+        "playerID": "4432620",
+        "teamID": "15"
+      },
+      {
+        "team": "HOU",
+        "salary": "3400",
+        "pos": "WR",
+        "longName": "Jaylin Noel",
+        "playerID": "4586312",
+        "teamID": "13"
+      },
+      {
+        "team": "BUF",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Jackson Hawes",
+        "playerID": "4573699",
+        "teamID": "4"
+      },
+      {
+        "team": "CHI",
+        "salary": "5300",
+        "pos": "WR",
+        "longName": "DJ Moore",
+        "playerID": "3915416",
+        "teamID": "6"
+      },
+      {
+        "team": "GB",
+        "salary": "6300",
+        "pos": "RB",
+        "longName": "Josh Jacobs",
+        "playerID": "4047365",
+        "teamID": "12"
+      },
+      {
+        "team": "CHI",
+        "salary": "3400",
+        "pos": "WR",
+        "longName": "Olamide Zaccheaus",
+        "playerID": "3917914",
+        "teamID": "6"
+      },
+      {
+        "team": "CHI",
+        "salary": "5700",
+        "pos": "RB",
+        "longName": "D'Andre Swift",
+        "playerID": "4259545",
+        "teamID": "6"
+      },
+      {
+        "team": "GB",
+        "salary": "5300",
+        "pos": "QB",
+        "longName": "Jordan Love",
+        "playerID": "4036378",
+        "teamID": "12"
+      },
+      {
+        "team": "LAR",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Ronnie Rivers",
+        "playerID": "4243003",
+        "teamID": "19"
+      },
+      {
+        "team": "GB",
+        "salary": "3500",
+        "pos": "WR",
+        "longName": "Dontayvion Wicks",
+        "playerID": "4428850",
+        "teamID": "12"
+      },
+      {
+        "team": "GB",
+        "salary": "2600",
+        "pos": "TE",
+        "longName": "Luke Musgrave",
+        "playerID": "4428085",
+        "teamID": "12"
+      },
+      {
+        "team": "GB",
+        "salary": "4300",
+        "pos": "RB",
+        "longName": "Chris Brooks",
+        "playerID": "3149687",
+        "teamID": "12"
+      },
+      {
+        "team": "GB",
+        "salary": "5300",
+        "pos": "RB",
+        "longName": "Emanuel Wilson",
+        "playerID": "4887558",
+        "teamID": "12"
+      },
+      {
+        "team": "CHI",
+        "salary": "5200",
+        "pos": "RB",
+        "longName": "Kyle Monangai",
+        "playerID": "4608686",
+        "teamID": "6"
+      },
+      {
+        "team": "LAR",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Konata Mumpfield",
+        "playerID": "4710855",
+        "teamID": "19"
+      },
+      {
+        "team": "SF",
+        "salary": "3600",
+        "pos": "WR",
+        "longName": "Kendrick Bourne",
+        "playerID": "3045523",
+        "teamID": "28"
+      },
+      {
+        "team": "PHI",
+        "salary": "7000",
+        "pos": "RB",
+        "longName": "Saquon Barkley",
+        "playerID": "3929630",
+        "teamID": "27"
+      },
+      {
+        "team": "HOU",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Christian Kirk",
+        "playerID": "3895856",
+        "teamID": "13"
+      },
+      {
+        "team": "LAC",
+        "salary": "5800",
+        "pos": "QB",
+        "longName": "Justin Herbert",
+        "playerID": "4038941",
+        "teamID": "18"
+      },
+      {
+        "team": "PHI",
+        "salary": "6300",
+        "pos": "QB",
+        "longName": "Jalen Hurts",
+        "playerID": "4040715",
+        "teamID": "27"
+      },
+      {
+        "team": "HOU",
+        "salary": "5200",
+        "pos": "QB",
+        "longName": "C.J. Stroud",
+        "playerID": "4432577",
+        "teamID": "13"
+      },
+      {
+        "team": "LAC",
+        "salary": "5200",
+        "pos": "WR",
+        "longName": "Quentin Johnston",
+        "playerID": "4429025",
+        "teamID": "18"
+      },
+      {
+        "team": "BUF",
+        "salary": "4800",
+        "pos": "WR",
+        "longName": "Khalil Shakir",
+        "playerID": "4373678",
+        "teamID": "4"
+      },
+      {
+        "team": "PIT",
+        "salary": "6100",
+        "pos": "RB",
+        "longName": "Jaylen Warren",
+        "playerID": "4569987",
+        "teamID": "26"
+      },
+      {
+        "team": "LAC",
+        "salary": "5700",
+        "pos": "WR",
+        "longName": "Ladd McConkey",
+        "playerID": "4612826",
+        "teamID": "18"
+      },
+      {
+        "team": "HOU",
+        "salary": "5600",
+        "pos": "RB",
+        "longName": "Woody Marks",
+        "playerID": "4429059",
+        "teamID": "13"
+      },
+      {
+        "team": "PHI",
+        "salary": "3100",
+        "pos": "WR",
+        "longName": "Darius Cooper",
+        "playerID": "4715355",
+        "teamID": "27"
+      },
+      {
+        "team": "CHI",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "Devin Duvernay",
+        "playerID": "4039050",
+        "teamID": "6"
+      },
+      {
+        "team": "LAR",
+        "salary": "3200",
+        "pos": "WR",
+        "longName": "Tutu Atwell",
+        "playerID": "4360797",
+        "teamID": "19"
+      },
+      {
+        "team": "LAR",
+        "salary": "5400",
+        "pos": "RB",
+        "longName": "Blake Corum",
+        "playerID": "4429096",
+        "teamID": "19"
+      },
+      {
+        "team": "GB",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Jayden Reed",
+        "playerID": "4362249",
+        "teamID": "12"
+      },
+      {
+        "team": "LAR",
+        "salary": "6400",
+        "pos": "RB",
+        "longName": "Kyren Williams",
+        "playerID": "4430737",
+        "teamID": "19"
+      },
+      {
+        "team": "CHI",
+        "salary": "5600",
+        "pos": "QB",
+        "longName": "Caleb Williams",
+        "playerID": "4431611",
+        "teamID": "6"
+      },
+      {
+        "team": "LAR",
+        "salary": "8700",
+        "pos": "WR",
+        "longName": "Puka Nacua",
+        "playerID": "4426515",
+        "teamID": "19"
+      },
+      {
+        "team": "GB",
+        "salary": "4400",
+        "pos": "WR",
+        "longName": "Romeo Doubs",
+        "playerID": "4361432",
+        "teamID": "12"
+      },
+      {
+        "team": "GB",
+        "salary": "4900",
+        "pos": "WR",
+        "longName": "Christian Watson",
+        "playerID": "4248528",
+        "teamID": "12"
+      },
+      {
+        "team": "CHI",
+        "salary": "3100",
+        "pos": "WR",
+        "longName": "Jahdae Walker",
+        "playerID": "5160110",
+        "teamID": "6"
+      },
+      {
+        "team": "PIT",
+        "salary": "4800",
+        "pos": "QB",
+        "longName": "Aaron Rodgers",
+        "playerID": "8439",
+        "teamID": "26"
+      },
+      {
+        "team": "SF",
+        "salary": "8500",
+        "pos": "RB",
+        "longName": "Christian McCaffrey",
+        "playerID": "3117251",
+        "teamID": "28"
+      },
+      {
+        "team": "BUF",
+        "salary": "3300",
+        "pos": "TE",
+        "longName": "Dawson Knox",
+        "playerID": "3930086",
+        "teamID": "4"
+      },
+      {
+        "team": "JAX",
+        "salary": "6100",
+        "pos": "QB",
+        "longName": "Trevor Lawrence",
+        "playerID": "4360310",
+        "teamID": "15"
+      },
+      {
+        "team": "SF",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Brock Purdy",
+        "playerID": "4361741",
+        "teamID": "28"
+      },
+      {
+        "team": "PHI",
+        "salary": "4100",
+        "pos": "RB",
+        "longName": "Will Shipley",
+        "playerID": "4431545",
+        "teamID": "27"
+      },
+      {
+        "team": "PIT",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Darnell Washington",
+        "playerID": "4430802",
+        "teamID": "26"
+      },
+      {
+        "team": "NE",
+        "salary": "6800",
+        "pos": "QB",
+        "longName": "Drake Maye",
+        "playerID": "4431452",
+        "teamID": "22"
+      },
+      {
+        "team": "LAC",
+        "salary": "3000",
+        "pos": "WR",
+        "longName": "KeAndre Lambert-Smith",
+        "playerID": "4430870",
+        "teamID": "18"
+      },
+      {
+        "team": "SF",
+        "salary": "2700",
+        "pos": "TE",
+        "longName": "Jake Tonges",
+        "playerID": "4259147",
+        "teamID": "28"
+      },
+      {
+        "team": "BUF",
+        "salary": "3800",
+        "pos": "TE",
+        "longName": "Dalton Kincaid",
+        "playerID": "4385690",
+        "teamID": "4"
+      },
+      {
+        "team": "NE",
+        "salary": "3500",
+        "pos": "WR",
+        "longName": "DeMario Douglas",
+        "playerID": "4427095",
+        "teamID": "22"
+      },
+      {
+        "team": "LAC",
+        "salary": "3400",
+        "pos": "TE",
+        "longName": "Oronde Gadsden",
+        "playerID": "4595342",
+        "teamID": "18"
+      },
+      {
+        "team": "HOU",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Jawhar Jordan",
+        "playerID": "4429939",
+        "teamID": "13"
+      },
+      {
+        "team": "CAR",
+        "salary": "5500",
+        "pos": "RB",
+        "longName": "Rico Dowdle",
+        "playerID": "4038815",
+        "teamID": "5"
+      },
+      {
+        "team": "CHI",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Tyson Bagent",
+        "playerID": "4434153",
+        "teamID": "6"
+      },
+      {
+        "team": "LAC",
+        "salary": "4200",
+        "pos": "WR",
+        "longName": "Keenan Allen",
+        "playerID": "15818",
+        "teamID": "18"
+      },
+      {
+        "team": "LAC",
+        "salary": "6200",
+        "pos": "RB",
+        "longName": "Omarion Hampton",
+        "playerID": "4685382",
+        "teamID": "18"
+      },
+      {
+        "team": "LAC",
+        "salary": "3200",
+        "pos": "WR",
+        "longName": "Tre' Harris",
+        "playerID": "4686612",
+        "teamID": "18"
+      },
+      {
+        "team": "LAC",
+        "salary": "4700",
+        "pos": "RB",
+        "longName": "Kimani Vidal",
+        "playerID": "4430968",
+        "teamID": "18"
+      },
+      {
+        "team": "HOU",
+        "salary": "4100",
+        "pos": "WR",
+        "longName": "Jayden Higgins",
+        "playerID": "4877706",
+        "teamID": "13"
+      },
+      {
+        "team": "BUF",
+        "salary": "4400",
+        "pos": "RB",
+        "longName": "Ty Johnson",
+        "playerID": "3915411",
+        "teamID": "4"
+      },
+      {
+        "team": "JAX",
+        "salary": "6600",
+        "pos": "RB",
+        "longName": "Travis Etienne Jr.",
+        "playerID": "4239996",
+        "teamID": "15"
+      },
+      {
+        "team": "LAC",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Trey Lance",
+        "playerID": "4383351",
+        "teamID": "18"
+      },
+      {
+        "team": "PHI",
+        "salary": "4900",
+        "pos": "RB",
+        "longName": "Tank Bigsby",
+        "playerID": "4429013",
+        "teamID": "27"
+      },
+      {
+        "team": "BUF",
+        "salary": "7400",
+        "pos": "RB",
+        "longName": "James Cook III",
+        "playerID": "4379399",
+        "teamID": "4"
+      },
+      {
+        "team": "NE",
+        "salary": "4300",
+        "pos": "WR",
+        "longName": "Kayshon Boutte",
+        "playerID": "4429022",
+        "teamID": "22"
+      },
+      {
+        "team": "PHI",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Tanner McKee",
+        "playerID": "4685201",
+        "teamID": "27"
+      },
+      {
+        "team": "JAX",
+        "salary": "4600",
+        "pos": "RB",
+        "longName": "Bhayshul Tuten",
+        "playerID": "4882093",
+        "teamID": "15"
+      },
+      {
+        "team": "NE",
+        "salary": "3800",
+        "pos": "WR",
+        "longName": "Kyle Williams",
+        "playerID": "4613202",
+        "teamID": "22"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "D'Ernest Johnson",
+        "playerID": "3139602",
+        "teamID": "22"
+      },
+      {
+        "team": "JAX",
+        "salary": "4700",
+        "pos": "WR",
+        "longName": "Brian Thomas Jr.",
+        "playerID": "4432773",
+        "teamID": "15"
+      },
+      {
+        "team": "LAC",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Hassan Haskins",
+        "playerID": "4372071",
+        "teamID": "18"
+      },
+      {
+        "team": "JAX",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "LeQuint Allen Jr.",
+        "playerID": "4911851",
+        "teamID": "15"
+      },
+      {
+        "team": "CHI",
+        "salary": "4600",
+        "pos": "WR",
+        "longName": "Luther Burden III",
+        "playerID": "4685278",
+        "teamID": "6"
+      },
+      {
+        "team": "BUF",
+        "salary": "4200",
+        "pos": "RB",
+        "longName": "Ray Davis",
+        "playerID": "4429501",
+        "teamID": "4"
+      },
+      {
+        "team": "HOU",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Joe Mixon",
+        "playerID": "3116385",
+        "teamID": "13"
+      },
+      {
+        "team": "LAR",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Jimmy Garoppolo",
+        "playerID": "16760",
+        "teamID": "19"
+      },
+      {
+        "team": "GB",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Malik Willis",
+        "playerID": "4242512",
+        "teamID": "12"
+      },
+      {
+        "team": "BUF",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Mitchell Trubisky",
+        "playerID": "3039707",
+        "teamID": "4"
+      },
+      {
+        "team": "CAR",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Ross Dwelley",
+        "playerID": "3120303",
+        "teamID": "5"
+      },
+      {
+        "team": "GB",
+        "salary": "4000",
+        "pos": "QB",
+        "longName": "Desmond Ridder",
+        "playerID": "4239086",
+        "teamID": "12"
+      },
+      {
+        "team": "CHI",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Nikola Kalinic",
+        "playerID": "4916349",
+        "teamID": "6"
+      },
+      {
+        "team": "GB",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Damien Martinez",
+        "playerID": "4808830",
+        "teamID": "12"
+      },
+      {
+        "team": "PIT",
+        "salary": "2500",
+        "pos": "TE",
+        "longName": "Jaheim Bell",
+        "playerID": "4429262",
+        "teamID": "26"
+      }
+    ],
+    "fanduel": [
+      {
+        "team": "LAR",
+        "salary": "5000",
+        "pos": "TE",
+        "longName": "Tyler Higbee",
+        "playerID": "2573401",
+        "teamID": "19"
+      },
+      {
+        "team": "PIT",
+        "salary": "4800",
+        "pos": "WR",
+        "longName": "Marquez Valdes-Scantling",
+        "playerID": "3051738",
+        "teamID": "26"
+      },
+      {
+        "team": "JAX",
+        "salary": "6900",
+        "pos": "WR",
+        "longName": "Parker Washington",
+        "playerID": "4432620",
+        "teamID": "15"
+      },
+      {
+        "team": "BUF",
+        "salary": "6100",
+        "pos": "WR",
+        "longName": "Khalil Shakir",
+        "playerID": "4373678",
+        "teamID": "4"
+      },
+      {
+        "team": "NE",
+        "salary": "5500",
+        "pos": "WR",
+        "longName": "DeMario Douglas",
+        "playerID": "4427095",
+        "teamID": "22"
+      },
+      {
+        "team": "SF",
+        "salary": "6700",
+        "pos": "WR",
+        "longName": "Jauan Jennings",
+        "playerID": "3886598",
+        "teamID": "28"
+      },
+      {
+        "team": "LAC",
+        "salary": "4500",
+        "pos": "RB",
+        "longName": "Jaret Patterson",
+        "playerID": "4362452",
+        "teamID": "18"
+      },
+      {
+        "team": "PHI",
+        "salary": "4500",
+        "pos": "TE",
+        "longName": "Grant Calcaterra",
+        "playerID": "4241374",
+        "teamID": "27"
+      },
+      {
+        "team": "BUF",
+        "salary": "4700",
+        "pos": "WR",
+        "longName": "Keon Coleman",
+        "playerID": "4635008",
+        "teamID": "4"
+      },
+      {
+        "team": "CAR",
+        "salary": "4200",
+        "pos": "WR",
+        "longName": "David Moore",
+        "playerID": "4212909",
+        "teamID": "5"
+      },
+      {
+        "team": "CAR",
+        "salary": "4200",
+        "pos": "WR",
+        "longName": "Brycen Tremayne",
+        "playerID": "4360763",
+        "teamID": "5"
+      },
+      {
+        "team": "PIT",
+        "salary": "4400",
+        "pos": "TE",
+        "longName": "Connor Heyward",
+        "playerID": "4241961",
+        "teamID": "26"
+      },
+      {
+        "team": "SF",
+        "salary": "9500",
+        "pos": "RB",
+        "longName": "Christian McCaffrey",
+        "playerID": "3117251",
+        "teamID": "28"
+      },
+      {
+        "team": "JAX",
+        "salary": "4100",
+        "pos": "TE",
+        "longName": "Johnny Mundt",
+        "playerID": "3052096",
+        "teamID": "15"
+      },
+      {
+        "team": "JAX",
+        "salary": "4100",
+        "pos": "TE",
+        "longName": "Hunter Long",
+        "playerID": "4239944",
+        "teamID": "15"
+      },
+      {
+        "team": "PHI",
+        "salary": "4200",
+        "pos": "TE",
+        "longName": "Kylen Granson",
+        "playerID": "4039160",
+        "teamID": "27"
+      },
+      {
+        "team": "NE",
+        "salary": "5700",
+        "pos": "WR",
+        "longName": "Kayshon Boutte",
+        "playerID": "4429022",
+        "teamID": "22"
+      },
+      {
+        "team": "LAC",
+        "salary": "6400",
+        "pos": "WR",
+        "longName": "Quentin Johnston",
+        "playerID": "4429025",
+        "teamID": "18"
+      },
+      {
+        "team": "PHI",
+        "salary": "4200",
+        "pos": "TE",
+        "longName": "Cameron Latu",
+        "playerID": "4372026",
+        "teamID": "27"
+      },
+      {
+        "team": "LAC",
+        "salary": "5600",
+        "pos": "RB",
+        "longName": "Kimani Vidal",
+        "playerID": "4430968",
+        "teamID": "18"
+      },
+      {
+        "team": "LAR",
+        "salary": "5200",
+        "pos": "TE",
+        "longName": "Colby Parkinson",
+        "playerID": "4242557",
+        "teamID": "19"
+      },
+      {
+        "team": "CAR",
+        "salary": "7400",
+        "pos": "WR",
+        "longName": "Tetairoa McMillan",
+        "playerID": "4685472",
+        "teamID": "5"
+      },
+      {
+        "team": "CHI",
+        "salary": "5400",
+        "pos": "TE",
+        "longName": "Colston Loveland",
+        "playerID": "4723086",
+        "teamID": "6"
+      },
+      {
+        "team": "CAR",
+        "salary": "5100",
+        "pos": "WR",
+        "longName": "Xavier Legette",
+        "playerID": "4430034",
+        "teamID": "5"
+      },
+      {
+        "team": "PIT",
+        "salary": "5200",
+        "pos": "TE",
+        "longName": "Pat Freiermuth",
+        "playerID": "4361411",
+        "teamID": "26"
+      },
+      {
+        "team": "HOU",
+        "salary": "5800",
+        "pos": "WR",
+        "longName": "Jayden Higgins",
+        "playerID": "4877706",
+        "teamID": "13"
+      },
+      {
+        "team": "NE",
+        "salary": "5500",
+        "pos": "TE",
+        "longName": "Hunter Henry",
+        "playerID": "3046439",
+        "teamID": "22"
+      },
+      {
+        "team": "BUF",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Mitchell Trubisky",
+        "playerID": "3039707",
+        "teamID": "4"
+      },
+      {
+        "team": "NE",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Joshua Dobbs",
+        "playerID": "3044720",
+        "teamID": "22"
+      },
+      {
+        "team": "BUF",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Curtis Samuel",
+        "playerID": "3121427",
+        "teamID": "4"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Mack Hollins",
+        "playerID": "2991662",
+        "teamID": "22"
+      },
+      {
+        "team": "SF",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Trent Taylor",
+        "playerID": "3040569",
+        "teamID": "28"
+      },
+      {
+        "team": "JAX",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Nick Mullens",
+        "playerID": "3059989",
+        "teamID": "15"
+      },
+      {
+        "team": "LAC",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Royce Freeman",
+        "playerID": "3122672",
+        "teamID": "18"
+      },
+      {
+        "team": "JAX",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Jordan Akins",
+        "playerID": "3128452",
+        "teamID": "15"
+      },
+      {
+        "team": "LAC",
+        "salary": "4100",
+        "pos": "TE",
+        "longName": "Tyler Conklin",
+        "playerID": "3915486",
+        "teamID": "18"
+      },
+      {
+        "team": "SF",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Malik Turner",
+        "playerID": "3115928",
+        "teamID": "28"
+      },
+      {
+        "team": "LAC",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Najee Harris",
+        "playerID": "4241457",
+        "teamID": "18"
+      },
+      {
+        "team": "SF",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Patrick Taylor Jr.",
+        "playerID": "4039358",
+        "teamID": "28"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Antonio Gibson",
+        "playerID": "4360294",
+        "teamID": "22"
+      },
+      {
+        "team": "PHI",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Quez Watkins",
+        "playerID": "4050373",
+        "teamID": "27"
+      },
+      {
+        "team": "BUF",
+        "salary": "4000",
+        "pos": "FB",
+        "longName": "Reggie Gilliam",
+        "playerID": "4039505",
+        "teamID": "4"
+      },
+      {
+        "team": "LAC",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Trey Lance",
+        "playerID": "4383351",
+        "teamID": "18"
+      },
+      {
+        "team": "SF",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Mac Jones",
+        "playerID": "4241464",
+        "teamID": "28"
+      },
+      {
+        "team": "NE",
+        "salary": "6300",
+        "pos": "RB",
+        "longName": "Rhamondre Stevenson",
+        "playerID": "4569173",
+        "teamID": "22"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Elijah Mitchell",
+        "playerID": "4241555",
+        "teamID": "22"
+      },
+      {
+        "team": "BUF",
+        "salary": "5000",
+        "pos": "WR",
+        "longName": "Joshua Palmer",
+        "playerID": "4242433",
+        "teamID": "4"
+      },
+      {
+        "team": "SF",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Javon Baker",
+        "playerID": "4692022",
+        "teamID": "28"
+      },
+      {
+        "team": "LAC",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "DJ Uiagalelei",
+        "playerID": "4429020",
+        "teamID": "18"
+      },
+      {
+        "team": "SF",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Adrian Martinez",
+        "playerID": "4361182",
+        "teamID": "28"
+      },
+      {
+        "team": "PHI",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Sam Howell",
+        "playerID": "4426875",
+        "teamID": "27"
+      },
+      {
+        "team": "PHI",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Kyle McCord",
+        "playerID": "4433971",
+        "teamID": "27"
+      },
+      {
+        "team": "JAX",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Ja'Quinden Jackson",
+        "playerID": "4690972",
+        "teamID": "15"
+      },
+      {
+        "team": "PHI",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Terrace Marshall Jr.",
+        "playerID": "4362630",
+        "teamID": "27"
+      },
+      {
+        "team": "JAX",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Austin Trammell",
+        "playerID": "4244856",
+        "teamID": "15"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Brandon Smith",
+        "playerID": "4240577",
+        "teamID": "22"
+      },
+      {
+        "team": "JAX",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Tim Jones",
+        "playerID": "4245131",
+        "teamID": "15"
+      },
+      {
+        "team": "LAC",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Hassan Haskins",
+        "playerID": "4372071",
+        "teamID": "18"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "CB",
+        "longName": "Marcus Jones",
+        "playerID": "4241720",
+        "teamID": "22"
+      },
+      {
+        "team": "PHI",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Danny Gray",
+        "playerID": "4689546",
+        "teamID": "27"
+      },
+      {
+        "team": "PHI",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Britain Covey",
+        "playerID": "3926231",
+        "teamID": "27"
+      },
+      {
+        "team": "PHI",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Tanner McKee",
+        "playerID": "4685201",
+        "teamID": "27"
+      },
+      {
+        "team": "LAC",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Tucker Fisk",
+        "playerID": "4242558",
+        "teamID": "18"
+      },
+      {
+        "team": "SF",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Jacob Cowing",
+        "playerID": "4575665",
+        "teamID": "28"
+      },
+      {
+        "team": "PHI",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Johnny Wilson",
+        "playerID": "4686104",
+        "teamID": "27"
+      },
+      {
+        "team": "LAC",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Derius Davis",
+        "playerID": "4362477",
+        "teamID": "18"
+      },
+      {
+        "team": "SF",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Brayden Willis",
+        "playerID": "4360290",
+        "teamID": "28"
+      },
+      {
+        "team": "NE",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Tommy DeVito",
+        "playerID": "4240391",
+        "teamID": "22"
+      },
+      {
+        "team": "PHI",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "E.J. Jenkins",
+        "playerID": "4248557",
+        "teamID": "27"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Deneric Prince",
+        "playerID": "4372526",
+        "teamID": "22"
+      },
+      {
+        "team": "BUF",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Frank Gore Jr.",
+        "playerID": "4429805",
+        "teamID": "4"
+      },
+      {
+        "team": "JAX",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Travis Hunter",
+        "playerID": "4685415",
+        "teamID": "15"
+      },
+      {
+        "team": "LAC",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Tanner McLachlan",
+        "playerID": "4384171",
+        "teamID": "18"
+      },
+      {
+        "team": "JAX",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Joshua Cephus",
+        "playerID": "4426893",
+        "teamID": "15"
+      },
+      {
+        "team": "JAX",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Carter Bradley",
+        "playerID": "4362260",
+        "teamID": "15"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Jack Westover",
+        "playerID": "4361100",
+        "teamID": "22"
+      },
+      {
+        "team": "LAC",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "JaQuae Jackson",
+        "playerID": "5160748",
+        "teamID": "18"
+      },
+      {
+        "team": "LAC",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Thomas Yassmin",
+        "playerID": "4361027",
+        "teamID": "18"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "John Jiles",
+        "playerID": "4887705",
+        "teamID": "22"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Terrell Jennings",
+        "playerID": "4427600",
+        "teamID": "22"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "CJ Dippre",
+        "playerID": "4596545",
+        "teamID": "22"
+      },
+      {
+        "team": "BUF",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Keleki Latu",
+        "playerID": "4688552",
+        "teamID": "4"
+      },
+      {
+        "team": "JAX",
+        "salary": "5200",
+        "pos": "RB",
+        "longName": "Bhayshul Tuten",
+        "playerID": "4882093",
+        "teamID": "15"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Lan Larison",
+        "playerID": "4698253",
+        "teamID": "22"
+      },
+      {
+        "team": "SF",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Junior Bergen",
+        "playerID": "4887918",
+        "teamID": "28"
+      },
+      {
+        "team": "BUF",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Stephen Gosnell",
+        "playerID": "4432215",
+        "teamID": "4"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "S",
+        "longName": "John Saunders Jr.",
+        "playerID": "4608762",
+        "teamID": "22"
+      },
+      {
+        "team": "JAX",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Patrick Herbert",
+        "playerID": "4429811",
+        "teamID": "15"
+      },
+      {
+        "team": "JAX",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Chandler Brayboy",
+        "playerID": "4573243",
+        "teamID": "15"
+      },
+      {
+        "team": "LAC",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Amar Johnson",
+        "playerID": "4878878",
+        "teamID": "18"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "FB",
+        "longName": "Brock Lampe",
+        "playerID": "4875767",
+        "teamID": "22"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Jeremiah Webb",
+        "playerID": "4572655",
+        "teamID": "22"
+      },
+      {
+        "team": "LAC",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Dalevon Campbell",
+        "playerID": "4569372",
+        "teamID": "18"
+      },
+      {
+        "team": "CAR",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Andy Dalton",
+        "playerID": "14012",
+        "teamID": "5"
+      },
+      {
+        "team": "CHI",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Case Keenum",
+        "playerID": "15168",
+        "teamID": "6"
+      },
+      {
+        "team": "LAR",
+        "salary": "8000",
+        "pos": "WR",
+        "longName": "Davante Adams",
+        "playerID": "16800",
+        "teamID": "19"
+      },
+      {
+        "team": "LAR",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Nick Vannett",
+        "playerID": "2576399",
+        "teamID": "19"
+      },
+      {
+        "team": "CAR",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Mike White",
+        "playerID": "3051381",
+        "teamID": "5"
+      },
+      {
+        "team": "CHI",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Travis Homer",
+        "playerID": "4037457",
+        "teamID": "6"
+      },
+      {
+        "team": "CHI",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Stephen Carlson",
+        "playerID": "3948283",
+        "teamID": "6"
+      },
+      {
+        "team": "GB",
+        "salary": "4000",
+        "pos": "LS",
+        "longName": "Matt Orzech",
+        "playerID": "4422336",
+        "teamID": "12"
+      },
+      {
+        "team": "CAR",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Dan Chisena",
+        "playerID": "3929637",
+        "teamID": "5"
+      },
+      {
+        "team": "GB",
+        "salary": "4200",
+        "pos": "TE",
+        "longName": "Josh Whyle",
+        "playerID": "4360086",
+        "teamID": "12"
+      },
+      {
+        "team": "LAR",
+        "salary": "7900",
+        "pos": "RB",
+        "longName": "Kyren Williams",
+        "playerID": "4430737",
+        "teamID": "19"
+      },
+      {
+        "team": "CHI",
+        "salary": "7800",
+        "pos": "QB",
+        "longName": "Caleb Williams",
+        "playerID": "4431611",
+        "teamID": "6"
+      },
+      {
+        "team": "GB",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "MarShawn Lloyd",
+        "playerID": "4429023",
+        "teamID": "12"
+      },
+      {
+        "team": "CAR",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Ainias Smith",
+        "playerID": "4428532",
+        "teamID": "5"
+      },
+      {
+        "team": "CAR",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "James Mitchell",
+        "playerID": "4361988",
+        "teamID": "5"
+      },
+      {
+        "team": "LAR",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Mark Redman",
+        "playerID": "4431346",
+        "teamID": "19"
+      },
+      {
+        "team": "LAR",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Stetson Bennett IV",
+        "playerID": "4259553",
+        "teamID": "19"
+      },
+      {
+        "team": "CHI",
+        "salary": "4000",
+        "pos": "DE",
+        "longName": "Dominique Robinson",
+        "playerID": "4244300",
+        "teamID": "6"
+      },
+      {
+        "team": "GB",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Pierre Strong Jr.",
+        "playerID": "4249836",
+        "teamID": "12"
+      },
+      {
+        "team": "GB",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "John FitzPatrick",
+        "playerID": "4379401",
+        "teamID": "12"
+      },
+      {
+        "team": "LAR",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Jarquez Hunter",
+        "playerID": "4710341",
+        "teamID": "19"
+      },
+      {
+        "team": "CHI",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Maurice Alexander",
+        "playerID": "3914307",
+        "teamID": "6"
+      },
+      {
+        "team": "GB",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Tucker Kraft",
+        "playerID": "4572680",
+        "teamID": "12"
+      },
+      {
+        "team": "CHI",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Tyson Bagent",
+        "playerID": "4434153",
+        "teamID": "6"
+      },
+      {
+        "team": "CHI",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Roschon Johnson",
+        "playerID": "4426386",
+        "teamID": "6"
+      },
+      {
+        "team": "LAR",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Tyler Scott",
+        "playerID": "4565908",
+        "teamID": "19"
+      },
+      {
+        "team": "GB",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Isaiah Neyor",
+        "playerID": "4428116",
+        "teamID": "12"
+      },
+      {
+        "team": "CAR",
+        "salary": "4400",
+        "pos": "TE",
+        "longName": "Mitchell Evans",
+        "playerID": "4683243",
+        "teamID": "5"
+      },
+      {
+        "team": "GB",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Will Sheppard",
+        "playerID": "4608679",
+        "teamID": "12"
+      },
+      {
+        "team": "CAR",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Montrell Johnson Jr.",
+        "playerID": "4684625",
+        "teamID": "5"
+      },
+      {
+        "team": "CAR",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Anthony Tyus III",
+        "playerID": "4709392",
+        "teamID": "5"
+      },
+      {
+        "team": "CAR",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Bryce Pierre",
+        "playerID": "5082648",
+        "teamID": "5"
+      },
+      {
+        "team": "LAR",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Tru Edwards",
+        "playerID": "4875786",
+        "teamID": "19"
+      },
+      {
+        "team": "LAR",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Brennan Presley",
+        "playerID": "4431342",
+        "teamID": "19"
+      },
+      {
+        "team": "CHI",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Jahdae Walker",
+        "playerID": "5160110",
+        "teamID": "6"
+      },
+      {
+        "team": "CHI",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Deion Hankins",
+        "playerID": "4575667",
+        "teamID": "6"
+      },
+      {
+        "team": "CAR",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Ja'seem Reed",
+        "playerID": "4876995",
+        "teamID": "5"
+      },
+      {
+        "team": "GB",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Drake Dabney",
+        "playerID": "4429466",
+        "teamID": "12"
+      },
+      {
+        "team": "CHI",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Thomas Gordon",
+        "playerID": "4569615",
+        "teamID": "6"
+      },
+      {
+        "team": "PIT",
+        "salary": "5100",
+        "pos": "WR",
+        "longName": "Adam Thielen",
+        "playerID": "16460",
+        "teamID": "26"
+      },
+      {
+        "team": "HOU",
+        "salary": "4300",
+        "pos": "RB",
+        "longName": "Dare Ogunbowale",
+        "playerID": "2983509",
+        "teamID": "13"
+      },
+      {
+        "team": "PIT",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Mason Rudolph",
+        "playerID": "3116407",
+        "teamID": "26"
+      },
+      {
+        "team": "HOU",
+        "salary": "5600",
+        "pos": "WR",
+        "longName": "Christian Kirk",
+        "playerID": "3895856",
+        "teamID": "13"
+      },
+      {
+        "team": "HOU",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Braxton Berrios",
+        "playerID": "3123075",
+        "teamID": "13"
+      },
+      {
+        "team": "HOU",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Justin Watson",
+        "playerID": "3118892",
+        "teamID": "13"
+      },
+      {
+        "team": "HOU",
+        "salary": "4000",
+        "pos": "FB",
+        "longName": "Jakob Johnson",
+        "playerID": "3115349",
+        "teamID": "13"
+      },
+      {
+        "team": "PIT",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Donald Parham Jr.",
+        "playerID": "3912092",
+        "teamID": "26"
+      },
+      {
+        "team": "PIT",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Matt Sokol",
+        "playerID": "3121378",
+        "teamID": "26"
+      },
+      {
+        "team": "HOU",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Harrison Bryant",
+        "playerID": "4040774",
+        "teamID": "13"
+      },
+      {
+        "team": "HOU",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Quintez Cephus",
+        "playerID": "4035793",
+        "teamID": "13"
+      },
+      {
+        "team": "PIT",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Trey Sermon",
+        "playerID": "4241401",
+        "teamID": "26"
+      },
+      {
+        "team": "HOU",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Brevin Jordan",
+        "playerID": "4362504",
+        "teamID": "13"
+      },
+      {
+        "team": "HOU",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Davis Mills",
+        "playerID": "4242546",
+        "teamID": "13"
+      },
+      {
+        "team": "HOU",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Luke Lachey",
+        "playerID": "4432338",
+        "teamID": "13"
+      },
+      {
+        "team": "HOU",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Graham Mertz",
+        "playerID": "4426335",
+        "teamID": "13"
+      },
+      {
+        "team": "PIT",
+        "salary": "6000",
+        "pos": "RB",
+        "longName": "Kenneth Gainwell",
+        "playerID": "4371733",
+        "teamID": "26"
+      },
+      {
+        "team": "PIT",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Skylar Thompson",
+        "playerID": "4036419",
+        "teamID": "26"
+      },
+      {
+        "team": "PIT",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Brandon Johnson",
+        "playerID": "4035198",
+        "teamID": "26"
+      },
+      {
+        "team": "HOU",
+        "salary": "4900",
+        "pos": "WR",
+        "longName": "Xavier Hutchinson",
+        "playerID": "4686422",
+        "teamID": "13"
+      },
+      {
+        "team": "PIT",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Lew Nichols",
+        "playerID": "4428119",
+        "teamID": "26"
+      },
+      {
+        "team": "HOU",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Jared Wayne",
+        "playerID": "4430681",
+        "teamID": "13"
+      },
+      {
+        "team": "PIT",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Will Howard",
+        "playerID": "4429955",
+        "teamID": "26"
+      },
+      {
+        "team": "PIT",
+        "salary": "6000",
+        "pos": "WR",
+        "longName": "John Rhys Plumlee",
+        "playerID": "4426494",
+        "teamID": "26"
+      },
+      {
+        "team": "HOU",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "British Brooks",
+        "playerID": "4373273",
+        "teamID": "13"
+      },
+      {
+        "team": "HOU",
+        "salary": "5000",
+        "pos": "WR",
+        "longName": "Jaylin Noel",
+        "playerID": "4586312",
+        "teamID": "13"
+      },
+      {
+        "team": "PIT",
+        "salary": "4200",
+        "pos": "RB",
+        "longName": "Kaleb Johnson",
+        "playerID": "4819231",
+        "teamID": "26"
+      },
+      {
+        "team": "HOU",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Josh Kelly",
+        "playerID": "4575558",
+        "teamID": "13"
+      },
+      {
+        "team": "PIT",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Max Hurleman",
+        "playerID": "4694237",
+        "teamID": "26"
+      },
+      {
+        "team": "BUF",
+        "salary": "5300",
+        "pos": "WR",
+        "longName": "Brandin Cooks",
+        "playerID": "16731",
+        "teamID": "4"
+      },
+      {
+        "team": "NE",
+        "salary": "6600",
+        "pos": "WR",
+        "longName": "Stefon Diggs",
+        "playerID": "2976212",
+        "teamID": "22"
+      },
+      {
+        "team": "NE",
+        "salary": "4300",
+        "pos": "TE",
+        "longName": "Austin Hooper",
+        "playerID": "3043275",
+        "teamID": "22"
+      },
+      {
+        "team": "PHI",
+        "salary": "5600",
+        "pos": "TE",
+        "longName": "Dallas Goedert",
+        "playerID": "3121023",
+        "teamID": "27"
+      },
+      {
+        "team": "PHI",
+        "salary": "8400",
+        "pos": "WR",
+        "longName": "A.J. Brown",
+        "playerID": "4047646",
+        "teamID": "27"
+      },
+      {
+        "team": "BUF",
+        "salary": "4600",
+        "pos": "WR",
+        "longName": "Gabe Davis",
+        "playerID": "4243537",
+        "teamID": "4"
+      },
+      {
+        "team": "JAX",
+        "salary": "4100",
+        "pos": "TE",
+        "longName": "Quintin Morris",
+        "playerID": "4244049",
+        "teamID": "15"
+      },
+      {
+        "team": "JAX",
+        "salary": "5900",
+        "pos": "WR",
+        "longName": "Brian Thomas Jr.",
+        "playerID": "4432773",
+        "teamID": "15"
+      },
+      {
+        "team": "BUF",
+        "salary": "5100",
+        "pos": "TE",
+        "longName": "Dalton Kincaid",
+        "playerID": "4385690",
+        "teamID": "4"
+      },
+      {
+        "team": "JAX",
+        "salary": "5300",
+        "pos": "TE",
+        "longName": "Brenton Strange",
+        "playerID": "4430539",
+        "teamID": "15"
+      },
+      {
+        "team": "BUF",
+        "salary": "4300",
+        "pos": "RB",
+        "longName": "Ray Davis",
+        "playerID": "4429501",
+        "teamID": "4"
+      },
+      {
+        "team": "SF",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Isaac Guerendo",
+        "playerID": "4372561",
+        "teamID": "28"
+      },
+      {
+        "team": "SF",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Jordan James",
+        "playerID": "4685397",
+        "teamID": "28"
+      },
+      {
+        "team": "SF",
+        "salary": "4100",
+        "pos": "WR",
+        "longName": "Jordan Watkins",
+        "playerID": "4431466",
+        "teamID": "28"
+      },
+      {
+        "team": "CHI",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Durham Smythe",
+        "playerID": "3052897",
+        "teamID": "6"
+      },
+      {
+        "team": "CAR",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Hunter Renfrow",
+        "playerID": "3135321",
+        "teamID": "5"
+      },
+      {
+        "team": "CHI",
+        "salary": "6400",
+        "pos": "RB",
+        "longName": "D'Andre Swift",
+        "playerID": "4259545",
+        "teamID": "6"
+      },
+      {
+        "team": "CAR",
+        "salary": "4700",
+        "pos": "TE",
+        "longName": "Tommy Tremble",
+        "playerID": "4372780",
+        "teamID": "5"
+      },
+      {
+        "team": "CAR",
+        "salary": "6900",
+        "pos": "QB",
+        "longName": "Bryce Young",
+        "playerID": "4685720",
+        "teamID": "5"
+      },
+      {
+        "team": "LAR",
+        "salary": "4800",
+        "pos": "TE",
+        "longName": "Terrance Ferguson",
+        "playerID": "4570037",
+        "teamID": "19"
+      },
+      {
+        "team": "LAR",
+        "salary": "4700",
+        "pos": "WR",
+        "longName": "Jordan Whittington",
+        "playerID": "4569382",
+        "teamID": "19"
+      },
+      {
+        "team": "GB",
+        "salary": "5800",
+        "pos": "WR",
+        "longName": "Romeo Doubs",
+        "playerID": "4361432",
+        "teamID": "12"
+      },
+      {
+        "team": "GB",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Clayton Tune",
+        "playerID": "4360175",
+        "teamID": "12"
+      },
+      {
+        "team": "CAR",
+        "salary": "4100",
+        "pos": "RB",
+        "longName": "Trevor Etienne",
+        "playerID": "4685350",
+        "teamID": "5"
+      },
+      {
+        "team": "LAR",
+        "salary": "4900",
+        "pos": "WR",
+        "longName": "Xavier Smith",
+        "playerID": "4386544",
+        "teamID": "19"
+      },
+      {
+        "team": "GB",
+        "salary": "5000",
+        "pos": "WR",
+        "longName": "Matthew Golden",
+        "playerID": "4701936",
+        "teamID": "12"
+      },
+      {
+        "team": "CHI",
+        "salary": "6000",
+        "pos": "WR",
+        "longName": "Luther Burden III",
+        "playerID": "4685278",
+        "teamID": "6"
+      },
+      {
+        "team": "LAR",
+        "salary": "5300",
+        "pos": "WR",
+        "longName": "Konata Mumpfield",
+        "playerID": "4710855",
+        "teamID": "19"
+      },
+      {
+        "team": "PIT",
+        "salary": "7000",
+        "pos": "QB",
+        "longName": "Aaron Rodgers",
+        "playerID": "8439",
+        "teamID": "26"
+      },
+      {
+        "team": "PIT",
+        "salary": "4200",
+        "pos": "WR",
+        "longName": "Ben Skowronek",
+        "playerID": "4035656",
+        "teamID": "26"
+      },
+      {
+        "team": "HOU",
+        "salary": "7200",
+        "pos": "QB",
+        "longName": "C.J. Stroud",
+        "playerID": "4432577",
+        "teamID": "13"
+      },
+      {
+        "team": "PIT",
+        "salary": "5600",
+        "pos": "WR",
+        "longName": "Calvin Austin III",
+        "playerID": "4243389",
+        "teamID": "26"
+      },
+      {
+        "team": "HOU",
+        "salary": "4300",
+        "pos": "TE",
+        "longName": "Cade Stover",
+        "playerID": "4426496",
+        "teamID": "13"
+      },
+      {
+        "team": "PIT",
+        "salary": "4500",
+        "pos": "WR",
+        "longName": "Roman Wilson",
+        "playerID": "4431492",
+        "teamID": "26"
+      },
+      {
+        "team": "SF",
+        "salary": "4200",
+        "pos": "FB",
+        "longName": "Kyle Juszczyk",
+        "playerID": "16002",
+        "teamID": "28"
+      },
+      {
+        "team": "SF",
+        "salary": "6300",
+        "pos": "TE",
+        "longName": "George Kittle",
+        "playerID": "3040151",
+        "teamID": "28"
+      },
+      {
+        "team": "LAC",
+        "salary": "4100",
+        "pos": "TE",
+        "longName": "Will Dissly",
+        "playerID": "3127292",
+        "teamID": "18"
+      },
+      {
+        "team": "BUF",
+        "salary": "4900",
+        "pos": "RB",
+        "longName": "Ty Johnson",
+        "playerID": "3915411",
+        "teamID": "4"
+      },
+      {
+        "team": "JAX",
+        "salary": "6300",
+        "pos": "WR",
+        "longName": "Jakobi Meyers",
+        "playerID": "3916433",
+        "teamID": "15"
+      },
+      {
+        "team": "NE",
+        "salary": "4300",
+        "pos": "RB",
+        "longName": "D'Ernest Johnson",
+        "playerID": "3139602",
+        "teamID": "22"
+      },
+      {
+        "team": "JAX",
+        "salary": "7500",
+        "pos": "RB",
+        "longName": "Travis Etienne Jr.",
+        "playerID": "4239996",
+        "teamID": "15"
+      },
+      {
+        "team": "PHI",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "AJ Dillon",
+        "playerID": "4239934",
+        "teamID": "27"
+      },
+      {
+        "team": "JAX",
+        "salary": "4200",
+        "pos": "WR",
+        "longName": "Dyami Brown",
+        "playerID": "4361577",
+        "teamID": "15"
+      },
+      {
+        "team": "PHI",
+        "salary": "4700",
+        "pos": "RB",
+        "longName": "Will Shipley",
+        "playerID": "4431545",
+        "teamID": "27"
+      },
+      {
+        "team": "NE",
+        "salary": "6800",
+        "pos": "RB",
+        "longName": "TreVeyon Henderson",
+        "playerID": "4432710",
+        "teamID": "22"
+      },
+      {
+        "team": "LAC",
+        "salary": "4100",
+        "pos": "WR",
+        "longName": "KeAndre Lambert-Smith",
+        "playerID": "4430870",
+        "teamID": "18"
+      },
+      {
+        "team": "LAC",
+        "salary": "6600",
+        "pos": "RB",
+        "longName": "Omarion Hampton",
+        "playerID": "4685382",
+        "teamID": "18"
+      },
+      {
+        "team": "JAX",
+        "salary": "4600",
+        "pos": "RB",
+        "longName": "LeQuint Allen Jr.",
+        "playerID": "4911851",
+        "teamID": "15"
+      },
+      {
+        "team": "BUF",
+        "salary": "4200",
+        "pos": "TE",
+        "longName": "Jackson Hawes",
+        "playerID": "4573699",
+        "teamID": "4"
+      },
+      {
+        "team": "LAR",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Jimmy Garoppolo",
+        "playerID": "16760",
+        "teamID": "19"
+      },
+      {
+        "team": "CHI",
+        "salary": "4500",
+        "pos": "TE",
+        "longName": "Cole Kmet",
+        "playerID": "4258595",
+        "teamID": "6"
+      },
+      {
+        "team": "GB",
+        "salary": "7200",
+        "pos": "QB",
+        "longName": "Jordan Love",
+        "playerID": "4036378",
+        "teamID": "12"
+      },
+      {
+        "team": "CHI",
+        "salary": "4100",
+        "pos": "WR",
+        "longName": "Devin Duvernay",
+        "playerID": "4039050",
+        "teamID": "6"
+      },
+      {
+        "team": "LAR",
+        "salary": "4500",
+        "pos": "WR",
+        "longName": "Tutu Atwell",
+        "playerID": "4360797",
+        "teamID": "19"
+      },
+      {
+        "team": "LAR",
+        "salary": "9700",
+        "pos": "WR",
+        "longName": "Puka Nacua",
+        "playerID": "4426515",
+        "teamID": "19"
+      },
+      {
+        "team": "GB",
+        "salary": "4400",
+        "pos": "CB",
+        "longName": "Bo Melton",
+        "playerID": "4259305",
+        "teamID": "12"
+      },
+      {
+        "team": "CHI",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Brittain Brown",
+        "playerID": "4036032",
+        "teamID": "6"
+      },
+      {
+        "team": "CHI",
+        "salary": "6200",
+        "pos": "WR",
+        "longName": "Rome Odunze",
+        "playerID": "4431299",
+        "teamID": "6"
+      },
+      {
+        "team": "CAR",
+        "salary": "5700",
+        "pos": "WR",
+        "longName": "Jalen Coker",
+        "playerID": "4695883",
+        "teamID": "5"
+      },
+      {
+        "team": "CAR",
+        "salary": "4300",
+        "pos": "WR",
+        "longName": "Jimmy Horn Jr.",
+        "playerID": "4708486",
+        "teamID": "5"
+      },
+      {
+        "team": "PIT",
+        "salary": "4600",
+        "pos": "TE",
+        "longName": "Jonnu Smith",
+        "playerID": "3054212",
+        "teamID": "26"
+      },
+      {
+        "team": "HOU",
+        "salary": "4800",
+        "pos": "RB",
+        "longName": "Nick Chubb",
+        "playerID": "3128720",
+        "teamID": "13"
+      },
+      {
+        "team": "HOU",
+        "salary": "8200",
+        "pos": "WR",
+        "longName": "Nico Collins",
+        "playerID": "4258173",
+        "teamID": "13"
+      },
+      {
+        "team": "HOU",
+        "salary": "5100",
+        "pos": "RB",
+        "longName": "Jawhar Jordan",
+        "playerID": "4429939",
+        "teamID": "13"
+      },
+      {
+        "team": "JAX",
+        "salary": "4300",
+        "pos": "WR",
+        "longName": "Tim Patrick",
+        "playerID": "3134353",
+        "teamID": "15"
+      },
+      {
+        "team": "SF",
+        "salary": "5200",
+        "pos": "WR",
+        "longName": "Kendrick Bourne",
+        "playerID": "3045523",
+        "teamID": "28"
+      },
+      {
+        "team": "PHI",
+        "salary": "8500",
+        "pos": "RB",
+        "longName": "Saquon Barkley",
+        "playerID": "3929630",
+        "teamID": "27"
+      },
+      {
+        "team": "BUF",
+        "salary": "8700",
+        "pos": "QB",
+        "longName": "Josh Allen",
+        "playerID": "3918298",
+        "teamID": "4"
+      },
+      {
+        "team": "BUF",
+        "salary": "4700",
+        "pos": "TE",
+        "longName": "Dawson Knox",
+        "playerID": "3930086",
+        "teamID": "4"
+      },
+      {
+        "team": "PHI",
+        "salary": "6800",
+        "pos": "WR",
+        "longName": "DeVonta Smith",
+        "playerID": "4241478",
+        "teamID": "27"
+      },
+      {
+        "team": "PHI",
+        "salary": "8200",
+        "pos": "QB",
+        "longName": "Jalen Hurts",
+        "playerID": "4040715",
+        "teamID": "27"
+      },
+      {
+        "team": "SF",
+        "salary": "4400",
+        "pos": "TE",
+        "longName": "Luke Farrell",
+        "playerID": "4040612",
+        "teamID": "28"
+      },
+      {
+        "team": "JAX",
+        "salary": "7900",
+        "pos": "QB",
+        "longName": "Trevor Lawrence",
+        "playerID": "4360310",
+        "teamID": "15"
+      },
+      {
+        "team": "SF",
+        "salary": "6000",
+        "pos": "WR",
+        "longName": "Ricky Pearsall",
+        "playerID": "4428209",
+        "teamID": "28"
+      },
+      {
+        "team": "LAR",
+        "salary": "8100",
+        "pos": "QB",
+        "longName": "Matthew Stafford",
+        "playerID": "12483",
+        "teamID": "19"
+      },
+      {
+        "team": "CHI",
+        "salary": "5200",
+        "pos": "WR",
+        "longName": "Olamide Zaccheaus",
+        "playerID": "3917914",
+        "teamID": "6"
+      },
+      {
+        "team": "CAR",
+        "salary": "7100",
+        "pos": "RB",
+        "longName": "Rico Dowdle",
+        "playerID": "4038815",
+        "teamID": "5"
+      },
+      {
+        "team": "LAR",
+        "salary": "4300",
+        "pos": "TE",
+        "longName": "Davis Allen",
+        "playerID": "4426553",
+        "teamID": "19"
+      },
+      {
+        "team": "GB",
+        "salary": "6300",
+        "pos": "WR",
+        "longName": "Christian Watson",
+        "playerID": "4248528",
+        "teamID": "12"
+      },
+      {
+        "team": "LAR",
+        "salary": "4300",
+        "pos": "RB",
+        "longName": "Ronnie Rivers",
+        "playerID": "4243003",
+        "teamID": "19"
+      },
+      {
+        "team": "GB",
+        "salary": "4800",
+        "pos": "WR",
+        "longName": "Dontayvion Wicks",
+        "playerID": "4428850",
+        "teamID": "12"
+      },
+      {
+        "team": "PIT",
+        "salary": "6700",
+        "pos": "RB",
+        "longName": "Jaylen Warren",
+        "playerID": "4569987",
+        "teamID": "26"
+      },
+      {
+        "team": "JAX",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "DeeJay Dallas",
+        "playerID": "4240631",
+        "teamID": "15"
+      },
+      {
+        "team": "PHI",
+        "salary": "4400",
+        "pos": "WR",
+        "longName": "Jahan Dotson",
+        "playerID": "4361409",
+        "teamID": "27"
+      },
+      {
+        "team": "SF",
+        "salary": "4200",
+        "pos": "WR",
+        "longName": "Skyy Moore",
+        "playerID": "4430191",
+        "teamID": "28"
+      },
+      {
+        "team": "BUF",
+        "salary": "4400",
+        "pos": "WR",
+        "longName": "Tyrell Shavers",
+        "playerID": "4241476",
+        "teamID": "4"
+      },
+      {
+        "team": "LAC",
+        "salary": "5000",
+        "pos": "TE",
+        "longName": "Oronde Gadsden",
+        "playerID": "4595342",
+        "teamID": "18"
+      },
+      {
+        "team": "LAC",
+        "salary": "6500",
+        "pos": "WR",
+        "longName": "Ladd McConkey",
+        "playerID": "4612826",
+        "teamID": "18"
+      },
+      {
+        "team": "NE",
+        "salary": "4500",
+        "pos": "WR",
+        "longName": "Efton Chism III",
+        "playerID": "4695193",
+        "teamID": "22"
+      },
+      {
+        "team": "NE",
+        "salary": "4900",
+        "pos": "WR",
+        "longName": "Kyle Williams",
+        "playerID": "4613202",
+        "teamID": "22"
+      },
+      {
+        "team": "PHI",
+        "salary": "4300",
+        "pos": "WR",
+        "longName": "Darius Cooper",
+        "playerID": "4715355",
+        "teamID": "27"
+      },
+      {
+        "team": "CHI",
+        "salary": "5800",
+        "pos": "WR",
+        "longName": "DJ Moore",
+        "playerID": "3915416",
+        "teamID": "6"
+      },
+      {
+        "team": "CAR",
+        "salary": "5100",
+        "pos": "RB",
+        "longName": "Chuba Hubbard",
+        "playerID": "4241416",
+        "teamID": "5"
+      },
+      {
+        "team": "GB",
+        "salary": "5400",
+        "pos": "WR",
+        "longName": "Jayden Reed",
+        "playerID": "4362249",
+        "teamID": "12"
+      },
+      {
+        "team": "GB",
+        "salary": "4500",
+        "pos": "TE",
+        "longName": "Luke Musgrave",
+        "playerID": "4428085",
+        "teamID": "12"
+      },
+      {
+        "team": "CHI",
+        "salary": "5500",
+        "pos": "RB",
+        "longName": "Kyle Monangai",
+        "playerID": "4608686",
+        "teamID": "6"
+      },
+      {
+        "team": "GB",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Savion Williams",
+        "playerID": "4431487",
+        "teamID": "12"
+      },
+      {
+        "team": "HOU",
+        "salary": "5200",
+        "pos": "TE",
+        "longName": "Dalton Schultz",
+        "playerID": "3117256",
+        "teamID": "13"
+      },
+      {
+        "team": "HOU",
+        "salary": "6500",
+        "pos": "RB",
+        "longName": "Woody Marks",
+        "playerID": "4429059",
+        "teamID": "13"
+      },
+      {
+        "team": "LAC",
+        "salary": "5600",
+        "pos": "WR",
+        "longName": "Keenan Allen",
+        "playerID": "15818",
+        "teamID": "18"
+      },
+      {
+        "team": "SF",
+        "salary": "4800",
+        "pos": "WR",
+        "longName": "Demarcus Robinson",
+        "playerID": "3043116",
+        "teamID": "28"
+      },
+      {
+        "team": "LAC",
+        "salary": "7600",
+        "pos": "QB",
+        "longName": "Justin Herbert",
+        "playerID": "4038941",
+        "teamID": "18"
+      },
+      {
+        "team": "GB",
+        "salary": "7800",
+        "pos": "RB",
+        "longName": "Josh Jacobs",
+        "playerID": "4047365",
+        "teamID": "12"
+      },
+      {
+        "team": "BUF",
+        "salary": "8400",
+        "pos": "RB",
+        "longName": "James Cook III",
+        "playerID": "4379399",
+        "teamID": "4"
+      },
+      {
+        "team": "NE",
+        "salary": "8000",
+        "pos": "QB",
+        "longName": "Drake Maye",
+        "playerID": "4431452",
+        "teamID": "22"
+      },
+      {
+        "team": "CAR",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Ja'Tavion Sanders",
+        "playerID": "4431588",
+        "teamID": "5"
+      },
+      {
+        "team": "SF",
+        "salary": "7300",
+        "pos": "QB",
+        "longName": "Brock Purdy",
+        "playerID": "4361741",
+        "teamID": "28"
+      },
+      {
+        "team": "SF",
+        "salary": "5000",
+        "pos": "RB",
+        "longName": "Brian Robinson Jr.",
+        "playerID": "4241474",
+        "teamID": "28"
+      },
+      {
+        "team": "LAC",
+        "salary": "4500",
+        "pos": "WR",
+        "longName": "Tre' Harris",
+        "playerID": "4686612",
+        "teamID": "18"
+      },
+      {
+        "team": "PHI",
+        "salary": "4800",
+        "pos": "RB",
+        "longName": "Tank Bigsby",
+        "playerID": "4429013",
+        "teamID": "27"
+      },
+      {
+        "team": "PIT",
+        "salary": "4600",
+        "pos": "WR",
+        "longName": "Scotty Miller",
+        "playerID": "3914397",
+        "teamID": "26"
+      },
+      {
+        "team": "SF",
+        "salary": "4600",
+        "pos": "TE",
+        "longName": "Jake Tonges",
+        "playerID": "4259147",
+        "teamID": "28"
+      },
+      {
+        "team": "LAR",
+        "salary": "5700",
+        "pos": "RB",
+        "longName": "Blake Corum",
+        "playerID": "4429096",
+        "teamID": "19"
+      },
+      {
+        "team": "PIT",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Darnell Washington",
+        "playerID": "4430802",
+        "teamID": "26"
+      },
+      {
+        "team": "GB",
+        "salary": "4600",
+        "pos": "RB",
+        "longName": "Emanuel Wilson",
+        "playerID": "4887558",
+        "teamID": "12"
+      },
+      {
+        "team": "GB",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Malik Willis",
+        "playerID": "4242512",
+        "teamID": "12"
+      },
+      {
+        "team": "BUF",
+        "salary": "4000",
+        "pos": "WR",
+        "longName": "Mecole Hardman Jr.",
+        "playerID": "4035004",
+        "teamID": "4"
+      },
+      {
+        "team": "NE",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Marshall Lang",
+        "playerID": "4566195",
+        "teamID": "22"
+      },
+      {
+        "team": "CAR",
+        "salary": "4100",
+        "pos": "TE",
+        "longName": "Ross Dwelley",
+        "playerID": "3120303",
+        "teamID": "5"
+      },
+      {
+        "team": "GB",
+        "salary": "6000",
+        "pos": "QB",
+        "longName": "Desmond Ridder",
+        "playerID": "4239086",
+        "teamID": "12"
+      },
+      {
+        "team": "CHI",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Nikola Kalinic",
+        "playerID": "4916349",
+        "teamID": "6"
+      },
+      {
+        "team": "GB",
+        "salary": "4000",
+        "pos": "RB",
+        "longName": "Damien Martinez",
+        "playerID": "4808830",
+        "teamID": "12"
+      },
+      {
+        "team": "PIT",
+        "salary": "4000",
+        "pos": "TE",
+        "longName": "Jaheim Bell",
+        "playerID": "4429262",
+        "teamID": "26"
+      }
+    ],
+    "yahoo": [
+      {
+        "team": "PIT",
+        "salary": "26",
+        "pos": "WR",
+        "longName": "DK Metcalf",
+        "playerID": "4047650",
+        "teamID": "26"
+      },
+      {
+        "team": "PIT",
+        "salary": "14",
+        "pos": "WR",
+        "longName": "Calvin Austin III",
+        "playerID": "4243389",
+        "teamID": "26"
+      },
+      {
+        "team": "HOU",
+        "salary": "14",
+        "pos": "WR",
+        "longName": "Xavier Hutchinson",
+        "playerID": "4686422",
+        "teamID": "13"
+      },
+      {
+        "team": "BUF",
+        "salary": "13",
+        "pos": "WR",
+        "longName": "Brandin Cooks",
+        "playerID": "16731",
+        "teamID": "4"
+      },
+      {
+        "team": "BUF",
+        "salary": "13",
+        "pos": "WR",
+        "longName": "Gabe Davis",
+        "playerID": "4243537",
+        "teamID": "4"
+      },
+      {
+        "team": "JAX",
+        "salary": "13",
+        "pos": "RB",
+        "longName": "Bhayshul Tuten",
+        "playerID": "4882093",
+        "teamID": "15"
+      },
+      {
+        "team": "HOU",
+        "salary": "13",
+        "pos": "RB",
+        "longName": "Nick Chubb",
+        "playerID": "3128720",
+        "teamID": "13"
+      },
+      {
+        "team": "LAR",
+        "salary": "14",
+        "pos": "TE",
+        "longName": "Tyler Higbee",
+        "playerID": "2573401",
+        "teamID": "19"
+      },
+      {
+        "team": "LAR",
+        "salary": "17",
+        "pos": "TE",
+        "longName": "Colby Parkinson",
+        "playerID": "4242557",
+        "teamID": "19"
+      },
+      {
+        "team": "LAC",
+        "salary": "15",
+        "pos": "WR",
+        "longName": "Keenan Allen",
+        "playerID": "15818",
+        "teamID": "18"
+      },
+      {
+        "team": "PHI",
+        "salary": "12",
+        "pos": "RB",
+        "longName": "Tank Bigsby",
+        "playerID": "4429013",
+        "teamID": "27"
+      },
+      {
+        "team": "BUF",
+        "salary": "16",
+        "pos": "TE",
+        "longName": "Dalton Kincaid",
+        "playerID": "4385690",
+        "teamID": "4"
+      },
+      {
+        "team": "BUF",
+        "salary": "12",
+        "pos": "RB",
+        "longName": "Ray Davis",
+        "playerID": "4429501",
+        "teamID": "4"
+      },
+      {
+        "team": "PIT",
+        "salary": "12",
+        "pos": "WR",
+        "longName": "Adam Thielen",
+        "playerID": "16460",
+        "teamID": "26"
+      },
+      {
+        "team": "PIT",
+        "salary": "12",
+        "pos": "TE",
+        "longName": "Jonnu Smith",
+        "playerID": "3054212",
+        "teamID": "26"
+      },
+      {
+        "team": "PIT",
+        "salary": "12",
+        "pos": "WR",
+        "longName": "Marquez Valdes-Scantling",
+        "playerID": "3051738",
+        "teamID": "26"
+      },
+      {
+        "team": "CHI",
+        "salary": "11",
+        "pos": "TE",
+        "longName": "Cole Kmet",
+        "playerID": "4258595",
+        "teamID": "6"
+      },
+      {
+        "team": "CAR",
+        "salary": "16",
+        "pos": "RB",
+        "longName": "Chuba Hubbard",
+        "playerID": "4241416",
+        "teamID": "5"
+      },
+      {
+        "team": "CAR",
+        "salary": "11",
+        "pos": "TE",
+        "longName": "Tommy Tremble",
+        "playerID": "4372780",
+        "teamID": "5"
+      },
+      {
+        "team": "PHI",
+        "salary": "11",
+        "pos": "WR",
+        "longName": "Jahan Dotson",
+        "playerID": "4361409",
+        "teamID": "27"
+      },
+      {
+        "team": "PIT",
+        "salary": "23",
+        "pos": "RB",
+        "longName": "Kenneth Gainwell",
+        "playerID": "4371733",
+        "teamID": "26"
+      },
+      {
+        "team": "CAR",
+        "salary": "20",
+        "pos": "QB",
+        "longName": "Andy Dalton",
+        "playerID": "14012",
+        "teamID": "5"
+      },
+      {
+        "team": "CHI",
+        "salary": "20",
+        "pos": "QB",
+        "longName": "Case Keenum",
+        "playerID": "15168",
+        "teamID": "6"
+      },
+      {
+        "team": "LAR",
+        "salary": "20",
+        "pos": "QB",
+        "longName": "Jimmy Garoppolo",
+        "playerID": "16760",
+        "teamID": "19"
+      },
+      {
+        "team": "LAR",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Nick Vannett",
+        "playerID": "2576399",
+        "teamID": "19"
+      },
+      {
+        "team": "CAR",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "David Moore",
+        "playerID": "4212909",
+        "teamID": "5"
+      },
+      {
+        "team": "CHI",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Durham Smythe",
+        "playerID": "3052897",
+        "teamID": "6"
+      },
+      {
+        "team": "CAR",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Hunter Renfrow",
+        "playerID": "3135321",
+        "teamID": "5"
+      },
+      {
+        "team": "CHI",
+        "salary": "10",
+        "pos": "RB",
+        "longName": "Travis Homer",
+        "playerID": "4037457",
+        "teamID": "6"
+      },
+      {
+        "team": "CHI",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Olamide Zaccheaus",
+        "playerID": "3917914",
+        "teamID": "6"
+      },
+      {
+        "team": "CHI",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Devin Duvernay",
+        "playerID": "4039050",
+        "teamID": "6"
+      },
+      {
+        "team": "LAR",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Tutu Atwell",
+        "playerID": "4360797",
+        "teamID": "19"
+      },
+      {
+        "team": "GB",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Josh Whyle",
+        "playerID": "4360086",
+        "teamID": "12"
+      },
+      {
+        "team": "LAR",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Terrance Ferguson",
+        "playerID": "4570037",
+        "teamID": "19"
+      },
+      {
+        "team": "LAR",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Jordan Whittington",
+        "playerID": "4569382",
+        "teamID": "19"
+      },
+      {
+        "team": "CAR",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "James Mitchell",
+        "playerID": "4361988",
+        "teamID": "5"
+      },
+      {
+        "team": "LAR",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Davis Allen",
+        "playerID": "4426553",
+        "teamID": "19"
+      },
+      {
+        "team": "LAR",
+        "salary": "20",
+        "pos": "QB",
+        "longName": "Stetson Bennett IV",
+        "playerID": "4259553",
+        "teamID": "19"
+      },
+      {
+        "team": "LAR",
+        "salary": "10",
+        "pos": "RB",
+        "longName": "Ronnie Rivers",
+        "playerID": "4243003",
+        "teamID": "19"
+      },
+      {
+        "team": "GB",
+        "salary": "10",
+        "pos": "CB",
+        "longName": "Bo Melton",
+        "playerID": "4259305",
+        "teamID": "12"
+      },
+      {
+        "team": "CAR",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Ja'Tavion Sanders",
+        "playerID": "4431588",
+        "teamID": "5"
+      },
+      {
+        "team": "LAR",
+        "salary": "10",
+        "pos": "RB",
+        "longName": "Jarquez Hunter",
+        "playerID": "4710341",
+        "teamID": "19"
+      },
+      {
+        "team": "GB",
+        "salary": "11",
+        "pos": "WR",
+        "longName": "Dontayvion Wicks",
+        "playerID": "4428850",
+        "teamID": "12"
+      },
+      {
+        "team": "GB",
+        "salary": "20",
+        "pos": "QB",
+        "longName": "Clayton Tune",
+        "playerID": "4360175",
+        "teamID": "12"
+      },
+      {
+        "team": "GB",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Luke Musgrave",
+        "playerID": "4428085",
+        "teamID": "12"
+      },
+      {
+        "team": "CHI",
+        "salary": "20",
+        "pos": "QB",
+        "longName": "Tyson Bagent",
+        "playerID": "4434153",
+        "teamID": "6"
+      },
+      {
+        "team": "CAR",
+        "salary": "10",
+        "pos": "RB",
+        "longName": "Trevor Etienne",
+        "playerID": "4685350",
+        "teamID": "5"
+      },
+      {
+        "team": "LAR",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Xavier Smith",
+        "playerID": "4386544",
+        "teamID": "19"
+      },
+      {
+        "team": "CAR",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Brycen Tremayne",
+        "playerID": "4360763",
+        "teamID": "5"
+      },
+      {
+        "team": "GB",
+        "salary": "10",
+        "pos": "RB",
+        "longName": "Chris Brooks",
+        "playerID": "3149687",
+        "teamID": "12"
+      },
+      {
+        "team": "CHI",
+        "salary": "19",
+        "pos": "TE",
+        "longName": "Colston Loveland",
+        "playerID": "4723086",
+        "teamID": "6"
+      },
+      {
+        "team": "CAR",
+        "salary": "10",
+        "pos": "RB",
+        "longName": "Jonathon Brooks",
+        "playerID": "4678008",
+        "teamID": "5"
+      },
+      {
+        "team": "CAR",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Mitchell Evans",
+        "playerID": "4683243",
+        "teamID": "5"
+      },
+      {
+        "team": "GB",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Savion Williams",
+        "playerID": "4431487",
+        "teamID": "12"
+      },
+      {
+        "team": "CAR",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Jimmy Horn Jr.",
+        "playerID": "4708486",
+        "teamID": "5"
+      },
+      {
+        "team": "LAR",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Konata Mumpfield",
+        "playerID": "4710855",
+        "teamID": "19"
+      },
+      {
+        "team": "CHI",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Jahdae Walker",
+        "playerID": "5160110",
+        "teamID": "6"
+      },
+      {
+        "team": "GB",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Drake Dabney",
+        "playerID": "4429466",
+        "teamID": "12"
+      },
+      {
+        "team": "SF",
+        "salary": "10",
+        "pos": "FB",
+        "longName": "Kyle Juszczyk",
+        "playerID": "16002",
+        "teamID": "28"
+      },
+      {
+        "team": "NE",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Austin Hooper",
+        "playerID": "3043275",
+        "teamID": "22"
+      },
+      {
+        "team": "SF",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Demarcus Robinson",
+        "playerID": "3043116",
+        "teamID": "28"
+      },
+      {
+        "team": "NE",
+        "salary": "20",
+        "pos": "QB",
+        "longName": "Joshua Dobbs",
+        "playerID": "3044720",
+        "teamID": "22"
+      },
+      {
+        "team": "JAX",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Tim Patrick",
+        "playerID": "3134353",
+        "teamID": "15"
+      },
+      {
+        "team": "JAX",
+        "salary": "20",
+        "pos": "QB",
+        "longName": "Nick Mullens",
+        "playerID": "3059989",
+        "teamID": "15"
+      },
+      {
+        "team": "JAX",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Johnny Mundt",
+        "playerID": "3052096",
+        "teamID": "15"
+      },
+      {
+        "team": "SF",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Kendrick Bourne",
+        "playerID": "3045523",
+        "teamID": "28"
+      },
+      {
+        "team": "PHI",
+        "salary": "18",
+        "pos": "TE",
+        "longName": "Dallas Goedert",
+        "playerID": "3121023",
+        "teamID": "27"
+      },
+      {
+        "team": "LAC",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Tyler Conklin",
+        "playerID": "3915486",
+        "teamID": "18"
+      },
+      {
+        "team": "LAC",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Will Dissly",
+        "playerID": "3127292",
+        "teamID": "18"
+      },
+      {
+        "team": "BUF",
+        "salary": "13",
+        "pos": "RB",
+        "longName": "Ty Johnson",
+        "playerID": "3915411",
+        "teamID": "4"
+      },
+      {
+        "team": "BUF",
+        "salary": "12",
+        "pos": "TE",
+        "longName": "Dawson Knox",
+        "playerID": "3930086",
+        "teamID": "4"
+      },
+      {
+        "team": "NE",
+        "salary": "10",
+        "pos": "RB",
+        "longName": "D'Ernest Johnson",
+        "playerID": "3139602",
+        "teamID": "22"
+      },
+      {
+        "team": "SF",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Brandon Aiyuk",
+        "playerID": "4360438",
+        "teamID": "28"
+      },
+      {
+        "team": "PHI",
+        "salary": "10",
+        "pos": "RB",
+        "longName": "AJ Dillon",
+        "playerID": "4239934",
+        "teamID": "27"
+      },
+      {
+        "team": "SF",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Luke Farrell",
+        "playerID": "4040612",
+        "teamID": "28"
+      },
+      {
+        "team": "JAX",
+        "salary": "10",
+        "pos": "RB",
+        "longName": "DeeJay Dallas",
+        "playerID": "4240631",
+        "teamID": "15"
+      },
+      {
+        "team": "BUF",
+        "salary": "10",
+        "pos": "FB",
+        "longName": "Reggie Gilliam",
+        "playerID": "4039505",
+        "teamID": "4"
+      },
+      {
+        "team": "LAC",
+        "salary": "20",
+        "pos": "QB",
+        "longName": "Trey Lance",
+        "playerID": "4383351",
+        "teamID": "18"
+      },
+      {
+        "team": "SF",
+        "salary": "10",
+        "pos": "RB",
+        "longName": "Brian Robinson Jr.",
+        "playerID": "4241474",
+        "teamID": "28"
+      },
+      {
+        "team": "JAX",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Dyami Brown",
+        "playerID": "4361577",
+        "teamID": "15"
+      },
+      {
+        "team": "LAC",
+        "salary": "10",
+        "pos": "RB",
+        "longName": "Jaret Patterson",
+        "playerID": "4362452",
+        "teamID": "18"
+      },
+      {
+        "team": "SF",
+        "salary": "20",
+        "pos": "QB",
+        "longName": "Mac Jones",
+        "playerID": "4241464",
+        "teamID": "28"
+      },
+      {
+        "team": "JAX",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Hunter Long",
+        "playerID": "4239944",
+        "teamID": "15"
+      },
+      {
+        "team": "JAX",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Quintin Morris",
+        "playerID": "4244049",
+        "teamID": "15"
+      },
+      {
+        "team": "PHI",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Kylen Granson",
+        "playerID": "4039160",
+        "teamID": "27"
+      },
+      {
+        "team": "BUF",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Joshua Palmer",
+        "playerID": "4242433",
+        "teamID": "4"
+      },
+      {
+        "team": "PHI",
+        "salary": "10",
+        "pos": "RB",
+        "longName": "Will Shipley",
+        "playerID": "4431545",
+        "teamID": "27"
+      },
+      {
+        "team": "NE",
+        "salary": "17",
+        "pos": "WR",
+        "longName": "Kayshon Boutte",
+        "playerID": "4429022",
+        "teamID": "22"
+      },
+      {
+        "team": "PHI",
+        "salary": "20",
+        "pos": "QB",
+        "longName": "Sam Howell",
+        "playerID": "4426875",
+        "teamID": "27"
+      },
+      {
+        "team": "LAC",
+        "salary": "10",
+        "pos": "RB",
+        "longName": "Hassan Haskins",
+        "playerID": "4372071",
+        "teamID": "18"
+      },
+      {
+        "team": "SF",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Skyy Moore",
+        "playerID": "4430191",
+        "teamID": "28"
+      },
+      {
+        "team": "PHI",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Grant Calcaterra",
+        "playerID": "4241374",
+        "teamID": "27"
+      },
+      {
+        "team": "PHI",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Britain Covey",
+        "playerID": "3926231",
+        "teamID": "27"
+      },
+      {
+        "team": "PHI",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Cameron Latu",
+        "playerID": "4372026",
+        "teamID": "27"
+      },
+      {
+        "team": "LAC",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "KeAndre Lambert-Smith",
+        "playerID": "4430870",
+        "teamID": "18"
+      },
+      {
+        "team": "PHI",
+        "salary": "20",
+        "pos": "QB",
+        "longName": "Tanner McKee",
+        "playerID": "4685201",
+        "teamID": "27"
+      },
+      {
+        "team": "NE",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "DeMario Douglas",
+        "playerID": "4427095",
+        "teamID": "22"
+      },
+      {
+        "team": "LAC",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Derius Davis",
+        "playerID": "4362477",
+        "teamID": "18"
+      },
+      {
+        "team": "LAC",
+        "salary": "10",
+        "pos": "FB",
+        "longName": "Scott Matlock",
+        "playerID": "4373684",
+        "teamID": "18"
+      },
+      {
+        "team": "NE",
+        "salary": "20",
+        "pos": "QB",
+        "longName": "Tommy DeVito",
+        "playerID": "4240391",
+        "teamID": "22"
+      },
+      {
+        "team": "BUF",
+        "salary": "11",
+        "pos": "WR",
+        "longName": "Tyrell Shavers",
+        "playerID": "4241476",
+        "teamID": "4"
+      },
+      {
+        "team": "LAC",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Tre' Harris",
+        "playerID": "4686612",
+        "teamID": "18"
+      },
+      {
+        "team": "SF",
+        "salary": "10",
+        "pos": "RB",
+        "longName": "Isaac Guerendo",
+        "playerID": "4372561",
+        "teamID": "28"
+      },
+      {
+        "team": "NE",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Jack Westover",
+        "playerID": "4361100",
+        "teamID": "22"
+      },
+      {
+        "team": "NE",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "CJ Dippre",
+        "playerID": "4596545",
+        "teamID": "22"
+      },
+      {
+        "team": "JAX",
+        "salary": "10",
+        "pos": "RB",
+        "longName": "LeQuint Allen Jr.",
+        "playerID": "4911851",
+        "teamID": "15"
+      },
+      {
+        "team": "BUF",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Keleki Latu",
+        "playerID": "4688552",
+        "teamID": "4"
+      },
+      {
+        "team": "SF",
+        "salary": "10",
+        "pos": "RB",
+        "longName": "Jordan James",
+        "playerID": "4685397",
+        "teamID": "28"
+      },
+      {
+        "team": "NE",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Efton Chism III",
+        "playerID": "4695193",
+        "teamID": "22"
+      },
+      {
+        "team": "BUF",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Jackson Hawes",
+        "playerID": "4573699",
+        "teamID": "4"
+      },
+      {
+        "team": "SF",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Jordan Watkins",
+        "playerID": "4431466",
+        "teamID": "28"
+      },
+      {
+        "team": "NE",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Kyle Williams",
+        "playerID": "4613202",
+        "teamID": "22"
+      },
+      {
+        "team": "PHI",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Darius Cooper",
+        "playerID": "4715355",
+        "teamID": "27"
+      },
+      {
+        "team": "HOU",
+        "salary": "10",
+        "pos": "RB",
+        "longName": "Dare Ogunbowale",
+        "playerID": "2983509",
+        "teamID": "13"
+      },
+      {
+        "team": "PIT",
+        "salary": "20",
+        "pos": "QB",
+        "longName": "Mason Rudolph",
+        "playerID": "3116407",
+        "teamID": "26"
+      },
+      {
+        "team": "HOU",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Christian Kirk",
+        "playerID": "3895856",
+        "teamID": "13"
+      },
+      {
+        "team": "HOU",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Braxton Berrios",
+        "playerID": "3123075",
+        "teamID": "13"
+      },
+      {
+        "team": "HOU",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Justin Watson",
+        "playerID": "3118892",
+        "teamID": "13"
+      },
+      {
+        "team": "PIT",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Scotty Miller",
+        "playerID": "3914397",
+        "teamID": "26"
+      },
+      {
+        "team": "HOU",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Harrison Bryant",
+        "playerID": "4040774",
+        "teamID": "13"
+      },
+      {
+        "team": "PIT",
+        "salary": "13",
+        "pos": "TE",
+        "longName": "Pat Freiermuth",
+        "playerID": "4361411",
+        "teamID": "26"
+      },
+      {
+        "team": "HOU",
+        "salary": "20",
+        "pos": "QB",
+        "longName": "Davis Mills",
+        "playerID": "4242546",
+        "teamID": "13"
+      },
+      {
+        "team": "PIT",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Ben Skowronek",
+        "playerID": "4035656",
+        "teamID": "26"
+      },
+      {
+        "team": "HOU",
+        "salary": "20",
+        "pos": "QB",
+        "longName": "Graham Mertz",
+        "playerID": "4426335",
+        "teamID": "13"
+      },
+      {
+        "team": "PIT",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Connor Heyward",
+        "playerID": "4241961",
+        "teamID": "26"
+      },
+      {
+        "team": "HOU",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Cade Stover",
+        "playerID": "4426496",
+        "teamID": "13"
+      },
+      {
+        "team": "HOU",
+        "salary": "11",
+        "pos": "WR",
+        "longName": "Tank Dell",
+        "playerID": "4366031",
+        "teamID": "13"
+      },
+      {
+        "team": "PIT",
+        "salary": "20",
+        "pos": "QB",
+        "longName": "Will Howard",
+        "playerID": "4429955",
+        "teamID": "26"
+      },
+      {
+        "team": "PIT",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Roman Wilson",
+        "playerID": "4431492",
+        "teamID": "26"
+      },
+      {
+        "team": "HOU",
+        "salary": "10",
+        "pos": "RB",
+        "longName": "British Brooks",
+        "playerID": "4373273",
+        "teamID": "13"
+      },
+      {
+        "team": "HOU",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Jaylin Noel",
+        "playerID": "4586312",
+        "teamID": "13"
+      },
+      {
+        "team": "PIT",
+        "salary": "10",
+        "pos": "RB",
+        "longName": "Kaleb Johnson",
+        "playerID": "4819231",
+        "teamID": "26"
+      },
+      {
+        "team": "GB",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Matthew Golden",
+        "playerID": "4701936",
+        "teamID": "12"
+      },
+      {
+        "team": "CAR",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Xavier Legette",
+        "playerID": "4430034",
+        "teamID": "5"
+      },
+      {
+        "team": "JAX",
+        "salary": "20",
+        "pos": "WR",
+        "longName": "Jakobi Meyers",
+        "playerID": "3916433",
+        "teamID": "15"
+      },
+      {
+        "team": "BUF",
+        "salary": "16",
+        "pos": "WR",
+        "longName": "Khalil Shakir",
+        "playerID": "4373678",
+        "teamID": "4"
+      },
+      {
+        "team": "JAX",
+        "salary": "15",
+        "pos": "TE",
+        "longName": "Brenton Strange",
+        "playerID": "4430539",
+        "teamID": "15"
+      },
+      {
+        "team": "BUF",
+        "salary": "11",
+        "pos": "WR",
+        "longName": "Keon Coleman",
+        "playerID": "4635008",
+        "teamID": "4"
+      },
+      {
+        "team": "HOU",
+        "salary": "13",
+        "pos": "RB",
+        "longName": "Jawhar Jordan",
+        "playerID": "4429939",
+        "teamID": "13"
+      },
+      {
+        "team": "CAR",
+        "salary": "13",
+        "pos": "WR",
+        "longName": "Jalen Coker",
+        "playerID": "4695883",
+        "teamID": "5"
+      },
+      {
+        "team": "JAX",
+        "salary": "21",
+        "pos": "WR",
+        "longName": "Parker Washington",
+        "playerID": "4432620",
+        "teamID": "15"
+      },
+      {
+        "team": "LAC",
+        "salary": "13",
+        "pos": "TE",
+        "longName": "Oronde Gadsden",
+        "playerID": "4595342",
+        "teamID": "18"
+      },
+      {
+        "team": "LAC",
+        "salary": "18",
+        "pos": "WR",
+        "longName": "Ladd McConkey",
+        "playerID": "4612826",
+        "teamID": "18"
+      },
+      {
+        "team": "PIT",
+        "salary": "25",
+        "pos": "QB",
+        "longName": "Aaron Rodgers",
+        "playerID": "8439",
+        "teamID": "26"
+      },
+      {
+        "team": "HOU",
+        "salary": "15",
+        "pos": "TE",
+        "longName": "Dalton Schultz",
+        "playerID": "3117256",
+        "teamID": "13"
+      },
+      {
+        "team": "PIT",
+        "salary": "25",
+        "pos": "RB",
+        "longName": "Jaylen Warren",
+        "playerID": "4569987",
+        "teamID": "26"
+      },
+      {
+        "team": "HOU",
+        "salary": "18",
+        "pos": "RB",
+        "longName": "Woody Marks",
+        "playerID": "4429059",
+        "teamID": "13"
+      },
+      {
+        "team": "GB",
+        "salary": "27",
+        "pos": "RB",
+        "longName": "Josh Jacobs",
+        "playerID": "4047365",
+        "teamID": "12"
+      },
+      {
+        "team": "LAR",
+        "salary": "20",
+        "pos": "RB",
+        "longName": "Blake Corum",
+        "playerID": "4429096",
+        "teamID": "19"
+      },
+      {
+        "team": "CHI",
+        "salary": "17",
+        "pos": "WR",
+        "longName": "Rome Odunze",
+        "playerID": "4431299",
+        "teamID": "6"
+      },
+      {
+        "team": "GB",
+        "salary": "10",
+        "pos": "RB",
+        "longName": "Emanuel Wilson",
+        "playerID": "4887558",
+        "teamID": "12"
+      },
+      {
+        "team": "PHI",
+        "salary": "20",
+        "pos": "WR",
+        "longName": "DeVonta Smith",
+        "playerID": "4241478",
+        "teamID": "27"
+      },
+      {
+        "team": "SF",
+        "salary": "24",
+        "pos": "WR",
+        "longName": "Jauan Jennings",
+        "playerID": "3886598",
+        "teamID": "28"
+      },
+      {
+        "team": "NE",
+        "salary": "22",
+        "pos": "RB",
+        "longName": "Rhamondre Stevenson",
+        "playerID": "4569173",
+        "teamID": "22"
+      },
+      {
+        "team": "LAC",
+        "salary": "19",
+        "pos": "WR",
+        "longName": "Quentin Johnston",
+        "playerID": "4429025",
+        "teamID": "18"
+      },
+      {
+        "team": "LAC",
+        "salary": "14",
+        "pos": "RB",
+        "longName": "Kimani Vidal",
+        "playerID": "4430968",
+        "teamID": "18"
+      },
+      {
+        "team": "HOU",
+        "salary": "28",
+        "pos": "WR",
+        "longName": "Nico Collins",
+        "playerID": "4258173",
+        "teamID": "13"
+      },
+      {
+        "team": "CHI",
+        "salary": "18",
+        "pos": "WR",
+        "longName": "DJ Moore",
+        "playerID": "3915416",
+        "teamID": "6"
+      },
+      {
+        "team": "CAR",
+        "salary": "20",
+        "pos": "RB",
+        "longName": "Rico Dowdle",
+        "playerID": "4038815",
+        "teamID": "5"
+      },
+      {
+        "team": "CAR",
+        "salary": "22",
+        "pos": "QB",
+        "longName": "Bryce Young",
+        "playerID": "4685720",
+        "teamID": "5"
+      },
+      {
+        "team": "GB",
+        "salary": "12",
+        "pos": "WR",
+        "longName": "Jayden Reed",
+        "playerID": "4362249",
+        "teamID": "12"
+      },
+      {
+        "team": "GB",
+        "salary": "14",
+        "pos": "WR",
+        "longName": "Romeo Doubs",
+        "playerID": "4361432",
+        "teamID": "12"
+      },
+      {
+        "team": "CHI",
+        "salary": "15",
+        "pos": "RB",
+        "longName": "Kyle Monangai",
+        "playerID": "4608686",
+        "teamID": "6"
+      },
+      {
+        "team": "PHI",
+        "salary": "30",
+        "pos": "RB",
+        "longName": "Saquon Barkley",
+        "playerID": "3929630",
+        "teamID": "27"
+      },
+      {
+        "team": "PHI",
+        "salary": "32",
+        "pos": "QB",
+        "longName": "Jalen Hurts",
+        "playerID": "4040715",
+        "teamID": "27"
+      },
+      {
+        "team": "SF",
+        "salary": "11",
+        "pos": "TE",
+        "longName": "Jake Tonges",
+        "playerID": "4259147",
+        "teamID": "28"
+      },
+      {
+        "team": "HOU",
+        "salary": "15",
+        "pos": "WR",
+        "longName": "Jayden Higgins",
+        "playerID": "4877706",
+        "teamID": "13"
+      },
+      {
+        "team": "LAR",
+        "salary": "26",
+        "pos": "WR",
+        "longName": "Davante Adams",
+        "playerID": "16800",
+        "teamID": "19"
+      },
+      {
+        "team": "CAR",
+        "salary": "23",
+        "pos": "WR",
+        "longName": "Tetairoa McMillan",
+        "playerID": "4685472",
+        "teamID": "5"
+      },
+      {
+        "team": "NE",
+        "salary": "22",
+        "pos": "WR",
+        "longName": "Stefon Diggs",
+        "playerID": "2976212",
+        "teamID": "22"
+      },
+      {
+        "team": "NE",
+        "salary": "15",
+        "pos": "TE",
+        "longName": "Hunter Henry",
+        "playerID": "3046439",
+        "teamID": "22"
+      },
+      {
+        "team": "BUF",
+        "salary": "20",
+        "pos": "QB",
+        "longName": "Mitchell Trubisky",
+        "playerID": "3039707",
+        "teamID": "4"
+      },
+      {
+        "team": "PHI",
+        "salary": "26",
+        "pos": "WR",
+        "longName": "A.J. Brown",
+        "playerID": "4047646",
+        "teamID": "27"
+      },
+      {
+        "team": "JAX",
+        "salary": "17",
+        "pos": "WR",
+        "longName": "Brian Thomas Jr.",
+        "playerID": "4432773",
+        "teamID": "15"
+      },
+      {
+        "team": "HOU",
+        "salary": "25",
+        "pos": "QB",
+        "longName": "C.J. Stroud",
+        "playerID": "4432577",
+        "teamID": "13"
+      },
+      {
+        "team": "GB",
+        "salary": "19",
+        "pos": "WR",
+        "longName": "Christian Watson",
+        "playerID": "4248528",
+        "teamID": "12"
+      },
+      {
+        "team": "CHI",
+        "salary": "15",
+        "pos": "WR",
+        "longName": "Luther Burden III",
+        "playerID": "4685278",
+        "teamID": "6"
+      },
+      {
+        "team": "SF",
+        "salary": "20",
+        "pos": "TE",
+        "longName": "George Kittle",
+        "playerID": "3040151",
+        "teamID": "28"
+      },
+      {
+        "team": "BUF",
+        "salary": "38",
+        "pos": "QB",
+        "longName": "Josh Allen",
+        "playerID": "3918298",
+        "teamID": "4"
+      },
+      {
+        "team": "LAC",
+        "salary": "28",
+        "pos": "QB",
+        "longName": "Justin Herbert",
+        "playerID": "4038941",
+        "teamID": "18"
+      },
+      {
+        "team": "BUF",
+        "salary": "33",
+        "pos": "RB",
+        "longName": "James Cook III",
+        "playerID": "4379399",
+        "teamID": "4"
+      },
+      {
+        "team": "NE",
+        "salary": "22",
+        "pos": "RB",
+        "longName": "TreVeyon Henderson",
+        "playerID": "4432710",
+        "teamID": "22"
+      },
+      {
+        "team": "CHI",
+        "salary": "30",
+        "pos": "QB",
+        "longName": "Caleb Williams",
+        "playerID": "4431611",
+        "teamID": "6"
+      },
+      {
+        "team": "CHI",
+        "salary": "25",
+        "pos": "RB",
+        "longName": "D'Andre Swift",
+        "playerID": "4259545",
+        "teamID": "6"
+      },
+      {
+        "team": "SF",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Ricky Pearsall",
+        "playerID": "4428209",
+        "teamID": "28"
+      },
+      {
+        "team": "GB",
+        "salary": "24",
+        "pos": "QB",
+        "longName": "Jordan Love",
+        "playerID": "4036378",
+        "teamID": "12"
+      },
+      {
+        "team": "LAR",
+        "salary": "26",
+        "pos": "RB",
+        "longName": "Kyren Williams",
+        "playerID": "4430737",
+        "teamID": "19"
+      },
+      {
+        "team": "GB",
+        "salary": "20",
+        "pos": "QB",
+        "longName": "Malik Willis",
+        "playerID": "4242512",
+        "teamID": "12"
+      },
+      {
+        "team": "SF",
+        "salary": "38",
+        "pos": "RB",
+        "longName": "Christian McCaffrey",
+        "playerID": "3117251",
+        "teamID": "28"
+      },
+      {
+        "team": "JAX",
+        "salary": "34",
+        "pos": "QB",
+        "longName": "Trevor Lawrence",
+        "playerID": "4360310",
+        "teamID": "15"
+      },
+      {
+        "team": "NE",
+        "salary": "35",
+        "pos": "QB",
+        "longName": "Drake Maye",
+        "playerID": "4431452",
+        "teamID": "22"
+      },
+      {
+        "team": "LAR",
+        "salary": "31",
+        "pos": "QB",
+        "longName": "Matthew Stafford",
+        "playerID": "12483",
+        "teamID": "19"
+      },
+      {
+        "team": "JAX",
+        "salary": "27",
+        "pos": "RB",
+        "longName": "Travis Etienne Jr.",
+        "playerID": "4239996",
+        "teamID": "15"
+      },
+      {
+        "team": "LAC",
+        "salary": "19",
+        "pos": "RB",
+        "longName": "Omarion Hampton",
+        "playerID": "4685382",
+        "teamID": "18"
+      },
+      {
+        "team": "SF",
+        "salary": "30",
+        "pos": "QB",
+        "longName": "Brock Purdy",
+        "playerID": "4361741",
+        "teamID": "28"
+      },
+      {
+        "team": "LAR",
+        "salary": "32",
+        "pos": "WR",
+        "longName": "Puka Nacua",
+        "playerID": "4426515",
+        "teamID": "19"
+      },
+      {
+        "team": "CHI",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Nikola Kalinic",
+        "playerID": "4916349",
+        "teamID": "6"
+      },
+      {
+        "team": "GB",
+        "salary": "10",
+        "pos": "WR",
+        "longName": "Jakobie Keeney-James",
+        "playerID": "5178972",
+        "teamID": "12"
+      },
+      {
+        "team": "LAC",
+        "salary": "20",
+        "pos": "QB",
+        "longName": "DJ Uiagalelei",
+        "playerID": "4429020",
+        "teamID": "18"
+      },
+      {
+        "team": "JAX",
+        "salary": "10",
+        "pos": "TE",
+        "longName": "Patrick Herbert",
+        "playerID": "4429811",
+        "teamID": "15"
+      }
+    ]
+  }
+}

@@ -105,9 +105,9 @@ def calculate_draftkings_dst_points(stats):
     int_pts = float(stats["interceptions"]) * INTERCEPTION_POINTS
     fumble_pts = float(stats["fumbleRecoveries"]) * FUMBLE_RECOVERY_POINTS
     def_td_pts = float(stats["defTD"]) * DEFENSIVE_TD_POINTS
-    return_td_pts = float(stats["returnTD"]) * RETURN_TD_POINTS
+    return_td_pts = float(stats["returnTD"]) * RETURN_TD_POINTS if "returnTD" in stats else 0.2
     safety_pts = float(stats["safeties"]) * SAFETY_POINTS
-    block_kick_pts = float(stats["blockKick"]) * BLOCKED_KICK_POINTS
+    block_kick_pts = float(stats["blockKick"]) * BLOCKED_KICK_POINTS if "blockKick" in stats else 0
     pts_allowed_pts = points_allowed_score(float(stats["ptsAgainst"]))
 
     # Total fantasy points
