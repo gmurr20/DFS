@@ -1,0 +1,2843 @@
+{
+  "statusCode": 200,
+  "body": {
+    "teamDefenseProjections": {
+      "22": {
+        "defTD": "0.2",
+        "teamID": "22",
+        "safeties": "0.0",
+        "fumbleRecoveries": "0.3",
+        "ptsAgainst": "18.8",
+        "teamAbv": "NE",
+        "interceptions": "0.6",
+        "sacks": "2.1",
+        "fantasyPointsDefault": "9.1"
+      },
+      "13": {
+        "defTD": "0.2",
+        "teamID": "13",
+        "safeties": "0.0",
+        "fumbleRecoveries": "0.6",
+        "ptsAgainst": "21.8",
+        "teamAbv": "HOU",
+        "interceptions": "0.6",
+        "sacks": "3.1",
+        "fantasyPointsDefault": "8.7"
+      },
+      "4": {
+        "defTD": "0.2",
+        "teamID": "4",
+        "safeties": "0.0",
+        "fumbleRecoveries": "0.4",
+        "ptsAgainst": "24.0",
+        "teamAbv": "BUF",
+        "interceptions": "0.7",
+        "sacks": "2.0",
+        "fantasyPointsDefault": "7.4"
+      },
+      "28": {
+        "defTD": "0.1",
+        "teamID": "28",
+        "safeties": "0.0",
+        "fumbleRecoveries": "0.5",
+        "ptsAgainst": "25.8",
+        "teamAbv": "SF",
+        "interceptions": "0.8",
+        "sacks": "1.7",
+        "fantasyPointsDefault": "6.9"
+      },
+      "6": {
+        "defTD": "0.1",
+        "teamID": "6",
+        "safeties": "0.0",
+        "fumbleRecoveries": "0.3",
+        "ptsAgainst": "26.0",
+        "teamAbv": "CHI",
+        "interceptions": "0.8",
+        "sacks": "2.0",
+        "fantasyPointsDefault": "6.8"
+      },
+      "29": {
+        "defTD": "0.2",
+        "teamID": "29",
+        "safeties": "0.0",
+        "fumbleRecoveries": "0.5",
+        "ptsAgainst": "18.8",
+        "teamAbv": "SEA",
+        "interceptions": "0.8",
+        "sacks": "2.0",
+        "fantasyPointsDefault": "9.8"
+      },
+      "19": {
+        "defTD": "0.2",
+        "teamID": "19",
+        "safeties": "0.0",
+        "fumbleRecoveries": "0.4",
+        "ptsAgainst": "22.5",
+        "teamAbv": "LAR",
+        "interceptions": "0.6",
+        "sacks": "2.2",
+        "fantasyPointsDefault": "7.4"
+      },
+      "10": {
+        "defTD": "0.2",
+        "teamID": "10",
+        "safeties": "0.0",
+        "fumbleRecoveries": "0.5",
+        "ptsAgainst": "22.5",
+        "teamAbv": "DEN",
+        "interceptions": "0.7",
+        "sacks": "3.7",
+        "fantasyPointsDefault": "9.3"
+      }
+    },
+    "playerProjections": {
+      "4569173": {
+        "Rushing": {
+          "rushYds": "52.3",
+          "carries": "12.6",
+          "rushTD": "0.4"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "3.0",
+          "recTD": "0.1",
+          "recYds": "23.5"
+        },
+        "fumblesLost": "0.0",
+        "pos": "RB",
+        "teamID": "22",
+        "team": "NE",
+        "longName": "Rhamondre Stevenson",
+        "playerID": "4569173",
+        "fantasyPoints": "13.58",
+        "fantasyPointsDefault": {
+          "standard": "10.58",
+          "PPR": "13.58",
+          "halfPPR": "12.08"
+        }
+      },
+      "3128429": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "4.7",
+          "recTD": "0.4",
+          "recYds": "59.6"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "10",
+        "team": "DEN",
+        "longName": "Courtland Sutton",
+        "playerID": "3128429",
+        "fantasyPoints": "13.06",
+        "fantasyPointsDefault": {
+          "standard": "8.36",
+          "PPR": "13.06",
+          "halfPPR": "10.71"
+        }
+      },
+      "4635008": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "1.6",
+          "recTD": "0.1",
+          "recYds": "22.4"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "4",
+        "team": "BUF",
+        "longName": "Keon Coleman",
+        "playerID": "4635008",
+        "fantasyPoints": "4.44",
+        "fantasyPointsDefault": {
+          "standard": "2.84",
+          "PPR": "4.44",
+          "halfPPR": "3.64"
+        }
+      },
+      "4695193": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "0.6",
+          "recTD": "0.0",
+          "recYds": "7.1"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "22",
+        "team": "NE",
+        "longName": "Efton Chism III",
+        "playerID": "4695193",
+        "fantasyPoints": "1.31",
+        "fantasyPointsDefault": {
+          "standard": "0.71",
+          "PPR": "1.31",
+          "halfPPR": "1.01"
+        }
+      },
+      "3117256": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "4.8",
+          "recTD": "0.3",
+          "recYds": "49.5"
+        },
+        "fumblesLost": "0.0",
+        "pos": "TE",
+        "teamID": "13",
+        "team": "HOU",
+        "longName": "Dalton Schultz",
+        "playerID": "3117256",
+        "fantasyPoints": "11.55",
+        "fantasyPointsDefault": {
+          "standard": "6.75",
+          "PPR": "11.55",
+          "halfPPR": "9.15"
+        }
+      },
+      "4259147": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "3.7",
+          "recTD": "0.2",
+          "recYds": "41.0"
+        },
+        "fumblesLost": "0.0",
+        "pos": "TE",
+        "teamID": "28",
+        "team": "SF",
+        "longName": "Jake Tonges",
+        "playerID": "4259147",
+        "fantasyPoints": "9.0",
+        "fantasyPointsDefault": {
+          "standard": "5.3",
+          "PPR": "9.0",
+          "halfPPR": "7.15"
+        }
+      },
+      "2971573": {
+        "Kicking": {
+          "fgMade": "2.0",
+          "fgMissed": "0.0",
+          "xpMade": "2.0",
+          "xpMissed": "0.0"
+        },
+        "team": "HOU",
+        "pos": "PK",
+        "longName": "Ka'imi Fairbairn",
+        "playerID": "2971573",
+        "teamID": "13",
+        "fantasyPoints": "8.0",
+        "fantasyPointsDefault": {
+          "standard": "8.0",
+          "PPR": "8.0",
+          "halfPPR": "8.0"
+        }
+      },
+      "3886598": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "4.9",
+          "recTD": "0.4",
+          "recYds": "57.1"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "28",
+        "team": "SF",
+        "longName": "Jauan Jennings",
+        "playerID": "3886598",
+        "fantasyPoints": "13.01",
+        "fantasyPointsDefault": {
+          "standard": "8.11",
+          "PPR": "13.01",
+          "halfPPR": "10.56"
+        }
+      },
+      "4427600": {
+        "Rushing": {
+          "rushYds": "5.8",
+          "carries": "1.5",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "0.2",
+          "recTD": "0.0",
+          "recYds": "1.6"
+        },
+        "fumblesLost": "0.0",
+        "pos": "RB",
+        "teamID": "22",
+        "team": "NE",
+        "longName": "Terrell Jennings",
+        "playerID": "4427600",
+        "fantasyPoints": "0.94",
+        "fantasyPointsDefault": {
+          "standard": "0.74",
+          "PPR": "0.94",
+          "halfPPR": "0.84"
+        }
+      },
+      "4426515": {
+        "Rushing": {
+          "rushYds": "3.0",
+          "carries": "0.6",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "8.1",
+          "recTD": "0.6",
+          "recYds": "105.6"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "19",
+        "team": "LAR",
+        "longName": "Puka Nacua",
+        "playerID": "4426515",
+        "fantasyPoints": "22.56",
+        "fantasyPointsDefault": {
+          "standard": "14.46",
+          "PPR": "22.56",
+          "halfPPR": "18.51"
+        }
+      },
+      "3930086": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "2.0",
+          "recTD": "0.1",
+          "recYds": "22.2"
+        },
+        "fumblesLost": "0.0",
+        "pos": "TE",
+        "teamID": "4",
+        "team": "BUF",
+        "longName": "Dawson Knox",
+        "playerID": "3930086",
+        "fantasyPoints": "4.82",
+        "fantasyPointsDefault": {
+          "standard": "2.82",
+          "PPR": "4.82",
+          "halfPPR": "3.82"
+        }
+      },
+      "3117251": {
+        "Rushing": {
+          "rushYds": "61.4",
+          "carries": "15.5",
+          "rushTD": "0.4"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "5.0",
+          "recTD": "0.3",
+          "recYds": "48.2"
+        },
+        "fumblesLost": "0.0",
+        "pos": "RB",
+        "teamID": "28",
+        "team": "SF",
+        "longName": "Christian McCaffrey",
+        "playerID": "3117251",
+        "fantasyPoints": "20.16",
+        "fantasyPointsDefault": {
+          "standard": "15.16",
+          "PPR": "20.16",
+          "halfPPR": "17.66"
+        }
+      },
+      "4259545": {
+        "Rushing": {
+          "rushYds": "54.9",
+          "carries": "12.7",
+          "rushTD": "0.4"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "2.4",
+          "recTD": "0.1",
+          "recYds": "17.1"
+        },
+        "fumblesLost": "0.0",
+        "pos": "RB",
+        "teamID": "6",
+        "team": "CHI",
+        "longName": "D'Andre Swift",
+        "playerID": "4259545",
+        "fantasyPoints": "12.6",
+        "fantasyPointsDefault": {
+          "standard": "10.2",
+          "PPR": "12.6",
+          "halfPPR": "11.4"
+        }
+      },
+      "4242557": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "2.9",
+          "recTD": "0.2",
+          "recYds": "30.3"
+        },
+        "fumblesLost": "0.0",
+        "pos": "TE",
+        "teamID": "19",
+        "team": "LAR",
+        "longName": "Colby Parkinson",
+        "playerID": "4242557",
+        "fantasyPoints": "7.13",
+        "fantasyPointsDefault": {
+          "standard": "4.23",
+          "PPR": "7.13",
+          "halfPPR": "5.68"
+        }
+      },
+      "4429022": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "2.8",
+          "recTD": "0.2",
+          "recYds": "40.0"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "22",
+        "team": "NE",
+        "longName": "Kayshon Boutte",
+        "playerID": "4429022",
+        "fantasyPoints": "8.0",
+        "fantasyPointsDefault": {
+          "standard": "5.2",
+          "PPR": "8.0",
+          "halfPPR": "6.6"
+        }
+      },
+      "4034949": {
+        "Kicking": {
+          "fgMade": "1.9",
+          "fgMissed": "0.1",
+          "xpMade": "2.1",
+          "xpMissed": "0.0"
+        },
+        "team": "SF",
+        "pos": "PK",
+        "longName": "Eddy Pineiro",
+        "playerID": "4034949",
+        "teamID": "28",
+        "fantasyPoints": "7.7",
+        "fantasyPointsDefault": {
+          "standard": "7.7",
+          "PPR": "7.7",
+          "halfPPR": "7.7"
+        }
+      },
+      "4429501": {
+        "Rushing": {
+          "rushYds": "7.1",
+          "carries": "1.9",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "0.3",
+          "recTD": "0.0",
+          "recYds": "4.3"
+        },
+        "fumblesLost": "0.0",
+        "pos": "RB",
+        "teamID": "4",
+        "team": "BUF",
+        "longName": "Ray Davis",
+        "playerID": "4429501",
+        "fantasyPoints": "1.44",
+        "fantasyPointsDefault": {
+          "standard": "1.14",
+          "PPR": "1.44",
+          "halfPPR": "1.29"
+        }
+      },
+      "4600981": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "3.1",
+          "recTD": "0.2",
+          "recYds": "37.2"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "10",
+        "team": "DEN",
+        "longName": "Pat Bryant",
+        "playerID": "4600981",
+        "fantasyPoints": "8.02",
+        "fantasyPointsDefault": {
+          "standard": "4.92",
+          "PPR": "8.02",
+          "halfPPR": "6.47"
+        }
+      },
+      "4586312": {
+        "Rushing": {
+          "rushYds": "1.3",
+          "carries": "0.3",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "1.3",
+          "recTD": "0.1",
+          "recYds": "15.6"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "13",
+        "team": "HOU",
+        "longName": "Jaylin Noel",
+        "playerID": "4586312",
+        "fantasyPoints": "3.59",
+        "fantasyPointsDefault": {
+          "standard": "2.29",
+          "PPR": "3.59",
+          "halfPPR": "2.94"
+        }
+      },
+      "4686472": {
+        "Rushing": {
+          "rushYds": "2.4",
+          "carries": "0.5",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "1.4",
+          "recTD": "0.1",
+          "recYds": "16.4"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "10",
+        "team": "DEN",
+        "longName": "Marvin Mims Jr.",
+        "playerID": "4686472",
+        "fantasyPoints": "3.88",
+        "fantasyPointsDefault": {
+          "standard": "2.48",
+          "PPR": "3.88",
+          "halfPPR": "3.18"
+        }
+      },
+      "4258173": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "1.0",
+          "recTD": "0.0",
+          "recYds": "10.0"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "13",
+        "team": "HOU",
+        "longName": "Nico Collins",
+        "playerID": "4258173",
+        "fantasyPoints": "2.0",
+        "fantasyPointsDefault": {
+          "standard": "1.0",
+          "PPR": "2.0",
+          "halfPPR": "1.5"
+        }
+      },
+      "4722893": {
+        "Rushing": {
+          "rushYds": "22.8",
+          "carries": "5.0",
+          "rushTD": "0.1"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "0.8",
+          "recTD": "0.0",
+          "recYds": "4.0"
+        },
+        "fumblesLost": "0.0",
+        "pos": "RB",
+        "teamID": "10",
+        "team": "DEN",
+        "longName": "Jaleel McLaughlin",
+        "playerID": "4722893",
+        "fantasyPoints": "4.08",
+        "fantasyPointsDefault": {
+          "standard": "3.28",
+          "PPR": "4.08",
+          "halfPPR": "3.68"
+        }
+      },
+      "4568490": {
+        "Rushing": {
+          "rushYds": "64.7",
+          "carries": "14.6",
+          "rushTD": "0.5"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "3.1",
+          "recTD": "0.2",
+          "recYds": "23.4"
+        },
+        "fumblesLost": "0.0",
+        "pos": "RB",
+        "teamID": "10",
+        "team": "DEN",
+        "longName": "RJ Harvey",
+        "playerID": "4568490",
+        "fantasyPoints": "16.11",
+        "fantasyPointsDefault": {
+          "standard": "13.01",
+          "PPR": "16.11",
+          "halfPPR": "14.56"
+        }
+      },
+      "4685278": {
+        "Rushing": {
+          "rushYds": "1.3",
+          "carries": "0.3",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "4.2",
+          "recTD": "0.3",
+          "recYds": "50.1"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "6",
+        "team": "CHI",
+        "longName": "Luther Burden III",
+        "playerID": "4685278",
+        "fantasyPoints": "11.14",
+        "fantasyPointsDefault": {
+          "standard": "6.94",
+          "PPR": "11.14",
+          "halfPPR": "9.04"
+        }
+      },
+      "12483": {
+        "Rushing": {
+          "rushYds": "2.7",
+          "carries": "0.8",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "36.0",
+          "passTD": "2.1",
+          "passYds": "283.0",
+          "int": "0.6",
+          "passCompletions": "23.7"
+        },
+        "Receiving": {
+          "receptions": "0.0",
+          "recTD": "0.0",
+          "recYds": "0.0"
+        },
+        "fumblesLost": "0.0",
+        "pos": "QB",
+        "teamID": "19",
+        "team": "LAR",
+        "longName": "Matthew Stafford",
+        "playerID": "12483",
+        "fantasyPoints": "19.39",
+        "fantasyPointsDefault": {
+          "standard": "19.39",
+          "PPR": "19.39",
+          "halfPPR": "19.39"
+        }
+      },
+      "4613202": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "1.5",
+          "recTD": "0.1",
+          "recYds": "19.6"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "22",
+        "team": "NE",
+        "longName": "Kyle Williams",
+        "playerID": "4613202",
+        "fantasyPoints": "4.06",
+        "fantasyPointsDefault": {
+          "standard": "2.56",
+          "PPR": "4.06",
+          "halfPPR": "3.31"
+        }
+      },
+      "4039057": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "1.4",
+          "recTD": "0.1",
+          "recYds": "14.1"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "10",
+        "team": "DEN",
+        "longName": "Lil'Jordan Humphrey",
+        "playerID": "4039057",
+        "fantasyPoints": "3.41",
+        "fantasyPointsDefault": {
+          "standard": "2.01",
+          "PPR": "3.41",
+          "halfPPR": "2.71"
+        }
+      },
+      "16002": {
+        "Rushing": {
+          "rushYds": "2.1",
+          "carries": "0.5",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "1.8",
+          "recTD": "0.1",
+          "recYds": "17.0"
+        },
+        "fumblesLost": "0.0",
+        "pos": "RB",
+        "teamID": "28",
+        "team": "SF",
+        "longName": "Kyle Juszczyk",
+        "playerID": "16002",
+        "fantasyPoints": "4.31",
+        "fantasyPointsDefault": {
+          "standard": "2.51",
+          "PPR": "4.31",
+          "halfPPR": "3.41"
+        }
+      },
+      "3046439": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "4.6",
+          "recTD": "0.4",
+          "recYds": "52.2"
+        },
+        "fumblesLost": "0.0",
+        "pos": "TE",
+        "teamID": "22",
+        "team": "NE",
+        "longName": "Hunter Henry",
+        "playerID": "3046439",
+        "fantasyPoints": "12.22",
+        "fantasyPointsDefault": {
+          "standard": "7.62",
+          "PPR": "12.22",
+          "halfPPR": "9.92"
+        }
+      },
+      "2975863": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "0.6",
+          "recTD": "0.1",
+          "recYds": "5.9"
+        },
+        "fumblesLost": "0.0",
+        "pos": "TE",
+        "teamID": "29",
+        "team": "SEA",
+        "longName": "Eric Saubert",
+        "playerID": "2975863",
+        "fantasyPoints": "1.79",
+        "fantasyPointsDefault": {
+          "standard": "1.19",
+          "PPR": "1.79",
+          "halfPPR": "1.49"
+        }
+      },
+      "4432710": {
+        "Rushing": {
+          "rushYds": "45.6",
+          "carries": "10.2",
+          "rushTD": "0.4"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "1.1",
+          "recTD": "0.1",
+          "recYds": "8.5"
+        },
+        "fumblesLost": "0.0",
+        "pos": "RB",
+        "teamID": "22",
+        "team": "NE",
+        "longName": "TreVeyon Henderson",
+        "playerID": "4432710",
+        "fantasyPoints": "9.51",
+        "fantasyPointsDefault": {
+          "standard": "8.41",
+          "PPR": "9.51",
+          "halfPPR": "8.96"
+        }
+      },
+      "4567048": {
+        "Rushing": {
+          "rushYds": "56.8",
+          "carries": "13.1",
+          "rushTD": "0.4"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "2.6",
+          "recTD": "0.1",
+          "recYds": "19.4"
+        },
+        "fumblesLost": "0.0",
+        "pos": "RB",
+        "teamID": "29",
+        "team": "SEA",
+        "longName": "Kenneth Walker III",
+        "playerID": "4567048",
+        "fantasyPoints": "13.22",
+        "fantasyPointsDefault": {
+          "standard": "10.62",
+          "PPR": "13.22",
+          "halfPPR": "11.92"
+        }
+      },
+      "16800": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "4.9",
+          "recTD": "0.7",
+          "recYds": "67.6"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "19",
+        "team": "LAR",
+        "longName": "Davante Adams",
+        "playerID": "16800",
+        "fantasyPoints": "15.86",
+        "fantasyPointsDefault": {
+          "standard": "10.96",
+          "PPR": "15.86",
+          "halfPPR": "13.41"
+        }
+      },
+      "4430737": {
+        "Rushing": {
+          "rushYds": "63.1",
+          "carries": "14.2",
+          "rushTD": "0.5"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "1.9",
+          "recTD": "0.1",
+          "recYds": "13.5"
+        },
+        "fumblesLost": "0.0",
+        "pos": "RB",
+        "teamID": "19",
+        "team": "LAR",
+        "longName": "Kyren Williams",
+        "playerID": "4430737",
+        "fantasyPoints": "13.16",
+        "fantasyPointsDefault": {
+          "standard": "11.26",
+          "PPR": "13.16",
+          "halfPPR": "12.21"
+        }
+      },
+      "4241474": {
+        "Rushing": {
+          "rushYds": "20.5",
+          "carries": "5.2",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "0.3",
+          "recTD": "0.0",
+          "recYds": "2.1"
+        },
+        "fumblesLost": "0.0",
+        "pos": "RB",
+        "teamID": "28",
+        "team": "SF",
+        "longName": "Brian Robinson Jr.",
+        "playerID": "4241474",
+        "fantasyPoints": "2.56",
+        "fantasyPointsDefault": {
+          "standard": "2.26",
+          "PPR": "2.56",
+          "halfPPR": "2.41"
+        }
+      },
+      "4427095": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "1.6",
+          "recTD": "0.1",
+          "recYds": "19.4"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "22",
+        "team": "NE",
+        "longName": "DeMario Douglas",
+        "playerID": "4427095",
+        "fantasyPoints": "4.14",
+        "fantasyPointsDefault": {
+          "standard": "2.54",
+          "PPR": "4.14",
+          "halfPPR": "3.34"
+        }
+      },
+      "4379399": {
+        "Rushing": {
+          "rushYds": "82.6",
+          "carries": "16.5",
+          "rushTD": "0.6"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "2.0",
+          "recTD": "0.1",
+          "recYds": "16.7"
+        },
+        "fumblesLost": "0.0",
+        "pos": "RB",
+        "teamID": "4",
+        "team": "BUF",
+        "longName": "James Cook III",
+        "playerID": "4379399",
+        "fantasyPoints": "16.13",
+        "fantasyPointsDefault": {
+          "standard": "14.13",
+          "PPR": "16.13",
+          "halfPPR": "15.13"
+        }
+      },
+      "2985659": {
+        "Kicking": {
+          "fgMade": "1.9",
+          "fgMissed": "0.4",
+          "xpMade": "2.3",
+          "xpMissed": "0.0"
+        },
+        "team": "DEN",
+        "pos": "PK",
+        "longName": "Wil Lutz",
+        "playerID": "2985659",
+        "teamID": "10",
+        "fantasyPoints": "7.6",
+        "fantasyPointsDefault": {
+          "standard": "7.6",
+          "PPR": "7.6",
+          "halfPPR": "7.6"
+        }
+      },
+      "3043116": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "2.8",
+          "recTD": "0.2",
+          "recYds": "37.8"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "28",
+        "team": "SF",
+        "longName": "Demarcus Robinson",
+        "playerID": "3043116",
+        "fantasyPoints": "7.78",
+        "fantasyPointsDefault": {
+          "standard": "4.98",
+          "PPR": "7.78",
+          "halfPPR": "6.38"
+        }
+      },
+      "4608686": {
+        "Rushing": {
+          "rushYds": "39.6",
+          "carries": "9.4",
+          "rushTD": "0.3"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "1.1",
+          "recTD": "0.0",
+          "recYds": "7.4"
+        },
+        "fumblesLost": "0.0",
+        "pos": "RB",
+        "teamID": "6",
+        "team": "CHI",
+        "longName": "Kyle Monangai",
+        "playerID": "4608686",
+        "fantasyPoints": "7.6",
+        "fantasyPointsDefault": {
+          "standard": "6.5",
+          "PPR": "7.6",
+          "halfPPR": "7.05"
+        }
+      },
+      "3128444": {
+        "Kicking": {
+          "fgMade": "1.8",
+          "fgMissed": "0.2",
+          "xpMade": "2.9",
+          "xpMissed": "0.0"
+        },
+        "team": "BUF",
+        "pos": "PK",
+        "longName": "Matthew Wright",
+        "playerID": "3128444",
+        "teamID": "4",
+        "fantasyPoints": "8.1",
+        "fantasyPointsDefault": {
+          "standard": "8.1",
+          "PPR": "8.1",
+          "halfPPR": "8.1"
+        }
+      },
+      "3128720": {
+        "Rushing": {
+          "rushYds": "21.7",
+          "carries": "5.2",
+          "rushTD": "0.1"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "0.1",
+          "recTD": "0.0",
+          "recYds": "1.0"
+        },
+        "fumblesLost": "0.0",
+        "pos": "RB",
+        "teamID": "13",
+        "team": "HOU",
+        "longName": "Nick Chubb",
+        "playerID": "3128720",
+        "fantasyPoints": "2.97",
+        "fantasyPointsDefault": {
+          "standard": "2.87",
+          "PPR": "2.97",
+          "halfPPR": "2.92"
+        }
+      },
+      "4032473": {
+        "Rushing": {
+          "rushYds": "3.5",
+          "carries": "0.8",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "1.8",
+          "recTD": "0.2",
+          "recYds": "26.2"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "29",
+        "team": "SEA",
+        "longName": "Rashid Shaheed",
+        "playerID": "4032473",
+        "fantasyPoints": "5.97",
+        "fantasyPointsDefault": {
+          "standard": "4.17",
+          "PPR": "5.97",
+          "halfPPR": "5.07"
+        }
+      },
+      "3918298": {
+        "Rushing": {
+          "rushYds": "35.0",
+          "carries": "6.7",
+          "rushTD": "0.7"
+        },
+        "Passing": {
+          "passAttempts": "30.2",
+          "passTD": "1.3",
+          "passYds": "236.4",
+          "int": "0.6",
+          "passCompletions": "20.7"
+        },
+        "Receiving": {
+          "receptions": "0.0",
+          "recTD": "0.0",
+          "recYds": "0.0"
+        },
+        "fumblesLost": "0.0",
+        "pos": "QB",
+        "teamID": "4",
+        "team": "BUF",
+        "longName": "Josh Allen",
+        "playerID": "3918298",
+        "fantasyPoints": "21.76",
+        "fantasyPointsDefault": {
+          "standard": "21.76",
+          "PPR": "21.76",
+          "halfPPR": "21.76"
+        }
+      },
+      "4573699": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "1.1",
+          "recTD": "0.1",
+          "recYds": "11.4"
+        },
+        "fumblesLost": "0.0",
+        "pos": "TE",
+        "teamID": "4",
+        "team": "BUF",
+        "longName": "Jackson Hawes",
+        "playerID": "4573699",
+        "fantasyPoints": "2.84",
+        "fantasyPointsDefault": {
+          "standard": "1.74",
+          "PPR": "2.84",
+          "halfPPR": "2.29"
+        }
+      },
+      "4258595": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "1.4",
+          "recTD": "0.2",
+          "recYds": "17.4"
+        },
+        "fumblesLost": "0.0",
+        "pos": "TE",
+        "teamID": "6",
+        "team": "CHI",
+        "longName": "Cole Kmet",
+        "playerID": "4258595",
+        "fantasyPoints": "4.34",
+        "fantasyPointsDefault": {
+          "standard": "2.94",
+          "PPR": "4.34",
+          "halfPPR": "3.64"
+        }
+      },
+      "4426338": {
+        "Rushing": {
+          "rushYds": "22.6",
+          "carries": "5.1",
+          "rushTD": "0.3"
+        },
+        "Passing": {
+          "passAttempts": "34.0",
+          "passTD": "1.5",
+          "passYds": "225.2",
+          "int": "0.7",
+          "passCompletions": "22.1"
+        },
+        "Receiving": {
+          "receptions": "0.0",
+          "recTD": "0.0",
+          "recYds": "0.0"
+        },
+        "fumblesLost": "0.0",
+        "pos": "QB",
+        "teamID": "10",
+        "team": "DEN",
+        "longName": "Bo Nix",
+        "playerID": "4426338",
+        "fantasyPoints": "18.37",
+        "fantasyPointsDefault": {
+          "standard": "18.37",
+          "PPR": "18.37",
+          "halfPPR": "18.37"
+        }
+      },
+      "4039505": {
+        "Rushing": {
+          "rushYds": "1.2",
+          "carries": "0.3",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "0.7",
+          "recTD": "0.0",
+          "recYds": "5.0"
+        },
+        "fumblesLost": "0.0",
+        "pos": "RB",
+        "teamID": "4",
+        "team": "BUF",
+        "longName": "Reggie Gilliam",
+        "playerID": "4039505",
+        "fantasyPoints": "1.32",
+        "fantasyPointsDefault": {
+          "standard": "0.62",
+          "PPR": "1.32",
+          "halfPPR": "0.97"
+        }
+      },
+      "3043275": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "1.0",
+          "recTD": "0.1",
+          "recYds": "11.4"
+        },
+        "fumblesLost": "0.0",
+        "pos": "TE",
+        "teamID": "22",
+        "team": "NE",
+        "longName": "Austin Hooper",
+        "playerID": "3043275",
+        "fantasyPoints": "2.74",
+        "fantasyPointsDefault": {
+          "standard": "1.74",
+          "PPR": "2.74",
+          "halfPPR": "2.24"
+        }
+      },
+      "3895856": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "4.2",
+          "recTD": "0.3",
+          "recYds": "52.9"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "13",
+        "team": "HOU",
+        "longName": "Christian Kirk",
+        "playerID": "3895856",
+        "fantasyPoints": "11.29",
+        "fantasyPointsDefault": {
+          "standard": "7.09",
+          "PPR": "11.29",
+          "halfPPR": "9.19"
+        }
+      },
+      "4431299": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "2.8",
+          "recTD": "0.3",
+          "recYds": "36.7"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "6",
+        "team": "CHI",
+        "longName": "Rome Odunze",
+        "playerID": "4431299",
+        "fantasyPoints": "8.27",
+        "fantasyPointsDefault": {
+          "standard": "5.47",
+          "PPR": "8.27",
+          "halfPPR": "6.87"
+        }
+      },
+      "4710855": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "1.0",
+          "recTD": "0.1",
+          "recYds": "10.0"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "19",
+        "team": "LAR",
+        "longName": "Konata Mumpfield",
+        "playerID": "4710855",
+        "fantasyPoints": "2.6",
+        "fantasyPointsDefault": {
+          "standard": "1.6",
+          "PPR": "2.6",
+          "halfPPR": "2.1"
+        }
+      },
+      "4426496": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "1.6",
+          "recTD": "0.1",
+          "recYds": "15.1"
+        },
+        "fumblesLost": "0.0",
+        "pos": "TE",
+        "teamID": "13",
+        "team": "HOU",
+        "longName": "Cade Stover",
+        "playerID": "4426496",
+        "fantasyPoints": "3.71",
+        "fantasyPointsDefault": {
+          "standard": "2.11",
+          "PPR": "3.71",
+          "halfPPR": "2.91"
+        }
+      },
+      "4431452": {
+        "Rushing": {
+          "rushYds": "32.4",
+          "carries": "6.9",
+          "rushTD": "0.2"
+        },
+        "Passing": {
+          "passAttempts": "29.7",
+          "passTD": "1.4",
+          "passYds": "243.9",
+          "int": "0.5",
+          "passCompletions": "21.1"
+        },
+        "Receiving": {
+          "receptions": "0.0",
+          "recTD": "0.0",
+          "recYds": "0.0"
+        },
+        "fumblesLost": "0.0",
+        "pos": "QB",
+        "teamID": "22",
+        "team": "NE",
+        "longName": "Drake Maye",
+        "playerID": "4431452",
+        "fantasyPoints": "19.3",
+        "fantasyPointsDefault": {
+          "standard": "19.3",
+          "PPR": "19.3",
+          "halfPPR": "19.3"
+        }
+      },
+      "11122": {
+        "Kicking": {
+          "fgMade": "1.0",
+          "fgMissed": "0.0",
+          "xpMade": "3.0",
+          "xpMissed": "0.0"
+        },
+        "team": "BUF",
+        "pos": "PK",
+        "longName": "Matt Prater",
+        "playerID": "11122",
+        "teamID": "4",
+        "fantasyPoints": "6.0",
+        "fantasyPointsDefault": {
+          "standard": "6.0",
+          "PPR": "6.0",
+          "halfPPR": "6.0"
+        }
+      },
+      "16731": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "2.8",
+          "recTD": "0.2",
+          "recYds": "34.7"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "4",
+        "team": "BUF",
+        "longName": "Brandin Cooks",
+        "playerID": "16731",
+        "fantasyPoints": "7.47",
+        "fantasyPointsDefault": {
+          "standard": "4.67",
+          "PPR": "7.47",
+          "halfPPR": "6.07"
+        }
+      },
+      "4431611": {
+        "Rushing": {
+          "rushYds": "22.7",
+          "carries": "4.9",
+          "rushTD": "0.2"
+        },
+        "Passing": {
+          "passAttempts": "33.9",
+          "passTD": "1.7",
+          "passYds": "234.6",
+          "int": "0.6",
+          "passCompletions": "20.0"
+        },
+        "Receiving": {
+          "receptions": "0.0",
+          "recTD": "0.0",
+          "recYds": "0.0"
+        },
+        "fumblesLost": "0.0",
+        "pos": "QB",
+        "teamID": "6",
+        "team": "CHI",
+        "longName": "Caleb Williams",
+        "playerID": "4431611",
+        "fantasyPoints": "19.05",
+        "fantasyPointsDefault": {
+          "standard": "19.05",
+          "PPR": "19.05",
+          "halfPPR": "19.05"
+        }
+      },
+      "4723086": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "5.5",
+          "recTD": "0.4",
+          "recYds": "60.7"
+        },
+        "fumblesLost": "0.0",
+        "pos": "TE",
+        "teamID": "6",
+        "team": "CHI",
+        "longName": "Colston Loveland",
+        "playerID": "4723086",
+        "fantasyPoints": "13.97",
+        "fantasyPointsDefault": {
+          "standard": "8.47",
+          "PPR": "13.97",
+          "halfPPR": "11.22"
+        }
+      },
+      "17427": {
+        "Kicking": {
+          "fgMade": "1.3",
+          "fgMissed": "0.7",
+          "xpMade": "2.6",
+          "xpMissed": "0.0"
+        },
+        "team": "CHI",
+        "pos": "PK",
+        "longName": "Cairo Santos",
+        "playerID": "17427",
+        "teamID": "6",
+        "fantasyPoints": "5.8",
+        "fantasyPointsDefault": {
+          "standard": "5.8",
+          "PPR": "5.8",
+          "halfPPR": "5.8"
+        }
+      },
+      "4361741": {
+        "Rushing": {
+          "rushYds": "20.1",
+          "carries": "5.1",
+          "rushTD": "0.2"
+        },
+        "Passing": {
+          "passAttempts": "33.2",
+          "passTD": "1.5",
+          "passYds": "252.6",
+          "int": "0.9",
+          "passCompletions": "22.6"
+        },
+        "Receiving": {
+          "receptions": "0.0",
+          "recTD": "0.0",
+          "recYds": "0.0"
+        },
+        "fumblesLost": "0.0",
+        "pos": "QB",
+        "teamID": "28",
+        "team": "SF",
+        "longName": "Brock Purdy",
+        "playerID": "4361741",
+        "fantasyPoints": "18.41",
+        "fantasyPointsDefault": {
+          "standard": "18.41",
+          "PPR": "18.41",
+          "halfPPR": "18.41"
+        }
+      },
+      "4386544": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "0.8",
+          "recTD": "0.1",
+          "recYds": "11.5"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "19",
+        "team": "LAR",
+        "longName": "Xavier Smith",
+        "playerID": "4386544",
+        "fantasyPoints": "2.55",
+        "fantasyPointsDefault": {
+          "standard": "1.75",
+          "PPR": "2.55",
+          "halfPPR": "2.15"
+        }
+      },
+      "3915416": {
+        "Rushing": {
+          "rushYds": "1.4",
+          "carries": "0.3",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "3.0",
+          "recTD": "0.3",
+          "recYds": "36.4"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "6",
+        "team": "CHI",
+        "longName": "DJ Moore",
+        "playerID": "3915416",
+        "fantasyPoints": "8.58",
+        "fantasyPointsDefault": {
+          "standard": "5.58",
+          "PPR": "8.58",
+          "halfPPR": "7.08"
+        }
+      },
+      "4429939": {
+        "Rushing": {
+          "rushYds": "4.6",
+          "carries": "1.1",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "0.8",
+          "recTD": "0.0",
+          "recYds": "4.6"
+        },
+        "fumblesLost": "0.0",
+        "pos": "RB",
+        "teamID": "13",
+        "team": "HOU",
+        "longName": "Jawhar Jordan",
+        "playerID": "4429939",
+        "fantasyPoints": "1.72",
+        "fantasyPointsDefault": {
+          "standard": "0.92",
+          "PPR": "1.72",
+          "halfPPR": "1.32"
+        }
+      },
+      "3045523": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "1.4",
+          "recTD": "0.1",
+          "recYds": "15.5"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "28",
+        "team": "SF",
+        "longName": "Kendrick Bourne",
+        "playerID": "3045523",
+        "fantasyPoints": "3.55",
+        "fantasyPointsDefault": {
+          "standard": "2.15",
+          "PPR": "3.55",
+          "halfPPR": "2.85"
+        }
+      },
+      "2473037": {
+        "Kicking": {
+          "fgMade": "2.0",
+          "fgMissed": "0.3",
+          "xpMade": "2.8",
+          "xpMissed": "0.0"
+        },
+        "team": "SEA",
+        "pos": "PK",
+        "longName": "Jason Myers",
+        "playerID": "2473037",
+        "teamID": "29",
+        "fantasyPoints": "8.5",
+        "fantasyPointsDefault": {
+          "standard": "8.5",
+          "PPR": "8.5",
+          "halfPPR": "8.5"
+        }
+      },
+      "4576297": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "3.8",
+          "recTD": "0.3",
+          "recYds": "36.8"
+        },
+        "fumblesLost": "0.0",
+        "pos": "TE",
+        "teamID": "29",
+        "team": "SEA",
+        "longName": "AJ Barner",
+        "playerID": "4576297",
+        "fantasyPoints": "9.28",
+        "fantasyPointsDefault": {
+          "standard": "5.48",
+          "PPR": "9.28",
+          "halfPPR": "7.38"
+        }
+      },
+      "3915411": {
+        "Rushing": {
+          "rushYds": "1.9",
+          "carries": "0.4",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "0.3",
+          "recTD": "0.0",
+          "recYds": "3.9"
+        },
+        "fumblesLost": "0.0",
+        "pos": "RB",
+        "teamID": "4",
+        "team": "BUF",
+        "longName": "Ty Johnson",
+        "playerID": "3915411",
+        "fantasyPoints": "0.88",
+        "fantasyPointsDefault": {
+          "standard": "0.58",
+          "PPR": "0.88",
+          "halfPPR": "0.73"
+        }
+      },
+      "4385690": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "3.9",
+          "recTD": "0.3",
+          "recYds": "46.5"
+        },
+        "fumblesLost": "0.0",
+        "pos": "TE",
+        "teamID": "4",
+        "team": "BUF",
+        "longName": "Dalton Kincaid",
+        "playerID": "4385690",
+        "fantasyPoints": "10.35",
+        "fantasyPointsDefault": {
+          "standard": "6.45",
+          "PPR": "10.35",
+          "halfPPR": "8.4"
+        }
+      },
+      "4570037": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "1.0",
+          "recTD": "0.1",
+          "recYds": "11.2"
+        },
+        "fumblesLost": "0.0",
+        "pos": "TE",
+        "teamID": "19",
+        "team": "LAR",
+        "longName": "Terrance Ferguson",
+        "playerID": "4570037",
+        "fantasyPoints": "2.72",
+        "fantasyPointsDefault": {
+          "standard": "1.72",
+          "PPR": "2.72",
+          "halfPPR": "2.22"
+        }
+      },
+      "4431280": {
+        "Rushing": {
+          "rushYds": "1.2",
+          "carries": "0.3",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "2.9",
+          "recTD": "0.2",
+          "recYds": "32.4"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "10",
+        "team": "DEN",
+        "longName": "Troy Franklin",
+        "playerID": "4431280",
+        "fantasyPoints": "7.46",
+        "fantasyPointsDefault": {
+          "standard": "4.56",
+          "PPR": "7.46",
+          "halfPPR": "6.01"
+        }
+      },
+      "4430191": {
+        "Rushing": {
+          "rushYds": "2.4",
+          "carries": "0.5",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "0.4",
+          "recTD": "0.0",
+          "recYds": "4.8"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "28",
+        "team": "SF",
+        "longName": "Skyy Moore",
+        "playerID": "4430191",
+        "fantasyPoints": "1.12",
+        "fantasyPointsDefault": {
+          "standard": "0.72",
+          "PPR": "1.12",
+          "halfPPR": "0.92"
+        }
+      },
+      "4574716": {
+        "Kicking": {
+          "fgMade": "1.8",
+          "fgMissed": "0.0",
+          "xpMade": "3.2",
+          "xpMissed": "0.0"
+        },
+        "team": "LAR",
+        "pos": "PK",
+        "longName": "Harrison Mevis",
+        "playerID": "4574716",
+        "teamID": "19",
+        "fantasyPoints": "8.6",
+        "fantasyPointsDefault": {
+          "standard": "8.6",
+          "PPR": "8.6",
+          "halfPPR": "8.6"
+        }
+      },
+      "4686422": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "2.9",
+          "recTD": "0.2",
+          "recYds": "35.4"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "13",
+        "team": "HOU",
+        "longName": "Xavier Hutchinson",
+        "playerID": "4686422",
+        "fantasyPoints": "7.64",
+        "fantasyPointsDefault": {
+          "standard": "4.74",
+          "PPR": "7.64",
+          "halfPPR": "6.19"
+        }
+      },
+      "4877706": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "3.1",
+          "recTD": "0.2",
+          "recYds": "40.7"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "13",
+        "team": "HOU",
+        "longName": "Jayden Higgins",
+        "playerID": "4877706",
+        "fantasyPoints": "8.37",
+        "fantasyPointsDefault": {
+          "standard": "5.27",
+          "PPR": "8.37",
+          "halfPPR": "6.82"
+        }
+      },
+      "3121427": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "1.0",
+          "recTD": "0.0",
+          "recYds": "14.0"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "4",
+        "team": "BUF",
+        "longName": "Curtis Samuel",
+        "playerID": "3121427",
+        "fantasyPoints": "2.4",
+        "fantasyPointsDefault": {
+          "standard": "1.4",
+          "PPR": "2.4",
+          "halfPPR": "1.9"
+        }
+      },
+      "4428209": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "2.1",
+          "recTD": "0.1",
+          "recYds": "26.0"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "28",
+        "team": "SF",
+        "longName": "Ricky Pearsall",
+        "playerID": "4428209",
+        "fantasyPoints": "5.3",
+        "fantasyPointsDefault": {
+          "standard": "3.2",
+          "PPR": "5.3",
+          "halfPPR": "4.25"
+        }
+      },
+      "4432577": {
+        "Rushing": {
+          "rushYds": "11.7",
+          "carries": "2.4",
+          "rushTD": "0.1"
+        },
+        "Passing": {
+          "passAttempts": "31.4",
+          "passTD": "1.2",
+          "passYds": "226.1",
+          "int": "0.5",
+          "passCompletions": "20.2"
+        },
+        "Receiving": {
+          "receptions": "0.0",
+          "recTD": "0.0",
+          "recYds": "0.0"
+        },
+        "fumblesLost": "0.0",
+        "pos": "QB",
+        "teamID": "13",
+        "team": "HOU",
+        "longName": "C.J. Stroud",
+        "playerID": "4432577",
+        "fantasyPoints": "15.11",
+        "fantasyPointsDefault": {
+          "standard": "15.11",
+          "PPR": "15.11",
+          "halfPPR": "15.11"
+        }
+      },
+      "2976212": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "4.4",
+          "recTD": "0.4",
+          "recYds": "54.9"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "22",
+        "team": "NE",
+        "longName": "Stefon Diggs",
+        "playerID": "2976212",
+        "fantasyPoints": "12.29",
+        "fantasyPointsDefault": {
+          "standard": "7.89",
+          "PPR": "12.29",
+          "halfPPR": "10.09"
+        }
+      },
+      "2573401": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "3.2",
+          "recTD": "0.2",
+          "recYds": "30.1"
+        },
+        "fumblesLost": "0.0",
+        "pos": "TE",
+        "teamID": "19",
+        "team": "LAR",
+        "longName": "Tyler Higbee",
+        "playerID": "2573401",
+        "fantasyPoints": "7.41",
+        "fantasyPointsDefault": {
+          "standard": "4.21",
+          "PPR": "7.41",
+          "halfPPR": "5.81"
+        }
+      },
+      "4426385": {
+        "Rushing": {
+          "rushYds": "47.3",
+          "carries": "11.1",
+          "rushTD": "0.6"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "2.6",
+          "recTD": "0.1",
+          "recYds": "17.3"
+        },
+        "fumblesLost": "0.0",
+        "pos": "RB",
+        "teamID": "29",
+        "team": "SEA",
+        "longName": "Zach Charbonnet",
+        "playerID": "4426385",
+        "fantasyPoints": "13.26",
+        "fantasyPointsDefault": {
+          "standard": "10.66",
+          "PPR": "13.26",
+          "halfPPR": "11.96"
+        }
+      },
+      "2977187": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "2.6",
+          "recTD": "0.2",
+          "recYds": "33.2"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "29",
+        "team": "SEA",
+        "longName": "Cooper Kupp",
+        "playerID": "2977187",
+        "fantasyPoints": "7.12",
+        "fantasyPointsDefault": {
+          "standard": "4.52",
+          "PPR": "7.12",
+          "halfPPR": "5.82"
+        }
+      },
+      "4429059": {
+        "Rushing": {
+          "rushYds": "69.7",
+          "carries": "17.2",
+          "rushTD": "0.3"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "1.4",
+          "recTD": "0.1",
+          "recYds": "13.0"
+        },
+        "fumblesLost": "0.0",
+        "pos": "RB",
+        "teamID": "13",
+        "team": "HOU",
+        "longName": "Woody Marks",
+        "playerID": "4429059",
+        "fantasyPoints": "12.07",
+        "fantasyPointsDefault": {
+          "standard": "10.67",
+          "PPR": "12.07",
+          "halfPPR": "11.37"
+        }
+      },
+      "4373678": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "5.6",
+          "recTD": "0.3",
+          "recYds": "60.4"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "4",
+        "team": "BUF",
+        "longName": "Khalil Shakir",
+        "playerID": "4373678",
+        "fantasyPoints": "13.44",
+        "fantasyPointsDefault": {
+          "standard": "7.84",
+          "PPR": "13.44",
+          "halfPPR": "10.64"
+        }
+      },
+      "3051876": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "2.9",
+          "recTD": "0.2",
+          "recYds": "24.7"
+        },
+        "fumblesLost": "0.0",
+        "pos": "TE",
+        "teamID": "10",
+        "team": "DEN",
+        "longName": "Evan Engram",
+        "playerID": "3051876",
+        "fantasyPoints": "6.57",
+        "fantasyPointsDefault": {
+          "standard": "3.67",
+          "PPR": "6.57",
+          "halfPPR": "5.12"
+        }
+      },
+      "4430878": {
+        "Rushing": {
+          "rushYds": "1.4",
+          "carries": "0.3",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "6.3",
+          "recTD": "0.7",
+          "recYds": "100.7"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "29",
+        "team": "SEA",
+        "longName": "Jaxon Smith-Njigba",
+        "playerID": "4430878",
+        "fantasyPoints": "20.71",
+        "fantasyPointsDefault": {
+          "standard": "14.41",
+          "PPR": "20.71",
+          "halfPPR": "17.56"
+        }
+      },
+      "4362748": {
+        "Rushing": {
+          "rushYds": "2.1",
+          "carries": "0.5",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "1.1",
+          "recTD": "0.0",
+          "recYds": "7.2"
+        },
+        "fumblesLost": "0.0",
+        "pos": "RB",
+        "teamID": "10",
+        "team": "DEN",
+        "longName": "Tyler Badie",
+        "playerID": "4362748",
+        "fantasyPoints": "2.03",
+        "fantasyPointsDefault": {
+          "standard": "0.93",
+          "PPR": "2.03",
+          "halfPPR": "1.48"
+        }
+      },
+      "3911853": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "1.0",
+          "recTD": "0.1",
+          "recYds": "10.0"
+        },
+        "fumblesLost": "0.0",
+        "pos": "TE",
+        "teamID": "10",
+        "team": "DEN",
+        "longName": "Adam Trautman",
+        "playerID": "3911853",
+        "fantasyPoints": "2.6",
+        "fantasyPointsDefault": {
+          "standard": "1.6",
+          "PPR": "2.6",
+          "halfPPR": "2.1"
+        }
+      },
+      "3912547": {
+        "Rushing": {
+          "rushYds": "4.8",
+          "carries": "1.2",
+          "rushTD": "0.1"
+        },
+        "Passing": {
+          "passAttempts": "29.2",
+          "passTD": "1.6",
+          "passYds": "246.8",
+          "int": "0.8",
+          "passCompletions": "19.8"
+        },
+        "Receiving": {
+          "receptions": "0.0",
+          "recTD": "0.0",
+          "recYds": "0.0"
+        },
+        "fumblesLost": "0.0",
+        "pos": "QB",
+        "teamID": "29",
+        "team": "SEA",
+        "longName": "Sam Darnold",
+        "playerID": "3912547",
+        "fantasyPoints": "16.55",
+        "fantasyPointsDefault": {
+          "standard": "16.55",
+          "PPR": "16.55",
+          "halfPPR": "16.55"
+        }
+      },
+      "4429096": {
+        "Rushing": {
+          "rushYds": "44.3",
+          "carries": "10.8",
+          "rushTD": "0.3"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "0.9",
+          "recTD": "0.0",
+          "recYds": "6.6"
+        },
+        "fumblesLost": "0.0",
+        "pos": "RB",
+        "teamID": "19",
+        "team": "LAR",
+        "longName": "Blake Corum",
+        "playerID": "4429096",
+        "fantasyPoints": "7.79",
+        "fantasyPointsDefault": {
+          "standard": "6.89",
+          "PPR": "7.79",
+          "halfPPR": "7.34"
+        }
+      },
+      "3917914": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "1.0",
+          "recTD": "0.0",
+          "recYds": "9.0"
+        },
+        "fumblesLost": "0.0",
+        "pos": "WR",
+        "teamID": "6",
+        "team": "CHI",
+        "longName": "Olamide Zaccheaus",
+        "playerID": "3917914",
+        "fantasyPoints": "1.9",
+        "fantasyPointsDefault": {
+          "standard": "0.9",
+          "PPR": "1.9",
+          "halfPPR": "1.4"
+        }
+      },
+      "4569923": {
+        "Kicking": {
+          "fgMade": "3.0",
+          "fgMissed": "0.0",
+          "xpMade": "2.0",
+          "xpMissed": "0.0"
+        },
+        "team": "NE",
+        "pos": "PK",
+        "longName": "Andy Borregales",
+        "playerID": "4569923",
+        "teamID": "22",
+        "fantasyPoints": "11.0",
+        "fantasyPointsDefault": {
+          "standard": "11.0",
+          "PPR": "11.0",
+          "halfPPR": "11.0"
+        }
+      },
+      "4040612": {
+        "Rushing": {
+          "rushYds": "0.0",
+          "carries": "0.0",
+          "rushTD": "0.0"
+        },
+        "Passing": {
+          "passAttempts": "0.0",
+          "passTD": "0.0",
+          "passYds": "0.0",
+          "int": "0.0",
+          "passCompletions": "0.0"
+        },
+        "Receiving": {
+          "receptions": "0.7",
+          "recTD": "0.0",
+          "recYds": "6.5"
+        },
+        "fumblesLost": "0.0",
+        "pos": "TE",
+        "teamID": "28",
+        "team": "SF",
+        "longName": "Luke Farrell",
+        "playerID": "4040612",
+        "fantasyPoints": "1.35",
+        "fantasyPointsDefault": {
+          "standard": "0.65",
+          "PPR": "1.35",
+          "halfPPR": "1.0"
+        }
+      }
+    },
+    "week": "20",
+    "season": "2025"
+  }
+}
